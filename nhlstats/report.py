@@ -51,7 +51,7 @@ footer{margin-top:40px;color:var(--muted);font-size:13px;border-top:1px solid va
 .empty{color:var(--muted)}
 .game{overflow-x:auto}
 .inj td,.inj th{text-align:left}
-.inj td:nth-child(5),.inj td:nth-child(6){white-space:nowrap}
+.inj td:nth-child(4),.inj td:nth-child(5){white-space:nowrap}
 .inj .tag{font-size:11px;padding:1px 7px}
 .tiles{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:10px;margin:20px 0 28px}
 .tile{display:flex;flex-direction:column;gap:2px;background:var(--card);border:1px solid var(--line);border-radius:12px;
@@ -246,7 +246,7 @@ def _finn_html(day: str, skaters, goalies, xg, items: list[Insight], tables, fin
     return "".join(parts)
 
 
-INJ_HEAD = ["Pelaaja", "Peruste", "Tila", "Vamma", "Arvioitu paluu", "Päivitetty"]
+INJ_HEAD = ["Pelaaja", "Tila", "Vamma", "Arvioitu paluu", "Päivitetty"]
 
 
 def _injuries_html(day: str, inj: pd.DataFrame, finns: set[int], stars: pd.DataFrame) -> str:
@@ -265,12 +265,11 @@ def _injuries_html(day: str, inj: pd.DataFrame, finns: set[int], stars: pd.DataF
         if r.espn_url:
             who = f'<a href="{escape(r.espn_url)}">{who}</a>'
         who += f" ({escape(r.team)})"
-        why = "suomalainen" if r.player_id in finns else f"tähti ({basis[r.player_id]})"
         upd = pd.Timestamp(r.updated) if r.updated else None
         upd_txt = f"{upd.day}.{upd.month}." if upd is not None else "–"
         if r.new:
             upd_txt = f'<span class="tag">uusi</span> {upd_txt}'
-        rows.append([who, escape(why), escape(status_fi(r.status)), escape(injury_fi(r.injury)),
+        rows.append([who, escape(status_fi(r.status)), escape(injury_fi(r.injury)),
                      escape(return_text(r.return_date, r.snapshot)), upd_txt])
     return _table(f"Sivussa olevat suomalaiset ja tähtipelaajat ({len(shown)} / {len(inj)})",
                   INJ_HEAD, rows, "inj wide")
