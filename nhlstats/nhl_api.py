@@ -61,6 +61,16 @@ def stars(season_id: int) -> list[dict]:
     return result
 
 
+def toi_splits(day: date) -> list[dict]:
+    """Pelipäivän kenttäpelaajien peliaika tilanteittain (tasakentin, yv, av) sekunteina."""
+    exp = (f'gameDate%3E%3D%22{day.isoformat()}%22%20and%20gameDate%3C%3D%22{day.isoformat()}%22'
+           f"%20and%20gameTypeId%3E%3D2")
+    data = http.get(f"{STATS}/skater/timeonice?isAggregate=false&isGame=true&limit=-1&cayenneExp={exp}").json()
+    return [{"game_id": r["gameId"], "player_id": r["playerId"], "ev_toi": r.get("evTimeOnIce") or 0,
+             "pp_toi": r.get("ppTimeOnIce") or 0, "sh_toi": r.get("shTimeOnIce") or 0}
+            for r in data.get("data", [])]
+
+
 def roster_countries(team: str) -> dict[int, str]:
     """Joukkueen nykyisen rosterin pelaajien syntymämaat (esim. FIN)."""
     roster = http.get(f"{WEB}/roster/{team}/current").json()

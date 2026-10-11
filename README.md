@@ -12,7 +12,7 @@ tekee suomenkielisen HTML-raportin, joka nostaa esiin kiinnostavia yksityiskohti
 - **Isot illat ja hattutemput, poikkeava peliaika**
 - **Kausitaulukot:** käynnissä olevat pisteputket, xG-ali- ja ylisuoriutujat
 - **Suomalaisnurkkaus:** yön suomalaiset kenttäpelaajat ja maalivahdit, heitä koskevat nostot
-  sekä suomalaisten pistepörssi ja maalivahtitilastot
+  ylivoima-aikoineen sekä suomalaisten pistepörssi ja maalivahtitilastot
 - **Loukkaantumiset:** yöllä pelanneet, joista tuli pelin jälkeen loukkaantumisilmoitus
   (esim. poikkeuksellisen lyhyt peliaika) sekä sivussa olevat suomalaiset ja tähtipelaajat
   arvioituine paluupäivineen. Tähti = edellisellä kaudella joukkueensa kolmen parhaan
@@ -25,6 +25,7 @@ Raportti julkaistaan GitHub Pagesissa: <https://juhaopesonen.github.io/NHL-stats
 | Lähde | Käyttö |
 |---|---|
 | [NHL:n avoin rajapinta](https://api-web.nhle.com) | Ottelut, tulokset, boxscoret, pelaajien nimet ja syntymämaat |
+| [NHL:n tilastorajapinta](https://api.nhle.com/stats/rest/en) | Peliaika tilanteittain (tasakentin, yv, av), edellisen kauden tilastot tähtipelaajia varten |
 | [ESPN](https://www.espn.com/nhl/injuries) (tiedot RotoWirelta) | Loukkaantumiset: tila, vamman tyyppi, arvioitu paluupäivä |
 | [MoneyPuck.com](https://moneypuck.com/data.htm) | Laukaustason data ja xG-malli → ixG, joukkueiden xG, 5v5-xG, vaaralliset paikat, GSAx |
 

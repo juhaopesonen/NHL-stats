@@ -43,6 +43,38 @@ def fetch_boxscores(season_id: int, until: date) -> None:
         day += timedelta(days=1)
 
 
+SPLIT_COLS = ["ev_toi", "pp_toi", "sh_toi"]
+
+
+def fill_toi_splits(season_id: int) -> None:
+    """Täydentää kenttäpelaajille yv-, av- ja tasakenttäajat päiville, joilta ne puuttuvat."""
+    skaters = storage.load(season_id, "skaters")
+    if skaters.empty:
+        return
+    for col in SPLIT_COLS:
+        if col not in skaters.columns:
+            skaters[col] = pd.NA
+    missing = skaters.groupby("date").pp_toi.apply(lambda s: s.isna().all())
+    days = sorted(missing[missing].index)
+    if not days:
+        return
+    for day in days:
+        try:
+            rows = nhl_api.toi_splits(date.fromisoformat(day))
+        except Exception as e:
+            print(f"Peliaikajakauman haku {day} epäonnistui: {e}")
+            continue
+        if not rows:
+            continue
+        split = pd.DataFrame(rows).set_index(["game_id", "player_id"])
+        idx = skaters.date == day
+        keys = pd.MultiIndex.from_frame(skaters.loc[idx, ["game_id", "player_id"]])
+        for col in SPLIT_COLS:
+            skaters.loc[idx, col] = split[col].reindex(keys).to_numpy()
+    storage.save(season_id, "skaters", skaters)
+    print(f"Peliaikajakauma (yv/av/tasak.) täydennetty {len(days)} päivälle")
+
+
 def update_countries(skaters: pd.DataFrame, goalies: pd.DataFrame) -> pd.DataFrame:
     """Hakee syntymämaan pelaajille, joita ei vielä ole data/players.csv:ssä."""
     known = storage.load_players()
@@ -108,6 +140,7 @@ def main() -> None:
 
     if not args.no_fetch:
         fetch_boxscores(season_id, day)
+        fill_toi_splits(season_id)
 
     games = storage.load(season_id, "games")
     skaters = storage.load(season_id, "skaters")

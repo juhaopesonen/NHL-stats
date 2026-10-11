@@ -182,6 +182,11 @@ def _table(title: str, head: list[str], rows: list[list[str]], cls: str = "") ->
             f"<table><tr>{th}</tr>{body}</table></div></div>")
 
 
+def _pp(seconds) -> str:
+    """Ylivoima-aika; viiva, jos tietoa ei (vielä) ole."""
+    return toi(seconds) if seconds is not None and pd.notna(seconds) else "–"
+
+
 def _finn_html(day: str, skaters, goalies, xg, items: list[Insight], tables, finns: set[int],
                inj: pd.DataFrame | None = None) -> str:
     xgp, xgg = xg["xg_players"], xg["xg_goalies"]
@@ -202,8 +207,8 @@ def _finn_html(day: str, skaters, goalies, xg, items: list[Insight], tables, fin
         sk = sk.sort_values(["points", "goals", "toi"], ascending=False)
         rows = [[f'<a href="#g{p.game_id}">{escape(p["name"])}</a> ({escape(p.team)}–{escape(p.opp)})',
                  str(p.goals), str(p.assists), f"<b>{p.points}</b>", str(p.sog),
-                 num(p.ixg) if pd.notna(p.ixg) else "–", toi(p.toi)] for _, p in sk.iterrows()]
-        cards.append(_table("Yön suomalaiset", ["Pelaaja", "M", "S", "P", "L", "ixG", "Aika"], rows))
+                 num(p.ixg) if pd.notna(p.ixg) else "–", toi(p.toi), _pp(p.get("pp_toi"))] for _, p in sk.iterrows()]
+        cards.append(_table("Yön suomalaiset", ["Pelaaja", "M", "S", "P", "L", "ixG", "Aika", "YV"], rows))
     if not gl.empty:
         if not xgg.empty:
             gl = gl.merge(xgg[["game_id", "player_id", "gsax"]], on=["game_id", "player_id"], how="left")
@@ -223,10 +228,10 @@ def _finn_html(day: str, skaters, goalies, xg, items: list[Insight], tables, fin
     fs = tables["finns"]
     if not fs.empty:
         rows = [[f'{escape(r["name"])} ({escape(r.team)})', str(r.gp), str(r.goals), str(r.assists),
-                 f"<b>{r.points}</b>", num(r.ixg), toi(r.toi), str(r.streak) if r.streak >= 2 else ""]
+                 f"<b>{r.points}</b>", num(r.ixg), toi(r.toi), _pp(r.pp_toi), str(r.streak) if r.streak >= 2 else ""]
                 for _, r in fs.head(15).iterrows()]
         season_cards.append(_table("Suomalaisten pistepörssi",
-                                   ["Pelaaja", "O", "M", "S", "P", "ixG", "Aika/O", "Putki"], rows))
+                                   ["Pelaaja", "O", "M", "S", "P", "ixG", "Aika/O", "YV/O", "Putki"], rows))
     sg = goalies[(goalies.date <= day) & goalies.player_id.isin(finns)]
     if not sg.empty:
         if not xgg.empty:

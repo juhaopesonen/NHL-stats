@@ -199,6 +199,8 @@ def build(day, games, skaters, goalies, xg, inj: pd.DataFrame | None = None) -> 
 def finn_season(season: pd.DataFrame, xgp: pd.DataFrame, finns: set[int]) -> pd.DataFrame:
     """Suomalaisten kenttäpelaajien kausitilastot pistejärjestyksessä."""
     fin = season[season.player_id.isin(finns)]
+    if "pp_toi" not in fin.columns:
+        fin = fin.assign(pp_toi=float("nan"))
     if not xgp.empty:
         fin = fin.merge(xgp[["game_id", "player_id", "ixg"]], on=["game_id", "player_id"], how="left")
     else:
@@ -206,7 +208,7 @@ def finn_season(season: pd.DataFrame, xgp: pd.DataFrame, finns: set[int]) -> pd.
     tot = fin.groupby("player_id").agg(
         name=("name", "last"), team=("team", "last"), gp=("game_id", "size"),
         goals=("goals", "sum"), assists=("assists", "sum"), points=("points", "sum"),
-        ixg=("ixg", lambda s: s.fillna(0).sum()), toi=("toi", "mean"),
+        ixg=("ixg", lambda s: s.fillna(0).sum()), toi=("toi", "mean"), pp_toi=("pp_toi", "mean"),
         streak=("points", lambda s: _trailing(s.tolist(), lambda v: v > 0))).reset_index()
     return tot.sort_values(["points", "goals", "toi"], ascending=False)
 
