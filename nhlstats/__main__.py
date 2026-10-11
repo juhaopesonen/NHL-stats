@@ -138,10 +138,18 @@ def main() -> None:
     players = storage.load_players()
     finns = set(players[players.birth_country == "FIN"].player_id)
     inj = storage.injuries_for(season_id, day.isoformat())
+    stars = storage.load(season_id, "stars")
+    if stars.empty and not args.no_fetch:
+        try:
+            stars = pd.DataFrame(nhl_api.stars(season_id))
+            storage.save(season_id, "stars", stars)
+            print(f"Tähtipelaajat: {len(stars)} (edellisen kauden tilastoista)")
+        except Exception as e:
+            print(f"Tähtipelaajien haku epäonnistui: {e}")
 
     items = insights.build(day.isoformat(), games, skaters, goalies, xg, inj)
     tables = insights.season_tables(day.isoformat(), skaters, xg["xg_players"], finns)
-    report.write(day, report.render(day, games, skaters, goalies, xg, items, tables, finns, inj))
+    report.write(day, report.render(day, games, skaters, goalies, xg, items, tables, finns, inj, stars))
     print(f"Raportti {day}: {len(items)} nostoa -> docs/raportit/{day}.html")
 
 

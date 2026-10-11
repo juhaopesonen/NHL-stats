@@ -48,11 +48,8 @@ footer{margin-top:40px;color:var(--muted);font-size:13px;border-top:1px solid va
 .empty{color:var(--muted)}
 .game{overflow-x:auto}
 .inj td,.inj th{text-align:left}
-.inj td:nth-child(4){white-space:nowrap}
-.wide{grid-column:1/-1}
-details.game{margin-top:14px}
-details.game summary{cursor:pointer;font-weight:600}
-details.game .game{border:0;padding:0}
+.inj td:nth-child(5),.inj td:nth-child(6){white-space:nowrap}
+.inj .tag{font-size:11px;padding:1px 7px}
 .subhead{font-size:15px;margin:20px 0 10px}
 #suomalaiset + .insights{margin-bottom:14px}
 .game td a{color:inherit;text-decoration:none;border-bottom:1px dotted var(--muted)}
@@ -174,10 +171,6 @@ def _finn_html(day: str, skaters, goalies, xg, items: list[Insight], tables, fin
         cards.append(_table("Yön suomalaismaalivahdit", ["Maalivahti", "Torjunnat", "Torj-%", "GSAx", "Tulos"], rows))
     if not cards:
         cards.append('<p class="empty">Yöllä ei pelannut suomalaisia.</p>')
-    if inj is not None and not inj.empty:
-        hurt = inj[inj.player_id.isin(finns)].sort_values("name")
-        if not hurt.empty:
-            cards.append(_table("Sivussa olevat suomalaiset", INJ_HEAD, _injury_rows(hurt), "inj wide"))
     parts.append(f'<div class="season">{"".join(cards)}</div>')
 
     season_cards = []
@@ -207,37 +200,34 @@ def _finn_html(day: str, skaters, goalies, xg, items: list[Insight], tables, fin
     return "".join(parts)
 
 
-def _injury_rows(df: pd.DataFrame, with_team: bool = True) -> list[list[str]]:
+INJ_HEAD = ["Pelaaja", "Peruste", "Tila", "Vamma", "Arvioitu paluu", "Päivitetty"]
+
+
+def _injuries_html(day: str, inj: pd.DataFrame, finns: set[int], stars: pd.DataFrame) -> str:
+    """Sivussa olevat suomalaiset ja joukkueiden tähtipelaajat."""
+    if inj is None or inj.empty:
+        return '<p class="empty">Loukkaantumistietoja ei ole saatavilla tälle päivälle.</p>'
+    basis = dict(zip(stars.player_id, stars.basis)) if not stars.empty else {}
+    shown = inj[inj.player_id.isin(finns) | inj.player_id.isin(basis.keys())].copy()
+    if shown.empty:
+        return '<p class="empty">Yksikään suomalainen tai tähtipelaaja ei ole sivussa.</p>'
+    shown["new"] = shown.updated >= day
+    shown = shown.sort_values(["new", "team", "name"], ascending=[False, True, True])
     rows = []
-    for _, r in df.iterrows():
+    for _, r in shown.iterrows():
         who = escape(r["name"])
         if r.espn_url:
             who = f'<a href="{escape(r.espn_url)}">{who}</a>'
-        if with_team:
-            who += f" ({escape(r.team)})"
+        who += f" ({escape(r.team)})"
+        why = "suomalainen" if r.player_id in finns else f"tähti ({basis[r.player_id]})"
         upd = pd.Timestamp(r.updated) if r.updated else None
-        rows.append([who, escape(status_fi(r.status)), escape(injury_fi(r.injury)),
-                     escape(return_text(r.return_date, r.snapshot)),
-                     f"{upd.day}.{upd.month}." if upd is not None else "–"])
-    return rows
-
-
-INJ_HEAD = ["Pelaaja", "Tila", "Vamma", "Arvioitu paluu", "Päivitetty"]
-
-
-def _injuries_html(day: str, inj: pd.DataFrame) -> str:
-    if inj is None or inj.empty:
-        return '<p class="empty">Loukkaantumistietoja ei ole saatavilla tälle päivälle.</p>'
-    fresh = inj[inj.updated >= day].sort_values(["updated", "team"], ascending=[False, True])
-    parts = []
-    if fresh.empty:
-        parts.append('<p class="empty">Ei uusia loukkaantumisilmoituksia.</p>')
-    else:
-        parts.append(_table(f"Uudet ja päivittyneet ilmoitukset ({len(fresh)})", INJ_HEAD, _injury_rows(fresh), "inj"))
-    full = inj.sort_values(["team", "name"])
-    parts.append(f'<details class="game"><summary>Kaikki sivussa olevat ({len(full)})</summary>'
-                 + _table("", INJ_HEAD, _injury_rows(full), "inj") + "</details>")
-    return "".join(parts)
+        upd_txt = f"{upd.day}.{upd.month}." if upd is not None else "–"
+        if r.new:
+            upd_txt = f'<span class="tag">uusi</span> {upd_txt}'
+        rows.append([who, escape(why), escape(status_fi(r.status)), escape(injury_fi(r.injury)),
+                     escape(return_text(r.return_date, r.snapshot)), upd_txt])
+    return _table(f"Sivussa olevat suomalaiset ja tähtipelaajat ({len(shown)} / {len(inj)})",
+                  INJ_HEAD, rows, "inj wide")
 
 
 def _season_html(tables: dict[str, pd.DataFrame]) -> str:
@@ -272,7 +262,8 @@ def _archive_html(current: date) -> str:
 
 
 def render(day: date, games, skaters, goalies, xg, items, tables, finns: set[int] = frozenset(),
-           inj: pd.DataFrame | None = None) -> str:
+           inj: pd.DataFrame | None = None, stars: pd.DataFrame | None = None) -> str:
+    stars = stars if stars is not None else pd.DataFrame()
     night = games[games.date == day.isoformat()].sort_values("game_id")
     cards = "".join(_game_html(gm, skaters, goalies, xg["xg_teams"], xg["xg_goalies"])
                     for _, gm in night.iterrows())
@@ -288,7 +279,7 @@ def render(day: date, games, skaters, goalies, xg, items, tables, finns: set[int
 <p class="sub">Ottelut {day_fi(day)} (Pohjois-Amerikan aikaa) · {len(night)} ottelua</p></header>
 <h2>Yön nostot</h2>{_insights_html(items)}
 <h2 id="suomalaiset">Suomalaisnurkkaus</h2>{_finn_html(day.isoformat(), skaters, goalies, xg, items, tables, finns, inj)}
-<h2 id="loukkaantumiset">Loukkaantumiset</h2>{_injuries_html(day.isoformat(), inj)}
+<h2 id="loukkaantumiset">Loukkaantumiset</h2>{_injuries_html(day.isoformat(), inj, finns, stars)}
 <h2>Ottelut</h2>{f'<div class="games">{cards}</div>' if cards else '<p class="empty">Ei pelattuja otteluita.</p>'}
 <h2>Kausi tähän mennessä</h2>{_season_html(tables)}
 <h2>Arkisto</h2>{{ARCHIVE}}

@@ -12,10 +12,11 @@ tekee suomenkielisen HTML-raportin, joka nostaa esiin kiinnostavia yksityiskohti
 - **Isot illat ja hattutemput, poikkeava peliaika**
 - **Kausitaulukot:** käynnissä olevat pisteputket, xG-ali- ja ylisuoriutujat
 - **Suomalaisnurkkaus:** yön suomalaiset kenttäpelaajat ja maalivahdit, heitä koskevat nostot
-  sekä suomalaisten pistepörssi, maalivahtitilastot ja sivussa olevat suomalaiset
+  sekä suomalaisten pistepörssi ja maalivahtitilastot
 - **Loukkaantumiset:** yöllä pelanneet, joista tuli pelin jälkeen loukkaantumisilmoitus
-  (esim. poikkeuksellisen lyhyt peliaika), uudet ilmoitukset ja koko liigan sivussa olevat
-  arvioituine paluupäivineen
+  (esim. poikkeuksellisen lyhyt peliaika) sekä sivussa olevat suomalaiset ja tähtipelaajat
+  arvioituine paluupäivineen. Tähti = edellisellä kaudella joukkueensa kolmen parhaan
+  pistemiehen joukossa (väh. 35 p), vähintään 65 p (puolustaja 45 p) tai joukkueen ykkösvahti
 
 Raportti julkaistaan GitHub Pagesissa: <https://juhaopesonen.github.io/NHL-stats/>
 
@@ -60,6 +61,7 @@ nhlstats/
 data/2026-27/   tallennettu data (games, skaters, goalies, xg_*)
 data/players.csv  pelaajien syntymämaat (suomalaiset = FIN)
 data/2026-27/injuries.csv  loukkaantumislistan päivittäiset tilannekuvat
+data/2026-27/stars.csv     tähtipelaajat (edellisen kauden tilastoista)
 docs/           GitHub Pages: index.html = uusin raportti, raportit/ = arkisto
 ```
 

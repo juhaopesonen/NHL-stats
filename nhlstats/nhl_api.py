@@ -24,6 +24,43 @@ def games_on(day: date) -> list[dict]:
     return http.get(f"{WEB}/score/{day.isoformat()}").json().get("games", [])
 
 
+def stars(season_id: int) -> list[dict]:
+    """Joukkueiden tähtipelaajat edellisen kauden runkosarjan perusteella.
+
+    Kenttäpelaaja: joukkueensa kolmen parhaan pistemiehen joukossa (väh. 35 p),
+    tai vähintään 65 pistettä, tai puolustaja vähintään 45 pistettä.
+    Maalivahti: joukkueensa ykkönen, vähintään 30 aloitusta.
+    """
+    prev = season_id - 10001  # 20262027 -> 20252026
+    exp = f"seasonId={prev}%20and%20gameTypeId=2"
+    sk = http.get(f"{STATS}/skater/summary?limit=-1&cayenneExp={exp}").json()["data"]
+    gl = http.get(f"{STATS}/goalie/summary?limit=-1&cayenneExp={exp}").json()["data"]
+    team = lambda r: (r.get("teamAbbrevs") or "").split(",")[-1].strip()
+
+    out = {}
+    by_team: dict[str, list[dict]] = {}
+    for r in sk:
+        by_team.setdefault(team(r), []).append(r)
+    for t, rows in by_team.items():
+        for r in sorted(rows, key=lambda r: r["points"], reverse=True)[:3]:
+            if r["points"] >= 35:
+                out[r["playerId"]] = (r, f'{t}:n {r["points"]} p')
+    for r in sk:
+        if r["points"] >= 65 or (r["positionCode"] == "D" and r["points"] >= 45):
+            out.setdefault(r["playerId"], (r, f'{r["points"]} p'))
+    result = [{"player_id": pid, "name": r["skaterFullName"], "team": team(r), "basis": basis}
+              for pid, (r, basis) in out.items()]
+
+    goalies_by_team: dict[str, dict] = {}
+    for r in gl:
+        t = team(r)
+        if r["gamesStarted"] >= 30 and r["gamesStarted"] > goalies_by_team.get(t, {}).get("gamesStarted", 0):
+            goalies_by_team[t] = r
+    result += [{"player_id": r["playerId"], "name": r["goalieFullName"], "team": t,
+                "basis": f'ykkösvahti, {r["gamesStarted"]} aloitusta'} for t, r in goalies_by_team.items()]
+    return result
+
+
 def roster_countries(team: str) -> dict[int, str]:
     """Joukkueen nykyisen rosterin pelaajien syntymämaat (esim. FIN)."""
     roster = http.get(f"{WEB}/roster/{team}/current").json()

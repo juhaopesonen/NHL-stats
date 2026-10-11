@@ -34,7 +34,7 @@ TYPE_FI = {
     "Collarbone": "solisluu", "Toe": "varvas", "Heel": "kantapää", "Lower-body": "alavartalo",
     "Upper-body": "ylävartalo", "Not Injury Related": "ei vamma",
     "Contract Dispute": "sopimuskiista", "Suspension": "pelikielto", "Covid-19": "koronavirus",
-    "Rest": "lepo", "Torso": "vartalo", "Kidney": "munuainen", "Spleen": "perna",
+    "Rest": "lepo", "Skull": "kallo", "Torso": "vartalo", "Kidney": "munuainen", "Spleen": "perna",
     "Bicep": "hauislihas", "Tricep": "ojentajalihas", "Lower Back": "alaselkä",
 }
 
