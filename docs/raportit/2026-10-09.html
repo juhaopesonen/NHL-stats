@@ -5,12 +5,12 @@
 <meta name="description" content="NHL:n yön otteluiden syvädata ja nostot: xG, putket ja poikkeamat.">
 <style>
 :root{--bg:#f6f7f9;--card:#fff;--text:#16181d;--muted:#5f6673;--line:#e3e6eb;
---accent:#0b5fff;--accent-soft:#e8efff;--good:#0f8a4b;--bad:#c4372c;--bar-a:#8a94a6;--bar-h:#0b5fff}
+--accent:#0b5fff;--accent-soft:#e8efff;--good:#0f8a4b;--bad:#c4372c;--bar-a:#6b7385;--bar-h:#0b5fff;--bar-a-text:#fff;--bar-h-text:#fff}
 @media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#0f1115;--card:#181b21;
 --text:#e8eaee;--muted:#9aa2b1;--line:#2a2f38;--accent:#6c9cff;--accent-soft:#1d2840;--good:#3ccf84;
---bad:#ff7a6e;--bar-a:#5b6475;--bar-h:#6c9cff}}
+--bad:#ff7a6e;--bar-a:#5b6475;--bar-h:#6c9cff;--bar-a-text:#fff;--bar-h-text:#0f1115}}
 :root[data-theme="dark"]{--bg:#0f1115;--card:#181b21;--text:#e8eaee;--muted:#9aa2b1;--line:#2a2f38;
---accent:#6c9cff;--accent-soft:#1d2840;--good:#3ccf84;--bad:#ff7a6e;--bar-a:#5b6475;--bar-h:#6c9cff}
+--accent:#6c9cff;--accent-soft:#1d2840;--good:#3ccf84;--bad:#ff7a6e;--bar-a:#5b6475;--bar-h:#6c9cff;--bar-a-text:#fff;--bar-h-text:#0f1115}
 *{box-sizing:border-box}
 body{margin:0;background:var(--bg);color:var(--text);font:15px/1.5 system-ui,-apple-system,"Segoe UI",Roboto,sans-serif}
 main{max-width:1100px;margin:0 auto;padding:24px 16px 48px}
@@ -26,8 +26,11 @@ a{color:var(--accent)}
 .score{display:flex;justify-content:space-between;align-items:center;font-size:20px;font-weight:700}
 .score .ot{font-size:12px;color:var(--muted);font-weight:500}
 .names{display:flex;justify-content:space-between;color:var(--muted);font-size:12px;margin-bottom:10px}
-.bar{display:flex;height:8px;border-radius:4px;overflow:hidden;margin:4px 0 10px;background:var(--line)}
-.bar .a{background:var(--bar-a)}.bar .h{background:var(--bar-h)}
+.bar{display:flex;height:22px;border-radius:6px;overflow:hidden;margin:6px 0 10px;background:var(--line);
+font-size:12px;font-weight:700;line-height:22px;font-variant-numeric:tabular-nums}
+.bar div{flex-basis:0;min-width:3.4em;padding:0 8px;white-space:nowrap}
+.bar .a{background:var(--bar-a);color:var(--bar-a-text)}
+.bar .h{background:var(--bar-h);color:var(--bar-h-text);text-align:right}
 table{width:100%;border-collapse:collapse;font-size:13px}
 td,th{padding:3px 4px;text-align:right;font-variant-numeric:tabular-nums}
 td:first-child,th:first-child{text-align:left}
@@ -59,28 +62,28 @@ footer{margin-top:40px;color:var(--muted);font-size:13px;border-top:1px solid va
 <article class="game" id="g2026020066">
   <div class="score"><span>SEA 6 – 3 DET</span><span class="ot"></span></div>
   <div class="names"><span>Seattle Kraken</span><span>Detroit Red Wings</span></div>
-  <div class="bar" title="xG-osuus"><div class="a" style="width:47.4%"></div><div class="h" style="width:52.6%"></div></div><table><tr><th></th><th>SEA</th><th>DET</th></tr><tr><td>Laukaukset maalia kohti</td><td>24</td><td>40</td></tr><tr><td>xG (ilman tyhjää maalia)</td><td>3,27</td><td>3,63</td></tr><tr><td>xG 5v5</td><td>2,44</td><td>3,33</td></tr><tr><td>Laukausyritykset (ei blokit)</td><td>40</td><td>57</td></tr><tr><td>Vaaralliset paikat</td><td>1</td><td>2</td></tr></table>
+  <div class="bar" title="xG SEA 3,27 – 3,63 DET"><div class="a" style="flex-grow:3.270">3,27</div><div class="h" style="flex-grow:3.627">3,63</div></div><table><tr><th></th><th>SEA</th><th>DET</th></tr><tr><td>Laukaukset maalia kohti</td><td>24</td><td>40</td></tr><tr><td>xG (ilman tyhjää maalia)</td><td>3,27</td><td>3,63</td></tr><tr><td>xG 5v5</td><td>2,44</td><td>3,33</td></tr><tr><td>Laukausyritykset (ei blokit)</td><td>40</td><td>57</td></tr><tr><td>Vaaralliset paikat</td><td>1</td><td>2</td></tr></table>
   <div class="block"><h3>Pisteet</h3><ul class="players"><li>Ben Meyers (SEA) 1+2</li><li>Frederick Gaudreau (SEA) 2+0</li><li>Michael Brandsegg-Nygård (DET) 1+1</li><li>Berkly Catton (SEA) 1+1</li><li>Brandon Montour (SEA) 0+2</li><li>Ryan Winterton (SEA) 0+2</li></ul></div>
   <div class="block"><table><tr><th>Maalivahti</th><th>Torjunnat</th><th>Torj-%</th><th>GSAx</th><th>Aika</th></tr><tr><td>Philipp Grubauer (SEA)</td><td>37/40</td><td>0,925</td><td><span class="pos">+0,63</span></td><td>59.55</td></tr><tr><td>John Gibson (DET)</td><td>10/15</td><td>0,667</td><td><span class="neg">−3,02</span></td><td>34.05</td></tr><tr><td>Daniil Tarasov (DET)</td><td>8/9</td><td>0,889</td><td><span class="pos">+0,29</span></td><td>25.55</td></tr></table></div>
 </article>
 <article class="game" id="g2026020067">
   <div class="score"><span>NYR 1 – 3 WSH</span><span class="ot"></span></div>
   <div class="names"><span>New York Rangers</span><span>Washington Capitals</span></div>
-  <div class="bar" title="xG-osuus"><div class="a" style="width:47.3%"></div><div class="h" style="width:52.7%"></div></div><table><tr><th></th><th>NYR</th><th>WSH</th></tr><tr><td>Laukaukset maalia kohti</td><td>22</td><td>27</td></tr><tr><td>xG (ilman tyhjää maalia)</td><td>2,89</td><td>3,21</td></tr><tr><td>xG 5v5</td><td>1,62</td><td>2,18</td></tr><tr><td>Laukausyritykset (ei blokit)</td><td>36</td><td>41</td></tr><tr><td>Vaaralliset paikat</td><td>2</td><td>4</td></tr></table>
+  <div class="bar" title="xG NYR 2,89 – 3,21 WSH"><div class="a" style="flex-grow:2.886">2,89</div><div class="h" style="flex-grow:3.212">3,21</div></div><table><tr><th></th><th>NYR</th><th>WSH</th></tr><tr><td>Laukaukset maalia kohti</td><td>22</td><td>27</td></tr><tr><td>xG (ilman tyhjää maalia)</td><td>2,89</td><td>3,21</td></tr><tr><td>xG 5v5</td><td>1,62</td><td>2,18</td></tr><tr><td>Laukausyritykset (ei blokit)</td><td>36</td><td>41</td></tr><tr><td>Vaaralliset paikat</td><td>2</td><td>4</td></tr></table>
   <div class="block"><h3>Pisteet</h3><ul class="players"><li>Boone Jenner (WSH) 1+0</li><li>Tom Wilson (WSH) 1+0</li><li>Timothy Liljegren (WSH) 1+0</li><li>Alexis Lafrenière (NYR) 1+0</li><li>J.T. Miller (NYR) 0+1</li><li>Dylan Strome (WSH) 0+1</li></ul></div>
   <div class="block"><table><tr><th>Maalivahti</th><th>Torjunnat</th><th>Torj-%</th><th>GSAx</th><th>Aika</th></tr><tr><td>Igor Shesterkin (NYR)</td><td>13/14</td><td>0,929</td><td><span class="pos">+0,86</span></td><td>28.20</td></tr><tr><td>Logan Thompson (WSH)</td><td>21/22</td><td>0,955</td><td><span class="pos">+1,89</span></td><td>60.00</td></tr><tr><td>Dylan Garand (NYR)</td><td>11/12</td><td>0,917</td><td><span class="pos">+0,36</span></td><td>29.45</td></tr></table></div>
 </article>
 <article class="game" id="g2026020068">
   <div class="score"><span>PIT 2 – 3 CBJ</span><span class="ot">VL</span></div>
   <div class="names"><span>Pittsburgh Penguins</span><span>Columbus Blue Jackets</span></div>
-  <div class="bar" title="xG-osuus"><div class="a" style="width:39.1%"></div><div class="h" style="width:60.9%"></div></div><table><tr><th></th><th>PIT</th><th>CBJ</th></tr><tr><td>Laukaukset maalia kohti</td><td>22</td><td>47</td></tr><tr><td>xG (ilman tyhjää maalia)</td><td>3,05</td><td>4,76</td></tr><tr><td>xG 5v5</td><td>2,32</td><td>3,18</td></tr><tr><td>Laukausyritykset (ei blokit)</td><td>34</td><td>61</td></tr><tr><td>Vaaralliset paikat</td><td>3</td><td>4</td></tr></table>
+  <div class="bar" title="xG PIT 3,05 – 4,76 CBJ"><div class="a" style="flex-grow:3.051">3,05</div><div class="h" style="flex-grow:4.761">4,76</div></div><table><tr><th></th><th>PIT</th><th>CBJ</th></tr><tr><td>Laukaukset maalia kohti</td><td>22</td><td>47</td></tr><tr><td>xG (ilman tyhjää maalia)</td><td>3,05</td><td>4,76</td></tr><tr><td>xG 5v5</td><td>2,32</td><td>3,18</td></tr><tr><td>Laukausyritykset (ei blokit)</td><td>34</td><td>61</td></tr><tr><td>Vaaralliset paikat</td><td>3</td><td>4</td></tr></table>
   <div class="block"><h3>Pisteet</h3><ul class="players"><li>Damon Severson (CBJ) 1+1</li><li>Cole Sillinger (CBJ) 0+2</li><li>Evgeni Malkin (PIT) 1+0</li><li>Bryan Rust (PIT) 1+0</li><li>Mathieu Olivier (CBJ) 1+0</li><li>Erik Karlsson (PIT) 0+1</li></ul></div>
   <div class="block"><table><tr><th>Maalivahti</th><th>Torjunnat</th><th>Torj-%</th><th>GSAx</th><th>Aika</th></tr><tr><td>Cam Talbot (CBJ)</td><td>20/22</td><td>0,909</td><td><span class="pos">+1,05</span></td><td>65.00</td></tr><tr><td>Sergei Murashov (PIT)</td><td>45/47</td><td>0,957</td><td><span class="pos">+2,76</span></td><td>65.00</td></tr></table></div>
 </article>
 <article class="game" id="g2026020069">
   <div class="score"><span>ANA 5 – 1 WPG</span><span class="ot"></span></div>
   <div class="names"><span>Anaheim Ducks</span><span>Winnipeg Jets</span></div>
-  <div class="bar" title="xG-osuus"><div class="a" style="width:51.4%"></div><div class="h" style="width:48.6%"></div></div><table><tr><th></th><th>ANA</th><th>WPG</th></tr><tr><td>Laukaukset maalia kohti</td><td>17</td><td>17</td></tr><tr><td>xG (ilman tyhjää maalia)</td><td>2,48</td><td>2,34</td></tr><tr><td>xG 5v5</td><td>2,16</td><td>1,37</td></tr><tr><td>Laukausyritykset (ei blokit)</td><td>28</td><td>32</td></tr><tr><td>Vaaralliset paikat</td><td>3</td><td>1</td></tr></table>
+  <div class="bar" title="xG ANA 2,48 – 2,34 WPG"><div class="a" style="flex-grow:2.476">2,48</div><div class="h" style="flex-grow:2.342">2,34</div></div><table><tr><th></th><th>ANA</th><th>WPG</th></tr><tr><td>Laukaukset maalia kohti</td><td>17</td><td>17</td></tr><tr><td>xG (ilman tyhjää maalia)</td><td>2,48</td><td>2,34</td></tr><tr><td>xG 5v5</td><td>2,16</td><td>1,37</td></tr><tr><td>Laukausyritykset (ei blokit)</td><td>28</td><td>32</td></tr><tr><td>Vaaralliset paikat</td><td>3</td><td>1</td></tr></table>
   <div class="block"><h3>Pisteet</h3><ul class="players"><li>Mikael Granlund (ANA) 1+1</li><li>Judd Caulfield (ANA) 1+1</li><li>Tim Washe (ANA) 1+1</li><li>Jeff Malott (ANA) 0+2</li><li>Beckett Sennecke (ANA) 0+2</li><li>Kyle Connor (WPG) 1+0</li></ul></div>
   <div class="block"><table><tr><th>Maalivahti</th><th>Torjunnat</th><th>Torj-%</th><th>GSAx</th><th>Aika</th></tr><tr><td>Lukas Dostal (ANA)</td><td>16/17</td><td>0,941</td><td><span class="pos">+1,34</span></td><td>60.00</td></tr><tr><td>Clay Stevenson (WPG)</td><td>12/16</td><td>0,750</td><td><span class="neg">−1,52</span></td><td>56.08</td></tr></table></div>
 </article></div>
@@ -88,7 +91,7 @@ footer{margin-top:40px;color:var(--muted);font-size:13px;border-top:1px solid va
 <h2>Arkisto</h2><ul class="archive"><li><a href="2026-10-10.html">lauantai 10.10.2026</a></li><li><a href="2026-10-09.html">perjantai 9.10.2026</a> (tämä)</li></ul>
 <footer>
 xG-, GSAx- ja laukausdata: <a href="https://moneypuck.com">MoneyPuck.com</a>.
-Tulokset ja pelaajatilastot: NHL.com. Loukkaantumiset: ESPN / RotoWire (paluuarviot ovat suuntaa-antavia). Päivitetty 2026-10-11 08:54 UTC.<br>
+Tulokset ja pelaajatilastot: NHL.com. Loukkaantumiset: ESPN / RotoWire (paluuarviot ovat suuntaa-antavia). Päivitetty 2026-10-11 08:57 UTC.<br>
 ixG = pelaajan laukausten odotetut maalit. GSAx = maalivahdin päästämät maalit verrattuna odotettuun
 (positiivinen = odotettua parempi). Vaarallinen paikka = laukaus, jonka xG on vähintään 0,20.
 Lähdekoodi: <a href="https://github.com/juhaopesonen/NHL-stats">GitHub</a>.

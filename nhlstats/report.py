@@ -11,12 +11,12 @@ from .insights import Insight, return_text
 
 CSS = """
 :root{--bg:#f6f7f9;--card:#fff;--text:#16181d;--muted:#5f6673;--line:#e3e6eb;
---accent:#0b5fff;--accent-soft:#e8efff;--good:#0f8a4b;--bad:#c4372c;--bar-a:#8a94a6;--bar-h:#0b5fff}
+--accent:#0b5fff;--accent-soft:#e8efff;--good:#0f8a4b;--bad:#c4372c;--bar-a:#6b7385;--bar-h:#0b5fff;--bar-a-text:#fff;--bar-h-text:#fff}
 @media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#0f1115;--card:#181b21;
 --text:#e8eaee;--muted:#9aa2b1;--line:#2a2f38;--accent:#6c9cff;--accent-soft:#1d2840;--good:#3ccf84;
---bad:#ff7a6e;--bar-a:#5b6475;--bar-h:#6c9cff}}
+--bad:#ff7a6e;--bar-a:#5b6475;--bar-h:#6c9cff;--bar-a-text:#fff;--bar-h-text:#0f1115}}
 :root[data-theme="dark"]{--bg:#0f1115;--card:#181b21;--text:#e8eaee;--muted:#9aa2b1;--line:#2a2f38;
---accent:#6c9cff;--accent-soft:#1d2840;--good:#3ccf84;--bad:#ff7a6e;--bar-a:#5b6475;--bar-h:#6c9cff}
+--accent:#6c9cff;--accent-soft:#1d2840;--good:#3ccf84;--bad:#ff7a6e;--bar-a:#5b6475;--bar-h:#6c9cff;--bar-a-text:#fff;--bar-h-text:#0f1115}
 *{box-sizing:border-box}
 body{margin:0;background:var(--bg);color:var(--text);font:15px/1.5 system-ui,-apple-system,"Segoe UI",Roboto,sans-serif}
 main{max-width:1100px;margin:0 auto;padding:24px 16px 48px}
@@ -32,8 +32,11 @@ a{color:var(--accent)}
 .score{display:flex;justify-content:space-between;align-items:center;font-size:20px;font-weight:700}
 .score .ot{font-size:12px;color:var(--muted);font-weight:500}
 .names{display:flex;justify-content:space-between;color:var(--muted);font-size:12px;margin-bottom:10px}
-.bar{display:flex;height:8px;border-radius:4px;overflow:hidden;margin:4px 0 10px;background:var(--line)}
-.bar .a{background:var(--bar-a)}.bar .h{background:var(--bar-h)}
+.bar{display:flex;height:22px;border-radius:6px;overflow:hidden;margin:6px 0 10px;background:var(--line);
+font-size:12px;font-weight:700;line-height:22px;font-variant-numeric:tabular-nums}
+.bar div{flex-basis:0;min-width:3.4em;padding:0 8px;white-space:nowrap}
+.bar .a{background:var(--bar-a);color:var(--bar-a-text)}
+.bar .h{background:var(--bar-h);color:var(--bar-h-text);text-align:right}
 table{width:100%;border-collapse:collapse;font-size:13px}
 td,th{padding:3px 4px;text-align:right;font-variant-numeric:tabular-nums}
 td:first-child,th:first-child{text-align:left}
@@ -89,9 +92,10 @@ def _game_html(gm, skaters, goalies, xgt, xgg) -> str:
             ("Laukausyritykset (ei blokit)", str(int(a.attempts)), str(int(h.attempts))),
             ("Vaaralliset paikat", str(int(a.hd_attempts)), str(int(h.hd_attempts))),
         ]
-        total = a.xg + h.xg or 1
-        bar = (f'<div class="bar" title="xG-osuus"><div class="a" style="width:{a.xg / total * 100:.1f}%"></div>'
-               f'<div class="h" style="width:{h.xg / total * 100:.1f}%"></div></div>')
+        title = f"xG {gm.away} {num(a.xg)} – {num(h.xg)} {gm.home}"
+        bar = (f'<div class="bar" title="{escape(title)}">'
+               f'<div class="a" style="flex-grow:{a.xg:.3f}">{num(a.xg)}</div>'
+               f'<div class="h" style="flex-grow:{h.xg:.3f}">{num(h.xg)}</div></div>')
     stat_rows = "".join(f"<tr><td>{escape(l)}</td><td>{x}</td><td>{y}</td></tr>" for l, x, y in rows)
     stats = (f'<table><tr><th></th><th>{escape(gm.away)}</th><th>{escape(gm.home)}</th></tr>{stat_rows}</table>')
     if not has_xg:
