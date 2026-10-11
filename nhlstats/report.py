@@ -208,7 +208,7 @@ def _finn_html(day: str, skaters, goalies, xg, items: list[Insight], tables, fin
         rows = [[f'<a href="#g{p.game_id}">{escape(p["name"])}</a> ({escape(p.team)}–{escape(p.opp)})',
                  str(p.goals), str(p.assists), f"<b>{p.points}</b>", str(p.sog),
                  num(p.ixg) if pd.notna(p.ixg) else "–", toi(p.toi), _pp(p.get("pp_toi"))] for _, p in sk.iterrows()]
-        cards.append(_table("Yön suomalaiset", ["Pelaaja", "M", "S", "P", "L", "ixG", "Aika", "YV"], rows))
+        cards.append(_table("Yön suomalaiset", ["Pelaaja", "M", "S", "P", "L", "ixG", "Aika", "YV min"], rows))
     if not gl.empty:
         if not xgg.empty:
             gl = gl.merge(xgg[["game_id", "player_id", "gsax"]], on=["game_id", "player_id"], how="left")
@@ -231,7 +231,7 @@ def _finn_html(day: str, skaters, goalies, xg, items: list[Insight], tables, fin
                  f"<b>{r.points}</b>", num(r.ixg), toi(r.toi), _pp(r.pp_toi), str(r.streak) if r.streak >= 2 else ""]
                 for _, r in fs.head(15).iterrows()]
         season_cards.append(_table("Suomalaisten pistepörssi",
-                                   ["Pelaaja", "O", "M", "S", "P", "ixG", "Aika/O", "YV/O", "Putki"], rows))
+                                   ["Pelaaja", "O", "M", "S", "P", "ixG", "Aika/O", "YV min/O", "Putki"], rows))
     sg = goalies[(goalies.date <= day) & goalies.player_id.isin(finns)]
     if not sg.empty:
         if not xgg.empty:
