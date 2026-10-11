@@ -222,8 +222,29 @@ def finn_season(season: pd.DataFrame, xgp: pd.DataFrame, finns: set[int],
     return tot.sort_values(["points", "goals", "toi"], ascending=False)
 
 
+def top_goalies(day: str, goalies: pd.DataFrame, xgg: pd.DataFrame, n: int = 10) -> pd.DataFrame:
+    """Kauden parhaat maalivahdit GSAx:n mukaan (vähintään GOALIE_TOP_MIN_GP ottelua)."""
+    gl = goalies[goalies.date <= day]
+    if gl.empty:
+        return pd.DataFrame()
+    if not xgg.empty:
+        gl = gl.merge(xgg[["game_id", "player_id", "gsax", "xga"]], on=["game_id", "player_id"], how="left")
+    else:
+        gl = gl.assign(gsax=float("nan"), xga=float("nan"))
+    tot = gl.groupby("player_id").agg(
+        name=("name", "last"), team=("team", "last"), gp=("game_id", "size"),
+        wins=("decision", lambda d: (d == "W").sum()), saves=("saves", "sum"),
+        shots=("shots_against", "sum"), ga=("goals_against", "sum"), toi=("toi", "sum"),
+        gsax=("gsax", lambda v: v.fillna(0).sum()), xga=("xga", lambda v: v.fillna(0).sum())).reset_index()
+    tot = tot[tot.gp >= c.GOALIE_TOP_MIN_GP]
+    tot["sv_pct"] = tot.saves / tot.shots.where(tot.shots > 0)
+    tot["gaa"] = tot.ga * 3600 / tot.toi.where(tot.toi > 0)
+    return tot.sort_values(["gsax", "sv_pct"], ascending=False).head(n)
+
+
 def season_tables(day: str, skaters: pd.DataFrame, xgp: pd.DataFrame,
-                  finns: set[int] = frozenset(), onice: pd.DataFrame | None = None) -> dict[str, pd.DataFrame]:
+                  finns: set[int] = frozenset(), onice: pd.DataFrame | None = None,
+                  goalies: pd.DataFrame | None = None, xgg: pd.DataFrame | None = None) -> dict[str, pd.DataFrame]:
     """Kauden taulukot: pisteputket, xG-yli/alisuoriutujat ja suomalaiset."""
     season = skaters[skaters.date <= day].sort_values(["date", "game_id"])
     rows = []
@@ -237,6 +258,8 @@ def season_tables(day: str, skaters: pd.DataFrame, xgp: pd.DataFrame,
     streaks = streaks.sort_values(["streak", "goals"], ascending=False).head(10)
 
     tables = {"streaks": streaks, "finns": finn_season(season, xgp, finns, onice)}
+    if goalies is not None:
+        tables["goalies"] = top_goalies(day, goalies, xgg if xgg is not None else pd.DataFrame())
     if not xgp.empty:
         # Mukaan kaikki pelatut ottelut, joille xG-data on olemassa (ei laukauksia = ixG 0)
         merged = season[season.game_id.isin(xgp.game_id.unique())].merge(

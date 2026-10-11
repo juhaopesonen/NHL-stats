@@ -19,6 +19,7 @@ GOAL_DROUGHT_MIN = 10         # päättynyt maaliton jakso vähintään N peliä
 UNLUCKY_IXG = 1.0             # ixG vähintään tämä mutta 0 maalia
 FINISHER_MARGIN = 1.5         # maalit - ixG vähintään tämä (ja >= 2 maalia)
 TEAM_XG_SHARE = 0.60          # hävinnyt joukkue, jonka xG-osuus vähintään tämä
+GOALIE_TOP_MIN_GP = 2         # kauden top 10 -maalivahtilistaan vähintään N ottelua
 GOALIE_GSAX = 2.0             # maalivahdin |GSAx| vähintään tämä
 TOI_MIN_GAMES = 5             # peliaikapoikkeama vaatii vähintään N aiempaa peliä
 TOI_UP_RATIO = 1.35

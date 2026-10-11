@@ -10,7 +10,7 @@ tekee suomenkielisen HTML-raportin, joka nostaa esiin kiinnostavia yksityiskohti
 - **xG vs. tulos:** joukkue hävisi, vaikka hallitsi odotettuja maaleja
 - **Maalivahdit:** GSAx (päästetyt maalit vs. odotettu) yli ±2
 - **Isot illat ja hattutemput, poikkeava peliaika**
-- **Kausitaulukot:** käynnissä olevat pisteputket, xG-ali- ja ylisuoriutujat
+- **Kausitaulukot:** käynnissä olevat pisteputket, xG-ali- ja ylisuoriutujat, top 10 maalivahdit (GSAx)
 - **Suomalaisnurkkaus:** yön suomalaiset kenttäpelaajat ja maalivahdit, heitä koskevat nostot
   ylivoima-aikoineen ja yön 5v5 xG puolesta/vastaan sekä suomalaisten pistepörssi (mm. 5v5 xG% jäällä ollessa ja ero
   joukkueeseen pelaajan ollessa vaihdossa) ja maalivahtitilastot

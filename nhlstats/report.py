@@ -4,7 +4,7 @@ from html import escape
 
 import pandas as pd
 
-from .config import DOCS_DIR, INSIGHT_ORDER, INSIGHTS_PER_KIND, INSIGHTS_TOP, REPORTS_DIR
+from .config import DOCS_DIR, GOALIE_TOP_MIN_GP, INSIGHT_ORDER, INSIGHTS_PER_KIND, INSIGHTS_TOP, REPORTS_DIR
 from .fmt import day_fi, num, toi
 from .injuries import injury_fi, status_fi
 from .insights import Insight, return_text
@@ -330,6 +330,13 @@ def _season_html(tables: dict[str, pd.DataFrame]) -> str:
         parts.append(f'<div class="game"><div class="block"><h3>{escape(title)}</h3>'
                      f'<table><tr><th>Pelaaja</th><th>O</th><th>M</th><th>ixG</th><th>Erotus</th></tr>'
                      f'{rows}</table></div></div>')
+    g = tables.get("goalies")
+    if g is not None and not g.empty:
+        grows = [[f'{n}. {escape(r["name"])} ({escape(r.team)})', str(r.gp), str(r.wins),
+                  num(r.sv_pct, 3) if pd.notna(r.sv_pct) else "–", num(r.gaa) if pd.notna(r.gaa) else "–",
+                  num(r.xga), _signed(r.gsax)] for n, (_, r) in enumerate(g.iterrows(), 1)]
+        parts.append(_table(f"Top 10 maalivahdit (GSAx, väh. {GOALIE_TOP_MIN_GP} ottelua)",
+                            ["Maalivahti", "O", "V", "Torj-%", "PPM", "xGA", "GSAx"], grows, "wide"))
     return f'<div class="season">{"".join(parts)}</div>'
 
 
@@ -435,7 +442,7 @@ def render(day: date, games, skaters, goalies, xg, items, tables, finns: set[int
 xG-, GSAx- ja laukausdata: <a href="https://moneypuck.com">MoneyPuck.com</a>.
 Tulokset ja pelaajatilastot: NHL.com. Loukkaantumiset: ESPN / RotoWire (paluuarviot ovat suuntaa-antavia). Päivitetty {updated}.<br>
 ixG = pelaajan laukausten odotetut maalit. GSAx = maalivahdin päästämät maalit verrattuna odotettuun
-(positiivinen = odotettua parempi). Vaarallinen paikka = laukaus, jonka xG on vähintään 0,20.
+(positiivinen = odotettua parempi). PPM = päästetyt maalit 60 minuuttia kohden. xGA = torjuttavien laukausten odotetut maalit. Vaarallinen paikka = laukaus, jonka xG on vähintään 0,20.
 5v5 xG% = joukkueen osuus odotetuista maaleista pelaajan ollessa jäällä 5 vs. 5 (kausi tähän asti);
 vs. tiimi = ero prosenttiyksikköinä joukkueen xG%:iin pelaajan ollessa vaihdossa.
 Yön 5v5-luvut on laskettu itse NHL:n vaihtodatasta ja MoneyPuckin laukauksista, joten ne voivat

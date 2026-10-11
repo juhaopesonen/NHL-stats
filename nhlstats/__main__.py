@@ -211,7 +211,7 @@ def main() -> None:
 
     items = insights.build(day.isoformat(), games, skaters, goalies, xg, inj)
     tables = insights.season_tables(day.isoformat(), skaters, xg["xg_players"], finns,
-                                    storage.load(season_id, "onice_5v5"))
+                                    storage.load(season_id, "onice_5v5"), goalies, xg["xg_goalies"])
     report.write(day, report.render(day, games, skaters, goalies, xg, items, tables, finns, inj, stars))
     print(f"Raportti {day}: {len(items)} nostoa -> docs/raportit/{day}.html")
 
