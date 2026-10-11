@@ -23,4 +23,12 @@ GOALIE_GSAX = 2.0             # maalivahdin |GSAx| vähintään tämä
 TOI_MIN_GAMES = 5             # peliaikapoikkeama vaatii vähintään N aiempaa peliä
 TOI_UP_RATIO = 1.35
 TOI_DOWN_RATIO = 0.60
-HIGH_DANGER_XG = 0.20         # MoneyPuckin "high danger" -raja laukauksen xG:lle
+INSIGHTS_TOP = 10             # sivun alussa näytettävien nostojen enimmäismäärä (loput avattavissa)
+INSIGHTS_PER_KIND = 2         # ...ja enintään näin monta samasta aiheesta
+# Nostojen aiheet siinä järjestyksessä kuin ne näytetään
+INSIGHT_ORDER = [
+    "Hattutemppu", "Iso ilta", "Maaliputki", "Pisteputki", "Pisteputket", "Maalivahti",
+    "xG vs. tulos", "Huono tuuri", "Viimeistelijä", "Loukkaantuminen", "Putki katkesi",
+    "Paasto päättyi", "Peliaika",
+]
+HIGH_DANGER_XG = 0.20        # MoneyPuckin "high danger" -raja laukauksen xG:lle

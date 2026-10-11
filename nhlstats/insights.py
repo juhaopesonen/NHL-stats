@@ -181,7 +181,8 @@ def injury_insights(day: str, skaters: pd.DataFrame, goalies: pd.DataFrame,
         out.append(Insight("Loukkaantuminen",
             f"{p['name']} ({p.team}) pelasi yöllä {toi(p.toi)} – nyt {injuries.status_fi(r.status)}, "
             f"vamma: {injuries.injury_fi(r.injury)}, arvioitu paluu {return_text(r.return_date, r.snapshot)}.",
-            62, int(p.game_id), int(p.player_id)))
+            # Mitä lyhyemmäksi peliaika jäi, sitä todennäköisemmin loukkaantuminen sattui yöllä
+            72 - p.toi / 60, int(p.game_id), int(p.player_id)))
     return out
 
 

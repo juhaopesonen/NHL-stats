@@ -4,7 +4,7 @@ from html import escape
 
 import pandas as pd
 
-from .config import DOCS_DIR, REPORTS_DIR
+from .config import DOCS_DIR, INSIGHT_ORDER, INSIGHTS_PER_KIND, INSIGHTS_TOP, REPORTS_DIR
 from .fmt import day_fi, num, toi
 from .injuries import injury_fi, status_fi
 from .insights import Insight, return_text
@@ -53,6 +53,16 @@ footer{margin-top:40px;color:var(--muted);font-size:13px;border-top:1px solid va
 .inj td,.inj th{text-align:left}
 .inj td:nth-child(5),.inj td:nth-child(6){white-space:nowrap}
 .inj .tag{font-size:11px;padding:1px 7px}
+details.section{margin-top:36px}
+details.section>summary{cursor:pointer;list-style:none;display:flex;align-items:baseline;gap:12px;flex-wrap:wrap}
+details.section>summary::-webkit-details-marker{display:none}
+details.section>summary h2{margin:0;display:inline}
+details.section>summary h2::before{content:"▸";display:inline-block;width:1.1em;color:var(--muted);transition:transform .15s}
+details.section[open]>summary h2::before{transform:rotate(90deg)}
+details.section>summary .sum{color:var(--muted);font-size:14px}
+details.section[open]>summary{margin-bottom:12px}
+details.more{margin-top:10px}
+details.more>summary{cursor:pointer;color:var(--accent);font-size:14px;margin-bottom:8px}
 .subhead{font-size:15px;margin:20px 0 10px}
 #suomalaiset + .insights{margin-bottom:14px}
 .game td a{color:inherit;text-decoration:none;border-bottom:1px dotted var(--muted)}
@@ -66,14 +76,43 @@ def _signed(x: float) -> str:
     return f'<span class="{cls}">{sign}{num(x)}</span>'
 
 
-def _insights_html(items: list[Insight]) -> str:
-    if not items:
-        return '<p class="empty">Ei erityisiä nostoja tältä yöltä.</p>'
+def _insight_list(items: list[Insight]) -> str:
     rows = []
     for i in items:
         link = f'<a href="#g{i.game_id}">ottelu</a>' if i.game_id else ""
         rows.append(f'<li><span class="tag">{escape(i.kind)}</span><span>{escape(i.text)}</span>{link}</li>')
     return f'<ul class="insights">{"".join(rows)}</ul>'
+
+
+def _by_kind(items: list[Insight]) -> list[Insight]:
+    """Aiheittain kiinteään järjestykseen, aiheen sisällä tärkein ensin."""
+    rank = {k: n for n, k in enumerate(INSIGHT_ORDER)}
+    return sorted(items, key=lambda i: (rank.get(i.kind, len(rank)), -i.score))
+
+
+def _insights_html(items: list[Insight], limit: int | None = None, per_kind: int = 2) -> str:
+    if not items:
+        return '<p class="empty">Ei erityisiä nostoja tältä yöltä.</p>'
+    if limit is None:
+        return _insight_list(_by_kind(items))
+    # Tärkeimmät nostot (enintään per_kind samasta aiheesta), näytetään aihejärjestyksessä
+    top, seen = [], {}
+    for i in sorted(items, key=lambda i: -i.score):
+        if len(top) < limit and seen.get(i.kind, 0) < per_kind:
+            seen[i.kind] = seen.get(i.kind, 0) + 1
+            top.append(i)
+    items = _by_kind(items)
+    html = _insight_list(_by_kind(top))
+    if len(top) < len(items):
+        html += (f'<details class="more"><summary>Kaikki nostot ({len(items)})</summary>'
+                 f"{_insight_list(items)}</details>")
+    return html
+
+
+def _section(title: str, anchor: str, summary: str, body: str) -> str:
+    """Suljettu osio, joka avautuu otsikkoa klikkaamalla."""
+    return (f'<details class="section" id="{anchor}"><summary><h2>{escape(title)}</h2>'
+            f'<span class="sum">{escape(summary)}</span></summary>{body}</details>')
 
 
 def _game_html(gm, skaters, goalies, xgt, xgg) -> str:
@@ -269,6 +308,18 @@ def render(day: date, games, skaters, goalies, xg, items, tables, finns: set[int
            inj: pd.DataFrame | None = None, stars: pd.DataFrame | None = None) -> str:
     stars = stars if stars is not None else pd.DataFrame()
     night = games[games.date == day.isoformat()].sort_values("game_id")
+
+    fin_night = skaters[(skaters.date == day.isoformat()) & skaters.player_id.isin(finns)]
+    fin_goalies = goalies[(goalies.date == day.isoformat()) & goalies.player_id.isin(finns)]
+    n_fin = len(fin_night) + len(fin_goalies)
+    finn_sum = (f"{n_fin} suomalaista pelasi, yhteensä {fin_night.goals.sum()}+{fin_night.assists.sum()}"
+                if n_fin else "ei suomalaisia yöllä")
+    inj_sum = "ei tietoja"
+    if inj is not None and not inj.empty:
+        star_ids = set(stars.player_id) if not stars.empty else set()
+        shown = inj[inj.player_id.isin(finns) | inj.player_id.isin(star_ids)]
+        new = int((shown.updated >= day.isoformat()).sum())
+        inj_sum = f"{len(shown)} suomalaista tai tähteä sivussa" + (f", {new} uutta" if new else "")
     cards = "".join(_game_html(gm, skaters, goalies, xg["xg_teams"], xg["xg_goalies"])
                     for _, gm in night.iterrows())
     updated = datetime.now(timezone.utc).strftime("%Y-%m-%d %H:%M UTC")
@@ -281,9 +332,10 @@ def render(day: date, games, skaters, goalies, xg, items, tables, finns: set[int
 <body><main>
 <header><h1>NHL-yöraportti</h1>
 <p class="sub">Ottelut {day_fi(day)} (Pohjois-Amerikan aikaa) · {len(night)} ottelua</p></header>
-<h2>Yön nostot</h2>{_insights_html(items)}
-<h2 id="suomalaiset">Suomalaisnurkkaus</h2>{_finn_html(day.isoformat(), skaters, goalies, xg, items, tables, finns, inj)}
-<h2 id="loukkaantumiset">Loukkaantumiset</h2>{_injuries_html(day.isoformat(), inj, finns, stars)}
+<h2>Yön nostot</h2>{_insights_html(items, INSIGHTS_TOP, INSIGHTS_PER_KIND)}
+{_section("Suomalaisnurkkaus", "suomalaiset", finn_sum,
+          _finn_html(day.isoformat(), skaters, goalies, xg, items, tables, finns, inj))}
+{_section("Loukkaantumiset", "loukkaantumiset", inj_sum, _injuries_html(day.isoformat(), inj, finns, stars))}
 <h2>Ottelut</h2>{f'<div class="games">{cards}</div>' if cards else '<p class="empty">Ei pelattuja otteluita.</p>'}
 <h2>Kausi tähän mennessä</h2>{_season_html(tables)}
 <h2>Arkisto</h2>{{ARCHIVE}}
