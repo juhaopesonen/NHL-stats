@@ -12,7 +12,7 @@ tekee suomenkielisen HTML-raportin, joka nostaa esiin kiinnostavia yksityiskohti
 - **Isot illat ja hattutemput, poikkeava peliaika**
 - **Kausitaulukot:** käynnissä olevat pisteputket, xG-ali- ja ylisuoriutujat
 - **Suomalaisnurkkaus:** yön suomalaiset kenttäpelaajat ja maalivahdit, heitä koskevat nostot
-  ylivoima-aikoineen sekä suomalaisten pistepörssi (mm. 5v5 xG% jäällä ollessa ja ero
+  ylivoima-aikoineen ja yön 5v5 xG puolesta/vastaan sekä suomalaisten pistepörssi (mm. 5v5 xG% jäällä ollessa ja ero
   joukkueeseen pelaajan ollessa vaihdossa) ja maalivahtitilastot
 - **Loukkaantumiset:** yöllä pelanneet, joista tuli pelin jälkeen loukkaantumisilmoitus
   (esim. poikkeuksellisen lyhyt peliaika) sekä sivussa olevat suomalaiset ja tähtipelaajat
@@ -64,6 +64,7 @@ data/2026-27/   tallennettu data (games, skaters, goalies, xg_*)
 data/players.csv  pelaajien syntymämaat (suomalaiset = FIN)
 data/2026-27/injuries.csv  loukkaantumislistan päivittäiset tilannekuvat
 data/2026-27/onice_5v5.csv MoneyPuckin 5v5-kausikooste (xG puolesta/vastaan jäällä)
+data/2026-27/onice_games.csv  ottelukohtaiset 5v5-luvut jäällä (oma laskenta: NHL:n vaihtodata + MoneyPuckin laukaukset)
 data/2026-27/stars.csv     tähtipelaajat (edellisen kauden tilastoista)
 docs/           GitHub Pages: index.html = uusin raportti, raportit/ = arkisto
 ```

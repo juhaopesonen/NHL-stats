@@ -201,6 +201,17 @@ def _onice(r) -> list[str]:
             f'<span class="{rel_cls}">{"+" if rel > 0 else ""}{rel:.0f}</span>'.replace("-", "−")]
 
 
+def _night_5v5(xgf, xga) -> list[str]:
+    """Yön 5v5 xG puolesta–vastaan ja xG-% (vihreä yli 50 %)."""
+    if pd.isna(xgf) or pd.isna(xga):
+        return ["–", "–"]
+    if xgf + xga == 0:
+        return [f"{num(xgf)}–{num(xga)}", "–"]
+    pct = xgf / (xgf + xga) * 100
+    cls = "pos" if pct > 50 else "neg" if pct < 50 else ""
+    return [f"{num(xgf)}–{num(xga)}", f'<span class="{cls}">{pct:.0f} %</span>']
+
+
 def _finn_html(day: str, skaters, goalies, xg, items: list[Insight], tables, finns: set[int],
                inj: pd.DataFrame | None = None) -> str:
     xgp, xgg = xg["xg_players"], xg["xg_goalies"]
@@ -218,11 +229,18 @@ def _finn_html(day: str, skaters, goalies, xg, items: list[Insight], tables, fin
             sk = sk.merge(xgp[["game_id", "player_id", "ixg"]], on=["game_id", "player_id"], how="left")
         else:
             sk = sk.assign(ixg=float("nan"))
+        og = xg.get("onice_games", pd.DataFrame())
+        if not og.empty:
+            sk = sk.merge(og[["game_id", "player_id", "xgf_5v5", "xga_5v5"]], on=["game_id", "player_id"], how="left")
+        else:
+            sk = sk.assign(xgf_5v5=float("nan"), xga_5v5=float("nan"))
         sk = sk.sort_values(["points", "goals", "toi"], ascending=False)
         rows = [[f'<a href="#g{p.game_id}">{escape(p["name"])}</a> ({escape(p.team)}–{escape(p.opp)})',
                  str(p.goals), str(p.assists), f"<b>{p.points}</b>", str(p.sog),
-                 num(p.ixg) if pd.notna(p.ixg) else "–", toi(p.toi), _pp(p.get("pp_toi"))] for _, p in sk.iterrows()]
-        cards.append(_table("Yön suomalaiset", ["Pelaaja", "M", "S", "P", "L", "ixG", "Aika", "YV min"], rows))
+                 num(p.ixg) if pd.notna(p.ixg) else "–", toi(p.toi), _pp(p.get("pp_toi")),
+                 *_night_5v5(p.xgf_5v5, p.xga_5v5)] for _, p in sk.iterrows()]
+        cards.append(_table("Yön suomalaiset", ["Pelaaja", "M", "S", "P", "L", "ixG", "Aika", "YV min",
+                                                "5v5 xGF–xGA", "5v5 xG%"], rows, "wide"))
     if not gl.empty:
         if not xgg.empty:
             gl = gl.merge(xgg[["game_id", "player_id", "gsax"]], on=["game_id", "player_id"], how="left")
@@ -420,6 +438,8 @@ ixG = pelaajan laukausten odotetut maalit. GSAx = maalivahdin päästämät maal
 (positiivinen = odotettua parempi). Vaarallinen paikka = laukaus, jonka xG on vähintään 0,20.
 5v5 xG% = joukkueen osuus odotetuista maaleista pelaajan ollessa jäällä 5 vs. 5 (kausi tähän asti);
 vs. tiimi = ero prosenttiyksikköinä joukkueen xG%:iin pelaajan ollessa vaihdossa.
+Yön 5v5-luvut on laskettu itse NHL:n vaihtodatasta ja MoneyPuckin laukauksista, joten ne voivat
+poiketa hieman MoneyPuckin omista luvuista.
 Lähdekoodi: <a href="https://github.com/juhaopesonen/NHL-stats">GitHub</a>.
 </footer>
 </main><script>{JS}</script></body></html>"""

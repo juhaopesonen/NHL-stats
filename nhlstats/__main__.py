@@ -6,7 +6,7 @@ from zoneinfo import ZoneInfo
 
 import pandas as pd
 
-from . import injuries, insights, moneypuck, nhl_api, report, storage
+from . import injuries, insights, moneypuck, nhl_api, onice, report, storage
 
 
 def default_day() -> date:
@@ -73,6 +73,29 @@ def fill_toi_splits(season_id: int) -> None:
             skaters.loc[idx, col] = split[col].reindex(keys).to_numpy()
     storage.save(season_id, "skaters", skaters)
     print(f"Peliaikajakauma (yv/av/tasak.) täydennetty {len(days)} päivälle")
+
+
+def update_onice_games(season_id: int, shots: pd.DataFrame, games: pd.DataFrame, day: date) -> None:
+    """Laskee 5v5-jäällä-luvut otteluille, joilta ne puuttuvat (vaihtodata yritetään viikon ajan)."""
+    done = storage.load(season_id, "onice_games")
+    have = set(done.game_id) if not done.empty else set()
+    with_shots = set(shots.game_id)
+    recent = (day - timedelta(days=7)).isoformat()
+    todo = games[~games.game_id.isin(have) & games.game_id.isin(with_shots) & (games.date >= recent)]
+    if have == set() and not todo.empty:  # ensimmäinen ajo: koko kausi
+        todo = games[games.game_id.isin(with_shots)]
+    parts = []
+    for g in todo.itertuples():
+        try:
+            df = onice.game_onice(g.game_id, shots, g.home, g.away)
+        except Exception as e:
+            print(f"Vaihtodatan haku {g.game_id} epäonnistui: {e}")
+            continue
+        if not df.empty:
+            parts.append(df.assign(date=g.date))
+    if parts:
+        storage.upsert_games(season_id, "onice_games", pd.concat(parts).to_dict("records"))
+    print(f"5v5 jäällä -luvut: {len(parts)}/{len(todo)} ottelua laskettu")
 
 
 def update_countries(skaters: pd.DataFrame, goalies: pd.DataFrame) -> pd.DataFrame:
@@ -160,6 +183,7 @@ def main() -> None:
             missing = games[(games.date == day.isoformat()) & ~games.game_id.isin(have)]
             print(f"MoneyPuck: xG {len(have)} ottelulle"
                   + (f", yön otteluista puuttuu vielä {len(missing)}" if len(missing) else ""))
+            update_onice_games(season_id, shots, games, day)
         except Exception as e:  # raportti tehdään ilman xG:tä, jos MoneyPuck ei vastaa
             print(f"MoneyPuck-haku epäonnistui: {e}")
         try:
@@ -168,6 +192,7 @@ def main() -> None:
             print(f"MoneyPuckin 5v5-kausikoosteen haku epäonnistui: {e}")
     xg = {k: (v if not v.empty else pd.DataFrame(columns=["game_id", "player_id", "team"]))
           for k, v in xg.items()}
+    xg["onice_games"] = storage.load(season_id, "onice_games")
 
     if not args.no_fetch:
         update_countries(skaters, goalies)

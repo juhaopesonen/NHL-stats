@@ -16,7 +16,7 @@ SHOTS_URL = "https://peter-tanner.com/moneypuck/downloads/shots_{year}.zip"
 COLUMNS = [
     "game_id", "season", "isPlayoffGame", "period", "isHomeTeam", "shooterPlayerId",
     "goalieIdForShot", "xGoal", "goal", "shotWasOnGoal", "shotOnEmptyNet",
-    "homeSkatersOnIce", "awaySkatersOnIce",
+    "homeSkatersOnIce", "awaySkatersOnIce", "time",
 ]
 
 
