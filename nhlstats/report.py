@@ -6,7 +6,8 @@ import pandas as pd
 
 from .config import DOCS_DIR, REPORTS_DIR
 from .fmt import day_fi, num, toi
-from .insights import Insight
+from .injuries import injury_fi, status_fi
+from .insights import Insight, return_text
 
 CSS = """
 :root{--bg:#f6f7f9;--card:#fff;--text:#16181d;--muted:#5f6673;--line:#e3e6eb;
@@ -46,6 +47,12 @@ th{color:var(--muted);font-weight:500;border-bottom:1px solid var(--line)}
 footer{margin-top:40px;color:var(--muted);font-size:13px;border-top:1px solid var(--line);padding-top:12px}
 .empty{color:var(--muted)}
 .game{overflow-x:auto}
+.inj td,.inj th{text-align:left}
+.inj td:nth-child(4){white-space:nowrap}
+.wide{grid-column:1/-1}
+details.game{margin-top:14px}
+details.game summary{cursor:pointer;font-weight:600}
+details.game .game{border:0;padding:0}
 .subhead{font-size:15px;margin:20px 0 10px}
 #suomalaiset + .insights{margin-bottom:14px}
 .game td a{color:inherit;text-decoration:none;border-bottom:1px dotted var(--muted)}
@@ -124,14 +131,16 @@ def _game_html(gm, skaters, goalies, xgt, xgg) -> str:
 DECISIONS = {"W": "voitto", "L": "tappio", "O": "JA-tappio"}
 
 
-def _table(title: str, head: list[str], rows: list[list[str]]) -> str:
+def _table(title: str, head: list[str], rows: list[list[str]], cls: str = "") -> str:
     th = "".join(f"<th>{h}</th>" for h in head)
     body = "".join("<tr>" + "".join(f"<td>{c}</td>" for c in r) + "</tr>" for r in rows)
-    return (f'<div class="game"><div class="block"><h3>{escape(title)}</h3>'
+    h3 = f"<h3>{escape(title)}</h3>" if title else ""
+    return (f'<div class="game {cls}"><div class="block">{h3}'
             f"<table><tr>{th}</tr>{body}</table></div></div>")
 
 
-def _finn_html(day: str, skaters, goalies, xg, items: list[Insight], tables, finns: set[int]) -> str:
+def _finn_html(day: str, skaters, goalies, xg, items: list[Insight], tables, finns: set[int],
+               inj: pd.DataFrame | None = None) -> str:
     xgp, xgg = xg["xg_players"], xg["xg_goalies"]
     sk = skaters[(skaters.date == day) & skaters.player_id.isin(finns)]
     gl = goalies[(goalies.date == day) & goalies.player_id.isin(finns)]
@@ -165,6 +174,10 @@ def _finn_html(day: str, skaters, goalies, xg, items: list[Insight], tables, fin
         cards.append(_table("Yön suomalaismaalivahdit", ["Maalivahti", "Torjunnat", "Torj-%", "GSAx", "Tulos"], rows))
     if not cards:
         cards.append('<p class="empty">Yöllä ei pelannut suomalaisia.</p>')
+    if inj is not None and not inj.empty:
+        hurt = inj[inj.player_id.isin(finns)].sort_values("name")
+        if not hurt.empty:
+            cards.append(_table("Sivussa olevat suomalaiset", INJ_HEAD, _injury_rows(hurt), "inj wide"))
     parts.append(f'<div class="season">{"".join(cards)}</div>')
 
     season_cards = []
@@ -191,6 +204,39 @@ def _finn_html(day: str, skaters, goalies, xg, items: list[Insight], tables, fin
         season_cards.append(_table("Suomalaismaalivahdit kaudella", ["Maalivahti", "O", "V", "Torj-%", "GSAx"], rows))
     if season_cards:
         parts.append(f'<h3 class="subhead">Kausi tähän mennessä</h3><div class="season">{"".join(season_cards)}</div>')
+    return "".join(parts)
+
+
+def _injury_rows(df: pd.DataFrame, with_team: bool = True) -> list[list[str]]:
+    rows = []
+    for _, r in df.iterrows():
+        who = escape(r["name"])
+        if r.espn_url:
+            who = f'<a href="{escape(r.espn_url)}">{who}</a>'
+        if with_team:
+            who += f" ({escape(r.team)})"
+        upd = pd.Timestamp(r.updated) if r.updated else None
+        rows.append([who, escape(status_fi(r.status)), escape(injury_fi(r.injury)),
+                     escape(return_text(r.return_date, r.snapshot)),
+                     f"{upd.day}.{upd.month}." if upd is not None else "–"])
+    return rows
+
+
+INJ_HEAD = ["Pelaaja", "Tila", "Vamma", "Arvioitu paluu", "Päivitetty"]
+
+
+def _injuries_html(day: str, inj: pd.DataFrame) -> str:
+    if inj is None or inj.empty:
+        return '<p class="empty">Loukkaantumistietoja ei ole saatavilla tälle päivälle.</p>'
+    fresh = inj[inj.updated >= day].sort_values(["updated", "team"], ascending=[False, True])
+    parts = []
+    if fresh.empty:
+        parts.append('<p class="empty">Ei uusia loukkaantumisilmoituksia.</p>')
+    else:
+        parts.append(_table(f"Uudet ja päivittyneet ilmoitukset ({len(fresh)})", INJ_HEAD, _injury_rows(fresh), "inj"))
+    full = inj.sort_values(["team", "name"])
+    parts.append(f'<details class="game"><summary>Kaikki sivussa olevat ({len(full)})</summary>'
+                 + _table("", INJ_HEAD, _injury_rows(full), "inj") + "</details>")
     return "".join(parts)
 
 
@@ -225,7 +271,8 @@ def _archive_html(current: date) -> str:
     return f'<ul class="archive">{"".join(links)}</ul>'
 
 
-def render(day: date, games, skaters, goalies, xg, items, tables, finns: set[int] = frozenset()) -> str:
+def render(day: date, games, skaters, goalies, xg, items, tables, finns: set[int] = frozenset(),
+           inj: pd.DataFrame | None = None) -> str:
     night = games[games.date == day.isoformat()].sort_values("game_id")
     cards = "".join(_game_html(gm, skaters, goalies, xg["xg_teams"], xg["xg_goalies"])
                     for _, gm in night.iterrows())
@@ -240,13 +287,14 @@ def render(day: date, games, skaters, goalies, xg, items, tables, finns: set[int
 <header><h1>NHL-yöraportti</h1>
 <p class="sub">Ottelut {day_fi(day)} (Pohjois-Amerikan aikaa) · {len(night)} ottelua</p></header>
 <h2>Yön nostot</h2>{_insights_html(items)}
-<h2 id="suomalaiset">Suomalaisnurkkaus</h2>{_finn_html(day.isoformat(), skaters, goalies, xg, items, tables, finns)}
+<h2 id="suomalaiset">Suomalaisnurkkaus</h2>{_finn_html(day.isoformat(), skaters, goalies, xg, items, tables, finns, inj)}
+<h2 id="loukkaantumiset">Loukkaantumiset</h2>{_injuries_html(day.isoformat(), inj)}
 <h2>Ottelut</h2>{f'<div class="games">{cards}</div>' if cards else '<p class="empty">Ei pelattuja otteluita.</p>'}
 <h2>Kausi tähän mennessä</h2>{_season_html(tables)}
 <h2>Arkisto</h2>{{ARCHIVE}}
 <footer>
 xG-, GSAx- ja laukausdata: <a href="https://moneypuck.com">MoneyPuck.com</a>.
-Tulokset ja pelaajatilastot: NHL.com. Päivitetty {updated}.<br>
+Tulokset ja pelaajatilastot: NHL.com. Loukkaantumiset: ESPN / RotoWire (paluuarviot ovat suuntaa-antavia). Päivitetty {updated}.<br>
 ixG = pelaajan laukausten odotetut maalit. GSAx = maalivahdin päästämät maalit verrattuna odotettuun
 (positiivinen = odotettua parempi). Vaarallinen paikka = laukaus, jonka xG on vähintään 0,20.
 Lähdekoodi: <a href="https://github.com/juhaopesonen/NHL-stats">GitHub</a>.

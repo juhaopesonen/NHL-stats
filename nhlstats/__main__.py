@@ -6,7 +6,7 @@ from zoneinfo import ZoneInfo
 
 import pandas as pd
 
-from . import insights, moneypuck, nhl_api, report, storage
+from . import injuries, insights, moneypuck, nhl_api, report, storage
 
 
 def default_day() -> date:
@@ -69,6 +69,31 @@ def update_countries(skaters: pd.DataFrame, goalies: pd.DataFrame) -> pd.DataFra
     return players
 
 
+def update_injuries(season_id: int, skaters: pd.DataFrame, goalies: pd.DataFrame) -> None:
+    """Tallentaa päivän loukkaantumislistan ja tunnistaa listan pelaajat."""
+    try:
+        players = storage.load_players()
+        cols = ["player_id", "name", "team"]
+        known = pd.concat([skaters[cols], goalies[cols]]).drop_duplicates("player_id", keep="last")
+        if "name" in players.columns:  # aiemmin haulla löydetyt
+            extra = players[players.name.astype(bool) & ~players.player_id.isin(known.player_id)]
+            known = pd.concat([known, extra[["player_id", "name"]].assign(team=None)])
+        snapshot = datetime.now(ZoneInfo("Europe/Helsinki")).date().isoformat()
+        inj = injuries.fetch(snapshot, known)
+        found = injuries.resolve_missing(inj)
+        if found:
+            new = pd.DataFrame(found)
+            if "name" not in players.columns:
+                players["name"] = ""
+            players = players[~players.player_id.isin(new.player_id)]
+            storage.save_players(pd.concat([players, new], ignore_index=True))
+        storage.save_injuries(season_id, inj)
+        print(f"Loukkaantumiset: {len(inj)} listalla, {len(found)} tunnistettu haulla, "
+              f"{inj.player_id.isna().sum()} tunnistamatta")
+    except Exception as e:
+        print(f"Loukkaantumisten haku epäonnistui: {e}")
+
+
 def main() -> None:
     parser = argparse.ArgumentParser(description="NHL-yöraportti")
     parser.add_argument("--date", type=date.fromisoformat, default=None,
@@ -107,12 +132,16 @@ def main() -> None:
     xg = {k: (v if not v.empty else pd.DataFrame(columns=["game_id", "player_id", "team"]))
           for k, v in xg.items()}
 
-    players = storage.load_players() if args.no_fetch else update_countries(skaters, goalies)
+    if not args.no_fetch:
+        update_countries(skaters, goalies)
+        update_injuries(season_id, skaters, goalies)
+    players = storage.load_players()
     finns = set(players[players.birth_country == "FIN"].player_id)
+    inj = storage.injuries_for(season_id, day.isoformat())
 
-    items = insights.build(day.isoformat(), games, skaters, goalies, xg)
+    items = insights.build(day.isoformat(), games, skaters, goalies, xg, inj)
     tables = insights.season_tables(day.isoformat(), skaters, xg["xg_players"], finns)
-    report.write(day, report.render(day, games, skaters, goalies, xg, items, tables, finns))
+    report.write(day, report.render(day, games, skaters, goalies, xg, items, tables, finns, inj))
     print(f"Raportti {day}: {len(items)} nostoa -> docs/raportit/{day}.html")
 
 

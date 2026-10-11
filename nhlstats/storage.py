@@ -41,6 +41,30 @@ def upsert_games(season_id: int, name: str, rows: list[dict]) -> None:
     save(season_id, name, new)
 
 
+def save_injuries(season_id: int, snapshot: pd.DataFrame) -> None:
+    """Loukkaantumislistan päiväkohtainen tilannekuva; saman päivän vanha korvataan."""
+    old = load(season_id, "injuries")
+    if not old.empty:
+        old = old[old.snapshot != snapshot.snapshot.iloc[0]]
+        snapshot = pd.concat([old, snapshot], ignore_index=True)
+    snapshot = snapshot.sort_values(["snapshot", "team", "name"], kind="stable")
+    snapshot.to_csv(season_dir(season_id) / "injuries.csv", index=False, lineterminator="\n")
+
+
+def injuries_for(season_id: int, day: str) -> pd.DataFrame:
+    """Uusin tilannekuva, joka on otettu viimeistään pelipäivää seuraavana päivänä."""
+    df = load(season_id, "injuries")
+    if df.empty:
+        return df
+    limit = (pd.Timestamp(day) + pd.Timedelta(days=1)).strftime("%Y-%m-%d")
+    df = df[df.snapshot <= limit]
+    if df.empty:
+        return df
+    df = df[df.snapshot == df.snapshot.max()].copy()
+    df["player_id"] = df.player_id.astype("Int64")
+    return df.fillna({"injury": "", "return_date": "", "updated": "", "espn_url": "", "position": ""})
+
+
 PLAYERS_FILE = DATA_DIR / "players.csv"
 
 

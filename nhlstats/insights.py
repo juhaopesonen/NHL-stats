@@ -4,6 +4,7 @@ from dataclasses import dataclass
 import pandas as pd
 
 from . import config as c
+from . import injuries
 from .fmt import num, toi
 
 
@@ -156,8 +157,40 @@ def xg_insights(day: str, games: pd.DataFrame, skaters: pd.DataFrame,
     return out
 
 
-def build(day, games, skaters, goalies, xg) -> list[Insight]:
-    items = player_insights(day, skaters) + xg_insights(
+def return_text(return_date: str, snapshot: str) -> str:
+    """Esim. '13.10. (n. 2 pv)'."""
+    if not return_date:
+        return "ei arviota"
+    ret, ref = pd.Timestamp(return_date), pd.Timestamp(snapshot)
+    days = (ret - ref).days
+    span = "pian" if days <= 0 else f"n. {days} pv" if days < 21 else f"n. {round(days / 7)} vk"
+    shown = f"{ret.day}.{ret.month}." + (str(ret.year) if days > 180 else "")
+    return f"{shown} ({span})"
+
+
+def injury_insights(day: str, skaters: pd.DataFrame, goalies: pd.DataFrame,
+                    inj: pd.DataFrame) -> list[Insight]:
+    """Yöllä pelanneet, joista on pelin jälkeen tullut loukkaantumisilmoitus."""
+    if inj.empty:
+        return []
+    fresh = inj[(inj.updated >= day) & inj.player_id.notna()]
+    played = pd.concat([skaters[skaters.date == day], goalies[goalies.date == day]])
+    out = []
+    for _, p in played[played.player_id.isin(set(fresh.player_id.astype(int)))].iterrows():
+        r = fresh[fresh.player_id == p.player_id].iloc[0]
+        out.append(Insight("Loukkaantuminen",
+            f"{p['name']} ({p.team}) pelasi yöllä {toi(p.toi)} – nyt {injuries.status_fi(r.status)}, "
+            f"vamma: {injuries.injury_fi(r.injury)}, arvioitu paluu {return_text(r.return_date, r.snapshot)}.",
+            62, int(p.game_id), int(p.player_id)))
+    return out
+
+
+def build(day, games, skaters, goalies, xg, inj: pd.DataFrame | None = None) -> list[Insight]:
+    hurt = injury_insights(day, skaters, goalies, inj if inj is not None else pd.DataFrame())
+    hurt_ids = {i.player_id for i in hurt}
+    items = [i for i in player_insights(day, skaters)
+             if not (i.kind == "Peliaika" and i.player_id in hurt_ids)]  # loukkaantuminen selittää
+    items += hurt + xg_insights(
         day, games, skaters, goalies, xg["xg_players"], xg["xg_teams"], xg["xg_goalies"])
     return sorted(items, key=lambda i: i.score, reverse=True)
 

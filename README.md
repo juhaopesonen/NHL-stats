@@ -12,7 +12,10 @@ tekee suomenkielisen HTML-raportin, joka nostaa esiin kiinnostavia yksityiskohti
 - **Isot illat ja hattutemput, poikkeava peliaika**
 - **Kausitaulukot:** käynnissä olevat pisteputket, xG-ali- ja ylisuoriutujat
 - **Suomalaisnurkkaus:** yön suomalaiset kenttäpelaajat ja maalivahdit, heitä koskevat nostot
-  sekä suomalaisten pistepörssi ja maalivahtitilastot kaudelta
+  sekä suomalaisten pistepörssi, maalivahtitilastot ja sivussa olevat suomalaiset
+- **Loukkaantumiset:** yöllä pelanneet, joista tuli pelin jälkeen loukkaantumisilmoitus
+  (esim. poikkeuksellisen lyhyt peliaika), uudet ilmoitukset ja koko liigan sivussa olevat
+  arvioituine paluupäivineen
 
 Raportti julkaistaan GitHub Pagesissa: <https://juhaopesonen.github.io/NHL-stats/>
 
@@ -21,6 +24,7 @@ Raportti julkaistaan GitHub Pagesissa: <https://juhaopesonen.github.io/NHL-stats
 | Lähde | Käyttö |
 |---|---|
 | [NHL:n avoin rajapinta](https://api-web.nhle.com) | Ottelut, tulokset, boxscoret, pelaajien nimet ja syntymämaat |
+| [ESPN](https://www.espn.com/nhl/injuries) (tiedot RotoWirelta) | Loukkaantumiset: tila, vamman tyyppi, arvioitu paluupäivä |
 | [MoneyPuck.com](https://moneypuck.com/data.htm) | Laukaustason data ja xG-malli → ixG, joukkueiden xG, 5v5-xG, vaaralliset paikat, GSAx |
 
 MoneyPuckin data on vapaasti käytettävissä ei-kaupalliseen käyttöön, kun MoneyPuck.com
@@ -55,8 +59,13 @@ nhlstats/
   config.py     raja-arvot (esim. pisteputken pituus, ixG-raja)
 data/2026-27/   tallennettu data (games, skaters, goalies, xg_*)
 data/players.csv  pelaajien syntymämaat (suomalaiset = FIN)
+data/2026-27/injuries.csv  loukkaantumislistan päivittäiset tilannekuvat
 docs/           GitHub Pages: index.html = uusin raportti, raportit/ = arkisto
 ```
+
+Loukkaantumisista tallennetaan vain faktatiedot, ei uutistekstejä. Paluupäivät ovat
+arvioita, ja ESPN:n rajapinta on epävirallinen, joten sen muuttuminen voi katkaista haun –
+muu raportti tehdään silloinkin normaalisti.
 
 Nostojen herkkyyttä säädetään tiedostossa `nhlstats/config.py`.
 
