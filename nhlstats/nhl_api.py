@@ -27,8 +27,8 @@ def games_on(day: date) -> list[dict]:
 def stars(season_id: int) -> list[dict]:
     """Joukkueiden tähtipelaajat edellisen kauden runkosarjan perusteella.
 
-    Kenttäpelaaja: joukkueensa kolmen parhaan pistemiehen joukossa (väh. 35 p),
-    tai vähintään 65 pistettä, tai puolustaja vähintään 45 pistettä.
+    Kenttäpelaaja: aina vähintään 50 pistettä, ja lisäksi joukkueensa kolmen
+    parhaan pistemiehen joukossa, puolustaja tai vähintään 65 pistettä.
     Maalivahti: joukkueensa ykkönen, vähintään 30 aloitusta.
     """
     prev = season_id - 10001  # 20262027 -> 20252026
@@ -43,10 +43,10 @@ def stars(season_id: int) -> list[dict]:
         by_team.setdefault(team(r), []).append(r)
     for t, rows in by_team.items():
         for r in sorted(rows, key=lambda r: r["points"], reverse=True)[:3]:
-            if r["points"] >= 35:
+            if r["points"] >= 50:
                 out[r["playerId"]] = (r, f'{t}:n {r["points"]} p')
     for r in sk:
-        if r["points"] >= 65 or (r["positionCode"] == "D" and r["points"] >= 45):
+        if r["points"] >= 65 or (r["positionCode"] == "D" and r["points"] >= 50):
             out.setdefault(r["playerId"], (r, f'{r["points"]} p'))
     result = [{"player_id": pid, "name": r["skaterFullName"], "team": team(r), "basis": basis}
               for pid, (r, basis) in out.items()]

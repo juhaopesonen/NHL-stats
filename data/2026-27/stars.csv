@@ -1,7 +1,6 @@
 player_id,name,team,basis
 8471214,Alex Ovechkin,WSH,WSH:n 64 p
 8471675,Sidney Crosby,PIT,PIT:n 74 p
-8474150,Mikael Backlund,CGY,CGY:n 43 p
 8474564,Steven Stamkos,NSH,NSH:n 66 p
 8474578,Erik Karlsson,PIT,PIT:n 66 p
 8474586,Jordan Eberle,SEA,SEA:n 55 p
@@ -24,7 +23,6 @@ player_id,name,team,basis
 8476880,Tom Wilson,WSH,WSH:n 62 p
 8476883,Andrei Vasilevskiy,TBL,"ykkösvahti, 58 aloitusta"
 8476887,Filip Forsberg,NSH,NSH:n 75 p
-8476905,Chandler Stephenson,SEA,SEA:n 49 p
 8476906,Shayne Gostisbehere,CAR,50 p
 8476945,Connor Hellebuyck,WPG,"ykkösvahti, 57 aloitusta"
 8476999,Linus Ullmark,OTT,"ykkösvahti, 49 aloitusta"
@@ -49,7 +47,6 @@ player_id,name,team,basis
 8478009,Ilya Sorokin,NYI,"ykkösvahti, 54 aloitusta"
 8478048,Igor Shesterkin,NYR,"ykkösvahti, 51 aloitusta"
 8478178,Darren Raddysh,TBL,70 p
-8478397,Rasmus Andersson,VGK,47 p
 8478398,Kyle Connor,WPG,WPG:n 92 p
 8478401,Pavel Zacha,BOS,BOS:n 65 p
 8478402,Connor McDavid,EDM,EDM:n 138 p
@@ -58,7 +55,6 @@ player_id,name,team,basis
 8478427,Sebastian Aho,CAR,CAR:n 80 p
 8478435,Dan Vladar,PHI,"ykkösvahti, 51 aloitusta"
 8478439,Travis Konecny,PHI,PHI:n 68 p
-8478444,Brock Boeser,VAN,VAN:n 48 p
 8478445,Mathew Barzal,NYI,NYI:n 72 p
 8478460,Zach Werenski,CBJ,CBJ:n 81 p
 8478483,Mitch Marner,VGK,VGK:n 80 p
@@ -78,7 +74,6 @@ player_id,name,team,basis
 8479407,Jesper Bratt,NJD,NJD:n 71 p
 8479410,Mikhail Sergachev,UTA,59 p
 8479420,Tage Thompson,BUF,BUF:n 81 p
-8479425,Filip Hronek,VAN,VAN:n 49 p
 8479542,Brandon Hagel,TBL,TBL:n 74 p
 8479973,Stuart Skinner,PIT,"ykkösvahti, 50 aloitusta"
 8479979,Jake Oettinger,DAL,"ykkösvahti, 54 aloitusta"
@@ -90,7 +85,6 @@ player_id,name,team,basis
 8480018,Nick Suzuki,MTL,MTL:n 101 p
 8480023,Robert Thomas,STL,STL:n 64 p
 8480027,Jason Robertson,DAL,DAL:n 96 p
-8480028,Morgan Frost,CGY,CGY:n 43 p
 8480036,Miro Heiskanen,DAL,63 p
 8480039,Martin Necas,COL,COL:n 100 p
 8480069,Cale Makar,COL,COL:n 79 p
@@ -103,7 +97,6 @@ player_id,name,team,basis
 8480830,Andrei Svechnikov,CAR,CAR:n 70 p
 8480839,Rasmus Dahlin,BUF,BUF:n 74 p
 8480843,Lukas Dostal,ANA,"ykkösvahti, 55 aloitusta"
-8480865,Noah Dobson,MTL,47 p
 8480893,Kirill Marchenko,CBJ,CBJ:n 67 p
 8480947,Kevin Lankinen,VAN,"ykkösvahti, 43 aloitusta"
 8480981,Joel Hofer,STL,"ykkösvahti, 43 aloitusta"
@@ -122,18 +115,15 @@ player_id,name,team,basis
 8482109,Alexis Lafrenière,NYR,NYR:n 57 p
 8482116,Tim Stützle,OTT,OTT:n 83 p
 8482122,Brock Faber,MIN,51 p
-8482124,Quinton Byfield,LAK,LAK:n 49 p
 8482137,Yaroslav Askarov,SJS,"ykkösvahti, 47 aloitusta"
 8482487,Jakub Dobes,MTL,"ykkösvahti, 42 aloitusta"
 8482665,Matty Beniers,SEA,SEA:n 50 p
-8482679,Matt Coronato,CGY,CGY:n 45 p
 8482699,Dylan Guenther,UTA,UTA:n 73 p
 8482720,Matthew Knies,TOR,TOR:n 66 p
 8482740,Wyatt Johnston,DAL,DAL:n 86 p
 8482982,Jet Greaves,CBJ,"ykkösvahti, 53 aloitusta"
 8483445,Cutter Gauthier,ANA,ANA:n 69 p
 8483457,Lane Hutson,MTL,MTL:n 78 p
-8483493,Frank Nazar,CHI,CHI:n 41 p
 8483515,Juraj Slafkovský,MTL,73 p
 8483516,Jimmy Snuggerud,STL,STL:n 51 p
 8483548,Brandon Bussi,CAR,"ykkösvahti, 39 aloitusta"

@@ -16,7 +16,7 @@ tekee suomenkielisen HTML-raportin, joka nostaa esiin kiinnostavia yksityiskohti
 - **Loukkaantumiset:** yöllä pelanneet, joista tuli pelin jälkeen loukkaantumisilmoitus
   (esim. poikkeuksellisen lyhyt peliaika) sekä sivussa olevat suomalaiset ja tähtipelaajat
   arvioituine paluupäivineen. Tähti = edellisellä kaudella joukkueensa kolmen parhaan
-  pistemiehen joukossa (väh. 35 p), vähintään 65 p (puolustaja 45 p) tai joukkueen ykkösvahti
+  pistemiehen joukossa ja väh. 50 p, vähintään 65 p (puolustaja 50 p) tai joukkueen ykkösvahti
 
 Raportti julkaistaan GitHub Pagesissa: <https://juhaopesonen.github.io/NHL-stats/>
 
