@@ -53,6 +53,7 @@ footer{margin-top:40px;color:var(--muted);font-size:13px;border-top:1px solid va
 .inj td,.inj th{text-align:left}
 .inj td:nth-child(4),.inj td:nth-child(5){white-space:nowrap}
 .inj .tag{font-size:11px;padding:1px 7px}
+.wide{grid-column:1/-1}
 .tiles{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:10px;margin:20px 0 28px}
 .tile{display:flex;flex-direction:column;gap:2px;background:var(--card);border:1px solid var(--line);border-radius:12px;
 padding:12px 14px;text-decoration:none;color:var(--text);transition:border-color .15s,background .15s}
@@ -187,6 +188,19 @@ def _pp(seconds) -> str:
     return toi(seconds) if seconds is not None and pd.notna(seconds) else "–"
 
 
+def _onice(r) -> list[str]:
+    """5v5 xG puolesta–vastaan, xG-% (vihreä yli 50) ja ero joukkueeseen ilman pelaajaa."""
+    if pd.isna(r.onice_xg_pct):
+        return ["–", "–", "–"]
+    pct = r.onice_xg_pct * 100
+    cls = "pos" if pct > 50 else "neg" if pct < 50 else ""
+    rel = (r.onice_xg_pct - r.office_xg_pct) * 100
+    rel_cls = "pos" if rel > 0 else "neg" if rel < 0 else ""
+    return [f"{num(r.onice_xgf, 1)}–{num(r.onice_xga, 1)}",
+            f'<span class="{cls}">{pct:.0f} %</span>',
+            f'<span class="{rel_cls}">{"+" if rel > 0 else ""}{rel:.0f}</span>'.replace("-", "−")]
+
+
 def _finn_html(day: str, skaters, goalies, xg, items: list[Insight], tables, finns: set[int],
                inj: pd.DataFrame | None = None) -> str:
     xgp, xgg = xg["xg_players"], xg["xg_goalies"]
@@ -228,10 +242,10 @@ def _finn_html(day: str, skaters, goalies, xg, items: list[Insight], tables, fin
     fs = tables["finns"]
     if not fs.empty:
         rows = [[f'{escape(r["name"])} ({escape(r.team)})', str(r.gp), str(r.goals), str(r.assists),
-                 f"<b>{r.points}</b>", num(r.ixg), toi(r.toi), _pp(r.pp_toi), str(r.streak) if r.streak >= 2 else ""]
+                 f"<b>{r.points}</b>", num(r.ixg), toi(r.toi), _pp(r.pp_toi), *_onice(r), str(r.streak) if r.streak >= 2 else ""]
                 for _, r in fs.head(15).iterrows()]
         season_cards.append(_table("Suomalaisten pistepörssi",
-                                   ["Pelaaja", "O", "M", "S", "P", "ixG", "Aika/O", "YV min/O", "Putki"], rows))
+                                   ["Pelaaja", "O", "M", "S", "P", "ixG", "Aika/O", "YV min/O", "5v5 xGF–xGA", "5v5 xG%", "vs. tiimi", "Putki"], rows, "wide"))
     sg = goalies[(goalies.date <= day) & goalies.player_id.isin(finns)]
     if not sg.empty:
         if not xgg.empty:
@@ -404,6 +418,8 @@ xG-, GSAx- ja laukausdata: <a href="https://moneypuck.com">MoneyPuck.com</a>.
 Tulokset ja pelaajatilastot: NHL.com. Loukkaantumiset: ESPN / RotoWire (paluuarviot ovat suuntaa-antavia). Päivitetty {updated}.<br>
 ixG = pelaajan laukausten odotetut maalit. GSAx = maalivahdin päästämät maalit verrattuna odotettuun
 (positiivinen = odotettua parempi). Vaarallinen paikka = laukaus, jonka xG on vähintään 0,20.
+5v5 xG% = joukkueen osuus odotetuista maaleista pelaajan ollessa jäällä 5 vs. 5 (kausi tähän asti);
+vs. tiimi = ero prosenttiyksikköinä joukkueen xG%:iin pelaajan ollessa vaihdossa.
 Lähdekoodi: <a href="https://github.com/juhaopesonen/NHL-stats">GitHub</a>.
 </footer>
 </main><script>{JS}</script></body></html>"""

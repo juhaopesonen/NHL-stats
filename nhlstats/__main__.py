@@ -162,6 +162,10 @@ def main() -> None:
                   + (f", yön otteluista puuttuu vielä {len(missing)}" if len(missing) else ""))
         except Exception as e:  # raportti tehdään ilman xG:tä, jos MoneyPuck ei vastaa
             print(f"MoneyPuck-haku epäonnistui: {e}")
+        try:
+            storage.save(season_id, "onice_5v5", moneypuck.download_onice_5v5(season_id // 10000))
+        except Exception as e:
+            print(f"MoneyPuckin 5v5-kausikoosteen haku epäonnistui: {e}")
     xg = {k: (v if not v.empty else pd.DataFrame(columns=["game_id", "player_id", "team"]))
           for k, v in xg.items()}
 
@@ -181,7 +185,8 @@ def main() -> None:
             print(f"Tähtipelaajien haku epäonnistui: {e}")
 
     items = insights.build(day.isoformat(), games, skaters, goalies, xg, inj)
-    tables = insights.season_tables(day.isoformat(), skaters, xg["xg_players"], finns)
+    tables = insights.season_tables(day.isoformat(), skaters, xg["xg_players"], finns,
+                                    storage.load(season_id, "onice_5v5"))
     report.write(day, report.render(day, games, skaters, goalies, xg, items, tables, finns, inj, stars))
     print(f"Raportti {day}: {len(items)} nostoa -> docs/raportit/{day}.html")
 

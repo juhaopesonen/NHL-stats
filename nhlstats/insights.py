@@ -196,8 +196,12 @@ def build(day, games, skaters, goalies, xg, inj: pd.DataFrame | None = None) -> 
     return sorted(items, key=lambda i: i.score, reverse=True)
 
 
-def finn_season(season: pd.DataFrame, xgp: pd.DataFrame, finns: set[int]) -> pd.DataFrame:
-    """Suomalaisten kenttäpelaajien kausitilastot pistejärjestyksessä."""
+def finn_season(season: pd.DataFrame, xgp: pd.DataFrame, finns: set[int],
+                onice: pd.DataFrame | None = None) -> pd.DataFrame:
+    """Suomalaisten kenttäpelaajien kausitilastot pistejärjestyksessä.
+
+    onice: MoneyPuckin 5v5-kausikooste (xG puolesta/vastaan pelaajan ollessa jäällä).
+    """
     fin = season[season.player_id.isin(finns)]
     if "pp_toi" not in fin.columns:
         fin = fin.assign(pp_toi=float("nan"))
@@ -210,11 +214,16 @@ def finn_season(season: pd.DataFrame, xgp: pd.DataFrame, finns: set[int]) -> pd.
         goals=("goals", "sum"), assists=("assists", "sum"), points=("points", "sum"),
         ixg=("ixg", lambda s: s.fillna(0).sum()), toi=("toi", "mean"), pp_toi=("pp_toi", "mean"),
         streak=("points", lambda s: _trailing(s.tolist(), lambda v: v > 0))).reset_index()
+    cols = ["onice_xgf", "onice_xga", "onice_xg_pct", "office_xg_pct"]
+    if onice is not None and not onice.empty:
+        tot = tot.merge(onice[["player_id"] + cols], on="player_id", how="left")
+    else:
+        tot = tot.assign(**{c: float("nan") for c in cols})
     return tot.sort_values(["points", "goals", "toi"], ascending=False)
 
 
 def season_tables(day: str, skaters: pd.DataFrame, xgp: pd.DataFrame,
-                  finns: set[int] = frozenset()) -> dict[str, pd.DataFrame]:
+                  finns: set[int] = frozenset(), onice: pd.DataFrame | None = None) -> dict[str, pd.DataFrame]:
     """Kauden taulukot: pisteputket, xG-yli/alisuoriutujat ja suomalaiset."""
     season = skaters[skaters.date <= day].sort_values(["date", "game_id"])
     rows = []
@@ -227,7 +236,7 @@ def season_tables(day: str, skaters: pd.DataFrame, xgp: pd.DataFrame,
     streaks = pd.DataFrame(rows, columns=["name", "team", "streak", "goals", "assists"])
     streaks = streaks.sort_values(["streak", "goals"], ascending=False).head(10)
 
-    tables = {"streaks": streaks, "finns": finn_season(season, xgp, finns)}
+    tables = {"streaks": streaks, "finns": finn_season(season, xgp, finns, onice)}
     if not xgp.empty:
         # Mukaan kaikki pelatut ottelut, joille xG-data on olemassa (ei laukauksia = ixG 0)
         merged = season[season.game_id.isin(xgp.game_id.unique())].merge(

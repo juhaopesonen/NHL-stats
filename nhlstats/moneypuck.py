@@ -33,6 +33,25 @@ def download_shots(start_year: int) -> pd.DataFrame:
     return shots
 
 
+SUMMARY_URL = "https://moneypuck.com/moneypuck/playerData/seasonSummary/{year}/regular/skaters.csv"
+
+
+def download_onice_5v5(start_year: int) -> pd.DataFrame:
+    """Kauden kumulatiiviset 5v5-luvut pelaajan ollessa jäällä (xG puolesta/vastaan)."""
+    resp = http.get(SUMMARY_URL.format(year=start_year))
+    df = pd.read_csv(io.StringIO(resp.text))
+    df = df[df.situation == "5on5"]
+    return pd.DataFrame({
+        "player_id": df.playerId,
+        "gp_5v5": df.games_played,
+        "toi_5v5": df.icetime,
+        "onice_xgf": df.OnIce_F_xGoals,
+        "onice_xga": df.OnIce_A_xGoals,
+        "onice_xg_pct": df.onIce_xGoalsPercentage,
+        "office_xg_pct": df.offIce_xGoalsPercentage,
+    })
+
+
 def aggregate(shots: pd.DataFrame, games: pd.DataFrame) -> dict[str, pd.DataFrame]:
     """Laskee ottelukohtaiset xG-luvut pelaajille, joukkueille ja maalivahdeille."""
     shots = shots.assign(hd=(shots.xGoal >= HIGH_DANGER_XG).astype(int))
