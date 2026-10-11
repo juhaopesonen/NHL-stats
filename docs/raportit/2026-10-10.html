@@ -1,0 +1,157 @@
+<!doctype html>
+<html lang="fi"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>NHL-yöraportti 10.10.2026</title>
+<meta name="description" content="NHL:n yön otteluiden syvädata ja nostot: xG, putket ja poikkeamat.">
+<style>
+:root{--bg:#f6f7f9;--card:#fff;--text:#16181d;--muted:#5f6673;--line:#e3e6eb;
+--accent:#0b5fff;--accent-soft:#e8efff;--good:#0f8a4b;--bad:#c4372c;--bar-a:#8a94a6;--bar-h:#0b5fff}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#0f1115;--card:#181b21;
+--text:#e8eaee;--muted:#9aa2b1;--line:#2a2f38;--accent:#6c9cff;--accent-soft:#1d2840;--good:#3ccf84;
+--bad:#ff7a6e;--bar-a:#5b6475;--bar-h:#6c9cff}}
+:root[data-theme="dark"]{--bg:#0f1115;--card:#181b21;--text:#e8eaee;--muted:#9aa2b1;--line:#2a2f38;
+--accent:#6c9cff;--accent-soft:#1d2840;--good:#3ccf84;--bad:#ff7a6e;--bar-a:#5b6475;--bar-h:#6c9cff}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--text);font:15px/1.5 system-ui,-apple-system,"Segoe UI",Roboto,sans-serif}
+main{max-width:1100px;margin:0 auto;padding:24px 16px 48px}
+h1{font-size:28px;margin:0}h2{font-size:20px;margin:36px 0 12px}
+.sub{color:var(--muted);margin:4px 0 0}
+a{color:var(--accent)}
+.insights{list-style:none;padding:0;margin:0;display:grid;gap:8px}
+.insights li{background:var(--card);border:1px solid var(--line);border-radius:10px;padding:10px 14px;display:flex;gap:12px;align-items:baseline}
+.tag{flex:none;font-size:12px;font-weight:600;background:var(--accent-soft);color:var(--accent);border-radius:999px;padding:2px 10px;white-space:nowrap}
+.insights a{margin-left:auto;font-size:13px;white-space:nowrap}
+.games{display:grid;grid-template-columns:repeat(auto-fill,minmax(320px,1fr));gap:14px}
+.game{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:14px 16px}
+.score{display:flex;justify-content:space-between;align-items:center;font-size:20px;font-weight:700}
+.score .ot{font-size:12px;color:var(--muted);font-weight:500}
+.names{display:flex;justify-content:space-between;color:var(--muted);font-size:12px;margin-bottom:10px}
+.bar{display:flex;height:8px;border-radius:4px;overflow:hidden;margin:4px 0 10px;background:var(--line)}
+.bar .a{background:var(--bar-a)}.bar .h{background:var(--bar-h)}
+table{width:100%;border-collapse:collapse;font-size:13px}
+td,th{padding:3px 4px;text-align:right;font-variant-numeric:tabular-nums}
+td:first-child,th:first-child{text-align:left}
+th{color:var(--muted);font-weight:500;border-bottom:1px solid var(--line)}
+.block{margin-top:10px}.block h3{font-size:13px;margin:0 0 4px;color:var(--muted);font-weight:600}
+.players{margin:0;padding-left:18px;font-size:13px}
+.pos{color:var(--good)}.neg{color:var(--bad)}
+.season{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:14px}
+.season .game table{font-size:14px}
+.archive{columns:3 160px;padding-left:18px}
+footer{margin-top:40px;color:var(--muted);font-size:13px;border-top:1px solid var(--line);padding-top:12px}
+.empty{color:var(--muted)}
+@media (max-width:520px){.insights li{flex-wrap:wrap}.insights a{margin-left:0}}
+</style></head>
+<body><main>
+<header><h1>NHL-yöraportti</h1>
+<p class="sub">Ottelut lauantai 10.10.2026 (Pohjois-Amerikan aikaa) · 14 ottelua</p></header>
+<h2>Yön nostot</h2><ul class="insights"><li><span class="tag">Hattutemppu</span><span>Brandon Hagel (TBL) teki hattutempun, tehot 3+1.</span><a href="#g2026020081">ottelu</a></li><li><span class="tag">Hattutemppu</span><span>Kirill Kaprizov (MIN) teki hattutempun, tehot 3+1.</span><a href="#g2026020073">ottelu</a></li><li><span class="tag">Maalivahti</span><span>Daniil Tarasov (DET) torjui 30/30 ja päästi 3,60 maalia odotettua vähemmän (GSAx).</span><a href="#g2026020075">ottelu</a></li><li><span class="tag">Maalivahti</span><span>Jacob Fowler (MTL) torjui 30/30 ja päästi 3,57 maalia odotettua vähemmän (GSAx).</span><a href="#g2026020075">ottelu</a></li><li><span class="tag">Iso ilta</span><span>William Nylander (TOR) keräsi 5 pistettä (2+3).</span><a href="#g2026020080">ottelu</a></li><li><span class="tag">Maaliputki</span><span>Mark Jankowski (CAR) on tehnyt maalin 3 ottelussa peräkkäin (yhteensä 3 maalia).</span><a href="#g2026020078">ottelu</a></li><li><span class="tag">Maalivahti</span><span>Jesper Wallstedt (MIN) torjui 29/30 ja päästi 2,19 maalia odotettua vähemmän (GSAx).</span><a href="#g2026020073">ottelu</a></li><li><span class="tag">Maalivahti</span><span>Jake Oettinger (DAL) torjui 19/20 ja päästi 2,10 maalia odotettua vähemmän (GSAx).</span><a href="#g2026020077">ottelu</a></li><li><span class="tag">Pisteputket</span><span>Pisteputki jatkui 12 pelaajalla (peliä putkessa): Bo Horvat (NYI) 5, Connor McDavid (EDM) 5, Jackson Blake (CAR) 5, Jackson LaCombe (ANA) 5, Jared Spurgeon (MIN) 5, Mikael Granlund (ANA) 5, Nikita Kucherov (TBL) 5, Quinn Hughes (MIN) 5, Roman Josi (NSH) 5, Sebastian Aho (CAR) 5, Steven Stamkos (NSH) 5, Vasily Podkolzin (EDM) 5.</span></li><li><span class="tag">Huono tuuri</span><span>Alex DeBrincat (DET) jäi ilman maalia, vaikka laukauksista kertyi 1,51 odotettua maalia (ixG, 10 laukausyritystä, 1 vaarallista).</span><a href="#g2026020075">ottelu</a></li><li><span class="tag">Iso ilta</span><span>Auston Matthews (TOR) keräsi 4 pistettä (2+2).</span><a href="#g2026020080">ottelu</a></li><li><span class="tag">Viimeistelijä</span><span>Jimmy Snuggerud (STL) teki 2 maalia vain 0,27 ixG:n laukauksista.</span><a href="#g2026020079">ottelu</a></li><li><span class="tag">Viimeistelijä</span><span>Brandon Hagel (TBL) teki 3 maalia vain 1,27 ixG:n laukauksista.</span><a href="#g2026020081">ottelu</a></li><li><span class="tag">Viimeistelijä</span><span>Jake Guentzel (TBL) teki 2 maalia vain 0,41 ixG:n laukauksista.</span><a href="#g2026020081">ottelu</a></li><li><span class="tag">Viimeistelijä</span><span>William Nylander (TOR) teki 2 maalia vain 0,50 ixG:n laukauksista.</span><a href="#g2026020080">ottelu</a></li><li><span class="tag">xG vs. tulos</span><span>COL hävisi TOR:lle 6–3, vaikka voitti odotetut maalit 4,56–2,04 (xG-osuus 69 %).</span><a href="#g2026020080">ottelu</a></li><li><span class="tag">Iso ilta</span><span>Fraser Minten (BOS) keräsi 3 pistettä (1+2).</span><a href="#g2026020070">ottelu</a></li><li><span class="tag">Iso ilta</span><span>Nico Hischier (NJD) keräsi 3 pistettä (2+1).</span><a href="#g2026020071">ottelu</a></li><li><span class="tag">Iso ilta</span><span>Dylan Holloway (STL) keräsi 3 pistettä (0+3).</span><a href="#g2026020079">ottelu</a></li><li><span class="tag">Maalivahti</span><span>Mackenzie Blackwood (COL): vaikea ilta, 17/22 ja 2,96 maalia odotettua enemmän (GSAx −2,96).</span><a href="#g2026020080">ottelu</a></li><li><span class="tag">Huono tuuri</span><span>Noah Ostlund (BUF) jäi ilman maalia, vaikka laukauksista kertyi 1,10 odotettua maalia (ixG, 9 laukausyritystä, 3 vaarallista).</span><a href="#g2026020074">ottelu</a></li><li><span class="tag">Putki katkesi</span><span>Elias Pettersson (VAN): 5 ottelun pisteputki katkesi yön peliin.</span><a href="#g2026020071">ottelu</a></li><li><span class="tag">Putki katkesi</span><span>Jack Eichel (VGK): 5 ottelun pisteputki katkesi yön peliin.</span><a href="#g2026020083">ottelu</a></li><li><span class="tag">Peliaika</span><span>Nick Lardis (CHI) pelasi 15.00, kun aiempi keskiarvo on 10.09.</span><a href="#g2026020078">ottelu</a></li><li><span class="tag">Peliaika</span><span>Chris Tanev (TOR) pelasi vain 3.29, kun aiempi keskiarvo on 19.31.</span><a href="#g2026020080">ottelu</a></li></ul>
+<h2>Ottelut</h2><div class="games">
+<article class="game" id="g2026020070">
+  <div class="score"><span>PHI 1 – 5 BOS</span><span class="ot"></span></div>
+  <div class="names"><span>Philadelphia Flyers</span><span>Boston Bruins</span></div>
+  <div class="bar" title="xG-osuus"><div class="a" style="width:30.0%"></div><div class="h" style="width:70.0%"></div></div><table><tr><th></th><th>PHI</th><th>BOS</th></tr><tr><td>Laukaukset maalia kohti</td><td>15</td><td>32</td></tr><tr><td>xG (ilman tyhjää maalia)</td><td>1,34</td><td>3,13</td></tr><tr><td>xG 5v5</td><td>1,06</td><td>3,01</td></tr><tr><td>Laukausyritykset (ei blokit)</td><td>28</td><td>46</td></tr><tr><td>Vaaralliset paikat</td><td>0</td><td>1</td></tr></table>
+  <div class="block"><h3>Pisteet</h3><ul class="players"><li>Fraser Minten (BOS) 1+2</li><li>JJ Peterka (BOS) 0+2</li><li>Pavel Zacha (BOS) 1+0</li><li>Casey Mittelstadt (BOS) 1+0</li><li>Marat Khusnutdinov (BOS) 1+0</li><li>Mason Lohrei (BOS) 1+0</li></ul></div>
+  <div class="block"><table><tr><th>Maalivahti</th><th>Torjunnat</th><th>Torj-%</th><th>GSAx</th><th>Aika</th></tr><tr><td>Dan Vladar (PHI)</td><td>27/32</td><td>0,844</td><td><span class="neg">−1,87</span></td><td>60.00</td></tr><tr><td>Jeremy Swayman (BOS)</td><td>14/15</td><td>0,933</td><td><span class="pos">+0,34</span></td><td>59.30</td></tr></table></div>
+</article>
+<article class="game" id="g2026020071">
+  <div class="score"><span>VAN 1 – 4 NJD</span><span class="ot"></span></div>
+  <div class="names"><span>Vancouver Canucks</span><span>New Jersey Devils</span></div>
+  <div class="bar" title="xG-osuus"><div class="a" style="width:37.8%"></div><div class="h" style="width:62.2%"></div></div><table><tr><th></th><th>VAN</th><th>NJD</th></tr><tr><td>Laukaukset maalia kohti</td><td>21</td><td>37</td></tr><tr><td>xG (ilman tyhjää maalia)</td><td>2,44</td><td>4,01</td></tr><tr><td>xG 5v5</td><td>2,15</td><td>2,56</td></tr><tr><td>Laukausyritykset (ei blokit)</td><td>34</td><td>48</td></tr><tr><td>Vaaralliset paikat</td><td>0</td><td>5</td></tr></table>
+  <div class="block"><h3>Pisteet</h3><ul class="players"><li>Nico Hischier (NJD) 2+1</li><li>Jesper Bratt (NJD) 1+1</li><li>Jack Hughes (NJD) 0+2</li><li>Jesper Boqvist (NJD) 1+0</li><li>Linus Karlsson (VAN) 1+0</li><li>Brock Boeser (VAN) 0+1</li></ul></div>
+  <div class="block"><table><tr><th>Maalivahti</th><th>Torjunnat</th><th>Torj-%</th><th>GSAx</th><th>Aika</th></tr><tr><td>Jake Allen (NJD)</td><td>20/21</td><td>0,952</td><td><span class="pos">+1,44</span></td><td>60.00</td></tr><tr><td>Kevin Lankinen (VAN)</td><td>2/3</td><td>0,667</td><td><span class="neg">−0,32</span></td><td>5.27</td></tr><tr><td>Leevi Meriläinen (VAN)</td><td>31/34</td><td>0,912</td><td><span class="pos">+0,34</span></td><td>54.33</td></tr></table></div>
+</article>
+<article class="game" id="g2026020072">
+  <div class="score"><span>EDM 3 – 1 SJS</span><span class="ot"></span></div>
+  <div class="names"><span>Edmonton Oilers</span><span>San Jose Sharks</span></div>
+  <div class="bar" title="xG-osuus"><div class="a" style="width:67.2%"></div><div class="h" style="width:32.8%"></div></div><table><tr><th></th><th>EDM</th><th>SJS</th></tr><tr><td>Laukaukset maalia kohti</td><td>20</td><td>20</td></tr><tr><td>xG (ilman tyhjää maalia)</td><td>2,46</td><td>1,20</td></tr><tr><td>xG 5v5</td><td>1,44</td><td>0,94</td></tr><tr><td>Laukausyritykset (ei blokit)</td><td>35</td><td>33</td></tr><tr><td>Vaaralliset paikat</td><td>2</td><td>0</td></tr></table>
+  <div class="block"><h3>Pisteet</h3><ul class="players"><li>Mattias Ekholm (EDM) 1+0</li><li>Alex Formenton (EDM) 1+0</li><li>Vasily Podkolzin (EDM) 1+0</li><li>Macklin Celebrini (SJS) 1+0</li><li>Connor Murphy (EDM) 0+1</li><li>Connor McDavid (EDM) 0+1</li></ul></div>
+  <div class="block"><table><tr><th>Maalivahti</th><th>Torjunnat</th><th>Torj-%</th><th>GSAx</th><th>Aika</th></tr><tr><td>Tristan Jarry (EDM)</td><td>19/20</td><td>0,950</td><td><span class="pos">+0,20</span></td><td>60.00</td></tr><tr><td>Yaroslav Askarov (SJS)</td><td>17/20</td><td>0,850</td><td><span class="neg">−0,54</span></td><td>56.28</td></tr></table></div>
+</article>
+<article class="game" id="g2026020073">
+  <div class="score"><span>MIN 4 – 1 FLA</span><span class="ot"></span></div>
+  <div class="names"><span>Minnesota Wild</span><span>Florida Panthers</span></div>
+  <div class="bar" title="xG-osuus"><div class="a" style="width:46.7%"></div><div class="h" style="width:53.3%"></div></div><table><tr><th></th><th>MIN</th><th>FLA</th></tr><tr><td>Laukaukset maalia kohti</td><td>29</td><td>30</td></tr><tr><td>xG (ilman tyhjää maalia)</td><td>2,80</td><td>3,19</td></tr><tr><td>xG 5v5</td><td>1,95</td><td>1,85</td></tr><tr><td>Laukausyritykset (ei blokit)</td><td>47</td><td>45</td></tr><tr><td>Vaaralliset paikat</td><td>0</td><td>2</td></tr></table>
+  <div class="block"><h3>Pisteet</h3><ul class="players"><li>Kirill Kaprizov (MIN) 3+1</li><li>Matt Boldy (MIN) 1+1</li><li>Matthew Tkachuk (FLA) 1+0</li><li>Jared Spurgeon (MIN) 0+1</li><li>Joel Eriksson Ek (MIN) 0+1</li><li>Quinn Hughes (MIN) 0+1</li></ul></div>
+  <div class="block"><table><tr><th>Maalivahti</th><th>Torjunnat</th><th>Torj-%</th><th>GSAx</th><th>Aika</th></tr><tr><td>Jacob Markstrom (FLA)</td><td>25/28</td><td>0,893</td><td><span class="neg">−0,20</span></td><td>57.46</td></tr><tr><td>Jesper Wallstedt (MIN)</td><td>29/30</td><td>0,967</td><td><span class="pos">+2,19</span></td><td>59.58</td></tr></table></div>
+</article>
+<article class="game" id="g2026020074">
+  <div class="score"><span>UTA 4 – 1 BUF</span><span class="ot"></span></div>
+  <div class="names"><span>Utah Mammoth</span><span>Buffalo Sabres</span></div>
+  <div class="bar" title="xG-osuus"><div class="a" style="width:61.3%"></div><div class="h" style="width:38.7%"></div></div><table><tr><th></th><th>UTA</th><th>BUF</th></tr><tr><td>Laukaukset maalia kohti</td><td>30</td><td>24</td></tr><tr><td>xG (ilman tyhjää maalia)</td><td>4,42</td><td>2,79</td></tr><tr><td>xG 5v5</td><td>3,42</td><td>1,72</td></tr><tr><td>Laukausyritykset (ei blokit)</td><td>56</td><td>39</td></tr><tr><td>Vaaralliset paikat</td><td>3</td><td>3</td></tr></table>
+  <div class="block"><h3>Pisteet</h3><ul class="players"><li>Anders Lee (UTA) 1+1</li><li>John Marino (UTA) 1+1</li><li>Kailer Yamamoto (UTA) 1+1</li><li>Barrett Hayton (UTA) 0+2</li><li>Nick Schmaltz (UTA) 1+0</li><li>Tage Thompson (BUF) 1+0</li></ul></div>
+  <div class="block"><table><tr><th>Maalivahti</th><th>Torjunnat</th><th>Torj-%</th><th>GSAx</th><th>Aika</th></tr><tr><td>Karel Vejmelka (UTA)</td><td>23/24</td><td>0,958</td><td><span class="pos">+1,79</span></td><td>59.54</td></tr><tr><td>Colten Ellis (BUF)</td><td>26/30</td><td>0,867</td><td><span class="pos">+0,42</span></td><td>59.28</td></tr></table></div>
+</article>
+<article class="game" id="g2026020075">
+  <div class="score"><span>DET 0 – 1 MTL</span><span class="ot">VL</span></div>
+  <div class="names"><span>Detroit Red Wings</span><span>Montréal Canadiens</span></div>
+  <div class="bar" title="xG-osuus"><div class="a" style="width:49.7%"></div><div class="h" style="width:50.3%"></div></div><table><tr><th></th><th>DET</th><th>MTL</th></tr><tr><td>Laukaukset maalia kohti</td><td>30</td><td>30</td></tr><tr><td>xG (ilman tyhjää maalia)</td><td>3,57</td><td>3,60</td></tr><tr><td>xG 5v5</td><td>1,36</td><td>1,98</td></tr><tr><td>Laukausyritykset (ei blokit)</td><td>40</td><td>51</td></tr><tr><td>Vaaralliset paikat</td><td>1</td><td>0</td></tr></table>
+  <div class="block"><h3>Pisteet</h3><ul class="players"><li>–</li></ul></div>
+  <div class="block"><table><tr><th>Maalivahti</th><th>Torjunnat</th><th>Torj-%</th><th>GSAx</th><th>Aika</th></tr><tr><td>Daniil Tarasov (DET)</td><td>30/30</td><td>1,000</td><td><span class="pos">+3,60</span></td><td>65.00</td></tr><tr><td>Jacob Fowler (MTL)</td><td>30/30</td><td>1,000</td><td><span class="pos">+3,57</span></td><td>64.46</td></tr></table></div>
+</article>
+<article class="game" id="g2026020076">
+  <div class="score"><span>NSH 2 – 3 OTT</span><span class="ot">VL</span></div>
+  <div class="names"><span>Nashville Predators</span><span>Ottawa Senators</span></div>
+  <div class="bar" title="xG-osuus"><div class="a" style="width:38.5%"></div><div class="h" style="width:61.5%"></div></div><table><tr><th></th><th>NSH</th><th>OTT</th></tr><tr><td>Laukaukset maalia kohti</td><td>18</td><td>20</td></tr><tr><td>xG (ilman tyhjää maalia)</td><td>1,77</td><td>2,82</td></tr><tr><td>xG 5v5</td><td>1,07</td><td>1,20</td></tr><tr><td>Laukausyritykset (ei blokit)</td><td>28</td><td>39</td></tr><tr><td>Vaaralliset paikat</td><td>1</td><td>1</td></tr></table>
+  <div class="block"><h3>Pisteet</h3><ul class="players"><li>Tim Stützle (OTT) 1+1</li><li>Jonathan Marchessault (NSH) 1+0</li><li>Ross Colton (NSH) 1+0</li><li>Drake Batherson (OTT) 1+0</li><li>Steven Stamkos (NSH) 0+1</li><li>Roman Josi (NSH) 0+1</li></ul></div>
+  <div class="block"><table><tr><th>Maalivahti</th><th>Torjunnat</th><th>Torj-%</th><th>GSAx</th><th>Aika</th></tr><tr><td>Linus Ullmark (OTT)</td><td>16/18</td><td>0,889</td><td><span class="neg">−0,23</span></td><td>63.43</td></tr><tr><td>Matt Murray (NSH)</td><td>18/20</td><td>0,900</td><td><span class="pos">+0,82</span></td><td>64.57</td></tr></table></div>
+</article>
+<article class="game" id="g2026020077">
+  <div class="score"><span>DAL 1 – 2 PIT</span><span class="ot">VL</span></div>
+  <div class="names"><span>Dallas Stars</span><span>Pittsburgh Penguins</span></div>
+  <div class="bar" title="xG-osuus"><div class="a" style="width:45.8%"></div><div class="h" style="width:54.2%"></div></div><table><tr><th></th><th>DAL</th><th>PIT</th></tr><tr><td>Laukaukset maalia kohti</td><td>25</td><td>20</td></tr><tr><td>xG (ilman tyhjää maalia)</td><td>2,63</td><td>3,10</td></tr><tr><td>xG 5v5</td><td>1,04</td><td>1,79</td></tr><tr><td>Laukausyritykset (ei blokit)</td><td>37</td><td>42</td></tr><tr><td>Vaaralliset paikat</td><td>1</td><td>1</td></tr></table>
+  <div class="block"><h3>Pisteet</h3><ul class="players"><li>Tyler Seguin (DAL) 1+0</li><li>Connor Dewar (PIT) 1+0</li><li>Jason Robertson (DAL) 0+1</li><li>Miro Heiskanen (DAL) 0+1</li><li>Blake Lizotte (PIT) 0+1</li></ul></div>
+  <div class="block"><table><tr><th>Maalivahti</th><th>Torjunnat</th><th>Torj-%</th><th>GSAx</th><th>Aika</th></tr><tr><td>Jake Oettinger (DAL)</td><td>19/20</td><td>0,950</td><td><span class="pos">+2,10</span></td><td>63.52</td></tr><tr><td>Arturs Silovs (PIT)</td><td>24/25</td><td>0,960</td><td><span class="pos">+1,63</span></td><td>64.52</td></tr></table></div>
+</article>
+<article class="game" id="g2026020078">
+  <div class="score"><span>CAR 5 – 2 CHI</span><span class="ot"></span></div>
+  <div class="names"><span>Carolina Hurricanes</span><span>Chicago Blackhawks</span></div>
+  <div class="bar" title="xG-osuus"><div class="a" style="width:58.3%"></div><div class="h" style="width:41.7%"></div></div><table><tr><th></th><th>CAR</th><th>CHI</th></tr><tr><td>Laukaukset maalia kohti</td><td>39</td><td>26</td></tr><tr><td>xG (ilman tyhjää maalia)</td><td>3,71</td><td>2,65</td></tr><tr><td>xG 5v5</td><td>3,13</td><td>2,39</td></tr><tr><td>Laukausyritykset (ei blokit)</td><td>56</td><td>37</td></tr><tr><td>Vaaralliset paikat</td><td>2</td><td>2</td></tr></table>
+  <div class="block"><h3>Pisteet</h3><ul class="players"><li>Jordan Martinook (CAR) 1+1</li><li>Jackson Blake (CAR) 1+1</li><li>Mike Reilly (CAR) 0+2</li><li>Taylor Hall (CAR) 1+0</li><li>Mark Jankowski (CAR) 1+0</li><li>Sebastian Aho (CAR) 1+0</li></ul></div>
+  <div class="block"><table><tr><th>Maalivahti</th><th>Torjunnat</th><th>Torj-%</th><th>GSAx</th><th>Aika</th></tr><tr><td>Spencer Knight (CHI)</td><td>34/39</td><td>0,872</td><td><span class="neg">−1,29</span></td><td>57.49</td></tr><tr><td>Brandon Bussi (CAR)</td><td>24/26</td><td>0,923</td><td><span class="pos">+0,65</span></td><td>59.17</td></tr></table></div>
+</article>
+<article class="game" id="g2026020079">
+  <div class="score"><span>CBJ 3 – 5 STL</span><span class="ot"></span></div>
+  <div class="names"><span>Columbus Blue Jackets</span><span>St. Louis Blues</span></div>
+  <div class="bar" title="xG-osuus"><div class="a" style="width:36.1%"></div><div class="h" style="width:63.9%"></div></div><table><tr><th></th><th>CBJ</th><th>STL</th></tr><tr><td>Laukaukset maalia kohti</td><td>23</td><td>27</td></tr><tr><td>xG (ilman tyhjää maalia)</td><td>1,77</td><td>3,14</td></tr><tr><td>xG 5v5</td><td>1,73</td><td>2,71</td></tr><tr><td>Laukausyritykset (ei blokit)</td><td>39</td><td>36</td></tr><tr><td>Vaaralliset paikat</td><td>2</td><td>5</td></tr></table>
+  <div class="block"><h3>Pisteet</h3><ul class="players"><li>Dylan Holloway (STL) 0+3</li><li>Jimmy Snuggerud (STL) 2+0</li><li>Pavel Buchnevich (STL) 1+0</li><li>Valeri Nichushkin (CBJ) 1+0</li><li>Jonatan Berggren (STL) 1+0</li><li>Jake Neighbours (STL) 1+0</li></ul></div>
+  <div class="block"><table><tr><th>Maalivahti</th><th>Torjunnat</th><th>Torj-%</th><th>GSAx</th><th>Aika</th></tr><tr><td>Jordan Binnington (STL)</td><td>20/23</td><td>0,870</td><td><span class="neg">−1,23</span></td><td>59.56</td></tr><tr><td>Jet Greaves (CBJ)</td><td>22/26</td><td>0,846</td><td><span class="neg">−0,86</span></td><td>58.46</td></tr></table></div>
+</article>
+<article class="game" id="g2026020080">
+  <div class="score"><span>TOR 6 – 3 COL</span><span class="ot"></span></div>
+  <div class="names"><span>Toronto Maple Leafs</span><span>Colorado Avalanche</span></div>
+  <div class="bar" title="xG-osuus"><div class="a" style="width:30.9%"></div><div class="h" style="width:69.1%"></div></div><table><tr><th></th><th>TOR</th><th>COL</th></tr><tr><td>Laukaukset maalia kohti</td><td>23</td><td>33</td></tr><tr><td>xG (ilman tyhjää maalia)</td><td>2,04</td><td>4,56</td></tr><tr><td>xG 5v5</td><td>1,45</td><td>2,72</td></tr><tr><td>Laukausyritykset (ei blokit)</td><td>30</td><td>51</td></tr><tr><td>Vaaralliset paikat</td><td>1</td><td>3</td></tr></table>
+  <div class="block"><h3>Pisteet</h3><ul class="players"><li>William Nylander (TOR) 2+3</li><li>Auston Matthews (TOR) 2+2</li><li>Nathan MacKinnon (COL) 2+0</li><li>Nick Paul (TOR) 0+2</li><li>Brock Nelson (COL) 1+0</li><li>Nick Blankenburg (TOR) 1+0</li></ul></div>
+  <div class="block"><table><tr><th>Maalivahti</th><th>Torjunnat</th><th>Torj-%</th><th>GSAx</th><th>Aika</th></tr><tr><td>Sergei Bobrovsky (TOR)</td><td>30/33</td><td>0,909</td><td><span class="pos">+1,56</span></td><td>59.55</td></tr><tr><td>Mackenzie Blackwood (COL)</td><td>17/22</td><td>0,773</td><td><span class="neg">−2,96</span></td><td>56.56</td></tr></table></div>
+</article>
+<article class="game" id="g2026020081">
+  <div class="score"><span>TBL 5 – 3 NYI</span><span class="ot"></span></div>
+  <div class="names"><span>Tampa Bay Lightning</span><span>New York Islanders</span></div>
+  <div class="bar" title="xG-osuus"><div class="a" style="width:52.1%"></div><div class="h" style="width:47.9%"></div></div><table><tr><th></th><th>TBL</th><th>NYI</th></tr><tr><td>Laukaukset maalia kohti</td><td>26</td><td>23</td></tr><tr><td>xG (ilman tyhjää maalia)</td><td>2,51</td><td>2,31</td></tr><tr><td>xG 5v5</td><td>1,21</td><td>1,24</td></tr><tr><td>Laukausyritykset (ei blokit)</td><td>29</td><td>31</td></tr><tr><td>Vaaralliset paikat</td><td>4</td><td>1</td></tr></table>
+  <div class="block"><h3>Pisteet</h3><ul class="players"><li>Brandon Hagel (TBL) 3+1</li><li>Jake Guentzel (TBL) 2+0</li><li>Tony DeAngelo (NYI) 1+1</li><li>Nikita Kucherov (TBL) 0+2</li><li>Max Crozier (TBL) 0+2</li><li>Brayden Schenn (NYI) 1+0</li></ul></div>
+  <div class="block"><table><tr><th>Maalivahti</th><th>Torjunnat</th><th>Torj-%</th><th>GSAx</th><th>Aika</th></tr><tr><td>Andrei Vasilevskiy (TBL)</td><td>20/23</td><td>0,870</td><td><span class="neg">−0,69</span></td><td>60.00</td></tr><tr><td>Ilya Sorokin (NYI)</td><td>21/25</td><td>0,840</td><td><span class="neg">−1,49</span></td><td>59.49</td></tr></table></div>
+</article>
+<article class="game" id="g2026020082">
+  <div class="score"><span>ANA 4 – 2 CGY</span><span class="ot"></span></div>
+  <div class="names"><span>Anaheim Ducks</span><span>Calgary Flames</span></div>
+  <table><tr><th></th><th>ANA</th><th>CGY</th></tr><tr><td>Laukaukset maalia kohti</td><td>28</td><td>29</td></tr></table><p class="empty">MoneyPuckin xG-data ei ole vielä saatavilla.</p>
+  <div class="block"><h3>Pisteet</h3><ul class="players"><li>Ryan Poehling (ANA) 1+1</li><li>Mikael Granlund (ANA) 0+2</li><li>Matt Coronato (CGY) 0+2</li><li>Frank Vatrano (ANA) 1+0</li><li>Morgan Frost (CGY) 1+0</li><li>Jackson LaCombe (ANA) 1+0</li></ul></div>
+  <div class="block"><table><tr><th>Maalivahti</th><th>Torjunnat</th><th>Torj-%</th><th>GSAx</th><th>Aika</th></tr><tr><td>Ville Husso (ANA)</td><td>27/29</td><td>0,931</td><td>–</td><td>60.00</td></tr><tr><td>Dustin Wolf (CGY)</td><td>24/28</td><td>0,857</td><td>–</td><td>57.11</td></tr></table></div>
+</article>
+<article class="game" id="g2026020083">
+  <div class="score"><span>LAK 1 – 2 VGK</span><span class="ot">JA</span></div>
+  <div class="names"><span>Los Angeles Kings</span><span>Vegas Golden Knights</span></div>
+  <table><tr><th></th><th>LAK</th><th>VGK</th></tr><tr><td>Laukaukset maalia kohti</td><td>27</td><td>32</td></tr></table><p class="empty">MoneyPuckin xG-data ei ole vielä saatavilla.</p>
+  <div class="block"><h3>Pisteet</h3><ul class="players"><li>Mitch Marner (VGK) 1+1</li><li>Trevor Connelly (VGK) 1+1</li><li>Mark Stone (VGK) 0+2</li><li>Artemi Panarin (LAK) 1+0</li><li>Adrian Kempe (LAK) 0+1</li><li>Brandt Clarke (LAK) 0+1</li></ul></div>
+  <div class="block"><table><tr><th>Maalivahti</th><th>Torjunnat</th><th>Torj-%</th><th>GSAx</th><th>Aika</th></tr><tr><td>Darcy Kuemper (LAK)</td><td>30/32</td><td>0,938</td><td>–</td><td>61.20</td></tr><tr><td>Carter Hart (VGK)</td><td>26/27</td><td>0,963</td><td>–</td><td>62.40</td></tr></table></div>
+</article></div>
+<h2>Kausi tähän mennessä</h2><div class="season"><div class="game"><div class="block"><h3>Käynnissä olevat pisteputket</h3><table><tr><th>Pelaaja</th><th>Peliä</th><th>Tehot</th></tr><tr><td>Sebastian Aho (CAR)</td><td>5</td><td>5+4</td></tr><tr><td>Vasily Podkolzin (EDM)</td><td>5</td><td>5+2</td></tr><tr><td>Bo Horvat (NYI)</td><td>5</td><td>4+2</td></tr><tr><td>Connor McDavid (EDM)</td><td>5</td><td>3+10</td></tr><tr><td>Steven Stamkos (NSH)</td><td>5</td><td>3+4</td></tr><tr><td>Quinn Hughes (MIN)</td><td>5</td><td>2+5</td></tr><tr><td>Mikael Granlund (ANA)</td><td>5</td><td>2+5</td></tr><tr><td>Jackson Blake (CAR)</td><td>5</td><td>1+6</td></tr><tr><td>Nikita Kucherov (TBL)</td><td>5</td><td>1+7</td></tr><tr><td>Roman Josi (NSH)</td><td>5</td><td>1+5</td></tr></table></div></div><div class="game"><div class="block"><h3>Maaleja tulossa? (maalit selvästi alle ixG:n)</h3><table><tr><th>Pelaaja</th><th>O</th><th>M</th><th>ixG</th><th>Erotus</th></tr><tr><td>Will Cuylle (NYR)</td><td>6</td><td>0</td><td>2,43</td><td><span class="neg">−2,43</span></td></tr><tr><td>Sam Reinhart (FLA)</td><td>5</td><td>0</td><td>2,05</td><td><span class="neg">−2,05</span></td></tr><tr><td>Matt Boldy (MIN)</td><td>5</td><td>1</td><td>3,03</td><td><span class="neg">−2,03</span></td></tr><tr><td>Wyatt Johnston (DAL)</td><td>5</td><td>0</td><td>1,96</td><td><span class="neg">−1,96</span></td></tr><tr><td>William Carrier (CAR)</td><td>6</td><td>0</td><td>1,84</td><td><span class="neg">−1,84</span></td></tr><tr><td>Zach Benson (BUF)</td><td>5</td><td>0</td><td>1,83</td><td><span class="neg">−1,83</span></td></tr><tr><td>Lucas Raymond (DET)</td><td>5</td><td>0</td><td>1,83</td><td><span class="neg">−1,83</span></td></tr><tr><td>Gabriel Vilardi (WPG)</td><td>5</td><td>0</td><td>1,77</td><td><span class="neg">−1,77</span></td></tr></table></div></div><div class="game"><div class="block"><h3>Kuumat viimeistelijät (maalit yli ixG:n)</h3><table><tr><th>Pelaaja</th><th>O</th><th>M</th><th>ixG</th><th>Erotus</th></tr><tr><td>Evan Bouchard (EDM)</td><td>5</td><td>6</td><td>0,89</td><td><span class="pos">+5,11</span></td></tr><tr><td>Nick Schmaltz (UTA)</td><td>6</td><td>6</td><td>3,03</td><td><span class="pos">+2,97</span></td></tr><tr><td>Victor Olofsson (VGK)</td><td>4</td><td>4</td><td>1,06</td><td><span class="pos">+2,94</span></td></tr><tr><td>Kirill Kaprizov (MIN)</td><td>5</td><td>6</td><td>3,07</td><td><span class="pos">+2,93</span></td></tr><tr><td>Kyle Connor (WPG)</td><td>5</td><td>6</td><td>3,14</td><td><span class="pos">+2,86</span></td></tr><tr><td>Paul Cotter (VAN)</td><td>6</td><td>4</td><td>1,26</td><td><span class="pos">+2,74</span></td></tr><tr><td>Nathan MacKinnon (COL)</td><td>5</td><td>5</td><td>2,57</td><td><span class="pos">+2,43</span></td></tr><tr><td>Frederick Gaudreau (SEA)</td><td>5</td><td>3</td><td>0,73</td><td><span class="pos">+2,27</span></td></tr></table></div></div></div>
+<h2>Arkisto</h2><ul class="archive"><li><a href="2026-10-10.html">lauantai 10.10.2026</a> (tämä)</li><li><a href="2026-10-09.html">perjantai 9.10.2026</a></li></ul>
+<footer>
+xG-, GSAx- ja laukausdata: <a href="https://moneypuck.com">MoneyPuck.com</a>.
+Tulokset ja pelaajatilastot: NHL.com. Päivitetty 2026-10-11 08:13 UTC.<br>
+ixG = pelaajan laukausten odotetut maalit. GSAx = maalivahdin päästämät maalit verrattuna odotettuun
+(positiivinen = odotettua parempi). Vaarallinen paikka = laukaus, jonka xG on vähintään 0,20.
+Lähdekoodi: <a href="https://github.com/juhaopesonen/NHL-stats">GitHub</a>.
+</footer>
+</main></body></html>

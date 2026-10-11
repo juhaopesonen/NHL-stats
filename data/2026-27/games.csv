@@ -1,0 +1,84 @@
+game_id,date,game_type,away,home,away_name,home_name,away_score,home_score,away_sog,home_sog,last_period
+2026020001,2026-09-29,2,FLA,CAR,Florida Panthers,Carolina Hurricanes,1,0,20,15,OT
+2026020002,2026-09-29,2,MTL,TOR,Montréal Canadiens,Toronto Maple Leafs,3,2,24,28,REG
+2026020003,2026-09-29,2,NYR,BOS,New York Rangers,Boston Bruins,0,3,24,23,REG
+2026020004,2026-09-29,2,VAN,EDM,Vancouver Canucks,Edmonton Oilers,6,5,23,37,OT
+2026020005,2026-09-29,2,CHI,VGK,Chicago Blackhawks,Vegas Golden Knights,2,5,26,37,REG
+2026020006,2026-09-30,2,PIT,PHI,Pittsburgh Penguins,Philadelphia Flyers,7,0,38,19,REG
+2026020007,2026-09-30,2,LAK,COL,Los Angeles Kings,Colorado Avalanche,4,8,31,29,REG
+2026020008,2026-09-30,2,NYI,TOR,New York Islanders,Toronto Maple Leafs,1,2,27,26,REG
+2026020009,2026-10-01,2,PHI,NJD,Philadelphia Flyers,New Jersey Devils,2,3,25,44,OT
+2026020010,2026-10-01,2,TBL,NYR,Tampa Bay Lightning,New York Rangers,1,5,24,25,REG
+2026020011,2026-10-01,2,BUF,CBJ,Buffalo Sabres,Columbus Blue Jackets,3,6,26,23,REG
+2026020012,2026-10-01,2,MIN,NSH,Minnesota Wild,Nashville Predators,3,1,30,20,REG
+2026020013,2026-10-01,2,CHI,UTA,Chicago Blackhawks,Utah Mammoth,0,6,15,32,REG
+2026020014,2026-10-01,2,SEA,CGY,Seattle Kraken,Calgary Flames,6,1,32,25,REG
+2026020015,2026-10-01,2,EDM,VAN,Edmonton Oilers,Vancouver Canucks,9,7,31,22,REG
+2026020016,2026-10-01,2,FLA,SJS,Florida Panthers,San Jose Sharks,3,4,26,32,OT
+2026020017,2026-10-02,2,NYR,DET,New York Rangers,Detroit Red Wings,2,0,21,22,REG
+2026020018,2026-10-02,2,WSH,CAR,Washington Capitals,Carolina Hurricanes,5,2,27,33,REG
+2026020019,2026-10-02,2,BOS,WPG,Boston Bruins,Winnipeg Jets,4,3,30,33,OT
+2026020020,2026-10-02,2,STL,DAL,St. Louis Blues,Dallas Stars,4,0,24,25,REG
+2026020021,2026-10-02,2,ANA,VGK,Anaheim Ducks,Vegas Golden Knights,4,3,20,30,REG
+2026020022,2026-10-03,2,CHI,BUF,Chicago Blackhawks,Buffalo Sabres,3,4,15,28,REG
+2026020023,2026-10-03,2,OTT,TOR,Ottawa Senators,Toronto Maple Leafs,3,2,29,29,REG
+2026020024,2026-10-03,2,WSH,TBL,Washington Capitals,Tampa Bay Lightning,1,3,21,30,REG
+2026020025,2026-10-03,2,CAR,PHI,Carolina Hurricanes,Philadelphia Flyers,3,2,40,18,OT
+2026020026,2026-10-03,2,MTL,PIT,Montréal Canadiens,Pittsburgh Penguins,5,6,25,30,OT
+2026020027,2026-10-03,2,UTA,CBJ,Utah Mammoth,Columbus Blue Jackets,4,1,31,19,REG
+2026020028,2026-10-03,2,SEA,EDM,Seattle Kraken,Edmonton Oilers,1,3,20,26,REG
+2026020029,2026-10-03,2,NJD,NYI,New Jersey Devils,New York Islanders,0,6,37,32,REG
+2026020030,2026-10-03,2,DAL,NSH,Dallas Stars,Nashville Predators,1,2,30,26,REG
+2026020031,2026-10-03,2,BOS,MIN,Boston Bruins,Minnesota Wild,1,4,27,30,REG
+2026020032,2026-10-03,2,STL,COL,St. Louis Blues,Colorado Avalanche,1,6,26,36,REG
+2026020033,2026-10-03,2,CGY,VAN,Calgary Flames,Vancouver Canucks,1,4,24,26,REG
+2026020034,2026-10-03,2,LAK,SJS,Los Angeles Kings,San Jose Sharks,4,5,35,25,OT
+2026020035,2026-10-04,2,WPG,DET,Winnipeg Jets,Detroit Red Wings,3,2,27,36,REG
+2026020036,2026-10-04,2,UTA,NYR,Utah Mammoth,New York Rangers,2,4,30,22,REG
+2026020037,2026-10-04,2,FLA,ANA,Florida Panthers,Anaheim Ducks,2,3,31,20,OT
+2026020038,2026-10-04,2,CGY,SEA,Calgary Flames,Seattle Kraken,1,6,33,27,REG
+2026020039,2026-10-04,2,VGK,VAN,Vegas Golden Knights,Vancouver Canucks,3,2,28,20,REG
+2026020040,2026-10-05,2,PHI,TBL,Philadelphia Flyers,Tampa Bay Lightning,1,4,15,36,REG
+2026020041,2026-10-05,2,OTT,BOS,Ottawa Senators,Boston Bruins,4,1,24,19,REG
+2026020042,2026-10-05,2,WPG,PIT,Winnipeg Jets,Pittsburgh Penguins,3,2,35,31,REG
+2026020043,2026-10-05,2,SJS,DAL,San Jose Sharks,Dallas Stars,0,5,13,26,REG
+2026020044,2026-10-06,2,NSH,TOR,Nashville Predators,Toronto Maple Leafs,4,5,25,37,OT
+2026020045,2026-10-06,2,CAR,MTL,Carolina Hurricanes,Montréal Canadiens,6,4,33,20,REG
+2026020046,2026-10-06,2,OTT,DET,Ottawa Senators,Detroit Red Wings,3,5,25,36,REG
+2026020047,2026-10-06,2,UTA,NJD,Utah Mammoth,New Jersey Devils,5,3,31,33,REG
+2026020048,2026-10-06,2,NYI,NYR,New York Islanders,New York Rangers,2,5,19,24,REG
+2026020049,2026-10-06,2,MIN,BUF,Minnesota Wild,Buffalo Sabres,2,3,20,28,OT
+2026020050,2026-10-06,2,STL,CHI,St. Louis Blues,Chicago Blackhawks,2,4,27,21,REG
+2026020051,2026-10-06,2,VGK,SEA,Vegas Golden Knights,Seattle Kraken,6,2,28,27,REG
+2026020052,2026-10-06,2,FLA,LAK,Florida Panthers,Los Angeles Kings,2,1,30,20,REG
+2026020053,2026-10-07,2,PIT,WSH,Pittsburgh Penguins,Washington Capitals,3,5,30,27,REG
+2026020054,2026-10-07,2,COL,WPG,Colorado Avalanche,Winnipeg Jets,2,3,34,19,REG
+2026020055,2026-10-07,2,EDM,ANA,Edmonton Oilers,Anaheim Ducks,5,2,19,31,REG
+2026020056,2026-10-08,2,UTA,BOS,Utah Mammoth,Boston Bruins,1,6,37,22,REG
+2026020057,2026-10-08,2,DAL,BUF,Dallas Stars,Buffalo Sabres,4,0,18,26,REG
+2026020058,2026-10-08,2,NSH,MTL,Nashville Predators,Montréal Canadiens,5,2,20,33,REG
+2026020059,2026-10-08,2,PHI,OTT,Philadelphia Flyers,Ottawa Senators,1,2,29,26,REG
+2026020060,2026-10-08,2,MIN,TBL,Minnesota Wild,Tampa Bay Lightning,2,3,36,35,REG
+2026020061,2026-10-08,2,VAN,CAR,Vancouver Canucks,Carolina Hurricanes,2,7,20,33,REG
+2026020062,2026-10-08,2,CHI,NYI,Chicago Blackhawks,New York Islanders,1,4,23,19,REG
+2026020063,2026-10-08,2,SJS,STL,San Jose Sharks,St. Louis Blues,3,2,27,26,OT
+2026020064,2026-10-08,2,COL,CGY,Colorado Avalanche,Calgary Flames,7,3,30,29,REG
+2026020065,2026-10-08,2,TOR,VGK,Toronto Maple Leafs,Vegas Golden Knights,3,4,24,43,SO
+2026020066,2026-10-09,2,SEA,DET,Seattle Kraken,Detroit Red Wings,6,3,24,40,REG
+2026020067,2026-10-09,2,NYR,WSH,New York Rangers,Washington Capitals,1,3,22,27,REG
+2026020068,2026-10-09,2,PIT,CBJ,Pittsburgh Penguins,Columbus Blue Jackets,2,3,22,47,SO
+2026020069,2026-10-09,2,ANA,WPG,Anaheim Ducks,Winnipeg Jets,5,1,17,17,REG
+2026020070,2026-10-10,2,PHI,BOS,Philadelphia Flyers,Boston Bruins,1,5,15,32,REG
+2026020071,2026-10-10,2,VAN,NJD,Vancouver Canucks,New Jersey Devils,1,4,21,37,REG
+2026020072,2026-10-10,2,EDM,SJS,Edmonton Oilers,San Jose Sharks,3,1,20,20,REG
+2026020073,2026-10-10,2,MIN,FLA,Minnesota Wild,Florida Panthers,4,1,29,30,REG
+2026020074,2026-10-10,2,UTA,BUF,Utah Mammoth,Buffalo Sabres,4,1,30,24,REG
+2026020075,2026-10-10,2,DET,MTL,Detroit Red Wings,Montréal Canadiens,0,1,30,30,SO
+2026020076,2026-10-10,2,NSH,OTT,Nashville Predators,Ottawa Senators,2,3,18,20,SO
+2026020077,2026-10-10,2,DAL,PIT,Dallas Stars,Pittsburgh Penguins,1,2,25,20,SO
+2026020078,2026-10-10,2,CAR,CHI,Carolina Hurricanes,Chicago Blackhawks,5,2,39,26,REG
+2026020079,2026-10-10,2,CBJ,STL,Columbus Blue Jackets,St. Louis Blues,3,5,23,27,REG
+2026020080,2026-10-10,2,TOR,COL,Toronto Maple Leafs,Colorado Avalanche,6,3,23,33,REG
+2026020081,2026-10-10,2,TBL,NYI,Tampa Bay Lightning,New York Islanders,5,3,26,23,REG
+2026020082,2026-10-10,2,ANA,CGY,Anaheim Ducks,Calgary Flames,4,2,28,29,REG
+2026020083,2026-10-10,2,LAK,VGK,Los Angeles Kings,Vegas Golden Knights,1,2,27,32,OT
