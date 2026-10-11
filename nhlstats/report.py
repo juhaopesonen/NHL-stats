@@ -53,14 +53,23 @@ footer{margin-top:40px;color:var(--muted);font-size:13px;border-top:1px solid va
 .inj td,.inj th{text-align:left}
 .inj td:nth-child(5),.inj td:nth-child(6){white-space:nowrap}
 .inj .tag{font-size:11px;padding:1px 7px}
-details.section{margin-top:36px}
-details.section>summary{cursor:pointer;list-style:none;display:flex;align-items:baseline;gap:12px;flex-wrap:wrap}
-details.section>summary::-webkit-details-marker{display:none}
-details.section>summary h2{margin:0;display:inline}
-details.section>summary h2::before{content:"▸";display:inline-block;width:1.1em;color:var(--muted);transition:transform .15s}
-details.section[open]>summary h2::before{transform:rotate(90deg)}
-details.section>summary .sum{color:var(--muted);font-size:14px}
-details.section[open]>summary{margin-bottom:12px}
+.tiles{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:10px;margin:20px 0 28px}
+.tile{display:flex;flex-direction:column;gap:2px;background:var(--card);border:1px solid var(--line);border-radius:12px;
+padding:12px 14px;text-decoration:none;color:var(--text);transition:border-color .15s,background .15s}
+.tile:hover{border-color:var(--accent)}
+.tile.active{border-color:var(--accent);box-shadow:inset 0 0 0 1px var(--accent);background:var(--accent-soft)}
+.t-title{font-size:13px;font-weight:600;color:var(--muted)}
+.tile.active .t-title{color:var(--accent)}
+.t-big{font-size:26px;font-weight:700;line-height:1.15;font-variant-numeric:tabular-nums}
+.t-sub{font-size:12px;color:var(--muted);line-height:1.35}
+@media (max-width:520px){.tiles{grid-template-columns:repeat(2,1fr)}.t-big{font-size:22px}}
+.panel{scroll-margin-top:12px}
+.panel>h2{margin-top:0}
+.js .panel+.panel{margin-top:0}
+.panel+.panel{margin-top:36px}
+.totop{position:fixed;right:16px;bottom:16px;background:var(--accent);color:var(--bg);text-decoration:none;
+font-size:14px;font-weight:600;padding:8px 14px;border-radius:999px;box-shadow:0 2px 8px rgba(0,0,0,.2);display:none}
+.totop.show{display:block}
 details.more{margin-top:10px}
 details.more>summary{cursor:pointer;color:var(--accent);font-size:14px;margin-bottom:8px}
 .subhead{font-size:15px;margin:20px 0 10px}
@@ -107,12 +116,6 @@ def _insights_html(items: list[Insight], limit: int | None = None, per_kind: int
         html += (f'<details class="more"><summary>Kaikki nostot ({len(items)})</summary>'
                  f"{_insight_list(items)}</details>")
     return html
-
-
-def _section(title: str, anchor: str, summary: str, body: str) -> str:
-    """Suljettu osio, joka avautuu otsikkoa klikkaamalla."""
-    return (f'<details class="section" id="{anchor}"><summary><h2>{escape(title)}</h2>'
-            f'<span class="sum">{escape(summary)}</span></summary>{body}</details>')
 
 
 def _game_html(gm, skaters, goalies, xgt, xgg) -> str:
@@ -294,6 +297,41 @@ def _season_html(tables: dict[str, pd.DataFrame]) -> str:
     return f'<div class="season">{"".join(parts)}</div>'
 
 
+def _tile(panel: str, title: str, big: str, sub: str) -> str:
+    return (f'<a class="tile" href="#{panel}" data-panel="{panel}"><span class="t-title">{escape(title)}</span>'
+            f'<span class="t-big">{escape(big)}</span><span class="t-sub">{escape(sub)}</span></a>')
+
+
+# Ruudukko: yksi osio kerrallaan näkyvissä. Ilman JavaScriptiä kaikki osiot näkyvät allekkain.
+JS = """
+(function(){
+  var root=document.documentElement; root.classList.add('js');
+  var panels=[].slice.call(document.querySelectorAll('.panel'));
+  var tiles=[].slice.call(document.querySelectorAll('.tile'));
+  var current=null;
+  function show(id){
+    current=id;
+    panels.forEach(function(p){p.hidden=p.id!==id;});
+    tiles.forEach(function(t){t.classList.toggle('active',t.dataset.panel===id);});
+  }
+  function route(){
+    var h=decodeURIComponent(location.hash.slice(1));
+    var el=h?document.getElementById(h):null;
+    var panel=el?el.closest('.panel'):null;
+    if(panel){show(panel.id); if(el!==panel) el.scrollIntoView({block:'start'});}
+    else{ if(!current) show('nostot'); if(el) el.scrollIntoView({block:'start'}); }
+  }
+  tiles.forEach(function(t){t.addEventListener('click',function(e){
+    e.preventDefault(); show(t.dataset.panel); history.replaceState(null,'','#'+t.dataset.panel);
+  });});
+  window.addEventListener('hashchange',route); route();
+  var top=document.querySelector('.totop');
+  function onScroll(){top.classList.toggle('show',window.scrollY>400);}
+  window.addEventListener('scroll',onScroll,{passive:true}); onScroll();
+})();
+"""
+
+
 def _archive_html(current: date) -> str:
     files = sorted(REPORTS_DIR.glob("*.html"), reverse=True)
     links = []
@@ -312,14 +350,31 @@ def render(day: date, games, skaters, goalies, xg, items, tables, finns: set[int
     fin_night = skaters[(skaters.date == day.isoformat()) & skaters.player_id.isin(finns)]
     fin_goalies = goalies[(goalies.date == day.isoformat()) & goalies.player_id.isin(finns)]
     n_fin = len(fin_night) + len(fin_goalies)
-    finn_sum = (f"{n_fin} suomalaista pelasi, yhteensä {fin_night.goals.sum()}+{fin_night.assists.sum()}"
-                if n_fin else "ei suomalaisia yöllä")
-    inj_sum = "ei tietoja"
     if inj is not None and not inj.empty:
         star_ids = set(stars.player_id) if not stars.empty else set()
         shown = inj[inj.player_id.isin(finns) | inj.player_id.isin(star_ids)]
         new = int((shown.updated >= day.isoformat()).sum())
-        inj_sum = f"{len(shown)} suomalaista tai tähteä sivussa" + (f", {new} uutta" if new else "")
+        inj_big, inj_sub = str(len(shown)), "suomalaista tai tähteä sivussa" + (f" · {new} uutta" if new else "")
+    else:
+        inj_big, inj_sub = "–", "ei tietoja"
+    streaks = tables["streaks"]
+    if not streaks.empty:
+        lead = streaks.iloc[0]
+        season_big, season_sub = str(lead.streak), f"pisin pisteputki: {lead['name']}"
+    else:
+        season_big, season_sub = "–", "kauden taulukot"
+    finn_big = str(n_fin)
+    finn_sub = (f"suomalaista pelasi · {fin_night.goals.sum()}+{fin_night.assists.sum()}"
+                if n_fin else "suomalaista pelasi")
+    top_kind = _by_kind(items)[0].kind.lower() if items else ""
+    tiles = "".join(_tile(*t) for t in (
+        ("nostot", "Yön nostot", str(len(items)), f"nostoa · kärjessä {top_kind}" if items else "nostoa"),
+        ("ottelut", "Ottelut", str(len(night)), "ottelua · xG ja maalivahdit"),
+        ("suomalaiset", "Suomalaisnurkkaus", finn_big, finn_sub),
+        ("loukkaantumiset", "Loukkaantumiset", inj_big, inj_sub),
+        ("kausi", "Kausi", season_big, season_sub),
+        ("arkisto", "Arkisto", "{ARCHIVE_COUNT}", "aiempaa raporttia"),
+    ))
     cards = "".join(_game_html(gm, skaters, goalies, xg["xg_teams"], xg["xg_goalies"])
                     for _, gm in night.iterrows())
     updated = datetime.now(timezone.utc).strftime("%Y-%m-%d %H:%M UTC")
@@ -330,15 +385,16 @@ def render(day: date, games, skaters, goalies, xg, items, tables, finns: set[int
 <meta name="description" content="NHL:n yön otteluiden syvädata ja nostot: xG, putket ja poikkeamat.">
 <style>{CSS}</style></head>
 <body><main>
-<header><h1>NHL-yöraportti</h1>
+<header id="top"><h1>NHL-yöraportti</h1>
 <p class="sub">Ottelut {day_fi(day)} (Pohjois-Amerikan aikaa) · {len(night)} ottelua</p></header>
-<h2>Yön nostot</h2>{_insights_html(items, INSIGHTS_TOP, INSIGHTS_PER_KIND)}
-{_section("Suomalaisnurkkaus", "suomalaiset", finn_sum,
-          _finn_html(day.isoformat(), skaters, goalies, xg, items, tables, finns, inj))}
-{_section("Loukkaantumiset", "loukkaantumiset", inj_sum, _injuries_html(day.isoformat(), inj, finns, stars))}
-<h2>Ottelut</h2>{f'<div class="games">{cards}</div>' if cards else '<p class="empty">Ei pelattuja otteluita.</p>'}
-<h2>Kausi tähän mennessä</h2>{_season_html(tables)}
-<h2>Arkisto</h2>{{ARCHIVE}}
+<nav class="tiles" id="valikko">{tiles}</nav>
+<section class="panel" id="nostot"><h2>Yön nostot</h2>{_insights_html(items, INSIGHTS_TOP, INSIGHTS_PER_KIND)}</section>
+<section class="panel" id="ottelut"><h2>Ottelut</h2>{f'<div class="games">{cards}</div>' if cards else '<p class="empty">Ei pelattuja otteluita.</p>'}</section>
+<section class="panel" id="suomalaiset"><h2>Suomalaisnurkkaus</h2>{_finn_html(day.isoformat(), skaters, goalies, xg, items, tables, finns, inj)}</section>
+<section class="panel" id="loukkaantumiset"><h2>Loukkaantumiset</h2>{_injuries_html(day.isoformat(), inj, finns, stars)}</section>
+<section class="panel" id="kausi"><h2>Kausi tähän mennessä</h2>{_season_html(tables)}</section>
+<section class="panel" id="arkisto"><h2>Arkisto</h2>{{ARCHIVE}}</section>
+<a class="totop" href="#valikko">↑ Valikko</a>
 <footer>
 xG-, GSAx- ja laukausdata: <a href="https://moneypuck.com">MoneyPuck.com</a>.
 Tulokset ja pelaajatilastot: NHL.com. Loukkaantumiset: ESPN / RotoWire (paluuarviot ovat suuntaa-antavia). Päivitetty {updated}.<br>
@@ -346,7 +402,7 @@ ixG = pelaajan laukausten odotetut maalit. GSAx = maalivahdin päästämät maal
 (positiivinen = odotettua parempi). Vaarallinen paikka = laukaus, jonka xG on vähintään 0,20.
 Lähdekoodi: <a href="https://github.com/juhaopesonen/NHL-stats">GitHub</a>.
 </footer>
-</main></body></html>"""
+</main><script>{JS}</script></body></html>"""
 
 
 def write(day: date, html: str) -> None:
@@ -356,6 +412,8 @@ def write(day: date, html: str) -> None:
     # Arkistoraportin linkit osoittavat sisarsivuihin, etusivun linkit raportit/-kansioon
     report.write_text("", encoding="utf-8")
     archive = _archive_html(day)
+    earlier = sum(1 for f in REPORTS_DIR.glob("*.html") if f.stem < day.isoformat())
+    html = html.replace("{ARCHIVE_COUNT}", str(earlier))
     report.write_text(html.replace("{ARCHIVE}", archive.replace('href="raportit/', 'href="')),
                       encoding="utf-8")
     # Etusivu näyttää aina uusimman raportin
