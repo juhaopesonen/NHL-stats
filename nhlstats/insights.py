@@ -13,6 +13,7 @@ class Insight:
     text: str
     score: float    # suurempi = tärkeämpi
     game_id: int | None = None
+    player_id: int | None = None
 
 
 def _trailing(values, predicate) -> int:
@@ -35,6 +36,7 @@ def player_insights(day: str, skaters: pd.DataFrame) -> list[Insight]:
         who = f"{last['name']} ({last.team})"
         pts, goals = g.points.tolist(), g.goals.tolist()
         gid = int(last.game_id)
+        start = len(out)
 
         streak = _trailing(pts, lambda v: v > 0)
         if streak >= c.POINT_STREAK_SOLO:
@@ -88,6 +90,9 @@ def player_insights(day: str, skaters: pd.DataFrame) -> list[Insight]:
                     f"{who} pelasi vain {toi(last.toi)}, kun aiempi keskiarvo on {toi(avg)}.",
                     28, gid))
 
+        for item in out[start:]:
+            item.player_id = int(last.player_id)
+
     if grouped:
         grouped.sort(key=lambda x: (-x[0], x[1]))
         names = ", ".join(f"{who} {n}" for n, who in grouped)
@@ -115,11 +120,11 @@ def xg_insights(day: str, games: pd.DataFrame, skaters: pd.DataFrame,
                 f"{who} jäi ilman maalia, vaikka laukauksista kertyi {num(p.ixg)} "
                 f"odotettua maalia (ixG, {p.attempts} laukausyritystä, "
                 f"{p.hd_attempts} vaarallista).",
-                50 + 30 * (p.ixg - c.UNLUCKY_IXG), int(p.game_id)))
+                50 + 30 * (p.ixg - c.UNLUCKY_IXG), int(p.game_id), int(p.player_id)))
         elif p.goals >= 2 and p.goals - p.ixg >= c.FINISHER_MARGIN:
             out.append(Insight("Viimeistelijä",
                 f"{who} teki {p.goals} maalia vain {num(p.ixg)} ixG:n laukauksista.",
-                45 + 10 * (p.goals - p.ixg), int(p.game_id)))
+                45 + 10 * (p.goals - p.ixg), int(p.game_id), int(p.player_id)))
 
     for _, gm in night.iterrows():
         t = xgt[xgt.game_id == gm.game_id].set_index("team")
@@ -143,11 +148,11 @@ def xg_insights(day: str, games: pd.DataFrame, skaters: pd.DataFrame,
         if g.gsax >= c.GOALIE_GSAX:
             out.append(Insight("Maalivahti",
                 f"{who} torjui {line} ja päästi {num(g.gsax)} maalia odotettua vähemmän (GSAx).",
-                50 + 10 * g.gsax, int(g.game_id)))
+                50 + 10 * g.gsax, int(g.game_id), int(g.player_id)))
         elif g.gsax <= -c.GOALIE_GSAX:
             out.append(Insight("Maalivahti",
                 f"{who}: vaikea ilta, {line} ja {num(-g.gsax)} maalia odotettua enemmän (GSAx {num(g.gsax)}).",
-                40 + 5 * -g.gsax, int(g.game_id)))
+                40 + 5 * -g.gsax, int(g.game_id), int(g.player_id)))
     return out
 
 
@@ -157,8 +162,24 @@ def build(day, games, skaters, goalies, xg) -> list[Insight]:
     return sorted(items, key=lambda i: i.score, reverse=True)
 
 
-def season_tables(day: str, skaters: pd.DataFrame, xgp: pd.DataFrame) -> dict[str, pd.DataFrame]:
-    """Kauden taulukot: käynnissä olevat pisteputket ja xG-yli/alisuoriutujat."""
+def finn_season(season: pd.DataFrame, xgp: pd.DataFrame, finns: set[int]) -> pd.DataFrame:
+    """Suomalaisten kenttäpelaajien kausitilastot pistejärjestyksessä."""
+    fin = season[season.player_id.isin(finns)]
+    if not xgp.empty:
+        fin = fin.merge(xgp[["game_id", "player_id", "ixg"]], on=["game_id", "player_id"], how="left")
+    else:
+        fin = fin.assign(ixg=float("nan"))
+    tot = fin.groupby("player_id").agg(
+        name=("name", "last"), team=("team", "last"), gp=("game_id", "size"),
+        goals=("goals", "sum"), assists=("assists", "sum"), points=("points", "sum"),
+        ixg=("ixg", lambda s: s.fillna(0).sum()), toi=("toi", "mean"),
+        streak=("points", lambda s: _trailing(s.tolist(), lambda v: v > 0))).reset_index()
+    return tot.sort_values(["points", "goals", "toi"], ascending=False)
+
+
+def season_tables(day: str, skaters: pd.DataFrame, xgp: pd.DataFrame,
+                  finns: set[int] = frozenset()) -> dict[str, pd.DataFrame]:
+    """Kauden taulukot: pisteputket, xG-yli/alisuoriutujat ja suomalaiset."""
     season = skaters[skaters.date <= day].sort_values(["date", "game_id"])
     rows = []
     for pid, g in season.groupby("player_id", sort=False):
@@ -170,7 +191,7 @@ def season_tables(day: str, skaters: pd.DataFrame, xgp: pd.DataFrame) -> dict[st
     streaks = pd.DataFrame(rows, columns=["name", "team", "streak", "goals", "assists"])
     streaks = streaks.sort_values(["streak", "goals"], ascending=False).head(10)
 
-    tables = {"streaks": streaks}
+    tables = {"streaks": streaks, "finns": finn_season(season, xgp, finns)}
     if not xgp.empty:
         # Mukaan kaikki pelatut ottelut, joille xG-data on olemassa (ei laukauksia = ixG 0)
         merged = season[season.game_id.isin(xgp.game_id.unique())].merge(

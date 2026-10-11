@@ -24,6 +24,17 @@ def games_on(day: date) -> list[dict]:
     return http.get(f"{WEB}/score/{day.isoformat()}").json().get("games", [])
 
 
+def roster_countries(team: str) -> dict[int, str]:
+    """Joukkueen nykyisen rosterin pelaajien syntymämaat (esim. FIN)."""
+    roster = http.get(f"{WEB}/roster/{team}/current").json()
+    return {p["id"]: p.get("birthCountry", "")
+            for group in ("forwards", "defensemen", "goalies") for p in roster.get(group, [])}
+
+
+def player_country(player_id: int) -> str:
+    return http.get(f"{WEB}/player/{player_id}/landing").json().get("birthCountry", "")
+
+
 def _toi_seconds(toi: str | None) -> int:
     if not toi:
         return 0

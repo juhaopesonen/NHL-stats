@@ -43,6 +43,32 @@ def fetch_boxscores(season_id: int, until: date) -> None:
         day += timedelta(days=1)
 
 
+def update_countries(skaters: pd.DataFrame, goalies: pd.DataFrame) -> pd.DataFrame:
+    """Hakee syntymämaan pelaajille, joita ei vielä ole data/players.csv:ssä."""
+    known = storage.load_players()
+    played = pd.concat([skaters[["player_id", "team"]], goalies[["player_id", "team"]]])
+    missing = set(played.player_id) - set(known.player_id)
+    if not missing:
+        return known
+    found: dict[int, str] = {}
+    for team in sorted(set(played[played.player_id.isin(missing)].team)):
+        try:
+            found.update(nhl_api.roster_countries(team))
+        except Exception as e:
+            print(f"Rosterin {team} haku epäonnistui: {e}")
+    # Rosterista puuttuvat (siirretyt, alas lähetetyt) haetaan yksitellen
+    for pid in missing - found.keys():
+        try:
+            found[pid] = nhl_api.player_country(pid)
+        except Exception as e:
+            print(f"Pelaajan {pid} haku epäonnistui: {e}")
+    new = pd.DataFrame([{"player_id": p, "birth_country": found[p]} for p in missing if p in found])
+    players = pd.concat([known, new], ignore_index=True)
+    storage.save_players(players)
+    print(f"Syntymämaat: {len(new)} uutta pelaajaa")
+    return players
+
+
 def main() -> None:
     parser = argparse.ArgumentParser(description="NHL-yöraportti")
     parser.add_argument("--date", type=date.fromisoformat, default=None,
@@ -81,9 +107,12 @@ def main() -> None:
     xg = {k: (v if not v.empty else pd.DataFrame(columns=["game_id", "player_id", "team"]))
           for k, v in xg.items()}
 
+    players = storage.load_players() if args.no_fetch else update_countries(skaters, goalies)
+    finns = set(players[players.birth_country == "FIN"].player_id)
+
     items = insights.build(day.isoformat(), games, skaters, goalies, xg)
-    tables = insights.season_tables(day.isoformat(), skaters, xg["xg_players"])
-    report.write(day, report.render(day, games, skaters, goalies, xg, items, tables))
+    tables = insights.season_tables(day.isoformat(), skaters, xg["xg_players"], finns)
+    report.write(day, report.render(day, games, skaters, goalies, xg, items, tables, finns))
     print(f"Raportti {day}: {len(items)} nostoa -> docs/raportit/{day}.html")
 
 

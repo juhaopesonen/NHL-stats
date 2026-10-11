@@ -41,6 +41,21 @@ def upsert_games(season_id: int, name: str, rows: list[dict]) -> None:
     save(season_id, name, new)
 
 
+PLAYERS_FILE = DATA_DIR / "players.csv"
+
+
+def load_players() -> pd.DataFrame:
+    """Pelaajien syntymämaat (kaudesta riippumaton)."""
+    if not PLAYERS_FILE.exists():
+        return pd.DataFrame(columns=["player_id", "birth_country"])
+    return pd.read_csv(PLAYERS_FILE, keep_default_na=False)
+
+
+def save_players(df: pd.DataFrame) -> None:
+    DATA_DIR.mkdir(parents=True, exist_ok=True)
+    df.sort_values("player_id").to_csv(PLAYERS_FILE, index=False, lineterminator="\n")
+
+
 def processed_dates(season_id: int) -> set[str]:
     path = season_dir(season_id) / "processed_dates.txt"
     if not path.exists():

@@ -45,6 +45,10 @@ th{color:var(--muted);font-weight:500;border-bottom:1px solid var(--line)}
 .archive{columns:3 160px;padding-left:18px}
 footer{margin-top:40px;color:var(--muted);font-size:13px;border-top:1px solid var(--line);padding-top:12px}
 .empty{color:var(--muted)}
+.game{overflow-x:auto}
+.subhead{font-size:15px;margin:20px 0 10px}
+#suomalaiset + .insights{margin-bottom:14px}
+.game td a{color:inherit;text-decoration:none;border-bottom:1px dotted var(--muted)}
 @media (max-width:520px){.insights li{flex-wrap:wrap}.insights a{margin-left:0}}
 """
 
@@ -117,6 +121,79 @@ def _game_html(gm, skaters, goalies, xgt, xgg) -> str:
 </article>"""
 
 
+DECISIONS = {"W": "voitto", "L": "tappio", "O": "JA-tappio"}
+
+
+def _table(title: str, head: list[str], rows: list[list[str]]) -> str:
+    th = "".join(f"<th>{h}</th>" for h in head)
+    body = "".join("<tr>" + "".join(f"<td>{c}</td>" for c in r) + "</tr>" for r in rows)
+    return (f'<div class="game"><div class="block"><h3>{escape(title)}</h3>'
+            f"<table><tr>{th}</tr>{body}</table></div></div>")
+
+
+def _finn_html(day: str, skaters, goalies, xg, items: list[Insight], tables, finns: set[int]) -> str:
+    xgp, xgg = xg["xg_players"], xg["xg_goalies"]
+    sk = skaters[(skaters.date == day) & skaters.player_id.isin(finns)]
+    gl = goalies[(goalies.date == day) & goalies.player_id.isin(finns)]
+    parts = []
+
+    own = [i for i in items if i.player_id in finns]
+    if own:
+        parts.append(_insights_html(own))
+
+    cards = []
+    if not sk.empty:
+        if not xgp.empty:
+            sk = sk.merge(xgp[["game_id", "player_id", "ixg"]], on=["game_id", "player_id"], how="left")
+        else:
+            sk = sk.assign(ixg=float("nan"))
+        sk = sk.sort_values(["points", "goals", "toi"], ascending=False)
+        rows = [[f'<a href="#g{p.game_id}">{escape(p["name"])}</a> ({escape(p.team)}–{escape(p.opp)})',
+                 str(p.goals), str(p.assists), f"<b>{p.points}</b>", str(p.sog),
+                 num(p.ixg) if pd.notna(p.ixg) else "–", toi(p.toi)] for _, p in sk.iterrows()]
+        cards.append(_table("Yön suomalaiset", ["Pelaaja", "M", "S", "P", "L", "ixG", "Aika"], rows))
+    if not gl.empty:
+        if not xgg.empty:
+            gl = gl.merge(xgg[["game_id", "player_id", "gsax"]], on=["game_id", "player_id"], how="left")
+        rows = []
+        for _, g in gl.iterrows():
+            sv = g.saves / g.shots_against if g.shots_against else 0
+            gsax = _signed(g.gsax) if "gsax" in g and pd.notna(g.gsax) else "–"
+            rows.append([f'<a href="#g{g.game_id}">{escape(g["name"])}</a> ({escape(g.team)}–{escape(g.opp)})',
+                         f"{g.saves}/{g.shots_against}", num(sv, 3), gsax,
+                         DECISIONS.get(g.decision, "–") if isinstance(g.decision, str) else "–"])
+        cards.append(_table("Yön suomalaismaalivahdit", ["Maalivahti", "Torjunnat", "Torj-%", "GSAx", "Tulos"], rows))
+    if not cards:
+        cards.append('<p class="empty">Yöllä ei pelannut suomalaisia.</p>')
+    parts.append(f'<div class="season">{"".join(cards)}</div>')
+
+    season_cards = []
+    fs = tables["finns"]
+    if not fs.empty:
+        rows = [[f'{escape(r["name"])} ({escape(r.team)})', str(r.gp), str(r.goals), str(r.assists),
+                 f"<b>{r.points}</b>", num(r.ixg), toi(r.toi), str(r.streak) if r.streak >= 2 else ""]
+                for _, r in fs.head(15).iterrows()]
+        season_cards.append(_table("Suomalaisten pistepörssi",
+                                   ["Pelaaja", "O", "M", "S", "P", "ixG", "Aika/O", "Putki"], rows))
+    sg = goalies[(goalies.date <= day) & goalies.player_id.isin(finns)]
+    if not sg.empty:
+        if not xgg.empty:
+            sg = sg.merge(xgg[["game_id", "player_id", "gsax"]], on=["game_id", "player_id"], how="left")
+        else:
+            sg = sg.assign(gsax=float("nan"))
+        tot = sg.groupby("player_id").agg(
+            name=("name", "last"), team=("team", "last"), gp=("game_id", "size"),
+            wins=("decision", lambda s: (s == "W").sum()), saves=("saves", "sum"),
+            shots=("shots_against", "sum"), gsax=("gsax", lambda s: s.fillna(0).sum())
+        ).sort_values("gp", ascending=False)
+        rows = [[f'{escape(r["name"])} ({escape(r.team)})', str(r.gp), str(r.wins),
+                 num(r.saves / r.shots if r.shots else 0, 3), _signed(r.gsax)] for _, r in tot.iterrows()]
+        season_cards.append(_table("Suomalaismaalivahdit kaudella", ["Maalivahti", "O", "V", "Torj-%", "GSAx"], rows))
+    if season_cards:
+        parts.append(f'<h3 class="subhead">Kausi tähän mennessä</h3><div class="season">{"".join(season_cards)}</div>')
+    return "".join(parts)
+
+
 def _season_html(tables: dict[str, pd.DataFrame]) -> str:
     parts = []
     s = tables["streaks"]
@@ -148,7 +225,7 @@ def _archive_html(current: date) -> str:
     return f'<ul class="archive">{"".join(links)}</ul>'
 
 
-def render(day: date, games, skaters, goalies, xg, items, tables) -> str:
+def render(day: date, games, skaters, goalies, xg, items, tables, finns: set[int] = frozenset()) -> str:
     night = games[games.date == day.isoformat()].sort_values("game_id")
     cards = "".join(_game_html(gm, skaters, goalies, xg["xg_teams"], xg["xg_goalies"])
                     for _, gm in night.iterrows())
@@ -163,6 +240,7 @@ def render(day: date, games, skaters, goalies, xg, items, tables) -> str:
 <header><h1>NHL-yöraportti</h1>
 <p class="sub">Ottelut {day_fi(day)} (Pohjois-Amerikan aikaa) · {len(night)} ottelua</p></header>
 <h2>Yön nostot</h2>{_insights_html(items)}
+<h2 id="suomalaiset">Suomalaisnurkkaus</h2>{_finn_html(day.isoformat(), skaters, goalies, xg, items, tables, finns)}
 <h2>Ottelut</h2>{f'<div class="games">{cards}</div>' if cards else '<p class="empty">Ei pelattuja otteluita.</p>'}
 <h2>Kausi tähän mennessä</h2>{_season_html(tables)}
 <h2>Arkisto</h2>{{ARCHIVE}}

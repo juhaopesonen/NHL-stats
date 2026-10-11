@@ -11,6 +11,8 @@ tekee suomenkielisen HTML-raportin, joka nostaa esiin kiinnostavia yksityiskohti
 - **Maalivahdit:** GSAx (päästetyt maalit vs. odotettu) yli ±2
 - **Isot illat ja hattutemput, poikkeava peliaika**
 - **Kausitaulukot:** käynnissä olevat pisteputket, xG-ali- ja ylisuoriutujat
+- **Suomalaisnurkkaus:** yön suomalaiset kenttäpelaajat ja maalivahdit, heitä koskevat nostot
+  sekä suomalaisten pistepörssi ja maalivahtitilastot kaudelta
 
 Raportti julkaistaan GitHub Pagesissa: <https://juhaopesonen.github.io/NHL-stats/>
 
@@ -18,7 +20,7 @@ Raportti julkaistaan GitHub Pagesissa: <https://juhaopesonen.github.io/NHL-stats
 
 | Lähde | Käyttö |
 |---|---|
-| [NHL:n avoin rajapinta](https://api-web.nhle.com) | Ottelut, tulokset, boxscoret, pelaajien nimet |
+| [NHL:n avoin rajapinta](https://api-web.nhle.com) | Ottelut, tulokset, boxscoret, pelaajien nimet ja syntymämaat |
 | [MoneyPuck.com](https://moneypuck.com/data.htm) | Laukaustason data ja xG-malli → ixG, joukkueiden xG, 5v5-xG, vaaralliset paikat, GSAx |
 
 MoneyPuckin data on vapaasti käytettävissä ei-kaupalliseen käyttöön, kun MoneyPuck.com
@@ -52,10 +54,15 @@ nhlstats/
   report.py     HTML-raportti
   config.py     raja-arvot (esim. pisteputken pituus, ixG-raja)
 data/2026-27/   tallennettu data (games, skaters, goalies, xg_*)
+data/players.csv  pelaajien syntymämaat (suomalaiset = FIN)
 docs/           GitHub Pages: index.html = uusin raportti, raportit/ = arkisto
 ```
 
 Nostojen herkkyyttä säädetään tiedostossa `nhlstats/config.py`.
+
+Suomalaiset tunnistetaan NHL:n ilmoittamasta syntymämaasta. Ulkomailla syntynyt
+suomalainen jää siis pois – sen voi korjata muuttamalla pelaajan maaksi `FIN`
+tiedostossa `data/players.csv`.
 
 ## Automaatio
 
