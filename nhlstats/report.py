@@ -170,7 +170,7 @@ def _game_html(gm, skaters, goalies, xgt, xgg) -> str:
     scorers = skaters[(skaters.game_id == gid) & (skaters.points > 0)].sort_values(
         ["points", "goals"], ascending=False)
     pl = "".join(
-        f"<li>{escape(p['name'])} ({escape(p.team)}) {p.goals}+{p.assists}</li>"
+        f"<li>{escape(p['name'])} ({escape(p.team)}) {p.goals}+{p.assists} ({_pm(p.plus_minus)})</li>"
         for _, p in scorers.head(6).iterrows()) or "<li>–</li>"
 
     gl = goalies[goalies.game_id == gid]
@@ -210,7 +210,7 @@ def _pm(value) -> str:
     """Plus/miinus värillisenä (+2 vihreä, −1 punainen)."""
     v = int(value)
     cls = "pos" if v > 0 else "neg" if v < 0 else ""
-    return f'<span class="{cls}">{"+" if v > 0 else "−" if v < 0 else ""}{abs(v)}</span>'
+    return f'<span class="{cls}">{"+" if v > 0 else "−" if v < 0 else "±"}{abs(v)}</span>'
 
 
 def _pp(seconds) -> str:
