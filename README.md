@@ -12,7 +12,7 @@ tekee suomenkielisen HTML-raportin, joka nostaa esiin kiinnostavia yksityiskohti
 - **Isot illat ja hattutemput, poikkeava peliaika**
 - **Kausitaulukot:** käynnissä olevat pisteputket, xG-ali- ja ylisuoriutujat, top 10 maalivahdit (GSAx)
 - **Suomalaisnurkkaus:** yön suomalaiset kenttäpelaajat ja maalivahdit, heitä koskevat nostot
-  ylivoima-aikoineen ja yön 5v5 xG puolesta/vastaan sekä suomalaisten pistepörssi (mm. 5v5 xG% jäällä ollessa ja ero
+  plus/miinuksineen, ylivoima-aikoineen ja yön 5v5 xG puolesta/vastaan sekä suomalaisten pistepörssi (mm. 5v5 xG% jäällä ollessa ja ero
   joukkueeseen pelaajan ollessa vaihdossa) ja maalivahtitilastot
 - **Loukkaantumiset:** yöllä pelanneet, joista tuli pelin jälkeen loukkaantumisilmoitus
   (esim. poikkeuksellisen lyhyt peliaika) sekä sivussa olevat suomalaiset ja tähtipelaajat

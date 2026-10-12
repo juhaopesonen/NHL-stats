@@ -212,6 +212,7 @@ def finn_season(season: pd.DataFrame, xgp: pd.DataFrame, finns: set[int],
     tot = fin.groupby("player_id").agg(
         name=("name", "last"), team=("team", "last"), gp=("game_id", "size"),
         goals=("goals", "sum"), assists=("assists", "sum"), points=("points", "sum"),
+        plus_minus=("plus_minus", "sum"),
         ixg=("ixg", lambda s: s.fillna(0).sum()), toi=("toi", "mean"), pp_toi=("pp_toi", "mean"),
         streak=("points", lambda s: _trailing(s.tolist(), lambda v: v > 0))).reset_index()
     cols = ["onice_xgf", "onice_xga", "onice_xg_pct", "office_xg_pct"]

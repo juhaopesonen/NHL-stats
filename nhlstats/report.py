@@ -206,6 +206,13 @@ def _table(title: str, head: list[str], rows: list[list[str]], cls: str = "") ->
             f"<table><tr>{th}</tr>{body}</table></div></div>")
 
 
+def _pm(value) -> str:
+    """Plus/miinus värillisenä (+2 vihreä, −1 punainen)."""
+    v = int(value)
+    cls = "pos" if v > 0 else "neg" if v < 0 else ""
+    return f'<span class="{cls}">{"+" if v > 0 else "−" if v < 0 else ""}{abs(v)}</span>'
+
+
 def _pp(seconds) -> str:
     """Ylivoima-aika; viiva, jos tietoa ei (vielä) ole."""
     return toi(seconds) if seconds is not None and pd.notna(seconds) else "–"
@@ -259,10 +266,10 @@ def _finn_html(day: str, skaters, goalies, xg, items: list[Insight], tables, fin
             sk = sk.assign(xgf_5v5=float("nan"), xga_5v5=float("nan"))
         sk = sk.sort_values(["points", "goals", "toi"], ascending=False)
         rows = [[f'<a href="#g{p.game_id}">{escape(p["name"])}</a> ({escape(p.team)}–{escape(p.opp)})',
-                 str(p.goals), str(p.assists), f"<b>{p.points}</b>", str(p.sog),
+                 str(p.goals), str(p.assists), f"<b>{p.points}</b>", _pm(p.plus_minus), str(p.sog),
                  num(p.ixg) if pd.notna(p.ixg) else "–", toi(p.toi), _pp(p.get("pp_toi")),
                  *_night_5v5(p.xgf_5v5, p.xga_5v5)] for _, p in sk.iterrows()]
-        cards.append(_table("Yön suomalaiset", ["Pelaaja", "M", "S", "P", "L", "ixG", "Aika", "YV min",
+        cards.append(_table("Yön suomalaiset", ["Pelaaja", "M", "S", "P", "+/−", "L", "ixG", "Aika", "YV min",
                                                 "5v5 xGF–xGA", "5v5 xG%"], rows, "wide"))
     if not gl.empty:
         if not xgg.empty:
@@ -283,10 +290,10 @@ def _finn_html(day: str, skaters, goalies, xg, items: list[Insight], tables, fin
     fs = tables["finns"]
     if not fs.empty:
         rows = [[f'{escape(r["name"])} ({escape(r.team)})', str(r.gp), str(r.goals), str(r.assists),
-                 f"<b>{r.points}</b>", num(r.ixg), toi(r.toi), _pp(r.pp_toi), *_onice(r), str(r.streak) if r.streak >= 2 else ""]
+                 f"<b>{r.points}</b>", _pm(r.plus_minus), num(r.ixg), toi(r.toi), _pp(r.pp_toi), *_onice(r), str(r.streak) if r.streak >= 2 else ""]
                 for _, r in fs.head(15).iterrows()]
         season_cards.append(_table("Suomalaisten pistepörssi",
-                                   ["Pelaaja", "O", "M", "S", "P", "ixG", "Aika/O", "YV min/O", "5v5 xGF–xGA", "5v5 xG%", "vs. tiimi", "Putki"], rows, "wide"))
+                                   ["Pelaaja", "O", "M", "S", "P", "+/−", "ixG", "Aika/O", "YV min/O", "5v5 xGF–xGA", "5v5 xG%", "vs. tiimi", "Putki"], rows, "wide"))
     sg = goalies[(goalies.date <= day) & goalies.player_id.isin(finns)]
     if not sg.empty:
         if not xgg.empty:
