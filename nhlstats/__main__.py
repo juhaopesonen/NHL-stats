@@ -6,7 +6,7 @@ from zoneinfo import ZoneInfo
 
 import pandas as pd
 
-from . import injuries, insights, moneypuck, nhl_api, onice, report, storage
+from . import feed, injuries, insights, moneypuck, nhl_api, onice, report, storage
 
 
 def default_day() -> date:
@@ -213,6 +213,8 @@ def main() -> None:
     tables = insights.season_tables(day.isoformat(), skaters, xg["xg_players"], finns,
                                     storage.load(season_id, "onice_5v5"), goalies, xg["xg_goalies"])
     report.write(day, report.render(day, games, skaters, goalies, xg, items, tables, finns, inj, stars))
+    feed.update(day, int((games.date == day.isoformat()).sum()),
+                [i.text for i in report.top_insights(items, limit=5)], report.finn_summary(day, skaters, goalies, finns))
     print(f"Raportti {day}: {len(items)} nostoa -> docs/raportit/{day}.html")
 
 

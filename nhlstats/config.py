@@ -6,6 +6,7 @@ DATA_DIR = ROOT / "data"
 DOCS_DIR = ROOT / "docs"
 REPORTS_DIR = DOCS_DIR / "raportit"
 
+SITE_URL = "https://juhaopesonen.github.io/NHL-stats/"
 USER_AGENT = "NHL-stats (+https://github.com/juhaopesonen/NHL-stats)"
 REQUEST_DELAY = 0.25  # sekuntia pyyntöjen välissä, ettei rajapintoja kuormiteta
 

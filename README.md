@@ -21,6 +21,9 @@ tekee suomenkielisen HTML-raportin, joka nostaa esiin kiinnostavia yksityiskohti
 
 Raportti julkaistaan GitHub Pagesissa: <https://juhaopesonen.github.io/NHL-stats/>
 
+Uudet raportit voi tilata RSS-syötteenä: <https://juhaopesonen.github.io/NHL-stats/feed.xml>
+(esim. Feedly, Inoreader tai Outlook; sähköpostiin esim. Blogtrottr tai FeedRabbit).
+
 ## Datalähteet
 
 | Lähde | Käyttö |
@@ -59,6 +62,7 @@ nhlstats/
   storage.py    CSV-tallennus kausittain
   insights.py   nostojen säännöt ja kausitaulukot
   report.py     HTML-raportti
+  feed.py       RSS-syöte (docs/feed.xml, tiivistelmät data/feed_items.json)
   config.py     raja-arvot (esim. pisteputken pituus, ixG-raja)
 data/2026-27/   tallennettu data (games, skaters, goalies, xg_*)
 data/players.csv  pelaajien syntymämaat (suomalaiset = FIN)

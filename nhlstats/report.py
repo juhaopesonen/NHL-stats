@@ -4,7 +4,7 @@ from html import escape
 
 import pandas as pd
 
-from .config import DOCS_DIR, GOALIE_TOP_MIN_GP, INSIGHT_ORDER, INSIGHTS_PER_KIND, INSIGHTS_TOP, REPORTS_DIR
+from .config import SITE_URL, DOCS_DIR, GOALIE_TOP_MIN_GP, INSIGHT_ORDER, INSIGHTS_PER_KIND, INSIGHTS_TOP, REPORTS_DIR
 from .fmt import day_fi, num, toi
 from .injuries import injury_fi, status_fi
 from .insights import Insight, return_text
@@ -22,6 +22,9 @@ body{margin:0;background:var(--bg);color:var(--text);font:15px/1.5 system-ui,-ap
 main{max-width:1100px;margin:0 auto;padding:24px 16px 48px}
 h1{font-size:28px;margin:0}h2{font-size:20px;margin:36px 0 12px}
 .sub{color:var(--muted);margin:4px 0 0}
+header{position:relative}
+.rss{position:absolute;top:6px;right:0;font-size:13px;font-weight:600;text-decoration:none;border:1px solid var(--line);border-radius:999px;padding:4px 12px;background:var(--card)}
+.rss:hover{border-color:var(--accent)}
 a{color:var(--accent)}
 .insights{list-style:none;padding:0;margin:0;display:grid;gap:8px}
 .insights li{background:var(--card);border:1px solid var(--line);border-radius:10px;padding:10px 14px;display:flex;gap:12px;align-items:baseline}
@@ -100,19 +103,39 @@ def _by_kind(items: list[Insight]) -> list[Insight]:
     return sorted(items, key=lambda i: (rank.get(i.kind, len(rank)), -i.score))
 
 
-def _insights_html(items: list[Insight], limit: int | None = None, per_kind: int = 2) -> str:
-    if not items:
-        return '<p class="empty">Ei erityisiä nostoja tältä yöltä.</p>'
-    if limit is None:
-        return _insight_list(_by_kind(items))
-    # Tärkeimmät nostot (enintään per_kind samasta aiheesta), näytetään aihejärjestyksessä
+def top_insights(items: list[Insight], limit: int = INSIGHTS_TOP,
+                 per_kind: int = INSIGHTS_PER_KIND) -> list[Insight]:
+    """Tärkeimmät nostot (enintään per_kind samasta aiheesta) aihejärjestyksessä."""
     top, seen = [], {}
     for i in sorted(items, key=lambda i: -i.score):
         if len(top) < limit and seen.get(i.kind, 0) < per_kind:
             seen[i.kind] = seen.get(i.kind, 0) + 1
             top.append(i)
+    return _by_kind(top)
+
+
+def finn_summary(day: date, skaters, goalies, finns: set[int]) -> str:
+    """Esim. '22 pelasi, yhteensä 1+5 – maalit: Aho'."""
+    sk = skaters[(skaters.date == day.isoformat()) & skaters.player_id.isin(finns)]
+    gl = goalies[(goalies.date == day.isoformat()) & goalies.player_id.isin(finns)]
+    n = len(sk) + len(gl)
+    if not n:
+        return "ei pelanneita yöllä"
+    text = f"{n} pelasi, yhteensä {sk.goals.sum()}+{sk.assists.sum()}"
+    scorers = sk[sk.points > 0].sort_values(["points", "goals"], ascending=False)
+    if not scorers.empty:
+        text += " – " + ", ".join(f"{p['name']} {p.goals}+{p.assists}" for _, p in scorers.head(5).iterrows())
+    return text
+
+
+def _insights_html(items: list[Insight], limit: int | None = None, per_kind: int = 2) -> str:
+    if not items:
+        return '<p class="empty">Ei erityisiä nostoja tältä yöltä.</p>'
+    if limit is None:
+        return _insight_list(_by_kind(items))
+    top = top_insights(items, limit, per_kind)
     items = _by_kind(items)
-    html = _insight_list(_by_kind(top))
+    html = _insight_list(top)
     if len(top) < len(items):
         html += (f'<details class="more"><summary>Kaikki nostot ({len(items)})</summary>'
                  f"{_insight_list(items)}</details>")
@@ -426,9 +449,10 @@ def render(day: date, games, skaters, goalies, xg, items, tables, finns: set[int
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <title>NHL-yöraportti {day.day}.{day.month}.{day.year}</title>
 <meta name="description" content="NHL:n yön otteluiden syvädata ja nostot: xG, putket ja poikkeamat.">
+<link rel="alternate" type="application/rss+xml" title="NHL-yöraportti" href="{SITE_URL}feed.xml">
 <style>{CSS}</style></head>
 <body><main>
-<header id="top"><h1>NHL-yöraportti</h1>
+<header id="top"><h1>NHL-yöraportti</h1><a class="rss" href="{SITE_URL}feed.xml" title="Tilaa RSS-syöte">Tilaa (RSS)</a>
 <p class="sub">Ottelut {day_fi(day)} (Pohjois-Amerikan aikaa) · {len(night)} ottelua</p></header>
 <nav class="tiles" id="valikko">{tiles}</nav>
 <section class="panel" id="nostot"><h2>Yön nostot</h2>{_insights_html(items, INSIGHTS_TOP, INSIGHTS_PER_KIND)}</section>
@@ -447,7 +471,7 @@ ixG = pelaajan laukausten odotetut maalit. GSAx = maalivahdin päästämät maal
 vs. tiimi = ero prosenttiyksikköinä joukkueen xG%:iin pelaajan ollessa vaihdossa.
 Yön 5v5-luvut on laskettu itse NHL:n vaihtodatasta ja MoneyPuckin laukauksista, joten ne voivat
 poiketa hieman MoneyPuckin omista luvuista.
-Lähdekoodi: <a href="https://github.com/juhaopesonen/NHL-stats">GitHub</a>.
+Lähdekoodi: <a href="https://github.com/juhaopesonen/NHL-stats">GitHub</a>. Tilaa uudet raportit <a href="{SITE_URL}feed.xml">RSS-syötteenä</a>.
 </footer>
 </main><script>{JS}</script></body></html>"""
 
