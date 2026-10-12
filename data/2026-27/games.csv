@@ -82,3 +82,6 @@ game_id,date,game_type,away,home,away_name,home_name,away_score,home_score,away_
 2026020081,2026-10-10,2,TBL,NYI,Tampa Bay Lightning,New York Islanders,5,3,26,23,REG
 2026020082,2026-10-10,2,ANA,CGY,Anaheim Ducks,Calgary Flames,4,2,28,29,REG
 2026020083,2026-10-10,2,LAK,VGK,Los Angeles Kings,Vegas Golden Knights,1,2,27,32,OT
+2026020084,2026-10-11,2,SEA,WSH,Seattle Kraken,Washington Capitals,5,3,27,36,REG
+2026020085,2026-10-11,2,VAN,NYR,Vancouver Canucks,New York Rangers,2,6,21,25,REG
+2026020086,2026-10-11,2,CAR,PHI,Carolina Hurricanes,Philadelphia Flyers,4,1,30,19,REG
