@@ -26,6 +26,9 @@ def save(season_id: int, name: str, df: pd.DataFrame) -> None:
     keys = [k for k in SORT_KEYS if k in df.columns]
     extra = ["player_id"] if "player_id" in df.columns else (["team"] if "team" in df.columns else [])
     df = df.sort_values(keys + extra or list(df.columns[:1]), kind="stable")
+    # Peliajat ovat sekunteja: kokonaislukuina, jottei tiedosto muutu kokonaan puuttuvien arvojen takia
+    for col in [c for c in df.columns if c == "toi" or c.endswith("_toi")]:
+        df[col] = pd.to_numeric(df[col]).round().astype("Int64")
     df.to_csv(season_dir(season_id) / f"{name}.csv", index=False, float_format="%.4f", lineterminator="\n")
 
 
