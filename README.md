@@ -81,8 +81,9 @@ tiedostossa `data/players.csv`.
 
 ## Automaatio
 
-`.github/workflows/yoraportti.yml` ajaa raportin joka aamu (06.30 UTC) ja päivittää sen
-iltapäivällä (12.00 UTC), kun MoneyPuckin data on varmasti täydentynyt. Data ja raportti
+`.github/workflows/yoraportti.yml` ajaa raportin joka aamu (05.47 UTC), varmistaa sen
+(07.47 UTC) ja päivittää sen iltapäivällä (12.17 UTC), kun MoneyPuckin data on varmasti täydentynyt.
+GitHubin ajastetut ajot voivat myöhästyä kymmeniä minuutteja. Data ja raportti
 commitoidaan repoon. Ajon voi käynnistää käsin GitHubin Actions-välilehdeltä
 (*Run workflow*), myös tietylle päivälle.
 

@@ -2,8 +2,11 @@ name: Yöraportti
 
 on:
   schedule:
-    - cron: "30 6 * * *"   # n. klo 9.30 Suomen kesäaikaa / 8.30 talviaikaa
-    - cron: "0 12 * * *"   # päivitys, kun MoneyPuckin xG-data on täydentynyt
+    # Minuutit tarkoituksella pois tasa- ja puolitunneilta: GitHub ruuhkautuu niihin ja
+    # ajastetut ajot myöhästyvät tai jäävät väliin. Ajat UTC:nä (Suomi kesällä +3, talvella +2).
+    - cron: "47 5 * * *"   # aamun raportti
+    - cron: "47 7 * * *"   # varmistus, jos aamun ajo myöhästyi tai jäi väliin
+    - cron: "17 12 * * *"  # päivitys, kun MoneyPuckin xG-data on täydentynyt
   workflow_dispatch:
     inputs:
       date:
