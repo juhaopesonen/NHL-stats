@@ -88,3 +88,19 @@ game_id,date,game_type,away,home,away_name,home_name,away_score,home_score,away_
 2026020087,2026-10-12,2,FLA,BUF,Florida Panthers,Buffalo Sabres,3,5,23,32,REG
 2026020088,2026-10-12,2,OTT,NJD,Ottawa Senators,New Jersey Devils,4,1,20,30,REG
 2026020089,2026-10-12,2,VGK,MIN,Vegas Golden Knights,Minnesota Wild,2,4,23,28,REG
+2026020090,2026-10-13,2,NJD,DET,New Jersey Devils,Detroit Red Wings,5,4,37,27,OT
+2026020091,2026-10-13,2,FLA,CBJ,Florida Panthers,Columbus Blue Jackets,7,3,28,27,REG
+2026020092,2026-10-13,2,BUF,MTL,Buffalo Sabres,Montréal Canadiens,3,4,17,38,SO
+2026020093,2026-10-13,2,WSH,CAR,Washington Capitals,Carolina Hurricanes,2,4,22,35,REG
+2026020094,2026-10-13,2,SEA,PHI,Seattle Kraken,Philadelphia Flyers,3,2,31,26,SO
+2026020095,2026-10-13,2,TBL,NYR,Tampa Bay Lightning,New York Rangers,1,4,26,23,REG
+2026020096,2026-10-13,2,STL,OTT,St. Louis Blues,Ottawa Senators,7,2,26,17,REG
+2026020097,2026-10-13,2,VAN,NYI,Vancouver Canucks,New York Islanders,2,3,26,38,REG
+2026020098,2026-10-13,2,PIT,CHI,Pittsburgh Penguins,Chicago Blackhawks,3,5,27,20,REG
+2026020099,2026-10-13,2,MIN,WPG,Minnesota Wild,Winnipeg Jets,2,5,21,25,REG
+2026020100,2026-10-13,2,COL,DAL,Colorado Avalanche,Dallas Stars,3,2,25,26,REG
+2026020101,2026-10-13,2,VGK,NSH,Vegas Golden Knights,Nashville Predators,5,2,25,27,REG
+2026020102,2026-10-13,2,TOR,UTA,Toronto Maple Leafs,Utah Mammoth,4,5,26,28,REG
+2026020103,2026-10-13,2,CGY,ANA,Calgary Flames,Anaheim Ducks,4,2,36,25,REG
+2026020104,2026-10-13,2,EDM,LAK,Edmonton Oilers,Los Angeles Kings,4,1,17,40,REG
+2026020105,2026-10-13,2,BOS,SJS,Boston Bruins,San Jose Sharks,6,3,26,38,REG
