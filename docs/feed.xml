@@ -6,7 +6,14 @@
   <atom:link href="https://juhaopesonen.github.io/NHL-stats/feed.xml" rel="self" type="application/rss+xml"/>
   <description>NHL:n yön otteluiden syvädata ja nostot suomeksi: xG, putket, suomalaiset ja loukkaantumiset.</description>
   <language>fi</language>
-  <lastBuildDate>Wed, 14 Oct 2026 12:57:40 +0000</lastBuildDate>
+  <lastBuildDate>Thu, 15 Oct 2026 06:09:58 +0000</lastBuildDate>
+  <item>
+    <title>NHL-yöraportti 14.10.2026 – 2 ottelua</title>
+    <link>https://juhaopesonen.github.io/NHL-stats/raportit/2026-10-14.html</link>
+    <guid isPermaLink="true">https://juhaopesonen.github.io/NHL-stats/raportit/2026-10-14.html</guid>
+    <pubDate>Thu, 15 Oct 2026 06:09:58 +0000</pubDate>
+    <description>&lt;p&gt;Ottelut keskiviikko 14.10.2026.&lt;/p&gt;&lt;ul&gt;&lt;li&gt;Alex Tuch (WSH) keräsi 3 pistettä (2+1).&lt;/li&gt;&lt;li&gt;Oskar Bäck (DAL) pelasi yöllä 3.04 – nyt päivittäinen arvio, vamma: ylävartalo, arvioitu paluu 17.10. (n. 2 pv).&lt;/li&gt;&lt;/ul&gt;&lt;p&gt;Suomalaiset: 7 pelasi, yhteensä 2+2 – Miro Heiskanen 1+0, Arttu Hyry 1+0, Artturi Lehkonen 0+1, Mikko Rantanen 0+1&lt;/p&gt;&lt;p&gt;&lt;a href=&quot;https://juhaopesonen.github.io/NHL-stats/raportit/2026-10-14.html&quot;&gt;Koko raportti&lt;/a&gt;&lt;/p&gt;</description>
+  </item>
   <item>
     <title>NHL-yöraportti 13.10.2026 – 16 ottelua</title>
     <link>https://juhaopesonen.github.io/NHL-stats/raportit/2026-10-13.html</link>

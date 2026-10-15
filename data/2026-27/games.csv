@@ -104,3 +104,5 @@ game_id,date,game_type,away,home,away_name,home_name,away_score,home_score,away_
 2026020103,2026-10-13,2,CGY,ANA,Calgary Flames,Anaheim Ducks,4,2,36,25,REG
 2026020104,2026-10-13,2,EDM,LAK,Edmonton Oilers,Los Angeles Kings,4,1,17,40,REG
 2026020105,2026-10-13,2,BOS,SJS,Boston Bruins,San Jose Sharks,6,3,26,38,REG
+2026020106,2026-10-14,2,MTL,WSH,Montréal Canadiens,Washington Capitals,4,5,30,23,REG
+2026020107,2026-10-14,2,DAL,COL,Dallas Stars,Colorado Avalanche,3,2,22,27,SO
