@@ -106,3 +106,14 @@ game_id,date,game_type,away,home,away_name,home_name,away_score,home_score,away_
 2026020105,2026-10-13,2,BOS,SJS,Boston Bruins,San Jose Sharks,6,3,26,38,REG
 2026020106,2026-10-14,2,MTL,WSH,Montréal Canadiens,Washington Capitals,4,5,30,23,REG
 2026020107,2026-10-14,2,DAL,COL,Dallas Stars,Colorado Avalanche,3,2,22,27,SO
+2026020108,2026-10-15,2,BUF,TOR,Buffalo Sabres,Toronto Maple Leafs,5,4,34,30,OT
+2026020109,2026-10-15,2,NYI,OTT,New York Islanders,Ottawa Senators,1,2,21,19,SO
+2026020110,2026-10-15,2,PHI,DET,Philadelphia Flyers,Detroit Red Wings,1,2,18,26,REG
+2026020111,2026-10-15,2,SEA,TBL,Seattle Kraken,Tampa Bay Lightning,3,4,27,35,OT
+2026020112,2026-10-15,2,VAN,FLA,Vancouver Canucks,Florida Panthers,2,3,17,39,OT
+2026020113,2026-10-15,2,NYR,NJD,New York Rangers,New Jersey Devils,1,7,19,31,REG
+2026020114,2026-10-15,2,WPG,CHI,Winnipeg Jets,Chicago Blackhawks,3,4,34,28,OT
+2026020115,2026-10-15,2,SJS,NSH,San Jose Sharks,Nashville Predators,3,2,32,34,SO
+2026020116,2026-10-15,2,STL,MIN,St. Louis Blues,Minnesota Wild,4,5,25,38,REG
+2026020117,2026-10-15,2,UTA,EDM,Utah Mammoth,Edmonton Oilers,4,2,24,24,REG
+2026020118,2026-10-15,2,CGY,VGK,Calgary Flames,Vegas Golden Knights,2,6,30,33,REG
