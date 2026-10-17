@@ -117,3 +117,5 @@ game_id,date,game_type,away,home,away_name,home_name,away_score,home_score,away_
 2026020116,2026-10-15,2,STL,MIN,St. Louis Blues,Minnesota Wild,4,5,25,38,REG
 2026020117,2026-10-15,2,UTA,EDM,Utah Mammoth,Edmonton Oilers,4,2,24,24,REG
 2026020118,2026-10-15,2,CGY,VGK,Calgary Flames,Vegas Golden Knights,2,6,30,33,REG
+2026020119,2026-10-16,2,PIT,COL,Pittsburgh Penguins,Colorado Avalanche,2,5,31,32,REG
+2026020120,2026-10-16,2,BOS,ANA,Boston Bruins,Anaheim Ducks,4,2,22,27,REG
