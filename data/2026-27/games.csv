@@ -119,3 +119,17 @@ game_id,date,game_type,away,home,away_name,home_name,away_score,home_score,away_
 2026020118,2026-10-15,2,CGY,VGK,Calgary Flames,Vegas Golden Knights,2,6,30,33,REG
 2026020119,2026-10-16,2,PIT,COL,Pittsburgh Penguins,Colorado Avalanche,2,5,31,32,REG
 2026020120,2026-10-16,2,BOS,ANA,Boston Bruins,Anaheim Ducks,4,2,22,27,REG
+2026020121,2026-10-17,2,NJD,WSH,New Jersey Devils,Washington Capitals,2,4,31,25,REG
+2026020122,2026-10-17,2,CAR,WPG,Carolina Hurricanes,Winnipeg Jets,3,2,37,23,REG
+2026020123,2026-10-17,2,VAN,TBL,Vancouver Canucks,Tampa Bay Lightning,2,4,14,35,REG
+2026020124,2026-10-17,2,SEA,FLA,Seattle Kraken,Florida Panthers,3,8,23,37,REG
+2026020125,2026-10-17,2,NYI,TOR,New York Islanders,Toronto Maple Leafs,4,1,20,29,REG
+2026020126,2026-10-17,2,BUF,MTL,Buffalo Sabres,Montréal Canadiens,3,4,26,34,OT
+2026020127,2026-10-17,2,SJS,DET,San Jose Sharks,Detroit Red Wings,3,4,34,27,SO
+2026020128,2026-10-17,2,OTT,PHI,Ottawa Senators,Philadelphia Flyers,1,3,26,28,REG
+2026020129,2026-10-17,2,NYR,CBJ,New York Rangers,Columbus Blue Jackets,0,1,29,29,OT
+2026020130,2026-10-17,2,DAL,CHI,Dallas Stars,Chicago Blackhawks,4,0,32,19,REG
+2026020131,2026-10-17,2,STL,NSH,St. Louis Blues,Nashville Predators,2,5,26,24,REG
+2026020132,2026-10-17,2,BOS,LAK,Boston Bruins,Los Angeles Kings,4,1,28,26,REG
+2026020133,2026-10-17,2,EDM,UTA,Edmonton Oilers,Utah Mammoth,6,2,21,28,REG
+2026020134,2026-10-17,2,PIT,VGK,Pittsburgh Penguins,Vegas Golden Knights,2,6,24,19,REG

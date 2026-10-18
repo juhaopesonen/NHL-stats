@@ -6,7 +6,14 @@
   <atom:link href="https://juhaopesonen.github.io/NHL-stats/feed.xml" rel="self" type="application/rss+xml"/>
   <description>NHL:n yön otteluiden syvädata ja nostot suomeksi: xG, putket, suomalaiset ja loukkaantumiset.</description>
   <language>fi</language>
-  <lastBuildDate>Sat, 17 Oct 2026 12:51:10 +0000</lastBuildDate>
+  <lastBuildDate>Sun, 18 Oct 2026 06:05:01 +0000</lastBuildDate>
+  <item>
+    <title>NHL-yöraportti 17.10.2026 – 14 ottelua</title>
+    <link>https://juhaopesonen.github.io/NHL-stats/raportit/2026-10-17.html</link>
+    <guid isPermaLink="true">https://juhaopesonen.github.io/NHL-stats/raportit/2026-10-17.html</guid>
+    <pubDate>Sun, 18 Oct 2026 06:05:01 +0000</pubDate>
+    <description>&lt;p&gt;Ottelut lauantai 17.10.2026.&lt;/p&gt;&lt;ul&gt;&lt;li&gt;Carter Verhaeghe (FLA) teki hattutempun, tehot 3+0.&lt;/li&gt;&lt;li&gt;Sam Bennett (FLA) teki hattutempun, tehot 3+0.&lt;/li&gt;&lt;li&gt;Mark Jankowski (CAR) on tehnyt maalin 6 ottelussa peräkkäin (yhteensä 6 maalia).&lt;/li&gt;&lt;li&gt;Matthew Tkachuk (FLA) jatkoi pisteputkensa 8 otteluun (putken aikana 3+11).&lt;/li&gt;&lt;li&gt;Jet Greaves (CBJ) torjui 29/29 ja päästi 3,39 maalia odotettua vähemmän (GSAx).&lt;/li&gt;&lt;/ul&gt;&lt;p&gt;Suomalaiset: 26 pelasi, yhteensä 6+6 – Arttu Hyry 2+0, Niko Mikkola 1+1, Kaapo Kakko 0+2, Jesperi Kotkaniemi 1+0, Roope Hintz 1+0&lt;/p&gt;&lt;p&gt;&lt;a href=&quot;https://juhaopesonen.github.io/NHL-stats/raportit/2026-10-17.html&quot;&gt;Koko raportti&lt;/a&gt;&lt;/p&gt;</description>
+  </item>
   <item>
     <title>NHL-yöraportti 16.10.2026 – 2 ottelua</title>
     <link>https://juhaopesonen.github.io/NHL-stats/raportit/2026-10-16.html</link>
