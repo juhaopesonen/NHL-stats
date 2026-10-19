@@ -133,3 +133,5 @@ game_id,date,game_type,away,home,away_name,home_name,away_score,home_score,away_
 2026020132,2026-10-17,2,BOS,LAK,Boston Bruins,Los Angeles Kings,4,1,28,26,REG
 2026020133,2026-10-17,2,EDM,UTA,Edmonton Oilers,Utah Mammoth,6,2,21,28,REG
 2026020134,2026-10-17,2,PIT,VGK,Pittsburgh Penguins,Vegas Golden Knights,2,6,24,19,REG
+2026020135,2026-10-18,2,CBJ,MIN,Columbus Blue Jackets,Minnesota Wild,1,2,14,34,REG
+2026020136,2026-10-18,2,CAR,CGY,Carolina Hurricanes,Calgary Flames,2,3,36,34,REG

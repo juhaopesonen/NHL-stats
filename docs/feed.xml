@@ -6,7 +6,14 @@
   <atom:link href="https://juhaopesonen.github.io/NHL-stats/feed.xml" rel="self" type="application/rss+xml"/>
   <description>NHL:n yön otteluiden syvädata ja nostot suomeksi: xG, putket, suomalaiset ja loukkaantumiset.</description>
   <language>fi</language>
-  <lastBuildDate>Sun, 18 Oct 2026 12:51:12 +0000</lastBuildDate>
+  <lastBuildDate>Mon, 19 Oct 2026 06:13:03 +0000</lastBuildDate>
+  <item>
+    <title>NHL-yöraportti 18.10.2026 – 2 ottelua</title>
+    <link>https://juhaopesonen.github.io/NHL-stats/raportit/2026-10-18.html</link>
+    <guid isPermaLink="true">https://juhaopesonen.github.io/NHL-stats/raportit/2026-10-18.html</guid>
+    <pubDate>Mon, 19 Oct 2026 06:13:03 +0000</pubDate>
+    <description>&lt;p&gt;Ottelut sunnuntai 18.10.2026.&lt;/p&gt;&lt;ul&gt;&lt;li&gt;Kirill Kaprizov (MIN) on tehnyt maalin 3 ottelussa peräkkäin (yhteensä 4 maalia).&lt;/li&gt;&lt;li&gt;Pisteputki jatkui 1 pelaajalla (peliä putkessa): Kirill Kaprizov (MIN) 6.&lt;/li&gt;&lt;li&gt;Cam Talbot (CBJ) torjui 32/34 ja päästi 2,10 maalia odotettua vähemmän (GSAx).&lt;/li&gt;&lt;li&gt;Joel Eriksson Ek (MIN) jäi ilman maalia, vaikka laukauksista kertyi 1,12 odotettua maalia (ixG, 5 laukausyritystä, 2 vaarallista).&lt;/li&gt;&lt;li&gt;Quinn Hughes (MIN): 8 ottelun pisteputki katkesi yön peliin.&lt;/li&gt;&lt;/ul&gt;&lt;p&gt;Suomalaiset: 2 pelasi, yhteensä 1+1 – Jesperi Kotkaniemi 1+0, Sebastian Aho 0+1&lt;/p&gt;&lt;p&gt;&lt;a href=&quot;https://juhaopesonen.github.io/NHL-stats/raportit/2026-10-18.html&quot;&gt;Koko raportti&lt;/a&gt;&lt;/p&gt;</description>
+  </item>
   <item>
     <title>NHL-yöraportti 17.10.2026 – 14 ottelua</title>
     <link>https://juhaopesonen.github.io/NHL-stats/raportit/2026-10-17.html</link>
