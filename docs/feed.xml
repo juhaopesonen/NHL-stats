@@ -6,7 +6,14 @@
   <atom:link href="https://juhaopesonen.github.io/NHL-stats/feed.xml" rel="self" type="application/rss+xml"/>
   <description>NHL:n yön otteluiden syvädata ja nostot suomeksi: xG, putket, suomalaiset ja loukkaantumiset.</description>
   <language>fi</language>
-  <lastBuildDate>Mon, 19 Oct 2026 13:00:13 +0000</lastBuildDate>
+  <lastBuildDate>Tue, 20 Oct 2026 06:11:11 +0000</lastBuildDate>
+  <item>
+    <title>NHL-yöraportti 19.10.2026 – 4 ottelua</title>
+    <link>https://juhaopesonen.github.io/NHL-stats/raportit/2026-10-19.html</link>
+    <guid isPermaLink="true">https://juhaopesonen.github.io/NHL-stats/raportit/2026-10-19.html</guid>
+    <pubDate>Tue, 20 Oct 2026 06:11:11 +0000</pubDate>
+    <description>&lt;p&gt;Ottelut maanantai 19.10.2026.&lt;/p&gt;&lt;ul&gt;&lt;li&gt;Matvei Michkov (PHI) on tehnyt maalin 3 ottelussa peräkkäin (yhteensä 4 maalia).&lt;/li&gt;&lt;li&gt;Sergei Bobrovsky (TOR) torjui 30/31 ja päästi 2,82 maalia odotettua vähemmän (GSAx).&lt;/li&gt;&lt;li&gt;Pavel Dorofeyev (NYR) jäi ilman maalia, vaikka laukauksista kertyi 1,44 odotettua maalia (ixG, 9 laukausyritystä, 3 vaarallista).&lt;/li&gt;&lt;li&gt;Matvei Michkov (PHI) teki 2 maalia vain 0,46 ixG:n laukauksista.&lt;/li&gt;&lt;li&gt;Bryan Rust (PIT) pelasi yöllä 9.32 – nyt sivussa, vamma: alavartalo, arvioitu paluu 22.10. (n. 2 pv).&lt;/li&gt;&lt;/ul&gt;&lt;p&gt;Suomalaiset: 5 pelasi, yhteensä 0+1 – Artturi Lehkonen 0+1&lt;/p&gt;&lt;p&gt;&lt;a href=&quot;https://juhaopesonen.github.io/NHL-stats/raportit/2026-10-19.html&quot;&gt;Koko raportti&lt;/a&gt;&lt;/p&gt;</description>
+  </item>
   <item>
     <title>NHL-yöraportti 18.10.2026 – 2 ottelua</title>
     <link>https://juhaopesonen.github.io/NHL-stats/raportit/2026-10-18.html</link>
