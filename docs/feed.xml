@@ -6,7 +6,14 @@
   <atom:link href="https://juhaopesonen.github.io/NHL-stats/feed.xml" rel="self" type="application/rss+xml"/>
   <description>NHL:n yön otteluiden syvädata ja nostot suomeksi: xG, putket, suomalaiset ja loukkaantumiset.</description>
   <language>fi</language>
-  <lastBuildDate>Tue, 20 Oct 2026 12:59:48 +0000</lastBuildDate>
+  <lastBuildDate>Wed, 21 Oct 2026 06:12:12 +0000</lastBuildDate>
+  <item>
+    <title>NHL-yöraportti 20.10.2026 – 11 ottelua</title>
+    <link>https://juhaopesonen.github.io/NHL-stats/raportit/2026-10-20.html</link>
+    <guid isPermaLink="true">https://juhaopesonen.github.io/NHL-stats/raportit/2026-10-20.html</guid>
+    <pubDate>Wed, 21 Oct 2026 06:12:12 +0000</pubDate>
+    <description>&lt;p&gt;Ottelut tiistai 20.10.2026.&lt;/p&gt;&lt;ul&gt;&lt;li&gt;Mikko Rantanen (DAL) teki hattutempun, tehot 3+0.&lt;/li&gt;&lt;li&gt;Leon Draisaitl (EDM) on tehnyt maalin 4 ottelussa peräkkäin (yhteensä 5 maalia).&lt;/li&gt;&lt;li&gt;Kirill Kaprizov (MIN) on tehnyt maalin 4 ottelussa peräkkäin (yhteensä 5 maalia).&lt;/li&gt;&lt;li&gt;Connor McDavid (EDM) jatkoi pisteputkensa 9 otteluun (putken aikana 6+20).&lt;/li&gt;&lt;li&gt;Pisteputki jatkui 5 pelaajalla (peliä putkessa): Kirill Kaprizov (MIN) 7, Mitch Marner (VGK) 7, Evan Bouchard (EDM) 6, Artturi Lehkonen (COL) 5, Dylan Holloway (STL) 5.&lt;/li&gt;&lt;/ul&gt;&lt;p&gt;Suomalaiset: 18 pelasi, yhteensä 5+6 – Mikko Rantanen 3+0, Artturi Lehkonen 2+0, Erik Haula 0+1, Joel Armia 0+1, Roope Hintz 0+1&lt;/p&gt;&lt;p&gt;&lt;a href=&quot;https://juhaopesonen.github.io/NHL-stats/raportit/2026-10-20.html&quot;&gt;Koko raportti&lt;/a&gt;&lt;/p&gt;</description>
+  </item>
   <item>
     <title>NHL-yöraportti 19.10.2026 – 4 ottelua</title>
     <link>https://juhaopesonen.github.io/NHL-stats/raportit/2026-10-19.html</link>
