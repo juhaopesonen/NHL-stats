@@ -6,7 +6,14 @@
   <atom:link href="https://juhaopesonen.github.io/NHL-stats/feed.xml" rel="self" type="application/rss+xml"/>
   <description>NHL:n yön otteluiden syvädata ja nostot suomeksi: xG, putket, suomalaiset ja loukkaantumiset.</description>
   <language>fi</language>
-  <lastBuildDate>Wed, 21 Oct 2026 13:00:22 +0000</lastBuildDate>
+  <lastBuildDate>Thu, 22 Oct 2026 06:13:06 +0000</lastBuildDate>
+  <item>
+    <title>NHL-yöraportti 21.10.2026 – 2 ottelua</title>
+    <link>https://juhaopesonen.github.io/NHL-stats/raportit/2026-10-21.html</link>
+    <guid isPermaLink="true">https://juhaopesonen.github.io/NHL-stats/raportit/2026-10-21.html</guid>
+    <pubDate>Thu, 22 Oct 2026 06:13:06 +0000</pubDate>
+    <description>&lt;p&gt;Ottelut keskiviikko 21.10.2026.&lt;/p&gt;&lt;ul&gt;&lt;li&gt;Matthew Tkachuk (FLA) jatkoi pisteputkensa 9 otteluun (putken aikana 3+12).&lt;/li&gt;&lt;li&gt;Pisteputki jatkui 2 pelaajalla (peliä putkessa): Brady Tkachuk (FLA) 5, Seth Jones (FLA) 5.&lt;/li&gt;&lt;li&gt;Dan Vladar (PHI) torjui 27/28 ja päästi 2,78 maalia odotettua vähemmän (GSAx).&lt;/li&gt;&lt;li&gt;Akira Schmid (FLA): vaikea ilta, 25/30 ja 2,53 maalia odotettua enemmän (GSAx −2,53).&lt;/li&gt;&lt;li&gt;Linus Ullmark (OTT) pelasi yöllä 43.35 – nyt päivittäinen arvio, vamma: alavartalo, arvioitu paluu 22.10. (pian).&lt;/li&gt;&lt;/ul&gt;&lt;p&gt;Suomalaiset: 6 pelasi, yhteensä 0+1 – Nikolas Matinpalo 0+1&lt;/p&gt;&lt;p&gt;&lt;a href=&quot;https://juhaopesonen.github.io/NHL-stats/raportit/2026-10-21.html&quot;&gt;Koko raportti&lt;/a&gt;&lt;/p&gt;</description>
+  </item>
   <item>
     <title>NHL-yöraportti 20.10.2026 – 11 ottelua</title>
     <link>https://juhaopesonen.github.io/NHL-stats/raportit/2026-10-20.html</link>

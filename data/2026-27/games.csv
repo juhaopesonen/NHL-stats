@@ -150,3 +150,5 @@ game_id,date,game_type,away,home,away_name,home_name,away_score,home_score,away_
 2026020149,2026-10-20,2,DET,SEA,Detroit Red Wings,Seattle Kraken,3,4,25,27,SO
 2026020150,2026-10-20,2,CAR,VAN,Carolina Hurricanes,Vancouver Canucks,6,3,44,17,REG
 2026020151,2026-10-20,2,TBL,VGK,Tampa Bay Lightning,Vegas Golden Knights,6,2,21,34,REG
+2026020152,2026-10-21,2,PHI,BUF,Philadelphia Flyers,Buffalo Sabres,3,1,26,28,REG
+2026020153,2026-10-21,2,FLA,OTT,Florida Panthers,Ottawa Senators,1,5,19,30,REG
