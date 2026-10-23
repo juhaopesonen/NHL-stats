@@ -152,3 +152,15 @@ game_id,date,game_type,away,home,away_name,home_name,away_score,home_score,away_
 2026020151,2026-10-20,2,TBL,VGK,Tampa Bay Lightning,Vegas Golden Knights,6,2,21,34,REG
 2026020152,2026-10-21,2,PHI,BUF,Philadelphia Flyers,Buffalo Sabres,3,1,26,28,REG
 2026020153,2026-10-21,2,FLA,OTT,Florida Panthers,Ottawa Senators,1,5,19,30,REG
+2026020154,2026-10-22,2,NSH,BOS,Nashville Predators,Boston Bruins,0,6,28,31,REG
+2026020155,2026-10-22,2,NYR,TOR,New York Rangers,Toronto Maple Leafs,4,5,25,35,REG
+2026020156,2026-10-22,2,SJS,OTT,San Jose Sharks,Ottawa Senators,6,2,28,43,REG
+2026020157,2026-10-22,2,ANA,NJD,Anaheim Ducks,New Jersey Devils,1,4,17,29,REG
+2026020158,2026-10-22,2,FLA,PIT,Florida Panthers,Pittsburgh Penguins,0,4,26,21,REG
+2026020159,2026-10-22,2,LAK,NYI,Los Angeles Kings,New York Islanders,3,2,27,43,OT
+2026020160,2026-10-22,2,VGK,STL,Vegas Golden Knights,St. Louis Blues,2,6,29,31,REG
+2026020161,2026-10-22,2,WPG,DAL,Winnipeg Jets,Dallas Stars,2,3,19,38,OT
+2026020162,2026-10-22,2,MIN,CGY,Minnesota Wild,Calgary Flames,1,2,37,22,REG
+2026020163,2026-10-22,2,CAR,EDM,Carolina Hurricanes,Edmonton Oilers,5,6,27,21,SO
+2026020164,2026-10-22,2,UTA,SEA,Utah Mammoth,Seattle Kraken,3,5,36,23,REG
+2026020165,2026-10-22,2,DET,VAN,Detroit Red Wings,Vancouver Canucks,5,2,31,13,REG
