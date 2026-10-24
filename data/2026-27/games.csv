@@ -164,3 +164,5 @@ game_id,date,game_type,away,home,away_name,home_name,away_score,home_score,away_
 2026020163,2026-10-22,2,CAR,EDM,Carolina Hurricanes,Edmonton Oilers,5,6,27,21,SO
 2026020164,2026-10-22,2,UTA,SEA,Utah Mammoth,Seattle Kraken,3,5,36,23,REG
 2026020165,2026-10-22,2,DET,VAN,Detroit Red Wings,Vancouver Canucks,5,2,31,13,REG
+2026020166,2026-10-23,2,MTL,CHI,Montréal Canadiens,Chicago Blackhawks,4,1,28,21,REG
+2026020167,2026-10-23,2,TBL,COL,Tampa Bay Lightning,Colorado Avalanche,3,6,34,24,REG

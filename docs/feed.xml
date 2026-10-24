@@ -6,7 +6,14 @@
   <atom:link href="https://juhaopesonen.github.io/NHL-stats/feed.xml" rel="self" type="application/rss+xml"/>
   <description>NHL:n yön otteluiden syvädata ja nostot suomeksi: xG, putket, suomalaiset ja loukkaantumiset.</description>
   <language>fi</language>
-  <lastBuildDate>Fri, 23 Oct 2026 12:57:58 +0000</lastBuildDate>
+  <lastBuildDate>Sat, 24 Oct 2026 06:08:13 +0000</lastBuildDate>
+  <item>
+    <title>NHL-yöraportti 23.10.2026 – 2 ottelua</title>
+    <link>https://juhaopesonen.github.io/NHL-stats/raportit/2026-10-23.html</link>
+    <guid isPermaLink="true">https://juhaopesonen.github.io/NHL-stats/raportit/2026-10-23.html</guid>
+    <pubDate>Sat, 24 Oct 2026 06:08:13 +0000</pubDate>
+    <description>&lt;p&gt;Ottelut perjantai 23.10.2026.&lt;/p&gt;&lt;ul&gt;&lt;li&gt;Nathan MacKinnon (COL) keräsi 4 pistettä (1+3).&lt;/li&gt;&lt;li&gt;Jake Evans (MTL) keräsi 3 pistettä (2+1).&lt;/li&gt;&lt;li&gt;Pisteputki jatkui 1 pelaajalla (peliä putkessa): Artturi Lehkonen (COL) 6.&lt;/li&gt;&lt;li&gt;Victor Hedman (TBL) pelasi yöllä 5.56 – nyt päivittäinen arvio, vamma: ei kerrottu, arvioitu paluu 24.10. (pian).&lt;/li&gt;&lt;li&gt;Nazem Kadri (COL) katkaisi 10 ottelun maalittoman jakson.&lt;/li&gt;&lt;/ul&gt;&lt;p&gt;Suomalaiset: 2 pelasi, yhteensä 1+1 – Artturi Lehkonen 1+1&lt;/p&gt;&lt;p&gt;&lt;a href=&quot;https://juhaopesonen.github.io/NHL-stats/raportit/2026-10-23.html&quot;&gt;Koko raportti&lt;/a&gt;&lt;/p&gt;</description>
+  </item>
   <item>
     <title>NHL-yöraportti 22.10.2026 – 12 ottelua</title>
     <link>https://juhaopesonen.github.io/NHL-stats/raportit/2026-10-22.html</link>
