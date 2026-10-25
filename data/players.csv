@@ -127,6 +127,7 @@ player_id,birth_country,name
 8476539,CAN,
 8476624,CAN,
 8476792,USA,Torey Krug
+8476822,USA,
 8476826,CAN,Yanni Gourde
 8476853,CAN,
 8476854,SWE,
@@ -213,6 +214,7 @@ player_id,birth_country,name
 8477507,RUS,
 8477511,CAN,
 8477527,CAN,
+8477541,USA,
 8477810,CAN,
 8477845,USA,
 8477903,USA,
@@ -242,6 +244,7 @@ player_id,birth_country,name
 8477986,CAN,
 8477987,USA,
 8477989,USA,
+8477992,SWE,
 8477998,CAN,
 8478007,LVA,Elvis Merzlikins
 8478009,RUS,
@@ -322,6 +325,7 @@ player_id,birth_country,name
 8478864,RUS,
 8478872,CZE,
 8478873,USA,Troy Terry
+8478874,USA,
 8478882,RUS,
 8478888,CAN,Cameron Hughes
 8478891,USA,
@@ -675,6 +679,7 @@ player_id,birth_country,name
 8482953,CAN,
 8482964,CAN,
 8482982,CAN,
+8482993,USA,
 8483017,CAN,
 8483100,USA,James Stefan
 8483395,CAN,

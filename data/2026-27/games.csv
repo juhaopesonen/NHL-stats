@@ -166,3 +166,15 @@ game_id,date,game_type,away,home,away_name,home_name,away_score,home_score,away_
 2026020165,2026-10-22,2,DET,VAN,Detroit Red Wings,Vancouver Canucks,5,2,31,13,REG
 2026020166,2026-10-23,2,MTL,CHI,Montréal Canadiens,Chicago Blackhawks,4,1,28,21,REG
 2026020167,2026-10-23,2,TBL,COL,Tampa Bay Lightning,Colorado Avalanche,3,6,34,24,REG
+2026020168,2026-10-24,2,ANA,PHI,Anaheim Ducks,Philadelphia Flyers,5,4,26,32,REG
+2026020169,2026-10-24,2,LAK,NJD,Los Angeles Kings,New Jersey Devils,1,3,13,26,REG
+2026020170,2026-10-24,2,SJS,BOS,San Jose Sharks,Boston Bruins,4,6,27,35,REG
+2026020171,2026-10-24,2,NYR,OTT,New York Rangers,Ottawa Senators,4,7,28,24,REG
+2026020172,2026-10-24,2,NSH,PIT,Nashville Predators,Pittsburgh Penguins,2,3,26,37,OT
+2026020173,2026-10-24,2,BUF,WSH,Buffalo Sabres,Washington Capitals,3,4,21,34,OT
+2026020174,2026-10-24,2,VGK,CBJ,Vegas Golden Knights,Columbus Blue Jackets,1,2,27,20,OT
+2026020175,2026-10-24,2,CAR,STL,Carolina Hurricanes,St. Louis Blues,4,0,39,24,REG
+2026020176,2026-10-24,2,TOR,EDM,Toronto Maple Leafs,Edmonton Oilers,7,2,31,32,REG
+2026020177,2026-10-24,2,TBL,UTA,Tampa Bay Lightning,Utah Mammoth,4,5,32,28,OT
+2026020178,2026-10-24,2,DET,CGY,Detroit Red Wings,Calgary Flames,1,4,29,25,REG
+2026020179,2026-10-24,2,MIN,SEA,Minnesota Wild,Seattle Kraken,5,1,36,24,REG

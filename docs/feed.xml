@@ -6,7 +6,14 @@
   <atom:link href="https://juhaopesonen.github.io/NHL-stats/feed.xml" rel="self" type="application/rss+xml"/>
   <description>NHL:n yön otteluiden syvädata ja nostot suomeksi: xG, putket, suomalaiset ja loukkaantumiset.</description>
   <language>fi</language>
-  <lastBuildDate>Sat, 24 Oct 2026 12:54:57 +0000</lastBuildDate>
+  <lastBuildDate>Sun, 25 Oct 2026 06:09:09 +0000</lastBuildDate>
+  <item>
+    <title>NHL-yöraportti 24.10.2026 – 12 ottelua</title>
+    <link>https://juhaopesonen.github.io/NHL-stats/raportit/2026-10-24.html</link>
+    <guid isPermaLink="true">https://juhaopesonen.github.io/NHL-stats/raportit/2026-10-24.html</guid>
+    <pubDate>Sun, 25 Oct 2026 06:09:09 +0000</pubDate>
+    <description>&lt;p&gt;Ottelut lauantai 24.10.2026.&lt;/p&gt;&lt;ul&gt;&lt;li&gt;Drake Batherson (OTT) teki hattutempun, tehot 3+1.&lt;/li&gt;&lt;li&gt;Leon Draisaitl (EDM) on tehnyt maalin 6 ottelussa peräkkäin (yhteensä 9 maalia).&lt;/li&gt;&lt;li&gt;Arseny Gritsyuk (NJD) on tehnyt maalin 5 ottelussa peräkkäin (yhteensä 5 maalia).&lt;/li&gt;&lt;li&gt;Connor McDavid (EDM) jatkoi pisteputkensa 11 otteluun (putken aikana 8+25).&lt;/li&gt;&lt;li&gt;Evan Bouchard (EDM) jatkoi pisteputkensa 8 otteluun (putken aikana 3+10).&lt;/li&gt;&lt;/ul&gt;&lt;p&gt;Suomalaiset: 17 pelasi, yhteensä 3+3 – Sebastian Aho 0+2, Ville Koivunen 1+0, Jesperi Kotkaniemi 1+0, Olli Maatta 1+0, Kaapo Kakko 0+1&lt;/p&gt;&lt;p&gt;&lt;a href=&quot;https://juhaopesonen.github.io/NHL-stats/raportit/2026-10-24.html&quot;&gt;Koko raportti&lt;/a&gt;&lt;/p&gt;</description>
+  </item>
   <item>
     <title>NHL-yöraportti 23.10.2026 – 2 ottelua</title>
     <link>https://juhaopesonen.github.io/NHL-stats/raportit/2026-10-23.html</link>
