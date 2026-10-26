@@ -6,7 +6,14 @@
   <atom:link href="https://juhaopesonen.github.io/NHL-stats/feed.xml" rel="self" type="application/rss+xml"/>
   <description>NHL:n yön otteluiden syvädata ja nostot suomeksi: xG, putket, suomalaiset ja loukkaantumiset.</description>
   <language>fi</language>
-  <lastBuildDate>Sun, 25 Oct 2026 12:54:21 +0000</lastBuildDate>
+  <lastBuildDate>Mon, 26 Oct 2026 06:16:05 +0000</lastBuildDate>
+  <item>
+    <title>NHL-yöraportti 25.10.2026 – 5 ottelua</title>
+    <link>https://juhaopesonen.github.io/NHL-stats/raportit/2026-10-25.html</link>
+    <guid isPermaLink="true">https://juhaopesonen.github.io/NHL-stats/raportit/2026-10-25.html</guid>
+    <pubDate>Mon, 26 Oct 2026 06:16:05 +0000</pubDate>
+    <description>&lt;p&gt;Ottelut sunnuntai 25.10.2026.&lt;/p&gt;&lt;ul&gt;&lt;li&gt;Ryan O&amp;#x27;Reilly (NSH) keräsi 4 pistettä (2+2).&lt;/li&gt;&lt;li&gt;Steven Stamkos (NSH) keräsi 3 pistettä (2+1).&lt;/li&gt;&lt;li&gt;Artturi Lehkonen (COL) on tehnyt maalin 3 ottelussa peräkkäin (yhteensä 4 maalia).&lt;/li&gt;&lt;li&gt;Pisteputki jatkui 2 pelaajalla (peliä putkessa): Artturi Lehkonen (COL) 7, Mikko Rantanen (DAL) 5.&lt;/li&gt;&lt;li&gt;Jacob Fowler (MTL) torjui 33/34 ja päästi 2,93 maalia odotettua vähemmän (GSAx).&lt;/li&gt;&lt;/ul&gt;&lt;p&gt;Suomalaiset: 13 pelasi, yhteensä 2+3 – Roope Hintz 0+2, Mikko Rantanen 1+0, Artturi Lehkonen 1+0, Joel Kiviranta 0+1&lt;/p&gt;&lt;p&gt;&lt;a href=&quot;https://juhaopesonen.github.io/NHL-stats/raportit/2026-10-25.html&quot;&gt;Koko raportti&lt;/a&gt;&lt;/p&gt;</description>
+  </item>
   <item>
     <title>NHL-yöraportti 24.10.2026 – 12 ottelua</title>
     <link>https://juhaopesonen.github.io/NHL-stats/raportit/2026-10-24.html</link>

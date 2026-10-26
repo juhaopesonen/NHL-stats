@@ -178,3 +178,8 @@ game_id,date,game_type,away,home,away_name,home_name,away_score,home_score,away_
 2026020177,2026-10-24,2,TBL,UTA,Tampa Bay Lightning,Utah Mammoth,4,5,32,28,OT
 2026020178,2026-10-24,2,DET,CGY,Detroit Red Wings,Calgary Flames,1,4,29,25,REG
 2026020179,2026-10-24,2,MIN,SEA,Minnesota Wild,Seattle Kraken,5,1,36,24,REG
+2026020180,2026-10-25,2,FLA,CHI,Florida Panthers,Chicago Blackhawks,3,2,33,21,REG
+2026020181,2026-10-25,2,NYI,DAL,New York Islanders,Dallas Stars,3,6,20,38,REG
+2026020182,2026-10-25,2,MTL,WPG,Montréal Canadiens,Winnipeg Jets,2,1,21,34,REG
+2026020183,2026-10-25,2,COL,NSH,Colorado Avalanche,Nashville Predators,2,6,21,35,REG
+2026020184,2026-10-25,2,MIN,VAN,Minnesota Wild,Vancouver Canucks,4,2,34,17,REG
