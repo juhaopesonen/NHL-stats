@@ -1977,16 +1977,16 @@ snapshot,player_id,name,team,position,status,injury,return_date,updated,espn_url
 2026-10-26,8476456.0,Jonathan Huberdeau,CGY,LW,Injured Reserve,Hip,2026-11-02,2026-10-24,https://www.espn.com/nhl/player/_/id/2562606
 2026-10-26,8474150.0,Mikael Backlund,CGY,C,Day-To-Day,Upper Body,2026-10-26,2026-10-25,https://www.espn.com/nhl/player/_/id/3797
 2026-10-26,8484180.0,Samuel Honzek,CGY,LW,Injured Reserve,Lower Body,2026-10-28,2026-10-20,https://www.espn.com/nhl/player/_/id/5149191
-2026-10-26,8481524.0,Bowen Byram,CHI,D,Out,Upper Body,2026-10-27,2026-10-24,https://www.espn.com/nhl/player/_/id/4565225
-2026-10-26,8478462.0,Nicolas Roy,COL,C,Out,Lower Body,2026-10-28,2026-10-24,https://www.espn.com/nhl/player/_/id/3943996
+2026-10-26,8481524.0,Bowen Byram,CHI,D,Day-To-Day,Upper Body,2026-10-27,2026-10-26,https://www.espn.com/nhl/player/_/id/4565225
+2026-10-26,8478462.0,Nicolas Roy,COL,C,Day-To-Day,Lower Body,2026-10-28,2026-10-26,https://www.espn.com/nhl/player/_/id/3943996
 2026-10-26,8482742.0,Zachary L'Heureux,COL,LW,Injured Reserve,Upper Body,2026-11-07,2026-10-23,https://www.espn.com/nhl/player/_/id/4874744
 2026-10-26,8478888.0,Cameron Hughes,DAL,C,Injured Reserve,Upper Body,2026-11-07,2026-09-29,https://www.espn.com/nhl/player/_/id/3942461
 2026-10-26,8476902.0,Esa Lindell,DAL,D,Injured Reserve,Lower Body,2026-10-27,2026-10-24,https://www.espn.com/nhl/player/_/id/3069352
 2026-10-26,8484822.0,Luke Krys,DAL,D,Injured Reserve,Undisclosed,2026-10-31,2026-09-29,https://www.espn.com/nhl/player/_/id/5207357
 2026-10-26,8475168.0,Matt Duchene,DAL,C,Injured Reserve,Abdomen,2027-01-12,2026-10-12,https://www.espn.com/nhl/player/_/id/5161
 2026-10-26,8480840.0,Oskar Back,DAL,C,Injured Reserve,Finger,2026-11-14,2026-10-24,https://www.espn.com/nhl/player/_/id/4894398
-2026-10-26,8476889.0,Radek Faksa,DAL,C,Out,Lower Body,2026-10-27,2026-10-25,https://www.espn.com/nhl/player/_/id/2976842
-2026-10-26,8479351.0,Sam Steel,DAL,C,Out,Undisclosed,2026-10-27,2026-10-24,https://www.espn.com/nhl/player/_/id/4024998
+2026-10-26,8476889.0,Radek Faksa,DAL,C,Day-To-Day,Lower Body,2026-10-27,2026-10-26,https://www.espn.com/nhl/player/_/id/2976842
+2026-10-26,8479351.0,Sam Steel,DAL,C,Day-To-Day,Undisclosed,2026-10-27,2026-10-26,https://www.espn.com/nhl/player/_/id/4024998
 2026-10-26,8480193.0,Daniil Tarasov,DET,G,Day-To-Day,Undisclosed,2026-10-26,2026-10-25,https://www.espn.com/nhl/player/_/id/4587994
 2026-10-26,8483464.0,Marco Kasper,DET,C,Injured Reserve,Upper Body,2026-10-29,2026-10-06,https://www.espn.com/nhl/player/_/id/5080152
 2026-10-26,8478891.0,Mason Appleton,DET,C,Injured Reserve,Undisclosed,2026-10-29,2026-10-06,https://www.espn.com/nhl/player/_/id/3942043
@@ -1998,12 +1998,12 @@ snapshot,player_id,name,team,position,status,injury,return_date,updated,espn_url
 2026-10-26,8477450.0,Jason Dickinson,EDM,C,Injured Reserve,Undisclosed,2026-10-28,2026-10-22,https://www.espn.com/nhl/player/_/id/3042062
 2026-10-26,,Matt Savoie,EDM,C,Injured Reserve,Lower Body,2026-11-24,2026-10-01,https://www.espn.com/nhl/player/_/id/5080153
 2026-10-26,8475218.0,Mattias Ekholm,EDM,D,Out,Upper Body,2026-10-31,2026-10-23,https://www.espn.com/nhl/player/_/id/2558631
-2026-10-26,8477406.0,Mattias Janmark,EDM,C,Injured Reserve,Undisclosed,2026-10-26,2026-09-29,https://www.espn.com/nhl/player/_/id/3042085
+2026-10-26,8477406.0,Mattias Janmark,EDM,C,Injured Reserve,Undisclosed,2026-11-28,2026-09-29,https://www.espn.com/nhl/player/_/id/3042085
 2026-10-26,8477493.0,Aleksander Barkov,FLA,C,Injured Reserve,Lower Body,2026-11-27,2026-10-06,https://www.espn.com/nhl/player/_/id/3041970
 2026-10-26,8473419.0,Brad Marchand,FLA,LW,Injured Reserve,Leg,2026-11-21,2026-10-12,https://www.espn.com/nhl/player/_/id/3852
 2026-10-26,8474593.0,Jacob Markstrom,FLA,G,Injured Reserve,Upper Body,2026-11-04,2026-10-20,https://www.espn.com/nhl/player/_/id/5452
 2026-10-26,8479981.0,Jonah Gadjovich,FLA,LW,Injured Reserve,Upper Body,2026-11-28,2026-09-17,https://www.espn.com/nhl/player/_/id/4233890
-2026-10-26,8481532.0,Alex Turcotte,LAK,C,Injured Reserve,Undisclosed,2026-10-26,2026-10-10,https://www.espn.com/nhl/player/_/id/4565226
+2026-10-26,8481532.0,Alex Turcotte,LAK,C,Injured Reserve,Undisclosed,2026-10-29,2026-10-10,https://www.espn.com/nhl/player/_/id/4565226
 2026-10-26,8484163.0,Jakub Dvorak,LAK,D,Injured Reserve,Upper Body,2026-10-31,2026-09-24,https://www.espn.com/nhl/player/_/id/5149241
 2026-10-26,8480890.0,Jan Jenik,LAK,C,Injured Reserve,Undisclosed,2026-11-07,2026-09-24,https://www.espn.com/nhl/player/_/id/4587568
 2026-10-26,8477942.0,Kevin Fiala,LAK,LW,Injured Reserve,Lower Leg,2026-10-31,2026-09-17,https://www.espn.com/nhl/player/_/id/3114743
@@ -2024,7 +2024,7 @@ snapshot,player_id,name,team,position,status,injury,return_date,updated,espn_url
 2026-10-26,8478445.0,Mathew Barzal,NYI,C,Injured Reserve,Knee,2026-11-07,2026-10-15,https://www.espn.com/nhl/player/_/id/3899946
 2026-10-26,8481711.0,Matias Maccelli,NYI,LW,Out,Lower Body,2026-11-17,2026-10-19,https://www.espn.com/nhl/player/_/id/4587580
 2026-10-26,8483669.0,Adam Sykora,NYR,LW,Injured Reserve,Lower Body,2027-01-25,2026-09-29,https://www.espn.com/nhl/player/_/id/5080232
-2026-10-26,8483685.0,Aidan Thompson,NYR,C,Injured Reserve,Undisclosed,2026-10-26,2026-09-29,https://www.espn.com/nhl/player/_/id/5136624
+2026-10-26,8483685.0,Aidan Thompson,NYR,C,Injured Reserve,Undisclosed,2026-11-13,2026-09-29,https://www.espn.com/nhl/player/_/id/5136624
 2026-10-26,8478048.0,Igor Shesterkin,NYR,G,Injured Reserve,Knee,2027-09-15,2026-10-11,https://www.espn.com/nhl/player/_/id/3151297
 2026-10-26,,Joe Veleno,NYR,C,Injured Reserve,Lower Body,2027-01-03,2026-10-10,https://www.espn.com/nhl/player/_/id/4352804
 2026-10-26,8476914.0,Joonas Korpisalo,NYR,G,Injured Reserve,Foot,2026-11-09,2026-10-10,https://www.espn.com/nhl/player/_/id/3069266
@@ -2067,7 +2067,7 @@ snapshot,player_id,name,team,position,status,injury,return_date,updated,espn_url
 2026-10-26,8475166.0,John Tavares,TOR,C,Injured Reserve,Lower Body,2026-11-27,2026-10-17,https://www.espn.com/nhl/player/_/id/5160
 2026-10-26,8483546.0,Marshall Rifai,TOR,D,Injured Reserve,Lower Body,2026-10-31,2026-10-23,https://www.espn.com/nhl/player/_/id/4419778
 2026-10-26,8477503.0,Max Domi,TOR,C,Injured Reserve,Back,2026-11-21,2026-09-30,https://www.espn.com/nhl/player/_/id/3042014
-2026-10-26,8477425.0,Miles Wood,TOR,LW,Injured Reserve,Undisclosed,2026-10-26,2026-10-15,https://www.espn.com/nhl/player/_/id/3042110
+2026-10-26,8477425.0,Miles Wood,TOR,LW,Injured Reserve,Undisclosed,2026-11-03,2026-10-15,https://www.espn.com/nhl/player/_/id/3042110
 2026-10-26,8483565.0,Nick Blankenburg,TOR,D,Injured Reserve,Upper Body,2026-11-12,2026-10-23,https://www.espn.com/nhl/player/_/id/4781550
 2026-10-26,8482174.0,William Villeneuve,TOR,D,Injured Reserve,Knee,2026-10-31,2026-09-29,https://www.espn.com/nhl/player/_/id/4697767
 2026-10-26,8478507.0,John Marino,UTA,D,Out,Upper Body,2026-11-01,2026-10-24,https://www.espn.com/nhl/player/_/id/3941974
