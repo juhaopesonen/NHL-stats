@@ -7,6 +7,7 @@ player_id,birth_country,name
 8471724,CAN,
 8473419,CAN,
 8473422,USA,
+8473503,CAN,
 8473512,CAN,
 8473533,CAN,
 8473575,RUS,
@@ -684,6 +685,7 @@ player_id,birth_country,name
 8483100,USA,James Stefan
 8483395,CAN,
 8483398,USA,
+8483406,CAN,
 8483424,CAN,
 8483425,CHE,
 8483429,USA,Seamus Casey

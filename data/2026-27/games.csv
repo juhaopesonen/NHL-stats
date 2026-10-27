@@ -183,3 +183,6 @@ game_id,date,game_type,away,home,away_name,home_name,away_score,home_score,away_
 2026020182,2026-10-25,2,MTL,WPG,Montréal Canadiens,Winnipeg Jets,2,1,21,34,REG
 2026020183,2026-10-25,2,COL,NSH,Colorado Avalanche,Nashville Predators,2,6,21,35,REG
 2026020184,2026-10-25,2,MIN,VAN,Minnesota Wild,Vancouver Canucks,4,2,34,17,REG
+2026020185,2026-10-26,2,LAK,NYR,Los Angeles Kings,New York Rangers,6,3,26,26,REG
+2026020186,2026-10-26,2,TOR,CGY,Toronto Maple Leafs,Calgary Flames,2,5,28,34,REG
+2026020187,2026-10-26,2,DET,EDM,Detroit Red Wings,Edmonton Oilers,4,3,29,28,SO
