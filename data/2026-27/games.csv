@@ -186,3 +186,14 @@ game_id,date,game_type,away,home,away_name,home_name,away_score,home_score,away_
 2026020185,2026-10-26,2,LAK,NYR,Los Angeles Kings,New York Rangers,6,3,26,26,REG
 2026020186,2026-10-26,2,TOR,CGY,Toronto Maple Leafs,Calgary Flames,2,5,28,34,REG
 2026020187,2026-10-26,2,DET,EDM,Detroit Red Wings,Edmonton Oilers,4,3,29,28,SO
+2026020188,2026-10-27,2,CBJ,PHI,Columbus Blue Jackets,Philadelphia Flyers,4,3,15,31,OT
+2026020189,2026-10-27,2,BOS,CAR,Boston Bruins,Carolina Hurricanes,1,2,15,30,REG
+2026020190,2026-10-27,2,LAK,CHI,Los Angeles Kings,Chicago Blackhawks,1,2,26,27,REG
+2026020191,2026-10-27,2,MTL,STL,Montréal Canadiens,St. Louis Blues,2,0,20,46,REG
+2026020192,2026-10-27,2,NYI,NSH,New York Islanders,Nashville Predators,4,3,28,23,SO
+2026020193,2026-10-27,2,NJD,DAL,New Jersey Devils,Dallas Stars,5,1,27,18,REG
+2026020194,2026-10-27,2,FLA,WPG,Florida Panthers,Winnipeg Jets,5,1,24,25,REG
+2026020195,2026-10-27,2,MIN,UTA,Minnesota Wild,Utah Mammoth,3,1,30,27,REG
+2026020196,2026-10-27,2,OTT,VGK,Ottawa Senators,Vegas Golden Knights,1,4,26,29,REG
+2026020197,2026-10-27,2,VAN,ANA,Vancouver Canucks,Anaheim Ducks,6,5,33,23,OT
+2026020198,2026-10-27,2,BUF,SJS,Buffalo Sabres,San Jose Sharks,2,0,40,23,REG
