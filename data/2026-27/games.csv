@@ -201,3 +201,14 @@ game_id,date,game_type,away,home,away_name,home_name,away_score,home_score,away_
 2026020200,2026-10-28,2,CGY,EDM,Calgary Flames,Edmonton Oilers,0,4,24,32,REG
 2026020201,2026-10-28,2,NJD,COL,New Jersey Devils,Colorado Avalanche,2,5,22,44,REG
 2026020202,2026-10-28,2,TOR,SEA,Toronto Maple Leafs,Seattle Kraken,4,5,21,17,REG
+2026020203,2026-10-29,2,CHI,DET,Chicago Blackhawks,Detroit Red Wings,1,4,19,31,REG
+2026020204,2026-10-29,2,WPG,TBL,Winnipeg Jets,Tampa Bay Lightning,4,6,21,31,REG
+2026020205,2026-10-29,2,UTA,PIT,Utah Mammoth,Pittsburgh Penguins,4,3,34,34,OT
+2026020206,2026-10-29,2,CBJ,CAR,Columbus Blue Jackets,Carolina Hurricanes,2,3,26,27,REG
+2026020207,2026-10-29,2,BOS,STL,Boston Bruins,St. Louis Blues,1,4,32,18,REG
+2026020208,2026-10-29,2,WSH,NSH,Washington Capitals,Nashville Predators,4,3,29,27,REG
+2026020209,2026-10-29,2,MTL,DAL,Montréal Canadiens,Dallas Stars,5,2,21,19,REG
+2026020210,2026-10-29,2,NYI,MIN,New York Islanders,Minnesota Wild,4,3,26,25,OT
+2026020211,2026-10-29,2,BUF,ANA,Buffalo Sabres,Anaheim Ducks,7,6,31,35,REG
+2026020212,2026-10-29,2,OTT,LAK,Ottawa Senators,Los Angeles Kings,5,6,22,38,OT
+2026020213,2026-10-29,2,VAN,SJS,Vancouver Canucks,San Jose Sharks,2,3,25,24,REG

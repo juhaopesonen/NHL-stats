@@ -6,7 +6,14 @@
   <atom:link href="https://juhaopesonen.github.io/NHL-stats/feed.xml" rel="self" type="application/rss+xml"/>
   <description>NHL:n yön otteluiden syvädata ja nostot suomeksi: xG, putket, suomalaiset ja loukkaantumiset.</description>
   <language>fi</language>
-  <lastBuildDate>Thu, 29 Oct 2026 13:14:29 +0000</lastBuildDate>
+  <lastBuildDate>Fri, 30 Oct 2026 06:20:22 +0000</lastBuildDate>
+  <item>
+    <title>NHL-yöraportti 29.10.2026 – 11 ottelua</title>
+    <link>https://juhaopesonen.github.io/NHL-stats/raportit/2026-10-29.html</link>
+    <guid isPermaLink="true">https://juhaopesonen.github.io/NHL-stats/raportit/2026-10-29.html</guid>
+    <pubDate>Fri, 30 Oct 2026 06:20:22 +0000</pubDate>
+    <description>&lt;p&gt;Ottelut torstai 29.10.2026.&lt;/p&gt;&lt;ul&gt;&lt;li&gt;Tage Thompson (BUF) teki hattutempun, tehot 3+2.&lt;/li&gt;&lt;li&gt;Viktor Arvidsson (DET) teki hattutempun, tehot 3+1.&lt;/li&gt;&lt;li&gt;Denton Mateychuk (CBJ) on tehnyt maalin 3 ottelussa peräkkäin (yhteensä 3 maalia).&lt;/li&gt;&lt;li&gt;Filip Forsberg (NSH) on tehnyt maalin 3 ottelussa peräkkäin (yhteensä 4 maalia).&lt;/li&gt;&lt;li&gt;Pisteputki jatkui 9 pelaajalla (peliä putkessa): Drake Batherson (OTT) 6, Elias Pettersson (VAN) 6, Jordan Kyrou (WSH) 6, Matthew Schaefer (NYI) 6, Mikhail Sergachev (UTA) 6, Jackson Blake (CAR) 5, Jackson LaCombe (ANA) 5, Jakob Chychrun (WSH) 5, Nikolaj Ehlers (CAR) 5.&lt;/li&gt;&lt;/ul&gt;&lt;p&gt;Suomalaiset: 20 pelasi, yhteensä 3+4 – Mikko Rantanen 0+2, Mikael Granlund 1+0, Erik Haula 1+0, Joel Armia 1+0, Miro Heiskanen 0+1&lt;/p&gt;&lt;p&gt;&lt;a href=&quot;https://juhaopesonen.github.io/NHL-stats/raportit/2026-10-29.html&quot;&gt;Koko raportti&lt;/a&gt;&lt;/p&gt;</description>
+  </item>
   <item>
     <title>NHL-yöraportti 28.10.2026 – 4 ottelua</title>
     <link>https://juhaopesonen.github.io/NHL-stats/raportit/2026-10-28.html</link>
