@@ -212,3 +212,6 @@ game_id,date,game_type,away,home,away_name,home_name,away_score,home_score,away_
 2026020211,2026-10-29,2,BUF,ANA,Buffalo Sabres,Anaheim Ducks,7,6,31,35,REG
 2026020212,2026-10-29,2,OTT,LAK,Ottawa Senators,Los Angeles Kings,5,6,22,38,OT
 2026020213,2026-10-29,2,VAN,SJS,Vancouver Canucks,San Jose Sharks,2,3,25,24,REG
+2026020214,2026-10-30,2,NJD,VGK,New Jersey Devils,Vegas Golden Knights,5,2,32,21,REG
+2026020215,2026-10-30,2,WPG,FLA,Winnipeg Jets,Florida Panthers,2,5,24,38,REG
+2026020216,2026-10-30,2,SEA,CGY,Seattle Kraken,Calgary Flames,2,6,22,27,REG

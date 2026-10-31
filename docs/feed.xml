@@ -6,7 +6,14 @@
   <atom:link href="https://juhaopesonen.github.io/NHL-stats/feed.xml" rel="self" type="application/rss+xml"/>
   <description>NHL:n yön otteluiden syvädata ja nostot suomeksi: xG, putket, suomalaiset ja loukkaantumiset.</description>
   <language>fi</language>
-  <lastBuildDate>Fri, 30 Oct 2026 13:11:11 +0000</lastBuildDate>
+  <lastBuildDate>Sat, 31 Oct 2026 06:18:07 +0000</lastBuildDate>
+  <item>
+    <title>NHL-yöraportti 30.10.2026 – 3 ottelua</title>
+    <link>https://juhaopesonen.github.io/NHL-stats/raportit/2026-10-30.html</link>
+    <guid isPermaLink="true">https://juhaopesonen.github.io/NHL-stats/raportit/2026-10-30.html</guid>
+    <pubDate>Sat, 31 Oct 2026 06:18:07 +0000</pubDate>
+    <description>&lt;p&gt;Ottelut perjantai 30.10.2026.&lt;/p&gt;&lt;ul&gt;&lt;li&gt;Anton Lundell (FLA) teki hattutempun, tehot 3+0.&lt;/li&gt;&lt;li&gt;Matt Coronato (CGY) keräsi 4 pistettä (1+3).&lt;/li&gt;&lt;li&gt;Mitch Marner (VGK) jatkoi pisteputkensa 9 otteluun (putken aikana 1+12).&lt;/li&gt;&lt;li&gt;Pisteputki jatkui 1 pelaajalla (peliä putkessa): Berkly Catton (SEA) 6.&lt;/li&gt;&lt;li&gt;Anton Lundell (FLA) teki 3 maalia vain 1,11 ixG:n laukauksista.&lt;/li&gt;&lt;/ul&gt;&lt;p&gt;Suomalaiset: 5 pelasi, yhteensä 3+3 – Anton Lundell 3+0, Eetu Luostarinen 0+2, Kaapo Kakko 0+1&lt;/p&gt;&lt;p&gt;&lt;a href=&quot;https://juhaopesonen.github.io/NHL-stats/raportit/2026-10-30.html&quot;&gt;Koko raportti&lt;/a&gt;&lt;/p&gt;</description>
+  </item>
   <item>
     <title>NHL-yöraportti 29.10.2026 – 11 ottelua</title>
     <link>https://juhaopesonen.github.io/NHL-stats/raportit/2026-10-29.html</link>
