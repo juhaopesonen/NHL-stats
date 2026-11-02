@@ -6,7 +6,14 @@
   <atom:link href="https://juhaopesonen.github.io/NHL-stats/feed.xml" rel="self" type="application/rss+xml"/>
   <description>NHL:n yön otteluiden syvädata ja nostot suomeksi: xG, putket, suomalaiset ja loukkaantumiset.</description>
   <language>fi</language>
-  <lastBuildDate>Sun, 01 Nov 2026 13:04:04 +0000</lastBuildDate>
+  <lastBuildDate>Mon, 02 Nov 2026 06:41:58 +0000</lastBuildDate>
+  <item>
+    <title>NHL-yöraportti 1.11.2026 – 5 ottelua</title>
+    <link>https://juhaopesonen.github.io/NHL-stats/raportit/2026-11-01.html</link>
+    <guid isPermaLink="true">https://juhaopesonen.github.io/NHL-stats/raportit/2026-11-01.html</guid>
+    <pubDate>Mon, 02 Nov 2026 06:41:58 +0000</pubDate>
+    <description>&lt;p&gt;Ottelut sunnuntai 1.11.2026.&lt;/p&gt;&lt;ul&gt;&lt;li&gt;Cutter Gauthier (ANA) teki hattutempun, tehot 3+0.&lt;/li&gt;&lt;li&gt;Connor McDavid (EDM) jatkoi pisteputkensa 15 otteluun (putken aikana 9+30).&lt;/li&gt;&lt;li&gt;Drake Batherson (OTT) jatkoi pisteputkensa 8 otteluun (putken aikana 6+7).&lt;/li&gt;&lt;li&gt;Pisteputki jatkui 9 pelaajalla (peliä putkessa): Mikhail Sergachev (UTA) 7, Jackson Blake (CAR) 6, Jackson LaCombe (ANA) 6, Nikolaj Ehlers (CAR) 6, Joel Eriksson Ek (MIN) 5, Kirill Kaprizov (MIN) 5, Matt Boldy (MIN) 5, Pavel Dorofeyev (NYR) 5, Quinn Hughes (MIN) 5.&lt;/li&gt;&lt;li&gt;Pyotr Kochetkov (CAR) torjui 26/26 ja päästi 3,02 maalia odotettua vähemmän (GSAx).&lt;/li&gt;&lt;/ul&gt;&lt;p&gt;Suomalaiset: 8 pelasi, yhteensä 3+2 – Sebastian Aho 1+1, Juuso Välimäki 1+0, Jesperi Kotkaniemi 1+0, Mikael Granlund 0+1&lt;/p&gt;&lt;p&gt;&lt;a href=&quot;https://juhaopesonen.github.io/NHL-stats/raportit/2026-11-01.html&quot;&gt;Koko raportti&lt;/a&gt;&lt;/p&gt;</description>
+  </item>
   <item>
     <title>NHL-yöraportti 31.10.2026 – 10 ottelua</title>
     <link>https://juhaopesonen.github.io/NHL-stats/raportit/2026-10-31.html</link>
