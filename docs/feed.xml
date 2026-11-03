@@ -6,7 +6,14 @@
   <atom:link href="https://juhaopesonen.github.io/NHL-stats/feed.xml" rel="self" type="application/rss+xml"/>
   <description>NHL:n yön otteluiden syvädata ja nostot suomeksi: xG, putket, suomalaiset ja loukkaantumiset.</description>
   <language>fi</language>
-  <lastBuildDate>Mon, 02 Nov 2026 13:26:11 +0000</lastBuildDate>
+  <lastBuildDate>Tue, 03 Nov 2026 06:37:05 +0000</lastBuildDate>
+  <item>
+    <title>NHL-yöraportti 2.11.2026 – 4 ottelua</title>
+    <link>https://juhaopesonen.github.io/NHL-stats/raportit/2026-11-02.html</link>
+    <guid isPermaLink="true">https://juhaopesonen.github.io/NHL-stats/raportit/2026-11-02.html</guid>
+    <pubDate>Tue, 03 Nov 2026 06:37:05 +0000</pubDate>
+    <description>&lt;p&gt;Ottelut maanantai 2.11.2026.&lt;/p&gt;&lt;ul&gt;&lt;li&gt;Sam Reinhart (FLA) on tehnyt maalin 3 ottelussa peräkkäin (yhteensä 3 maalia).&lt;/li&gt;&lt;li&gt;Mitch Marner (VGK) jatkoi pisteputkensa 10 otteluun (putken aikana 1+14).&lt;/li&gt;&lt;li&gt;Pisteputki jatkui 4 pelaajalla (peliä putkessa): Connor Bedard (CHI) 6, Devon Toews (COL) 5, Nathan MacKinnon (COL) 5, Roman Kantserov (CHI) 5.&lt;/li&gt;&lt;li&gt;Matthew Poitras (BOS) pelasi yöllä 3.13 – nyt päivittäinen arvio, vamma: ei kerrottu, arvioitu paluu 5.11. (n. 2 pv).&lt;/li&gt;&lt;li&gt;Artturi Lehkonen (COL): 9 ottelun pisteputki katkesi yön peliin.&lt;/li&gt;&lt;/ul&gt;&lt;p&gt;Suomalaiset: 5 pelasi, yhteensä 0+0&lt;/p&gt;&lt;p&gt;&lt;a href=&quot;https://juhaopesonen.github.io/NHL-stats/raportit/2026-11-02.html&quot;&gt;Koko raportti&lt;/a&gt;&lt;/p&gt;</description>
+  </item>
   <item>
     <title>NHL-yöraportti 1.11.2026 – 5 ottelua</title>
     <link>https://juhaopesonen.github.io/NHL-stats/raportit/2026-11-01.html</link>

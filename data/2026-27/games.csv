@@ -230,3 +230,7 @@ game_id,date,game_type,away,home,away_name,home_name,away_score,home_score,away_
 2026020229,2026-11-01,2,UTA,PHI,Utah Mammoth,Philadelphia Flyers,3,6,22,21,REG
 2026020230,2026-11-01,2,EDM,NYR,Edmonton Oilers,New York Rangers,4,1,25,28,REG
 2026020231,2026-11-01,2,OTT,ANA,Ottawa Senators,Anaheim Ducks,3,6,22,33,REG
+2026020232,2026-11-02,2,VGK,BOS,Vegas Golden Knights,Boston Bruins,2,3,23,27,SO
+2026020233,2026-11-02,2,DET,FLA,Detroit Red Wings,Florida Panthers,5,3,29,26,REG
+2026020234,2026-11-02,2,COL,CHI,Colorado Avalanche,Chicago Blackhawks,5,2,29,23,REG
+2026020235,2026-11-02,2,CGY,SJS,Calgary Flames,San Jose Sharks,2,1,22,27,REG
