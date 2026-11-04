@@ -6,7 +6,14 @@
   <atom:link href="https://juhaopesonen.github.io/NHL-stats/feed.xml" rel="self" type="application/rss+xml"/>
   <description>NHL:n yön otteluiden syvädata ja nostot suomeksi: xG, putket, suomalaiset ja loukkaantumiset.</description>
   <language>fi</language>
-  <lastBuildDate>Tue, 03 Nov 2026 13:21:19 +0000</lastBuildDate>
+  <lastBuildDate>Wed, 04 Nov 2026 06:42:10 +0000</lastBuildDate>
+  <item>
+    <title>NHL-yöraportti 3.11.2026 – 11 ottelua</title>
+    <link>https://juhaopesonen.github.io/NHL-stats/raportit/2026-11-03.html</link>
+    <guid isPermaLink="true">https://juhaopesonen.github.io/NHL-stats/raportit/2026-11-03.html</guid>
+    <pubDate>Wed, 04 Nov 2026 06:42:10 +0000</pubDate>
+    <description>&lt;p&gt;Ottelut tiistai 3.11.2026.&lt;/p&gt;&lt;ul&gt;&lt;li&gt;Jason Robertson (DAL) teki hattutempun, tehot 3+1.&lt;/li&gt;&lt;li&gt;Cutter Gauthier (ANA) teki hattutempun, tehot 3+0.&lt;/li&gt;&lt;li&gt;Rickard Rakell (PIT) on tehnyt maalin 4 ottelussa peräkkäin (yhteensä 4 maalia).&lt;/li&gt;&lt;li&gt;Connor McDavid (EDM) jatkoi pisteputkensa 16 otteluun (putken aikana 9+31).&lt;/li&gt;&lt;li&gt;Mitch Marner (VGK) jatkoi pisteputkensa 11 otteluun (putken aikana 1+15).&lt;/li&gt;&lt;/ul&gt;&lt;p&gt;Suomalaiset: 17 pelasi, yhteensä 5+10 – Roope Hintz 1+2, Mikael Granlund 1+2, Eeli Tolvanen 1+1, Kasperi Kapanen 0+2, Mikko Rantanen 1+0&lt;/p&gt;&lt;p&gt;&lt;a href=&quot;https://juhaopesonen.github.io/NHL-stats/raportit/2026-11-03.html&quot;&gt;Koko raportti&lt;/a&gt;&lt;/p&gt;</description>
+  </item>
   <item>
     <title>NHL-yöraportti 2.11.2026 – 4 ottelua</title>
     <link>https://juhaopesonen.github.io/NHL-stats/raportit/2026-11-02.html</link>
