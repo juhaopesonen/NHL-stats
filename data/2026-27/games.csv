@@ -245,3 +245,7 @@ game_id,date,game_type,away,home,away_name,home_name,away_score,home_score,away_
 2026020244,2026-11-03,2,COL,CBJ,Colorado Avalanche,Columbus Blue Jackets,2,7,29,24,REG
 2026020245,2026-11-03,2,CAR,NSH,Carolina Hurricanes,Nashville Predators,1,4,30,20,REG
 2026020246,2026-11-03,2,ANA,VAN,Anaheim Ducks,Vancouver Canucks,5,4,22,23,REG
+2026020247,2026-11-04,2,OTT,BUF,Ottawa Senators,Buffalo Sabres,2,1,30,24,REG
+2026020248,2026-11-04,2,CHI,FLA,Chicago Blackhawks,Florida Panthers,3,5,20,30,REG
+2026020249,2026-11-04,2,SJS,LAK,San Jose Sharks,Los Angeles Kings,2,7,32,27,REG
+2026020250,2026-11-04,2,CGY,SEA,Calgary Flames,Seattle Kraken,1,2,26,29,OT
