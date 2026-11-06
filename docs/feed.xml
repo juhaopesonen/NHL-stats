@@ -6,7 +6,14 @@
   <atom:link href="https://juhaopesonen.github.io/NHL-stats/feed.xml" rel="self" type="application/rss+xml"/>
   <description>NHL:n yön otteluiden syvädata ja nostot suomeksi: xG, putket, suomalaiset ja loukkaantumiset.</description>
   <language>fi</language>
-  <lastBuildDate>Thu, 05 Nov 2026 13:28:18 +0000</lastBuildDate>
+  <lastBuildDate>Fri, 06 Nov 2026 06:43:04 +0000</lastBuildDate>
+  <item>
+    <title>NHL-yöraportti 5.11.2026 – 11 ottelua</title>
+    <link>https://juhaopesonen.github.io/NHL-stats/raportit/2026-11-05.html</link>
+    <guid isPermaLink="true">https://juhaopesonen.github.io/NHL-stats/raportit/2026-11-05.html</guid>
+    <pubDate>Fri, 06 Nov 2026 06:43:04 +0000</pubDate>
+    <description>&lt;p&gt;Ottelut torstai 5.11.2026.&lt;/p&gt;&lt;ul&gt;&lt;li&gt;Logan Cooley (UTA) teki hattutempun, tehot 3+1.&lt;/li&gt;&lt;li&gt;Cutter Gauthier (ANA) on tehnyt maalin 4 ottelussa peräkkäin (yhteensä 9 maalia).&lt;/li&gt;&lt;li&gt;Connor McDavid (EDM) jatkoi pisteputkensa 17 otteluun (putken aikana 10+34).&lt;/li&gt;&lt;li&gt;Mikhail Sergachev (UTA) jatkoi pisteputkensa 9 otteluun (putken aikana 3+8).&lt;/li&gt;&lt;li&gt;Pisteputki jatkui 10 pelaajalla (peliä putkessa): Roman Kantserov (CHI) 7, Brayden Point (TBL) 6, Cutter Gauthier (ANA) 6, Kent Johnson (CBJ) 6, Leo Carlsson (ANA) 6, Tristan Luneau (ANA) 6, Evan Bouchard (EDM) 5, Nick Suzuki (MTL) 5, Victor Olofsson (VGK) 5, Zach Werenski (CBJ) 5.&lt;/li&gt;&lt;/ul&gt;&lt;p&gt;Suomalaiset: 17 pelasi, yhteensä 3+3 – Sebastian Aho 0+2, Jesperi Kotkaniemi 1+0, Mikko Rantanen 1+0, Kasperi Kapanen 1+0, Mikael Granlund 0+1&lt;/p&gt;&lt;p&gt;&lt;a href=&quot;https://juhaopesonen.github.io/NHL-stats/raportit/2026-11-05.html&quot;&gt;Koko raportti&lt;/a&gt;&lt;/p&gt;</description>
+  </item>
   <item>
     <title>NHL-yöraportti 4.11.2026 – 4 ottelua</title>
     <link>https://juhaopesonen.github.io/NHL-stats/raportit/2026-11-04.html</link>
