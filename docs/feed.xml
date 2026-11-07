@@ -6,7 +6,14 @@
   <atom:link href="https://juhaopesonen.github.io/NHL-stats/feed.xml" rel="self" type="application/rss+xml"/>
   <description>NHL:n yön otteluiden syvädata ja nostot suomeksi: xG, putket, suomalaiset ja loukkaantumiset.</description>
   <language>fi</language>
-  <lastBuildDate>Fri, 06 Nov 2026 13:22:57 +0000</lastBuildDate>
+  <lastBuildDate>Sat, 07 Nov 2026 06:28:34 +0000</lastBuildDate>
+  <item>
+    <title>NHL-yöraportti 6.11.2026 – 3 ottelua</title>
+    <link>https://juhaopesonen.github.io/NHL-stats/raportit/2026-11-06.html</link>
+    <guid isPermaLink="true">https://juhaopesonen.github.io/NHL-stats/raportit/2026-11-06.html</guid>
+    <pubDate>Sat, 07 Nov 2026 06:28:34 +0000</pubDate>
+    <description>&lt;p&gt;Ottelut perjantai 6.11.2026.&lt;/p&gt;&lt;ul&gt;&lt;li&gt;Kirill Kaprizov (MIN) keräsi 4 pistettä (1+3).&lt;/li&gt;&lt;li&gt;Cutter Gauthier (ANA) on tehnyt maalin 5 ottelussa peräkkäin (yhteensä 10 maalia).&lt;/li&gt;&lt;li&gt;Jackson LaCombe (ANA) jatkoi pisteputkensa 9 otteluun (putken aikana 0+13).&lt;/li&gt;&lt;li&gt;Pisteputki jatkui 12 pelaajalla (peliä putkessa): Cutter Gauthier (ANA) 7, Joel Eriksson Ek (MIN) 7, Kent Johnson (CBJ) 7, Kirill Kaprizov (MIN) 7, Leo Carlsson (ANA) 7, Matt Boldy (MIN) 7, Quinn Hughes (MIN) 7, Tristan Luneau (ANA) 7, Zach Benson (BUF) 6, Zach Werenski (CBJ) 6, Mikael Granlund (ANA) 5, Tage Thompson (BUF) 5.&lt;/li&gt;&lt;li&gt;Dmitri Voronkov (CBJ) pelasi yöllä 8.00 – nyt päivittäinen arvio, vamma: ylävartalo, arvioitu paluu 10.11. (n. 3 pv).&lt;/li&gt;&lt;/ul&gt;&lt;p&gt;Suomalaiset: 4 pelasi, yhteensä 0+2 – Mikael Granlund 0+2&lt;/p&gt;&lt;p&gt;&lt;a href=&quot;https://juhaopesonen.github.io/NHL-stats/raportit/2026-11-06.html&quot;&gt;Koko raportti&lt;/a&gt;&lt;/p&gt;</description>
+  </item>
   <item>
     <title>NHL-yöraportti 5.11.2026 – 11 ottelua</title>
     <link>https://juhaopesonen.github.io/NHL-stats/raportit/2026-11-05.html</link>

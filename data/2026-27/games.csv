@@ -260,3 +260,6 @@ game_id,date,game_type,away,home,away_name,home_name,away_score,home_score,away_
 2026020259,2026-11-05,2,VAN,WPG,Vancouver Canucks,Winnipeg Jets,2,6,26,29,REG
 2026020260,2026-11-05,2,ANA,EDM,Anaheim Ducks,Edmonton Oilers,5,4,21,27,REG
 2026020261,2026-11-05,2,NSH,COL,Nashville Predators,Colorado Avalanche,3,2,25,32,OT
+2026020262,2026-11-06,2,CBJ,BUF,Columbus Blue Jackets,Buffalo Sabres,2,5,26,37,REG
+2026020263,2026-11-06,2,SJS,MIN,San Jose Sharks,Minnesota Wild,1,4,24,29,REG
+2026020264,2026-11-06,2,ANA,CGY,Anaheim Ducks,Calgary Flames,5,3,29,21,REG
