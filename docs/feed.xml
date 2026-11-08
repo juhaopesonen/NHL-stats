@@ -6,7 +6,14 @@
   <atom:link href="https://juhaopesonen.github.io/NHL-stats/feed.xml" rel="self" type="application/rss+xml"/>
   <description>NHL:n yön otteluiden syvädata ja nostot suomeksi: xG, putket, suomalaiset ja loukkaantumiset.</description>
   <language>fi</language>
-  <lastBuildDate>Sat, 07 Nov 2026 13:07:37 +0000</lastBuildDate>
+  <lastBuildDate>Sun, 08 Nov 2026 06:30:15 +0000</lastBuildDate>
+  <item>
+    <title>NHL-yöraportti 7.11.2026 – 12 ottelua</title>
+    <link>https://juhaopesonen.github.io/NHL-stats/raportit/2026-11-07.html</link>
+    <guid isPermaLink="true">https://juhaopesonen.github.io/NHL-stats/raportit/2026-11-07.html</guid>
+    <pubDate>Sun, 08 Nov 2026 06:30:15 +0000</pubDate>
+    <description>&lt;p&gt;Ottelut lauantai 7.11.2026.&lt;/p&gt;&lt;ul&gt;&lt;li&gt;Roman Kantserov (CHI) on tehnyt maalin 4 ottelussa peräkkäin (yhteensä 4 maalia).&lt;/li&gt;&lt;li&gt;Leon Draisaitl (EDM) on tehnyt maalin 3 ottelussa peräkkäin (yhteensä 4 maalia).&lt;/li&gt;&lt;li&gt;Connor McDavid (EDM) jatkoi pisteputkensa 18 otteluun (putken aikana 10+37).&lt;/li&gt;&lt;li&gt;Jackson Blake (CAR) jatkoi pisteputkensa 9 otteluun (putken aikana 4+7).&lt;/li&gt;&lt;li&gt;Pisteputki jatkui 10 pelaajalla (peliä putkessa): Brayden Point (TBL) 7, Auston Matthews (TOR) 6, Evan Bouchard (EDM) 6, Sam Reinhart (FLA) 6, Clayton Keller (UTA) 5, Lane Hutson (MTL) 5, Leon Draisaitl (EDM) 5, Logan Stankoven (CAR) 5, Mikko Rantanen (DAL) 5, Wyatt Johnston (DAL) 5.&lt;/li&gt;&lt;/ul&gt;&lt;p&gt;Suomalaiset: 25 pelasi, yhteensä 3+9 – Sebastian Aho 1+2, Roope Hintz 1+1, Jesperi Kotkaniemi 0+2, Mikko Rantanen 0+2, Kaapo Kakko 1+0&lt;/p&gt;&lt;p&gt;&lt;a href=&quot;https://juhaopesonen.github.io/NHL-stats/raportit/2026-11-07.html&quot;&gt;Koko raportti&lt;/a&gt;&lt;/p&gt;</description>
+  </item>
   <item>
     <title>NHL-yöraportti 6.11.2026 – 3 ottelua</title>
     <link>https://juhaopesonen.github.io/NHL-stats/raportit/2026-11-06.html</link>

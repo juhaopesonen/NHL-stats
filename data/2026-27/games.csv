@@ -263,3 +263,15 @@ game_id,date,game_type,away,home,away_name,home_name,away_score,home_score,away_
 2026020262,2026-11-06,2,CBJ,BUF,Columbus Blue Jackets,Buffalo Sabres,2,5,26,37,REG
 2026020263,2026-11-06,2,SJS,MIN,San Jose Sharks,Minnesota Wild,1,4,24,29,REG
 2026020264,2026-11-06,2,ANA,CGY,Anaheim Ducks,Calgary Flames,5,3,29,21,REG
+2026020265,2026-11-07,2,FLA,WSH,Florida Panthers,Washington Capitals,3,4,30,31,REG
+2026020266,2026-11-07,2,STL,NSH,St. Louis Blues,Nashville Predators,1,3,26,29,REG
+2026020267,2026-11-07,2,NYR,SEA,New York Rangers,Seattle Kraken,4,3,26,28,REG
+2026020268,2026-11-07,2,MTL,TOR,Montréal Canadiens,Toronto Maple Leafs,4,2,28,28,REG
+2026020269,2026-11-07,2,UTA,OTT,Utah Mammoth,Ottawa Senators,2,4,32,21,REG
+2026020270,2026-11-07,2,NJD,NYI,New Jersey Devils,New York Islanders,5,4,50,23,OT
+2026020271,2026-11-07,2,CHI,CAR,Chicago Blackhawks,Carolina Hurricanes,2,9,20,33,REG
+2026020272,2026-11-07,2,SJS,DAL,San Jose Sharks,Dallas Stars,3,4,23,30,REG
+2026020273,2026-11-07,2,TBL,MIN,Tampa Bay Lightning,Minnesota Wild,4,3,34,22,OT
+2026020274,2026-11-07,2,DET,COL,Detroit Red Wings,Colorado Avalanche,0,4,27,29,REG
+2026020275,2026-11-07,2,PIT,LAK,Pittsburgh Penguins,Los Angeles Kings,5,2,19,28,REG
+2026020276,2026-11-07,2,VAN,EDM,Vancouver Canucks,Edmonton Oilers,2,4,22,30,REG
