@@ -6,7 +6,14 @@
   <atom:link href="https://juhaopesonen.github.io/NHL-stats/feed.xml" rel="self" type="application/rss+xml"/>
   <description>NHL:n yön otteluiden syvädata ja nostot suomeksi: xG, putket, suomalaiset ja loukkaantumiset.</description>
   <language>fi</language>
-  <lastBuildDate>Sun, 08 Nov 2026 17:57:08 +0000</lastBuildDate>
+  <lastBuildDate>Mon, 09 Nov 2026 14:22:07 +0000</lastBuildDate>
+  <item>
+    <title>NHL-yöraportti 8.11.2026 – 6 ottelua</title>
+    <link>https://juhaopesonen.github.io/NHL-stats/raportit/2026-11-08.html</link>
+    <guid isPermaLink="true">https://juhaopesonen.github.io/NHL-stats/raportit/2026-11-08.html</guid>
+    <pubDate>Mon, 09 Nov 2026 14:22:07 +0000</pubDate>
+    <description>&lt;p&gt;Ottelut sunnuntai 8.11.2026.&lt;/p&gt;&lt;ul&gt;&lt;li&gt;Cutter Gauthier (ANA) teki hattutempun, tehot 3+1.&lt;/li&gt;&lt;li&gt;Cutter Gauthier (ANA) on tehnyt maalin 6 ottelussa peräkkäin (yhteensä 13 maalia).&lt;/li&gt;&lt;li&gt;Morgan Geekie (BOS) on tehnyt maalin 4 ottelussa peräkkäin (yhteensä 4 maalia).&lt;/li&gt;&lt;li&gt;Jackson LaCombe (ANA) jatkoi pisteputkensa 10 otteluun (putken aikana 0+16).&lt;/li&gt;&lt;li&gt;Cutter Gauthier (ANA) jatkoi pisteputkensa 8 otteluun (putken aikana 13+4).&lt;/li&gt;&lt;/ul&gt;&lt;p&gt;Suomalaiset: 4 pelasi, yhteensä 1+3 – Mikael Granlund 1+3&lt;/p&gt;&lt;p&gt;&lt;a href=&quot;https://juhaopesonen.github.io/NHL-stats/raportit/2026-11-08.html&quot;&gt;Koko raportti&lt;/a&gt;&lt;/p&gt;</description>
+  </item>
   <item>
     <title>NHL-yöraportti 7.11.2026 – 12 ottelua</title>
     <link>https://juhaopesonen.github.io/NHL-stats/raportit/2026-11-07.html</link>
@@ -209,13 +216,6 @@
     <guid isPermaLink="true">https://juhaopesonen.github.io/NHL-stats/raportit/2026-10-10.html</guid>
     <pubDate>Mon, 12 Oct 2026 06:59:24 +0000</pubDate>
     <description>&lt;p&gt;Ottelut lauantai 10.10.2026.&lt;/p&gt;&lt;ul&gt;&lt;li&gt;Brandon Hagel (TBL) teki hattutempun, tehot 3+1.&lt;/li&gt;&lt;li&gt;Kirill Kaprizov (MIN) teki hattutempun, tehot 3+1.&lt;/li&gt;&lt;li&gt;William Nylander (TOR) keräsi 5 pistettä (2+3).&lt;/li&gt;&lt;li&gt;Daniil Tarasov (DET) torjui 30/30 ja päästi 3,60 maalia odotettua vähemmän (GSAx).&lt;/li&gt;&lt;li&gt;Jacob Fowler (MTL) torjui 30/30 ja päästi 3,57 maalia odotettua vähemmän (GSAx).&lt;/li&gt;&lt;/ul&gt;&lt;p&gt;Suomalaiset: 22 pelasi, yhteensä 1+5 – Mikael Granlund 0+2, Sebastian Aho 1+0, Miro Heiskanen 0+1, Jesperi Kotkaniemi 0+1, Matias Maccelli 0+1&lt;/p&gt;&lt;p&gt;&lt;a href=&quot;https://juhaopesonen.github.io/NHL-stats/raportit/2026-10-10.html&quot;&gt;Koko raportti&lt;/a&gt;&lt;/p&gt;</description>
-  </item>
-  <item>
-    <title>NHL-yöraportti 9.10.2026 – 4 ottelua</title>
-    <link>https://juhaopesonen.github.io/NHL-stats/raportit/2026-10-09.html</link>
-    <guid isPermaLink="true">https://juhaopesonen.github.io/NHL-stats/raportit/2026-10-09.html</guid>
-    <pubDate>Mon, 12 Oct 2026 06:59:23 +0000</pubDate>
-    <description>&lt;p&gt;Ottelut perjantai 9.10.2026.&lt;/p&gt;&lt;ul&gt;&lt;li&gt;Ben Meyers (SEA) keräsi 3 pistettä (1+2).&lt;/li&gt;&lt;li&gt;Viktor Arvidsson (DET) on tehnyt maalin 3 ottelussa peräkkäin (yhteensä 3 maalia).&lt;/li&gt;&lt;li&gt;Sergei Murashov (PIT) torjui 45/47 ja päästi 2,76 maalia odotettua vähemmän (GSAx).&lt;/li&gt;&lt;li&gt;John Gibson (DET): vaikea ilta, 10/15 ja 3,02 maalia odotettua enemmän (GSAx −3,02).&lt;/li&gt;&lt;li&gt;Frederick Gaudreau (SEA) teki 2 maalia vain 0,27 ixG:n laukauksista.&lt;/li&gt;&lt;/ul&gt;&lt;p&gt;Suomalaiset: 6 pelasi, yhteensä 1+2 – Mikael Granlund 1+1, Kaapo Kakko 0+1&lt;/p&gt;&lt;p&gt;&lt;a href=&quot;https://juhaopesonen.github.io/NHL-stats/raportit/2026-10-09.html&quot;&gt;Koko raportti&lt;/a&gt;&lt;/p&gt;</description>
   </item>
 </channel>
 </rss>

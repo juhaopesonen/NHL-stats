@@ -275,3 +275,9 @@ game_id,date,game_type,away,home,away_name,home_name,away_score,home_score,away_
 2026020274,2026-11-07,2,DET,COL,Detroit Red Wings,Colorado Avalanche,0,4,27,29,REG
 2026020275,2026-11-07,2,PIT,LAK,Pittsburgh Penguins,Los Angeles Kings,5,2,19,28,REG
 2026020276,2026-11-07,2,VAN,EDM,Vancouver Canucks,Edmonton Oilers,2,4,22,30,REG
+2026020277,2026-11-08,2,FLA,BOS,Florida Panthers,Boston Bruins,1,4,41,36,REG
+2026020278,2026-11-08,2,VGK,BUF,Vegas Golden Knights,Buffalo Sabres,4,1,26,29,REG
+2026020279,2026-11-08,2,NJD,TOR,New Jersey Devils,Toronto Maple Leafs,4,0,29,23,REG
+2026020280,2026-11-08,2,TBL,WPG,Tampa Bay Lightning,Winnipeg Jets,3,4,21,25,REG
+2026020281,2026-11-08,2,PHI,CGY,Philadelphia Flyers,Calgary Flames,3,4,35,26,OT
+2026020282,2026-11-08,2,PIT,ANA,Pittsburgh Penguins,Anaheim Ducks,2,5,33,25,REG
