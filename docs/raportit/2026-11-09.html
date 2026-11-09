@@ -1,0 +1,127 @@
+<!doctype html>
+<html lang="fi"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>NHL-yöraportti 9.11.2026</title>
+<meta name="description" content="NHL:n yön otteluiden syvädata ja nostot: xG, putket ja poikkeamat.">
+<link rel="alternate" type="application/rss+xml" title="NHL-yöraportti" href="https://juhaopesonen.github.io/NHL-stats/feed.xml">
+<style>
+:root{--bg:#f6f7f9;--card:#fff;--text:#16181d;--muted:#5f6673;--line:#e3e6eb;
+--accent:#0b5fff;--accent-soft:#e8efff;--good:#0f8a4b;--bad:#c4372c;--bar-a:#6b7385;--bar-h:#0b5fff;--bar-a-text:#fff;--bar-h-text:#fff}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#0f1115;--card:#181b21;
+--text:#e8eaee;--muted:#9aa2b1;--line:#2a2f38;--accent:#6c9cff;--accent-soft:#1d2840;--good:#3ccf84;
+--bad:#ff7a6e;--bar-a:#5b6475;--bar-h:#6c9cff;--bar-a-text:#fff;--bar-h-text:#0f1115}}
+:root[data-theme="dark"]{--bg:#0f1115;--card:#181b21;--text:#e8eaee;--muted:#9aa2b1;--line:#2a2f38;
+--accent:#6c9cff;--accent-soft:#1d2840;--good:#3ccf84;--bad:#ff7a6e;--bar-a:#5b6475;--bar-h:#6c9cff;--bar-a-text:#fff;--bar-h-text:#0f1115}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--text);font:15px/1.5 system-ui,-apple-system,"Segoe UI",Roboto,sans-serif}
+main{max-width:1100px;margin:0 auto;padding:24px 16px 48px}
+h1{font-size:28px;margin:0}h2{font-size:20px;margin:36px 0 12px}
+.sub{color:var(--muted);margin:4px 0 0}
+header{position:relative}
+.rss{position:absolute;top:6px;right:0;font-size:13px;font-weight:600;text-decoration:none;border:1px solid var(--line);border-radius:999px;padding:4px 12px;background:var(--card)}
+.rss:hover{border-color:var(--accent)}
+a{color:var(--accent)}
+.insights{list-style:none;padding:0;margin:0;display:grid;gap:8px}
+.insights li{background:var(--card);border:1px solid var(--line);border-radius:10px;padding:10px 14px;display:flex;gap:12px;align-items:baseline}
+.tag{flex:none;font-size:12px;font-weight:600;background:var(--accent-soft);color:var(--accent);border-radius:999px;padding:2px 10px;white-space:nowrap}
+.insights a{margin-left:auto;font-size:13px;white-space:nowrap}
+.games{display:grid;grid-template-columns:repeat(auto-fill,minmax(320px,1fr));gap:14px}
+.game{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:14px 16px}
+.score{display:flex;justify-content:space-between;align-items:center;font-size:20px;font-weight:700}
+.score .ot{font-size:12px;color:var(--muted);font-weight:500}
+.names{display:flex;justify-content:space-between;color:var(--muted);font-size:12px;margin-bottom:10px}
+.bar{display:flex;height:22px;border-radius:6px;overflow:hidden;margin:6px 0 10px;background:var(--line);
+font-size:12px;font-weight:700;line-height:22px;font-variant-numeric:tabular-nums}
+.bar div{flex-basis:0;min-width:3.4em;padding:0 8px;white-space:nowrap}
+.bar .a{background:var(--bar-a);color:var(--bar-a-text)}
+.bar .h{background:var(--bar-h);color:var(--bar-h-text);text-align:right}
+table{width:100%;border-collapse:collapse;font-size:13px}
+td,th{padding:3px 4px;text-align:right;font-variant-numeric:tabular-nums}
+td:first-child,th:first-child{text-align:left}
+th{color:var(--muted);font-weight:500;border-bottom:1px solid var(--line)}
+.block{margin-top:10px}.block h3{font-size:13px;margin:0 0 4px;color:var(--muted);font-weight:600}
+.players{margin:0;padding-left:18px;font-size:13px}
+.pos{color:var(--good)}.neg{color:var(--bad)}
+.season{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:14px}
+.season .game table{font-size:14px}
+.archive{columns:3 160px;padding-left:18px}
+footer{margin-top:40px;color:var(--muted);font-size:13px;border-top:1px solid var(--line);padding-top:12px}
+.empty{color:var(--muted)}
+.game{overflow-x:auto}
+.inj td,.inj th{text-align:left}
+.inj td:nth-child(4),.inj td:nth-child(5){white-space:nowrap}
+.inj .tag{font-size:11px;padding:1px 7px}
+.wide{grid-column:1/-1}
+.tiles{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:10px;margin:20px 0 28px}
+.tile{display:flex;flex-direction:column;gap:2px;background:var(--card);border:1px solid var(--line);border-radius:12px;
+padding:12px 14px;text-decoration:none;color:var(--text);transition:border-color .15s,background .15s}
+.tile:hover{border-color:var(--accent)}
+.tile.active{border-color:var(--accent);box-shadow:inset 0 0 0 1px var(--accent);background:var(--accent-soft)}
+.t-title{font-size:13px;font-weight:600;color:var(--muted)}
+.tile.active .t-title{color:var(--accent)}
+.t-big{font-size:26px;font-weight:700;line-height:1.15;font-variant-numeric:tabular-nums}
+.t-sub{font-size:12px;color:var(--muted);line-height:1.35}
+@media (max-width:520px){.tiles{grid-template-columns:repeat(2,1fr)}.t-big{font-size:22px}}
+.panel{scroll-margin-top:12px}
+.panel>h2{margin-top:0}
+.js .panel+.panel{margin-top:0}
+.panel+.panel{margin-top:36px}
+.totop{position:fixed;right:16px;bottom:16px;background:var(--accent);color:var(--bg);text-decoration:none;
+font-size:14px;font-weight:600;padding:8px 14px;border-radius:999px;box-shadow:0 2px 8px rgba(0,0,0,.2);display:none}
+.totop.show{display:block}
+details.more{margin-top:10px}
+details.more>summary{cursor:pointer;color:var(--accent);font-size:14px;margin-bottom:8px}
+.subhead{font-size:15px;margin:20px 0 10px}
+#suomalaiset + .insights{margin-bottom:14px}
+.game td a{color:inherit;text-decoration:none;border-bottom:1px dotted var(--muted)}
+@media (max-width:520px){.insights li{flex-wrap:wrap}.insights a{margin-left:0}}
+</style></head>
+<body><main>
+<header id="top"><h1>NHL-yöraportti</h1><a class="rss" href="https://juhaopesonen.github.io/NHL-stats/feed.xml" title="Tilaa RSS-syöte">Tilaa (RSS)</a>
+<p class="sub">Ottelut maanantai 9.11.2026 (Pohjois-Amerikan aikaa) · 0 ottelua</p></header>
+<nav class="tiles" id="valikko"><a class="tile" href="#nostot" data-panel="nostot"><span class="t-title">Yön nostot</span><span class="t-big">0</span><span class="t-sub">nostoa</span></a><a class="tile" href="#ottelut" data-panel="ottelut"><span class="t-title">Ottelut</span><span class="t-big">0</span><span class="t-sub">ottelua · xG ja maalivahdit</span></a><a class="tile" href="#suomalaiset" data-panel="suomalaiset"><span class="t-title">Suomalaisnurkkaus</span><span class="t-big">0</span><span class="t-sub">suomalaista pelasi</span></a><a class="tile" href="#loukkaantumiset" data-panel="loukkaantumiset"><span class="t-title">Loukkaantumiset</span><span class="t-big">17</span><span class="t-sub">suomalaista tai tähteä sivussa · 3 uutta</span></a><a class="tile" href="#kausi" data-panel="kausi"><span class="t-title">Kausi</span><span class="t-big">18</span><span class="t-sub">pisin pisteputki: Connor McDavid</span></a><a class="tile" href="#arkisto" data-panel="arkisto"><span class="t-title">Arkisto</span><span class="t-big">31</span><span class="t-sub">aiempaa raporttia</span></a></nav>
+<section class="panel" id="nostot"><h2>Yön nostot</h2><p class="empty">Ei erityisiä nostoja tältä yöltä.</p></section>
+<section class="panel" id="ottelut"><h2>Ottelut</h2><p class="empty">Ei pelattuja otteluita.</p></section>
+<section class="panel" id="suomalaiset"><h2>Suomalaisnurkkaus</h2><div class="season"><p class="empty">Yöllä ei pelannut suomalaisia.</p></div><h3 class="subhead">Kausi tähän mennessä</h3><div class="season"><div class="game wide"><div class="block"><h3>Suomalaisten pistepörssi</h3><table><tr><th>Pelaaja</th><th>O</th><th>M</th><th>S</th><th>P</th><th>+/−</th><th>ixG</th><th>Aika/O</th><th>YV min/O</th><th>5v5 xGF–xGA</th><th>5v5 xG%</th><th>vs. tiimi</th><th>Putki</th></tr><tr><td>Sebastian Aho (CAR)</td><td>19</td><td>10</td><td>16</td><td><b>26</b></td><td><span class="pos">+14</span></td><td>8,45</td><td>19.49</td><td>3.46</td><td>14,7–9,1</td><td><span class="pos">62 %</span></td><td><span class="pos">+3</span></td><td>2</td></tr><tr><td>Mikko Rantanen (DAL)</td><td>17</td><td>9</td><td>12</td><td><b>21</b></td><td><span class="pos">+7</span></td><td>5,30</td><td>20.01</td><td>3.37</td><td>12,0–8,8</td><td><span class="pos">58 %</span></td><td><span class="pos">+11</span></td><td>5</td></tr><tr><td>Mikael Granlund (ANA)</td><td>17</td><td>5</td><td>15</td><td><b>20</b></td><td><span class="">±0</span></td><td>4,44</td><td>20.36</td><td>4.12</td><td>6,3–11,1</td><td><span class="neg">36 %</span></td><td><span class="neg">−10</span></td><td>6</td></tr><tr><td>Artturi Lehkonen (COL)</td><td>18</td><td>12</td><td>5</td><td><b>17</b></td><td><span class="pos">+13</span></td><td>7,26</td><td>18.37</td><td>1.29</td><td>13,3–12,2</td><td><span class="pos">52 %</span></td><td><span class="neg">−2</span></td><td></td></tr><tr><td>Roope Hintz (DAL)</td><td>17</td><td>7</td><td>8</td><td><b>15</b></td><td><span class="pos">+8</span></td><td>5,37</td><td>16.39</td><td>2.45</td><td>8,3–7,8</td><td><span class="pos">52 %</span></td><td><span class="pos">+2</span></td><td></td></tr><tr><td>Kaapo Kakko (SEA)</td><td>16</td><td>3</td><td>10</td><td><b>13</b></td><td><span class="pos">+3</span></td><td>1,84</td><td>14.18</td><td>2.26</td><td>8,2–9,6</td><td><span class="neg">46 %</span></td><td><span class="pos">+1</span></td><td>3</td></tr><tr><td>Miro Heiskanen (DAL)</td><td>15</td><td>3</td><td>8</td><td><b>11</b></td><td><span class="pos">+2</span></td><td>1,61</td><td>24.53</td><td>2.58</td><td>11,1–8,7</td><td><span class="pos">56 %</span></td><td><span class="pos">+8</span></td><td></td></tr><tr><td>Kasperi Kapanen (EDM)</td><td>18</td><td>5</td><td>5</td><td><b>10</b></td><td><span class="neg">−5</span></td><td>4,04</td><td>18.23</td><td>2.43</td><td>8,2–8,7</td><td><span class="neg">49 %</span></td><td><span class="">0</span></td><td></td></tr><tr><td>Jesperi Kotkaniemi (CAR)</td><td>17</td><td>5</td><td>5</td><td><b>10</b></td><td><span class="pos">+7</span></td><td>1,80</td><td>11.48</td><td>0.50</td><td>8,1–6,7</td><td><span class="pos">55 %</span></td><td><span class="neg">−8</span></td><td>2</td></tr><tr><td>Erik Haula (LAK)</td><td>15</td><td>3</td><td>4</td><td><b>7</b></td><td><span class="neg">−1</span></td><td>2,83</td><td>15.26</td><td>1.29</td><td>4,6–8,4</td><td><span class="neg">35 %</span></td><td><span class="neg">−19</span></td><td></td></tr><tr><td>Ville Koivunen (PIT)</td><td>15</td><td>2</td><td>5</td><td><b>7</b></td><td><span class="">±0</span></td><td>1,82</td><td>13.54</td><td>1.51</td><td>9,6–8,2</td><td><span class="pos">54 %</span></td><td><span class="pos">+3</span></td><td></td></tr><tr><td>Anton Lundell (FLA)</td><td>17</td><td>4</td><td>2</td><td><b>6</b></td><td><span class="neg">−5</span></td><td>5,02</td><td>17.37</td><td>2.28</td><td>7,1–5,4</td><td><span class="pos">57 %</span></td><td><span class="pos">+5</span></td><td></td></tr><tr><td>Arttu Hyry (DAL)</td><td>17</td><td>4</td><td>2</td><td><b>6</b></td><td><span class="">±0</span></td><td>4,35</td><td>14.52</td><td>0.00</td><td>8,2–7,9</td><td><span class="pos">51 %</span></td><td><span class="pos">+1</span></td><td></td></tr><tr><td>Eeli Tolvanen (NYR)</td><td>18</td><td>4</td><td>2</td><td><b>6</b></td><td><span class="pos">+5</span></td><td>3,23</td><td>12.30</td><td>0.48</td><td>7,5–8,3</td><td><span class="neg">47 %</span></td><td><span class="neg">−6</span></td><td></td></tr><tr><td>Joel Armia (LAK)</td><td>15</td><td>3</td><td>3</td><td><b>6</b></td><td><span class="neg">−1</span></td><td>2,21</td><td>13.28</td><td>0.07</td><td>6,3–6,2</td><td><span class="">50 %</span></td><td><span class="pos">+1</span></td><td></td></tr></table></div></div><div class="game "><div class="block"><h3>Suomalaismaalivahdit kaudella</h3><table><tr><th>Maalivahti</th><th>O</th><th>V</th><th>Torj-%</th><th>GSAx</th></tr><tr><td>Leevi Meriläinen (VAN)</td><td>13</td><td>2</td><td>0,889</td><td><span class="neg">−2,08</span></td></tr><tr><td>Juuse Saros (NSH)</td><td>12</td><td>5</td><td>0,912</td><td><span class="pos">+6,49</span></td></tr><tr><td>Ukko-Pekka Luukkonen (BUF)</td><td>11</td><td>5</td><td>0,878</td><td><span class="neg">−2,52</span></td></tr><tr><td>Kevin Lankinen (VAN)</td><td>9</td><td>1</td><td>0,808</td><td><span class="neg">−15,26</span></td></tr><tr><td>Ville Husso (ANA)</td><td>6</td><td>2</td><td>0,869</td><td><span class="neg">−2,96</span></td></tr><tr><td>Justus Annunen (NSH)</td><td>4</td><td>3</td><td>0,873</td><td><span class="neg">−0,93</span></td></tr><tr><td>Joonas Korpisalo (NYR)</td><td>1</td><td>1</td><td>0,893</td><td><span class="neg">−0,16</span></td></tr></table></div></div></div></section>
+<section class="panel" id="loukkaantumiset"><h2>Loukkaantumiset</h2><div class="game inj wide"><div class="block"><h3>Sivussa olevat suomalaiset ja tähtipelaajat (17 / 122)</h3><table><tr><th>Pelaaja</th><th>Tila</th><th>Vamma</th><th>Arvioitu paluu</th><th>Päivitetty</th></tr><tr><td><a href="https://www.espn.com/nhl/player/_/id/3899946">Mathew Barzal</a> (NYI)</td><td>IR-listalla</td><td>polvi</td><td>14.11. (n. 4 pv)</td><td><span class="tag">uusi</span> 9.11.</td></tr><tr><td><a href="https://www.espn.com/nhl/player/_/id/4587580">Matias Maccelli</a> (NYI)</td><td>IR-listalla</td><td>alavartalo</td><td>14.11. (n. 4 pv)</td><td><span class="tag">uusi</span> 9.11.</td></tr><tr><td><a href="https://www.espn.com/nhl/player/_/id/4874911">Ville Koivunen</a> (PIT)</td><td>päivittäinen arvio</td><td>alavartalo</td><td>11.11. (n. 1 pv)</td><td><span class="tag">uusi</span> 9.11.</td></tr><tr><td><a href="https://www.espn.com/nhl/player/_/id/3654006">Alex Lyon</a> (BUF)</td><td>IR-listalla</td><td>olkapää</td><td>22.11. (n. 12 pv)</td><td>15.10.</td></tr><tr><td><a href="https://www.espn.com/nhl/player/_/id/5216882">Konsta Helenius</a> (BUF)</td><td>sivussa</td><td>ylävartalo</td><td>17.11. (n. 7 pv)</td><td>2.11.</td></tr><tr><td><a href="https://www.espn.com/nhl/player/_/id/4233536">Miro Heiskanen</a> (DAL)</td><td>päivittäinen arvio</td><td>ylävartalo</td><td>12.11. (n. 2 pv)</td><td>8.11.</td></tr><tr><td><a href="https://www.espn.com/nhl/player/_/id/3114755">Dylan Larkin</a> (DET)</td><td>IR-listalla</td><td>pelikielto</td><td>14.11. (n. 4 pv)</td><td>31.10.</td></tr><tr><td><a href="https://www.espn.com/nhl/player/_/id/2590824">John Gibson</a> (DET)</td><td>päivittäinen arvio</td><td>alavartalo</td><td>10.11. (pian)</td><td>8.11.</td></tr><tr><td><a href="https://www.espn.com/nhl/player/_/id/3041970">Aleksander Barkov</a> (FLA)</td><td>IR-listalla</td><td>polvi</td><td>27.11. (n. 17 pv)</td><td>6.11.</td></tr><tr><td><a href="https://www.espn.com/nhl/player/_/id/4697449">Brock Faber</a> (MIN)</td><td>IR-listalla</td><td>kallo</td><td>14.11. (n. 4 pv)</td><td>5.11.</td></tr><tr><td><a href="https://www.espn.com/nhl/player/_/id/4272674">Filip Gustavsson</a> (MIN)</td><td>IR-listalla</td><td>lonkka</td><td>19.11. (n. 9 pv)</td><td>5.11.</td></tr><tr><td><a href="https://www.espn.com/nhl/player/_/id/3151297">Igor Shesterkin</a> (NYR)</td><td>IR-listalla</td><td>polvi</td><td>15.9.2027 (n. 44 vk)</td><td>11.10.</td></tr><tr><td><a href="https://www.espn.com/nhl/player/_/id/3041999">Rasmus Ristolainen</a> (PHI)</td><td>IR-listalla</td><td>käsi</td><td>11.11. (n. 1 pv)</td><td>27.10.</td></tr><tr><td><a href="https://www.espn.com/nhl/player/_/id/2591155">Bryan Rust</a> (PIT)</td><td>IR-listalla</td><td>alavartalo</td><td>5.12. (n. 4 vk)</td><td>22.10.</td></tr><tr><td><a href="https://www.espn.com/nhl/player/_/id/5080225">Nikke Kokko</a> (SEA)</td><td>IR-listalla</td><td>ei vamma</td><td>14.11. (n. 4 pv)</td><td>7.11.</td></tr><tr><td><a href="https://www.espn.com/nhl/player/_/id/4587996">Kirill Marchenko</a> (TOR)</td><td>IR-listalla</td><td>alavartalo</td><td>17.11. (n. 7 pv)</td><td>29.10.</td></tr><tr><td><a href="https://www.espn.com/nhl/player/_/id/3042016">Josh Morrissey</a> (WPG)</td><td>IR-listalla</td><td>ranne</td><td>10.11. (pian)</td><td>8.11.</td></tr></table></div></div></section>
+<section class="panel" id="kausi"><h2>Kausi tähän mennessä</h2><div class="season"><div class="game"><div class="block"><h3>Käynnissä olevat pisteputket</h3><table><tr><th>Pelaaja</th><th>Peliä</th><th>Tehot</th></tr><tr><td>Connor McDavid (EDM)</td><td>18</td><td>10+37</td></tr><tr><td>Jackson LaCombe (ANA)</td><td>10</td><td>0+16</td></tr><tr><td>Jackson Blake (CAR)</td><td>9</td><td>4+7</td></tr><tr><td>Cutter Gauthier (ANA)</td><td>8</td><td>13+4</td></tr><tr><td>Roman Kantserov (CHI)</td><td>8</td><td>6+2</td></tr><tr><td>Kirill Kaprizov (MIN)</td><td>8</td><td>5+9</td></tr><tr><td>Joel Eriksson Ek (MIN)</td><td>8</td><td>4+6</td></tr><tr><td>Quinn Hughes (MIN)</td><td>8</td><td>4+9</td></tr><tr><td>Tristan Luneau (ANA)</td><td>8</td><td>4+7</td></tr><tr><td>Berkly Catton (SEA)</td><td>8</td><td>3+7</td></tr></table></div></div><div class="game"><div class="block"><h3>Maaleja tulossa? (maalit selvästi alle ixG:n)</h3><table><tr><th>Pelaaja</th><th>O</th><th>M</th><th>ixG</th><th>Erotus</th></tr><tr><td>Wyatt Johnston (DAL)</td><td>15</td><td>3</td><td>8,29</td><td><span class="neg">−5,29</span></td></tr><tr><td>Zach Benson (BUF)</td><td>17</td><td>2</td><td>6,95</td><td><span class="neg">−4,95</span></td></tr><tr><td>Gabriel Vilardi (WPG)</td><td>18</td><td>1</td><td>5,53</td><td><span class="neg">−4,53</span></td></tr><tr><td>Joel Eriksson Ek (MIN)</td><td>19</td><td>6</td><td>10,46</td><td><span class="neg">−4,46</span></td></tr><tr><td>Alex Laferriere (LAK)</td><td>15</td><td>3</td><td>7,08</td><td><span class="neg">−4,08</span></td></tr><tr><td>T.J. Hughes (COL)</td><td>18</td><td>2</td><td>5,78</td><td><span class="neg">−3,78</span></td></tr><tr><td>Alex Ovechkin (WSH)</td><td>15</td><td>1</td><td>4,73</td><td><span class="neg">−3,73</span></td></tr><tr><td>Juraj Slafkovský (MTL)</td><td>17</td><td>2</td><td>5,68</td><td><span class="neg">−3,68</span></td></tr></table></div></div><div class="game"><div class="block"><h3>Kuumat viimeistelijät (maalit yli ixG:n)</h3><table><tr><th>Pelaaja</th><th>O</th><th>M</th><th>ixG</th><th>Erotus</th></tr><tr><td>Evan Bouchard (EDM)</td><td>18</td><td>10</td><td>3,52</td><td><span class="pos">+6,48</span></td></tr><tr><td>Cutter Gauthier (ANA)</td><td>17</td><td>15</td><td>8,53</td><td><span class="pos">+6,47</span></td></tr><tr><td>Leon Draisaitl (EDM)</td><td>18</td><td>16</td><td>10,85</td><td><span class="pos">+5,15</span></td></tr><tr><td>Artturi Lehkonen (COL)</td><td>18</td><td>12</td><td>7,26</td><td><span class="pos">+4,74</span></td></tr><tr><td>Logan Cooley (UTA)</td><td>18</td><td>11</td><td>6,27</td><td><span class="pos">+4,73</span></td></tr><tr><td>Roman Kantserov (CHI)</td><td>18</td><td>9</td><td>4,63</td><td><span class="pos">+4,37</span></td></tr><tr><td>Matvei Michkov (PHI)</td><td>19</td><td>10</td><td>5,63</td><td><span class="pos">+4,37</span></td></tr><tr><td>Jimmy Snuggerud (STL)</td><td>17</td><td>9</td><td>4,64</td><td><span class="pos">+4,36</span></td></tr></table></div></div><div class="game wide"><div class="block"><h3>Top 10 maalivahdit (GSAx, väh. 2 ottelua)</h3><table><tr><th>Maalivahti</th><th>O</th><th>V</th><th>Torj-%</th><th>PPM</th><th>xGA</th><th>GSAx</th></tr><tr><td>1. Jesper Wallstedt (MIN)</td><td>16</td><td>11</td><td>0,922</td><td>1,99</td><td>45,39</td><td><span class="pos">+13,39</span></td></tr><tr><td>2. Jacob Fowler (MTL)</td><td>10</td><td>8</td><td>0,926</td><td>2,15</td><td>33,44</td><td><span class="pos">+11,44</span></td></tr><tr><td>3. Jeremy Swayman (BOS)</td><td>13</td><td>9</td><td>0,920</td><td>2,21</td><td>39,08</td><td><span class="pos">+10,08</span></td></tr><tr><td>4. Pyotr Kochetkov (CAR)</td><td>12</td><td>11</td><td>0,920</td><td>1,67</td><td>29,81</td><td><span class="pos">+9,81</span></td></tr><tr><td>5. Linus Ullmark (OTT)</td><td>8</td><td>7</td><td>0,945</td><td>1,33</td><td>18,40</td><td><span class="pos">+8,40</span></td></tr><tr><td>6. Jake Oettinger (DAL)</td><td>13</td><td>9</td><td>0,906</td><td>1,99</td><td>33,43</td><td><span class="pos">+7,43</span></td></tr><tr><td>7. Juuse Saros (NSH)</td><td>12</td><td>5</td><td>0,912</td><td>2,62</td><td>38,49</td><td><span class="pos">+6,49</span></td></tr><tr><td>8. Daniil Tarasov (DET)</td><td>8</td><td>2</td><td>0,919</td><td>2,10</td><td>21,24</td><td><span class="pos">+6,24</span></td></tr><tr><td>9. Ilya Sorokin (NYI)</td><td>11</td><td>6</td><td>0,909</td><td>2,64</td><td>34,95</td><td><span class="pos">+5,95</span></td></tr><tr><td>10. Joel Hofer (STL)</td><td>12</td><td>6</td><td>0,919</td><td>2,36</td><td>33,89</td><td><span class="pos">+5,89</span></td></tr></table></div></div></div></section>
+<section class="panel" id="arkisto"><h2>Arkisto</h2><ul class="archive"><li><a href="2026-11-09.html">maanantai 9.11.2026</a> (tämä)</li><li><a href="2026-11-08.html">sunnuntai 8.11.2026</a></li><li><a href="2026-11-07.html">lauantai 7.11.2026</a></li><li><a href="2026-11-06.html">perjantai 6.11.2026</a></li><li><a href="2026-11-05.html">torstai 5.11.2026</a></li><li><a href="2026-11-04.html">keskiviikko 4.11.2026</a></li><li><a href="2026-11-03.html">tiistai 3.11.2026</a></li><li><a href="2026-11-02.html">maanantai 2.11.2026</a></li><li><a href="2026-11-01.html">sunnuntai 1.11.2026</a></li><li><a href="2026-10-31.html">lauantai 31.10.2026</a></li><li><a href="2026-10-30.html">perjantai 30.10.2026</a></li><li><a href="2026-10-29.html">torstai 29.10.2026</a></li><li><a href="2026-10-28.html">keskiviikko 28.10.2026</a></li><li><a href="2026-10-27.html">tiistai 27.10.2026</a></li><li><a href="2026-10-26.html">maanantai 26.10.2026</a></li><li><a href="2026-10-25.html">sunnuntai 25.10.2026</a></li><li><a href="2026-10-24.html">lauantai 24.10.2026</a></li><li><a href="2026-10-23.html">perjantai 23.10.2026</a></li><li><a href="2026-10-22.html">torstai 22.10.2026</a></li><li><a href="2026-10-21.html">keskiviikko 21.10.2026</a></li><li><a href="2026-10-20.html">tiistai 20.10.2026</a></li><li><a href="2026-10-19.html">maanantai 19.10.2026</a></li><li><a href="2026-10-18.html">sunnuntai 18.10.2026</a></li><li><a href="2026-10-17.html">lauantai 17.10.2026</a></li><li><a href="2026-10-16.html">perjantai 16.10.2026</a></li><li><a href="2026-10-15.html">torstai 15.10.2026</a></li><li><a href="2026-10-14.html">keskiviikko 14.10.2026</a></li><li><a href="2026-10-13.html">tiistai 13.10.2026</a></li><li><a href="2026-10-12.html">maanantai 12.10.2026</a></li><li><a href="2026-10-11.html">sunnuntai 11.10.2026</a></li><li><a href="2026-10-10.html">lauantai 10.10.2026</a></li><li><a href="2026-10-09.html">perjantai 9.10.2026</a></li></ul></section>
+<a class="totop" href="#valikko">↑ Valikko</a>
+<footer>
+xG-, GSAx- ja laukausdata: <a href="https://moneypuck.com">MoneyPuck.com</a>.
+Tulokset ja pelaajatilastot: NHL.com. Loukkaantumiset: ESPN / RotoWire (paluuarviot ovat suuntaa-antavia). Päivitetty 2026-11-09 22:25 UTC.<br>
+ixG = pelaajan laukausten odotetut maalit. GSAx = maalivahdin päästämät maalit verrattuna odotettuun
+(positiivinen = odotettua parempi). PPM = päästetyt maalit 60 minuuttia kohden. xGA = torjuttavien laukausten odotetut maalit. Vaarallinen paikka = laukaus, jonka xG on vähintään 0,20.
+5v5 xG% = joukkueen osuus odotetuista maaleista pelaajan ollessa jäällä 5 vs. 5 (kausi tähän asti);
+vs. tiimi = ero prosenttiyksikköinä joukkueen xG%:iin pelaajan ollessa vaihdossa.
+Yön 5v5-luvut on laskettu itse NHL:n vaihtodatasta ja MoneyPuckin laukauksista, joten ne voivat
+poiketa hieman MoneyPuckin omista luvuista.
+Lähdekoodi: <a href="https://github.com/juhaopesonen/NHL-stats">GitHub</a>. Tilaa uudet raportit <a href="https://juhaopesonen.github.io/NHL-stats/feed.xml">RSS-syötteenä</a>.
+</footer>
+</main><script>
+(function(){
+  var root=document.documentElement; root.classList.add('js');
+  var panels=[].slice.call(document.querySelectorAll('.panel'));
+  var tiles=[].slice.call(document.querySelectorAll('.tile'));
+  var current=null;
+  function show(id){
+    current=id;
+    panels.forEach(function(p){p.hidden=p.id!==id;});
+    tiles.forEach(function(t){t.classList.toggle('active',t.dataset.panel===id);});
+  }
+  function route(){
+    var h=decodeURIComponent(location.hash.slice(1));
+    var el=h?document.getElementById(h):null;
+    var panel=el?el.closest('.panel'):null;
+    if(panel){show(panel.id); if(el!==panel) el.scrollIntoView({block:'start'});}
+    else{ if(!current) show('nostot'); if(el) el.scrollIntoView({block:'start'}); }
+  }
+  tiles.forEach(function(t){t.addEventListener('click',function(e){
+    e.preventDefault(); show(t.dataset.panel); history.replaceState(null,'','#'+t.dataset.panel);
+  });});
+  window.addEventListener('hashchange',route); route();
+  var top=document.querySelector('.totop');
+  function onScroll(){top.classList.toggle('show',window.scrollY>400);}
+  window.addEventListener('scroll',onScroll,{passive:true}); onScroll();
+})();
+</script></body></html>
