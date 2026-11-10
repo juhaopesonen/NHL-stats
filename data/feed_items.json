@@ -368,9 +368,15 @@
   "title": "NHL-yöraportti 8.11.2026 – 6 ottelua"
  },
  "2026-11-09": {
-  "finns": "ei pelanneita yöllä",
-  "highlights": [],
+  "finns": "3 pelasi, yhteensä 0+0",
+  "highlights": [
+   "Leon Draisaitl (EDM) on tehnyt maalin 4 ottelussa peräkkäin (yhteensä 6 maalia).",
+   "Victor Eklund (NYI) on tehnyt maalin 3 ottelussa peräkkäin (yhteensä 3 maalia).",
+   "Connor McDavid (EDM) jatkoi pisteputkensa 19 otteluun (putken aikana 11+37).",
+   "Pisteputki jatkui 2 pelaajalla (peliä putkessa): Leon Draisaitl (EDM) 6, Brock Boeser (VAN) 5.",
+   "Devon Levi (EDM) torjui 28/29 ja päästi 2,43 maalia odotettua vähemmän (GSAx)."
+  ],
   "published": "2026-11-09T22:25:59+00:00",
-  "title": "NHL-yöraportti 9.11.2026 – 0 ottelua"
+  "title": "NHL-yöraportti 9.11.2026 – 3 ottelua"
  }
 }

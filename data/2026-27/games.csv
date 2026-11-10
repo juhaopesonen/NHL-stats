@@ -281,3 +281,6 @@ game_id,date,game_type,away,home,away_name,home_name,away_score,home_score,away_
 2026020280,2026-11-08,2,TBL,WPG,Tampa Bay Lightning,Winnipeg Jets,3,4,21,25,REG
 2026020281,2026-11-08,2,PHI,CGY,Philadelphia Flyers,Calgary Flames,3,4,35,26,OT
 2026020282,2026-11-08,2,PIT,ANA,Pittsburgh Penguins,Anaheim Ducks,2,5,33,25,REG
+2026020283,2026-11-09,2,NYR,EDM,New York Rangers,Edmonton Oilers,1,3,29,20,REG
+2026020284,2026-11-09,2,PHI,VAN,Philadelphia Flyers,Vancouver Canucks,3,1,17,19,REG
+2026020285,2026-11-09,2,NYI,SJS,New York Islanders,San Jose Sharks,2,3,32,39,SO
