@@ -6,7 +6,14 @@
   <atom:link href="https://juhaopesonen.github.io/NHL-stats/feed.xml" rel="self" type="application/rss+xml"/>
   <description>NHL:n yön otteluiden syvädata ja nostot suomeksi: xG, putket, suomalaiset ja loukkaantumiset.</description>
   <language>fi</language>
-  <lastBuildDate>Tue, 10 Nov 2026 19:47:02 +0000</lastBuildDate>
+  <lastBuildDate>Wed, 11 Nov 2026 12:57:59 +0000</lastBuildDate>
+  <item>
+    <title>NHL-yöraportti 10.11.2026 – 7 ottelua</title>
+    <link>https://juhaopesonen.github.io/NHL-stats/raportit/2026-11-10.html</link>
+    <guid isPermaLink="true">https://juhaopesonen.github.io/NHL-stats/raportit/2026-11-10.html</guid>
+    <pubDate>Wed, 11 Nov 2026 12:57:59 +0000</pubDate>
+    <description>&lt;p&gt;Ottelut tiistai 10.11.2026.&lt;/p&gt;&lt;ul&gt;&lt;li&gt;Kirill Kaprizov (MIN) jatkoi pisteputkensa 9 otteluun (putken aikana 6+9).&lt;/li&gt;&lt;li&gt;Quinn Hughes (MIN) jatkoi pisteputkensa 9 otteluun (putken aikana 4+10).&lt;/li&gt;&lt;li&gt;Pisteputki jatkui 5 pelaajalla (peliä putkessa): Jack Hughes (NJD) 6, Jesper Bratt (NJD) 6, Lane Hutson (MTL) 6, Matthew Tkachuk (FLA) 5, Thomas Chabot (OTT) 5.&lt;/li&gt;&lt;li&gt;Juuse Saros (NSH) torjui 30/30 ja päästi 2,88 maalia odotettua vähemmän (GSAx).&lt;/li&gt;&lt;li&gt;Jesper Wallstedt (MIN) torjui 27/28 ja päästi 2,64 maalia odotettua vähemmän (GSAx).&lt;/li&gt;&lt;/ul&gt;&lt;p&gt;Suomalaiset: 9 pelasi, yhteensä 1+3 – Anton Lundell 0+2, Artturi Lehkonen 1+0, Eetu Luostarinen 0+1&lt;/p&gt;&lt;p&gt;&lt;a href=&quot;https://juhaopesonen.github.io/NHL-stats/raportit/2026-11-10.html&quot;&gt;Koko raportti&lt;/a&gt;&lt;/p&gt;</description>
+  </item>
   <item>
     <title>NHL-yöraportti 9.11.2026 – 3 ottelua</title>
     <link>https://juhaopesonen.github.io/NHL-stats/raportit/2026-11-09.html</link>
@@ -209,13 +216,6 @@
     <guid isPermaLink="true">https://juhaopesonen.github.io/NHL-stats/raportit/2026-10-12.html</guid>
     <pubDate>Tue, 13 Oct 2026 05:58:36 +0000</pubDate>
     <description>&lt;p&gt;Ottelut maanantai 12.10.2026.&lt;/p&gt;&lt;ul&gt;&lt;li&gt;Pisteputki jatkui 2 pelaajalla (peliä putkessa): Quinn Hughes (MIN) 6, Matthew Tkachuk (FLA) 5.&lt;/li&gt;&lt;li&gt;Michael Amadio (OTT) jäi ilman maalia, vaikka laukauksista kertyi 1,03 odotettua maalia (ixG, 4 laukausyritystä, 1 vaarallista).&lt;/li&gt;&lt;li&gt;Nikolas Matinpalo (OTT) pelasi yöllä 2.19 – nyt sivussa, vamma: ylävartalo, arvioitu paluu 13.10. (pian).&lt;/li&gt;&lt;li&gt;Nico Sturm (MIN) pelasi yöllä 3.20 – nyt sivussa, vamma: ylävartalo, arvioitu paluu 13.10. (pian).&lt;/li&gt;&lt;li&gt;Jared Spurgeon (MIN): 5 ottelun pisteputki katkesi yön peliin.&lt;/li&gt;&lt;/ul&gt;&lt;p&gt;Suomalaiset: 7 pelasi, yhteensä 1+1 – Anton Lundell 1+0, Olli Maatta 0+1&lt;/p&gt;&lt;p&gt;&lt;a href=&quot;https://juhaopesonen.github.io/NHL-stats/raportit/2026-10-12.html&quot;&gt;Koko raportti&lt;/a&gt;&lt;/p&gt;</description>
-  </item>
-  <item>
-    <title>NHL-yöraportti 11.10.2026 – 3 ottelua</title>
-    <link>https://juhaopesonen.github.io/NHL-stats/raportit/2026-10-11.html</link>
-    <guid isPermaLink="true">https://juhaopesonen.github.io/NHL-stats/raportit/2026-10-11.html</guid>
-    <pubDate>Mon, 12 Oct 2026 06:59:25 +0000</pubDate>
-    <description>&lt;p&gt;Ottelut sunnuntai 11.10.2026.&lt;/p&gt;&lt;ul&gt;&lt;li&gt;Mark Jankowski (CAR) on tehnyt maalin 4 ottelussa peräkkäin (yhteensä 4 maalia).&lt;/li&gt;&lt;li&gt;Alexis Lafrenière (NYR) on tehnyt maalin 3 ottelussa peräkkäin (yhteensä 5 maalia).&lt;/li&gt;&lt;li&gt;Pisteputki jatkui 1 pelaajalla (peliä putkessa): Sebastian Aho (CAR) 6.&lt;/li&gt;&lt;li&gt;Kevin Lankinen (VAN): vaikea ilta, 19/25 ja 2,36 maalia odotettua enemmän (GSAx −2,36).&lt;/li&gt;&lt;li&gt;Tye Kartye (NYR) teki 2 maalia vain 0,49 ixG:n laukauksista.&lt;/li&gt;&lt;/ul&gt;&lt;p&gt;Suomalaiset: 7 pelasi, yhteensä 2+2 – Sebastian Aho 1+1, Kaapo Kakko 1+0, Eeli Tolvanen 0+1&lt;/p&gt;&lt;p&gt;&lt;a href=&quot;https://juhaopesonen.github.io/NHL-stats/raportit/2026-10-11.html&quot;&gt;Koko raportti&lt;/a&gt;&lt;/p&gt;</description>
   </item>
 </channel>
 </rss>
