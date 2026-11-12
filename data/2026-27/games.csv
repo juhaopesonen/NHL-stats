@@ -291,3 +291,9 @@ game_id,date,game_type,away,home,away_name,home_name,away_score,home_score,away_
 2026020290,2026-11-10,2,DET,STL,Detroit Red Wings,St. Louis Blues,2,3,32,33,REG
 2026020291,2026-11-10,2,NJD,WPG,New Jersey Devils,Winnipeg Jets,2,4,21,25,REG
 2026020292,2026-11-10,2,NSH,LAK,Nashville Predators,Los Angeles Kings,3,0,30,30,REG
+2026020293,2026-11-11,2,TBL,BUF,Tampa Bay Lightning,Buffalo Sabres,8,3,22,31,REG
+2026020294,2026-11-11,2,NYR,CGY,New York Rangers,Calgary Flames,3,1,24,30,REG
+2026020295,2026-11-11,2,PHI,EDM,Philadelphia Flyers,Edmonton Oilers,2,3,32,24,OT
+2026020296,2026-11-11,2,UTA,VGK,Utah Mammoth,Vegas Golden Knights,3,5,17,28,REG
+2026020297,2026-11-11,2,NSH,ANA,Nashville Predators,Anaheim Ducks,4,2,22,29,REG
+2026020298,2026-11-11,2,PIT,SJS,Pittsburgh Penguins,San Jose Sharks,3,2,35,36,SO
