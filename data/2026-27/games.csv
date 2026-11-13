@@ -297,3 +297,14 @@ game_id,date,game_type,away,home,away_name,home_name,away_score,home_score,away_
 2026020296,2026-11-11,2,UTA,VGK,Utah Mammoth,Vegas Golden Knights,3,5,17,28,REG
 2026020297,2026-11-11,2,NSH,ANA,Nashville Predators,Anaheim Ducks,4,2,22,29,REG
 2026020298,2026-11-11,2,PIT,SJS,Pittsburgh Penguins,San Jose Sharks,3,2,35,36,SO
+2026020299,2026-11-12,2,MTL,BOS,Montréal Canadiens,Boston Bruins,5,2,31,32,REG
+2026020300,2026-11-12,2,MIN,TOR,Minnesota Wild,Toronto Maple Leafs,5,2,26,28,REG
+2026020301,2026-11-12,2,COL,OTT,Colorado Avalanche,Ottawa Senators,3,4,29,26,OT
+2026020302,2026-11-12,2,DET,FLA,Detroit Red Wings,Florida Panthers,4,5,28,29,REG
+2026020303,2026-11-12,2,WSH,NJD,Washington Capitals,New Jersey Devils,2,5,28,29,REG
+2026020304,2026-11-12,2,TBL,CBJ,Tampa Bay Lightning,Columbus Blue Jackets,3,1,28,29,REG
+2026020305,2026-11-12,2,BUF,CHI,Buffalo Sabres,Chicago Blackhawks,2,3,23,25,OT
+2026020306,2026-11-12,2,WPG,DAL,Winnipeg Jets,Dallas Stars,8,3,30,33,REG
+2026020307,2026-11-12,2,STL,UTA,St. Louis Blues,Utah Mammoth,1,0,22,29,SO
+2026020308,2026-11-12,2,NYI,LAK,New York Islanders,Los Angeles Kings,5,2,21,28,REG
+2026020309,2026-11-12,2,CAR,SEA,Carolina Hurricanes,Seattle Kraken,4,1,30,13,REG
