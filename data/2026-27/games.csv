@@ -308,3 +308,5 @@ game_id,date,game_type,away,home,away_name,home_name,away_score,home_score,away_
 2026020307,2026-11-12,2,STL,UTA,St. Louis Blues,Utah Mammoth,1,0,22,29,SO
 2026020308,2026-11-12,2,NYI,LAK,New York Islanders,Los Angeles Kings,5,2,21,28,REG
 2026020309,2026-11-12,2,CAR,SEA,Carolina Hurricanes,Seattle Kraken,4,1,30,13,REG
+2026020310,2026-11-13,2,NYR,VAN,New York Rangers,Vancouver Canucks,5,1,31,28,REG
+2026020311,2026-11-13,2,NSH,VGK,Nashville Predators,Vegas Golden Knights,3,2,32,42,SO

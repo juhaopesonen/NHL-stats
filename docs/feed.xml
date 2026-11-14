@@ -6,7 +6,14 @@
   <atom:link href="https://juhaopesonen.github.io/NHL-stats/feed.xml" rel="self" type="application/rss+xml"/>
   <description>NHL:n yön otteluiden syvädata ja nostot suomeksi: xG, putket, suomalaiset ja loukkaantumiset.</description>
   <language>fi</language>
-  <lastBuildDate>Fri, 13 Nov 2026 19:46:36 +0000</lastBuildDate>
+  <lastBuildDate>Sat, 14 Nov 2026 08:58:50 +0000</lastBuildDate>
+  <item>
+    <title>NHL-yöraportti 13.11.2026 – 2 ottelua</title>
+    <link>https://juhaopesonen.github.io/NHL-stats/raportit/2026-11-13.html</link>
+    <guid isPermaLink="true">https://juhaopesonen.github.io/NHL-stats/raportit/2026-11-13.html</guid>
+    <pubDate>Sat, 14 Nov 2026 08:58:50 +0000</pubDate>
+    <description>&lt;p&gt;Ottelut perjantai 13.11.2026.&lt;/p&gt;&lt;ul&gt;&lt;li&gt;Pisteputki jatkui 3 pelaajalla (peliä putkessa): Brock Boeser (VAN) 6, Tomas Hertl (VGK) 6, Mika Zibanejad (NYR) 5.&lt;/li&gt;&lt;li&gt;Rasmus Andersson (VGK) katkaisi 10 ottelun maalittoman jakson.&lt;/li&gt;&lt;li&gt;Adam Wilsby (NSH) pelasi 28.31, kun aiempi keskiarvo on 19.54.&lt;/li&gt;&lt;li&gt;Dylan Coghlan (VGK) pelasi 19.46, kun aiempi keskiarvo on 14.08.&lt;/li&gt;&lt;/ul&gt;&lt;p&gt;Suomalaiset: 3 pelasi, yhteensä 0+0&lt;/p&gt;&lt;p&gt;&lt;a href=&quot;https://juhaopesonen.github.io/NHL-stats/raportit/2026-11-13.html&quot;&gt;Koko raportti&lt;/a&gt;&lt;/p&gt;</description>
+  </item>
   <item>
     <title>NHL-yöraportti 12.11.2026 – 11 ottelua</title>
     <link>https://juhaopesonen.github.io/NHL-stats/raportit/2026-11-12.html</link>
@@ -209,13 +216,6 @@
     <guid isPermaLink="true">https://juhaopesonen.github.io/NHL-stats/raportit/2026-10-15.html</guid>
     <pubDate>Fri, 16 Oct 2026 06:09:38 +0000</pubDate>
     <description>&lt;p&gt;Ottelut torstai 15.10.2026.&lt;/p&gt;&lt;ul&gt;&lt;li&gt;Matt Boldy (MIN) teki hattutempun, tehot 3+1.&lt;/li&gt;&lt;li&gt;Brady Tkachuk (FLA) teki hattutempun, tehot 3+0.&lt;/li&gt;&lt;li&gt;Kyle Connor (WPG) on tehnyt maalin 4 ottelussa peräkkäin (yhteensä 5 maalia).&lt;/li&gt;&lt;li&gt;Quinn Hughes (MIN) jatkoi pisteputkensa 8 otteluun (putken aikana 2+10).&lt;/li&gt;&lt;li&gt;Pisteputki jatkui 11 pelaajalla (peliä putkessa): Connor McDavid (EDM) 7, Matthew Tkachuk (FLA) 7, Alexis Lafrenière (NYR) 6, Auston Matthews (TOR) 6, Kirill Marchenko (TOR) 6, Barrett Hayton (UTA) 5, Jack Hughes (NJD) 5, Kirill Kaprizov (MIN) 5, Mason McTavish (STL) 5, Matias Maccelli (NYI) 5, Mitch Marner (VGK) 5.&lt;/li&gt;&lt;/ul&gt;&lt;p&gt;Suomalaiset: 14 pelasi, yhteensä 1+1 – Matias Maccelli 1+0, Brad Lambert 0+1&lt;/p&gt;&lt;p&gt;&lt;a href=&quot;https://juhaopesonen.github.io/NHL-stats/raportit/2026-10-15.html&quot;&gt;Koko raportti&lt;/a&gt;&lt;/p&gt;</description>
-  </item>
-  <item>
-    <title>NHL-yöraportti 14.10.2026 – 2 ottelua</title>
-    <link>https://juhaopesonen.github.io/NHL-stats/raportit/2026-10-14.html</link>
-    <guid isPermaLink="true">https://juhaopesonen.github.io/NHL-stats/raportit/2026-10-14.html</guid>
-    <pubDate>Thu, 15 Oct 2026 06:09:58 +0000</pubDate>
-    <description>&lt;p&gt;Ottelut keskiviikko 14.10.2026.&lt;/p&gt;&lt;ul&gt;&lt;li&gt;Alex Tuch (WSH) keräsi 3 pistettä (2+1).&lt;/li&gt;&lt;li&gt;Oskar Bäck (DAL) pelasi yöllä 3.04 – nyt päivittäinen arvio, vamma: ylävartalo, arvioitu paluu 17.10. (n. 2 pv).&lt;/li&gt;&lt;/ul&gt;&lt;p&gt;Suomalaiset: 7 pelasi, yhteensä 2+2 – Miro Heiskanen 1+0, Arttu Hyry 1+0, Artturi Lehkonen 0+1, Mikko Rantanen 0+1&lt;/p&gt;&lt;p&gt;&lt;a href=&quot;https://juhaopesonen.github.io/NHL-stats/raportit/2026-10-14.html&quot;&gt;Koko raportti&lt;/a&gt;&lt;/p&gt;</description>
   </item>
 </channel>
 </rss>
