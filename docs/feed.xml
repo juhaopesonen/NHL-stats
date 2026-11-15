@@ -6,7 +6,14 @@
   <atom:link href="https://juhaopesonen.github.io/NHL-stats/feed.xml" rel="self" type="application/rss+xml"/>
   <description>NHL:n yön otteluiden syvädata ja nostot suomeksi: xG, putket, suomalaiset ja loukkaantumiset.</description>
   <language>fi</language>
-  <lastBuildDate>Sat, 14 Nov 2026 18:09:34 +0000</lastBuildDate>
+  <lastBuildDate>Sun, 15 Nov 2026 07:57:11 +0000</lastBuildDate>
+  <item>
+    <title>NHL-yöraportti 14.11.2026 – 14 ottelua</title>
+    <link>https://juhaopesonen.github.io/NHL-stats/raportit/2026-11-14.html</link>
+    <guid isPermaLink="true">https://juhaopesonen.github.io/NHL-stats/raportit/2026-11-14.html</guid>
+    <pubDate>Sun, 15 Nov 2026 07:57:11 +0000</pubDate>
+    <description>&lt;p&gt;Ottelut lauantai 14.11.2026.&lt;/p&gt;&lt;ul&gt;&lt;li&gt;Simon Holmstrom (NYI) teki hattutempun, tehot 3+0.&lt;/li&gt;&lt;li&gt;Cutter Gauthier (ANA) on tehnyt maalin 8 ottelussa peräkkäin (yhteensä 15 maalia).&lt;/li&gt;&lt;li&gt;Pierre-Luc Dubois (WSH) on tehnyt maalin 4 ottelussa peräkkäin (yhteensä 4 maalia).&lt;/li&gt;&lt;li&gt;Connor McDavid (EDM) jatkoi pisteputkensa 21 otteluun (putken aikana 11+39).&lt;/li&gt;&lt;li&gt;Jackson Blake (CAR) jatkoi pisteputkensa 11 otteluun (putken aikana 5+8).&lt;/li&gt;&lt;/ul&gt;&lt;p&gt;Suomalaiset: 22 pelasi, yhteensä 4+12 – Lenni Hameenaho 1+2, Artturi Lehkonen 1+1, Teuvo Teravainen 0+2, Matias Maccelli 0+2, Anton Lundell 1+0&lt;/p&gt;&lt;p&gt;&lt;a href=&quot;https://juhaopesonen.github.io/NHL-stats/raportit/2026-11-14.html&quot;&gt;Koko raportti&lt;/a&gt;&lt;/p&gt;</description>
+  </item>
   <item>
     <title>NHL-yöraportti 13.11.2026 – 2 ottelua</title>
     <link>https://juhaopesonen.github.io/NHL-stats/raportit/2026-11-13.html</link>
@@ -209,13 +216,6 @@
     <guid isPermaLink="true">https://juhaopesonen.github.io/NHL-stats/raportit/2026-10-16.html</guid>
     <pubDate>Sat, 17 Oct 2026 06:05:24 +0000</pubDate>
     <description>&lt;p&gt;Ottelut perjantai 16.10.2026.&lt;/p&gt;&lt;ul&gt;&lt;li&gt;Nathan MacKinnon (COL) keräsi 4 pistettä (1+3).&lt;/li&gt;&lt;li&gt;Martin Necas (COL) keräsi 3 pistettä (0+3).&lt;/li&gt;&lt;li&gt;Roger McQueen (ANA) jäi ilman maalia, vaikka laukauksista kertyi 1,02 odotettua maalia (ixG, 7 laukausyritystä, 2 vaarallista).&lt;/li&gt;&lt;li&gt;Pavel Zacha (BOS) pelasi yöllä 17.04 – nyt päivittäinen arvio, vamma: ei kerrottu, arvioitu paluu 17.10. (pian).&lt;/li&gt;&lt;/ul&gt;&lt;p&gt;Suomalaiset: 2 pelasi, yhteensä 2+1 – Artturi Lehkonen 2+0, Ville Koivunen 0+1&lt;/p&gt;&lt;p&gt;&lt;a href=&quot;https://juhaopesonen.github.io/NHL-stats/raportit/2026-10-16.html&quot;&gt;Koko raportti&lt;/a&gt;&lt;/p&gt;</description>
-  </item>
-  <item>
-    <title>NHL-yöraportti 15.10.2026 – 11 ottelua</title>
-    <link>https://juhaopesonen.github.io/NHL-stats/raportit/2026-10-15.html</link>
-    <guid isPermaLink="true">https://juhaopesonen.github.io/NHL-stats/raportit/2026-10-15.html</guid>
-    <pubDate>Fri, 16 Oct 2026 06:09:38 +0000</pubDate>
-    <description>&lt;p&gt;Ottelut torstai 15.10.2026.&lt;/p&gt;&lt;ul&gt;&lt;li&gt;Matt Boldy (MIN) teki hattutempun, tehot 3+1.&lt;/li&gt;&lt;li&gt;Brady Tkachuk (FLA) teki hattutempun, tehot 3+0.&lt;/li&gt;&lt;li&gt;Kyle Connor (WPG) on tehnyt maalin 4 ottelussa peräkkäin (yhteensä 5 maalia).&lt;/li&gt;&lt;li&gt;Quinn Hughes (MIN) jatkoi pisteputkensa 8 otteluun (putken aikana 2+10).&lt;/li&gt;&lt;li&gt;Pisteputki jatkui 11 pelaajalla (peliä putkessa): Connor McDavid (EDM) 7, Matthew Tkachuk (FLA) 7, Alexis Lafrenière (NYR) 6, Auston Matthews (TOR) 6, Kirill Marchenko (TOR) 6, Barrett Hayton (UTA) 5, Jack Hughes (NJD) 5, Kirill Kaprizov (MIN) 5, Mason McTavish (STL) 5, Matias Maccelli (NYI) 5, Mitch Marner (VGK) 5.&lt;/li&gt;&lt;/ul&gt;&lt;p&gt;Suomalaiset: 14 pelasi, yhteensä 1+1 – Matias Maccelli 1+0, Brad Lambert 0+1&lt;/p&gt;&lt;p&gt;&lt;a href=&quot;https://juhaopesonen.github.io/NHL-stats/raportit/2026-10-15.html&quot;&gt;Koko raportti&lt;/a&gt;&lt;/p&gt;</description>
   </item>
 </channel>
 </rss>
