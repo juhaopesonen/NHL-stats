@@ -324,3 +324,8 @@ game_id,date,game_type,away,home,away_name,home_name,away_score,home_score,away_
 2026020323,2026-11-14,2,SJS,UTA,San Jose Sharks,Utah Mammoth,6,5,21,32,SO
 2026020324,2026-11-14,2,NYI,ANA,New York Islanders,Anaheim Ducks,6,2,25,28,REG
 2026020325,2026-11-14,2,CGY,LAK,Calgary Flames,Los Angeles Kings,3,2,24,31,REG
+2026020326,2026-11-15,2,EDM,PHI,Edmonton Oilers,Philadelphia Flyers,5,2,20,36,REG
+2026020327,2026-11-15,2,FLA,DAL,Florida Panthers,Dallas Stars,1,2,26,22,OT
+2026020328,2026-11-15,2,CGY,ANA,Calgary Flames,Anaheim Ducks,1,6,21,34,REG
+2026020329,2026-11-15,2,VAN,VGK,Vancouver Canucks,Vegas Golden Knights,6,3,27,37,REG
+2026020330,2026-11-15,2,NSH,SJS,Nashville Predators,San Jose Sharks,2,4,34,24,REG
