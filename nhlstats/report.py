@@ -74,8 +74,13 @@ padding:12px 14px;text-decoration:none;color:var(--text);transition:border-color
 .totop{position:fixed;right:16px;bottom:16px;background:var(--accent);color:var(--bg);text-decoration:none;
 font-size:14px;font-weight:600;padding:8px 14px;border-radius:999px;box-shadow:0 2px 8px rgba(0,0,0,.2);display:none}
 .totop.show{display:block}
-details.more{margin-top:10px}
-details.more>summary{cursor:pointer;color:var(--accent);font-size:14px;margin-bottom:8px}
+details.more>summary{display:inline-block;cursor:pointer;list-style:none;color:var(--accent);font-size:14px;
+font-weight:600;border:1px solid var(--line);background:var(--card);border-radius:999px;padding:4px 14px;margin-bottom:10px}
+details.more>summary::-webkit-details-marker{display:none}
+details.more>summary:hover{border-color:var(--accent)}
+details.more .opened,details.more[open] .closed{display:none}
+details.more[open] .opened{display:inline}
+details.more[open]+.insights{display:none}
 .subhead{font-size:15px;margin:20px 0 10px}
 #suomalaiset + .insights{margin-bottom:14px}
 .game td a{color:inherit;text-decoration:none;border-bottom:1px dotted var(--muted)}
@@ -135,11 +140,12 @@ def _insights_html(items: list[Insight], limit: int | None = None, per_kind: int
         return _insight_list(_by_kind(items))
     top = top_insights(items, limit, per_kind)
     items = _by_kind(items)
-    html = _insight_list(top)
-    if len(top) < len(items):
-        html += (f'<details class="more"><summary>Kaikki nostot ({len(items)})</summary>'
-                 f"{_insight_list(items)}</details>")
-    return html
+    if len(top) == len(items):
+        return _insight_list(top)
+    # Painike listan alussa: auki ollessa näytetään kaikki nostot ja kärkilista piilotetaan (CSS)
+    return (f'<details class="more"><summary><span class="closed">Näytä kaikki nostot ({len(items)})</span>'
+            f'<span class="opened">Näytä vain kärkinostot ({len(top)})</span></summary>'
+            f"{_insight_list(items)}</details>{_insight_list(top)}")
 
 
 def _game_html(gm, skaters, goalies, xgt, xgg) -> str:
