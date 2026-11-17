@@ -4658,7 +4658,7 @@ snapshot,player_id,name,team,position,status,injury,return_date,updated,espn_url
 2026-11-17,8480068.0,Ryan Poehling,ANA,C,Injured Reserve,Knee,2026-12-06,2026-11-11,https://www.espn.com/nhl/player/_/id/4233668
 2026-11-17,8485395.0,James Hagens,BOS,C,Injured Reserve,Back,2026-11-21,2026-11-07,https://www.espn.com/nhl/player/_/id/5275337
 2026-11-17,8479941.0,Justin Danforth,BUF,RW,Injured Reserve,Upper Body,2026-11-22,2026-10-29,https://www.espn.com/nhl/player/_/id/4894355
-2026-11-17,8484797.0,Konsta Helenius,BUF,C,Injured Reserve,Upper Body,2026-11-19,2026-11-12,https://www.espn.com/nhl/player/_/id/5216882
+2026-11-17,8484797.0,Konsta Helenius,BUF,C,Injured Reserve,Upper Body,2026-11-21,2026-11-12,https://www.espn.com/nhl/player/_/id/5216882
 2026-11-17,8476891.0,Matt Grzelcyk,BUF,D,Injured Reserve,Lower Body,2026-11-22,2026-10-13,https://www.espn.com/nhl/player/_/id/3069448
 2026-11-17,8477497.0,Sean Monahan,CBJ,C,Out,Upper Body,2026-11-25,2026-11-16,https://www.espn.com/nhl/player/_/id/3041996
 2026-11-17,8482074.0,Connor Zary,CGY,C,Out,Knee,2026-11-28,2026-10-30,https://www.espn.com/nhl/player/_/id/4697407
@@ -4671,6 +4671,7 @@ snapshot,player_id,name,team,position,status,injury,return_date,updated,espn_url
 2026-11-17,8482742.0,Zachary L'Heureux,COL,LW,Injured Reserve,Upper Body,2026-11-27,2026-10-23,https://www.espn.com/nhl/player/_/id/4874744
 2026-11-17,8478476.0,Kyle Capobianco,DAL,D,Injured Reserve,Leg,2026-11-27,2026-11-14,https://www.espn.com/nhl/player/_/id/3939716
 2026-11-17,8483425.0,Lian Bichsel,DAL,D,Injured Reserve,Lower Body,2026-11-27,2026-11-14,https://www.espn.com/nhl/player/_/id/5080162
+2026-11-17,8475168.0,Matt Duchene,DAL,C,Injured Reserve,Abdomen,2027-01-12,2026-10-12,https://www.espn.com/nhl/player/_/id/5161
 2026-11-17,8480036.0,Miro Heiskanen,DAL,D,Day-To-Day,Upper Body,2026-11-17,2026-11-16,https://www.espn.com/nhl/player/_/id/4233536
 2026-11-17,8480840.0,Oskar Back,DAL,C,Injured Reserve,Finger,2026-11-17,2026-10-24,https://www.espn.com/nhl/player/_/id/4894398
 2026-11-17,8474574.0,Tyler Myers,DAL,D,Day-To-Day,Upper Body,2026-11-17,2026-11-16,https://www.espn.com/nhl/player/_/id/5052
@@ -4711,6 +4712,7 @@ snapshot,player_id,name,team,position,status,injury,return_date,updated,espn_url
 2026-11-17,8485957.0,Alberts Smits,NYR,D,Injured Reserve,Upper Body,2026-11-22,2026-11-10,https://www.espn.com/nhl/player/_/id/5334662
 2026-11-17,8478048.0,Igor Shesterkin,NYR,G,Injured Reserve,Knee,2027-09-15,2026-10-11,https://www.espn.com/nhl/player/_/id/3151297
 2026-11-17,,Joe Veleno,NYR,C,Injured Reserve,Lower Body,2027-01-03,2026-10-10,https://www.espn.com/nhl/player/_/id/4352804
+2026-11-17,8481604.0,Pavel Dorofeyev,NYR,RW,Out,Lower Body,2026-11-22,2026-11-17,https://www.espn.com/nhl/player/_/id/4587588
 2026-11-17,8480434.0,Sean Durzi,NYR,D,Injured Reserve,Lower Body,2026-11-22,2026-11-05,https://www.espn.com/nhl/player/_/id/4378683
 2026-11-17,8477444.0,Andre Burakovsky,OTT,LW,Injured Reserve,Lower Body,2026-11-27,2026-10-31,https://www.espn.com/nhl/player/_/id/3042044
 2026-11-17,8478173.0,Hayden Hodgson,OTT,RW,Out,Groin,2026-11-19,2026-11-16,https://www.espn.com/nhl/player/_/id/3150479
@@ -4753,7 +4755,6 @@ snapshot,player_id,name,team,position,status,injury,return_date,updated,espn_url
 2026-11-17,8482174.0,William Villeneuve,TOR,D,Injured Reserve,Knee,2026-12-05,2026-09-29,https://www.espn.com/nhl/player/_/id/4697767
 2026-11-17,8482699.0,Dylan Guenther,UTA,RW,Injured Reserve,Upper Body,2026-12-05,2026-11-12,https://www.espn.com/nhl/player/_/id/4874723
 2026-11-17,8478507.0,John Marino,UTA,D,Injured Reserve,Upper Body,2026-12-03,2026-11-01,https://www.espn.com/nhl/player/_/id/3941974
-2026-11-17,8483431.0,Logan Cooley,UTA,C,Day-To-Day,Upper Body,2026-11-16,2026-11-15,https://www.espn.com/nhl/player/_/id/5080143
 2026-11-17,8483472.0,Maveric Lamoureux,UTA,D,Injured Reserve,Shoulder,2027-02-12,2026-09-28,https://www.espn.com/nhl/player/_/id/5080177
 2026-11-17,8477220.0,Nate Schmidt,UTA,D,Injured Reserve,Upper Body,2026-11-21,2026-11-12,https://www.espn.com/nhl/player/_/id/3024798
 2026-11-17,8477951.0,Nick Schmaltz,UTA,C,Out,Lower Body,2026-11-21,2026-11-14,https://www.espn.com/nhl/player/_/id/3114770
