@@ -452,9 +452,13 @@
   "title": "NHL-yöraportti 15.11.2026 – 5 ottelua"
  },
  "2026-11-16": {
-  "finns": "ei pelanneita yöllä",
-  "highlights": [],
+  "finns": "2 pelasi, yhteensä 0+0",
+  "highlights": [
+   "Will Cuylle (NYR) teki 2 maalia vain 0,47 ixG:n laukauksista.",
+   "Cole Caufield (MTL): 6 ottelun pisteputki katkesi yön peliin.",
+   "Mika Zibanejad (NYR): 5 ottelun pisteputki katkesi yön peliin."
+  ],
   "published": "2026-11-16T22:09:43+00:00",
-  "title": "NHL-yöraportti 16.11.2026 – 0 ottelua"
+  "title": "NHL-yöraportti 16.11.2026 – 1 ottelua"
  }
 }
