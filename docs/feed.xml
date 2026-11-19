@@ -6,7 +6,14 @@
   <atom:link href="https://juhaopesonen.github.io/NHL-stats/feed.xml" rel="self" type="application/rss+xml"/>
   <description>NHL:n yön otteluiden syvädata ja nostot suomeksi: xG, putket, suomalaiset ja loukkaantumiset.</description>
   <language>fi</language>
-  <lastBuildDate>Wed, 18 Nov 2026 20:36:32 +0000</lastBuildDate>
+  <lastBuildDate>Thu, 19 Nov 2026 06:46:51 +0000</lastBuildDate>
+  <item>
+    <title>NHL-yöraportti 18.11.2026 – 3 ottelua</title>
+    <link>https://juhaopesonen.github.io/NHL-stats/raportit/2026-11-18.html</link>
+    <guid isPermaLink="true">https://juhaopesonen.github.io/NHL-stats/raportit/2026-11-18.html</guid>
+    <pubDate>Thu, 19 Nov 2026 06:46:51 +0000</pubDate>
+    <description>&lt;p&gt;Ottelut keskiviikko 18.11.2026.&lt;/p&gt;&lt;ul&gt;&lt;li&gt;Lane Hutson (MTL) keräsi 3 pistettä (0+3).&lt;/li&gt;&lt;li&gt;Lucas Raymond (DET) on tehnyt maalin 3 ottelussa peräkkäin (yhteensä 3 maalia).&lt;/li&gt;&lt;li&gt;Jesper Bratt (NJD) jatkoi pisteputkensa 9 otteluun (putken aikana 2+9).&lt;/li&gt;&lt;li&gt;Gavin Brindley (COL) pelasi yöllä 2.38 – nyt päivittäinen arvio, vamma: ylävartalo, arvioitu paluu 19.11. (pian).&lt;/li&gt;&lt;li&gt;Kevin Stenlund (UTA) katkaisi 12 ottelun maalittoman jakson.&lt;/li&gt;&lt;/ul&gt;&lt;p&gt;Suomalaiset: 2 pelasi, yhteensä 0+0&lt;/p&gt;&lt;p&gt;&lt;a href=&quot;https://juhaopesonen.github.io/NHL-stats/raportit/2026-11-18.html&quot;&gt;Koko raportti&lt;/a&gt;&lt;/p&gt;</description>
+  </item>
   <item>
     <title>NHL-yöraportti 17.11.2026 – 11 ottelua</title>
     <link>https://juhaopesonen.github.io/NHL-stats/raportit/2026-11-17.html</link>
@@ -209,13 +216,6 @@
     <guid isPermaLink="true">https://juhaopesonen.github.io/NHL-stats/raportit/2026-10-20.html</guid>
     <pubDate>Wed, 21 Oct 2026 06:12:12 +0000</pubDate>
     <description>&lt;p&gt;Ottelut tiistai 20.10.2026.&lt;/p&gt;&lt;ul&gt;&lt;li&gt;Mikko Rantanen (DAL) teki hattutempun, tehot 3+0.&lt;/li&gt;&lt;li&gt;Leon Draisaitl (EDM) on tehnyt maalin 4 ottelussa peräkkäin (yhteensä 5 maalia).&lt;/li&gt;&lt;li&gt;Kirill Kaprizov (MIN) on tehnyt maalin 4 ottelussa peräkkäin (yhteensä 5 maalia).&lt;/li&gt;&lt;li&gt;Connor McDavid (EDM) jatkoi pisteputkensa 9 otteluun (putken aikana 6+20).&lt;/li&gt;&lt;li&gt;Pisteputki jatkui 5 pelaajalla (peliä putkessa): Kirill Kaprizov (MIN) 7, Mitch Marner (VGK) 7, Evan Bouchard (EDM) 6, Artturi Lehkonen (COL) 5, Dylan Holloway (STL) 5.&lt;/li&gt;&lt;/ul&gt;&lt;p&gt;Suomalaiset: 18 pelasi, yhteensä 5+6 – Mikko Rantanen 3+0, Artturi Lehkonen 2+0, Erik Haula 0+1, Joel Armia 0+1, Roope Hintz 0+1&lt;/p&gt;&lt;p&gt;&lt;a href=&quot;https://juhaopesonen.github.io/NHL-stats/raportit/2026-10-20.html&quot;&gt;Koko raportti&lt;/a&gt;&lt;/p&gt;</description>
-  </item>
-  <item>
-    <title>NHL-yöraportti 19.10.2026 – 4 ottelua</title>
-    <link>https://juhaopesonen.github.io/NHL-stats/raportit/2026-10-19.html</link>
-    <guid isPermaLink="true">https://juhaopesonen.github.io/NHL-stats/raportit/2026-10-19.html</guid>
-    <pubDate>Tue, 20 Oct 2026 06:11:11 +0000</pubDate>
-    <description>&lt;p&gt;Ottelut maanantai 19.10.2026.&lt;/p&gt;&lt;ul&gt;&lt;li&gt;Matvei Michkov (PHI) on tehnyt maalin 3 ottelussa peräkkäin (yhteensä 4 maalia).&lt;/li&gt;&lt;li&gt;Sergei Bobrovsky (TOR) torjui 30/31 ja päästi 2,82 maalia odotettua vähemmän (GSAx).&lt;/li&gt;&lt;li&gt;Pavel Dorofeyev (NYR) jäi ilman maalia, vaikka laukauksista kertyi 1,44 odotettua maalia (ixG, 9 laukausyritystä, 3 vaarallista).&lt;/li&gt;&lt;li&gt;Matvei Michkov (PHI) teki 2 maalia vain 0,46 ixG:n laukauksista.&lt;/li&gt;&lt;li&gt;Bryan Rust (PIT) pelasi yöllä 9.32 – nyt sivussa, vamma: alavartalo, arvioitu paluu 22.10. (n. 2 pv).&lt;/li&gt;&lt;/ul&gt;&lt;p&gt;Suomalaiset: 5 pelasi, yhteensä 0+1 – Artturi Lehkonen 0+1&lt;/p&gt;&lt;p&gt;&lt;a href=&quot;https://juhaopesonen.github.io/NHL-stats/raportit/2026-10-19.html&quot;&gt;Koko raportti&lt;/a&gt;&lt;/p&gt;</description>
   </item>
 </channel>
 </rss>
