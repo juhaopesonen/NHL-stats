@@ -14,6 +14,8 @@ tekee suomenkielisen HTML-raportin, joka nostaa esiin kiinnostavia yksityiskohti
 - **Suomalaisnurkkaus:** yön suomalaiset kenttäpelaajat ja maalivahdit, heitä koskevat nostot
   plus/miinuksineen, ylivoima-aikoineen ja yön 5v5 xG puolesta/vastaan sekä suomalaisten pistepörssi (mm. 5v5 xG% jäällä ollessa ja ero
   joukkueeseen pelaajan ollessa vaihdossa) ja maalivahtitilastot
+- **Sarjataulukko:** divisioonittain, ja jokaiselle joukkueelle MoneyPuckin simulaation
+  playoff-, divisioonavoitto- ja mestaruustodennäköisyys sekä ennustettu pistemäärä
 - **Loukkaantumiset:** yöllä pelanneet, joista tuli pelin jälkeen loukkaantumisilmoitus
   (esim. poikkeuksellisen lyhyt peliaika) sekä sivussa olevat suomalaiset ja tähtipelaajat
   arvioituine paluupäivineen. Tähti = edellisellä kaudella joukkueensa kolmen parhaan
@@ -31,7 +33,7 @@ Uudet raportit voi tilata RSS-syötteenä: <https://juhaopesonen.github.io/NHL-s
 | [NHL:n avoin rajapinta](https://api-web.nhle.com) | Ottelut, tulokset, boxscoret, pelaajien nimet ja syntymämaat |
 | [NHL:n tilastorajapinta](https://api.nhle.com/stats/rest/en) | Peliaika tilanteittain (tasakentin, yv, av), edellisen kauden tilastot tähtipelaajia varten |
 | [ESPN](https://www.espn.com/nhl/injuries) (tiedot RotoWirelta) | Loukkaantumiset: tila, vamman tyyppi, arvioitu paluupäivä |
-| [MoneyPuck.com](https://moneypuck.com/data.htm) | Laukaustason data ja xG-malli → ixG, joukkueiden xG, 5v5-xG, vaaralliset paikat, GSAx |
+| [MoneyPuck.com](https://moneypuck.com/data.htm) | Laukaustason data ja xG-malli → ixG, joukkueiden xG, 5v5-xG, vaaralliset paikat, GSAx; playoff-simulaatio |
 
 MoneyPuckin data on vapaasti käytettävissä ei-kaupalliseen käyttöön, kun MoneyPuck.com
 mainitaan lähteenä – raportin alatunnisteessa on maininta.
@@ -69,6 +71,8 @@ data/players.csv  pelaajien syntymämaat (suomalaiset = FIN)
 data/2026-27/injuries.csv  loukkaantumislistan päivittäiset tilannekuvat
 data/2026-27/onice_5v5.csv MoneyPuckin 5v5-kausikooste (xG puolesta/vastaan jäällä)
 data/2026-27/onice_games.csv  ottelukohtaiset 5v5-luvut jäällä (oma laskenta: NHL:n vaihtodata + MoneyPuckin laukaukset)
+data/2026-27/standings.csv  sarjataulukko päivittäin
+data/2026-27/playoff_odds.csv  MoneyPuckin playoff-todennäköisyydet päivittäin
 data/2026-27/stars.csv     tähtipelaajat (edellisen kauden tilastoista)
 docs/           GitHub Pages: index.html = uusin raportti, raportit/ = arkisto
 ```

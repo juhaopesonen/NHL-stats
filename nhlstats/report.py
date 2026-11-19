@@ -57,7 +57,15 @@ footer{margin-top:40px;color:var(--muted);font-size:13px;border-top:1px solid va
 .inj td:nth-child(4),.inj td:nth-child(5){white-space:nowrap}
 .inj .tag{font-size:11px;padding:1px 7px}
 .wide{grid-column:1/-1}
-.tiles{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:10px;margin:20px 0 28px}
+.standings tr.cut td{border-bottom:2px solid var(--muted)}
+.odds{display:inline-flex;align-items:center;gap:6px;justify-content:flex-end;min-width:92px}
+.ob{display:inline-block;width:46px;height:8px;border-radius:4px;background:var(--line);overflow:hidden}
+.ob span{display:block;height:100%;background:var(--muted)}
+.odds.hi .ob span{background:var(--good)}.odds.lo .ob span{background:var(--bad)}
+.note{color:var(--muted);font-size:13px;margin-top:12px}
+.standings td,.standings th{white-space:nowrap}
+@media (max-width:640px){.standings td:nth-child(n+3):nth-child(-n+5),.standings th:nth-child(n+3):nth-child(-n+5),.standings td:nth-child(n+7):nth-child(-n+9),.standings th:nth-child(n+7):nth-child(-n+9),.standings td:nth-child(n+11):nth-child(-n+12),.standings th:nth-child(n+11):nth-child(-n+12){display:none}.standings td:first-child{white-space:normal}}
+.tiles{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin:20px 0 28px}
 .tile{display:flex;flex-direction:column;gap:2px;background:var(--card);border:1px solid var(--line);border-radius:12px;
 padding:12px 14px;text-decoration:none;color:var(--text);transition:border-color .15s,background .15s}
 .tile:hover{border-color:var(--accent)}
@@ -376,6 +384,57 @@ def _season_html(tables: dict[str, pd.DataFrame]) -> str:
     return f'<div class="season">{"".join(parts)}</div>'
 
 
+DIVISIONS = [("Eastern", "Atlantic", "Atlantin divisioona"), ("Eastern", "Metropolitan", "Metropolitan-divisioona"),
+             ("Western", "Central", "Keskinen divisioona"), ("Western", "Pacific", "Tyynenmeren divisioona")]
+
+
+def _pct(p) -> str:
+    """Todennäköisyys prosentteina: '<1 %' ja '>99 %' ääripäissä."""
+    if p is None or pd.isna(p):
+        return "–"
+    v = p * 100
+    return "<1 %" if v < 0.5 and v > 0 else ">99 %" if 99.5 <= v < 100 else f"{v:.0f} %"
+
+
+def _odds_cell(p) -> str:
+    """Playoff-todennäköisyys palkkina ja lukuna."""
+    if p is None or pd.isna(p):
+        return "–"
+    cls = "hi" if p >= 0.75 else "mid" if p >= 0.25 else "lo"
+    return (f'<span class="odds {cls}"><span class="ob"><span style="width:{p * 100:.0f}%"></span></span>'
+            f"{_pct(p)}</span>")
+
+
+def _standings_html(st: pd.DataFrame, odds: pd.DataFrame) -> str:
+    if st.empty:
+        return '<p class="empty">Sarjataulukkoa ei ole saatavilla tälle päivälle.</p>'
+    if not odds.empty:
+        st = st.merge(odds[["team", "made_playoffs", "won_division", "won_cup", "proj_points"]], on="team", how="left")
+    else:
+        st = st.assign(made_playoffs=float("nan"), won_division=float("nan"), won_cup=float("nan"),
+                       proj_points=float("nan"))
+    cards = []
+    for conf, div, title in DIVISIONS:
+        d = st[st.division == div].sort_values("div_rank")
+        rows = []
+        for _, r in d.iterrows():
+            line = ' class="cut"' if r.div_rank == 3 else ""
+            rows.append(
+                f"<tr{line}><td>{r.div_rank}. {escape(r['name'])}</td><td>{r.gp}</td><td>{r.w}</td><td>{r.l}</td>"
+                f"<td>{r.otl}</td><td><b>{r.pts}</b></td><td>{_pm(r.gd)}</td><td>{escape(r.l10)}</td>"
+                f"<td>{escape(r.streak)}</td><td>{_odds_cell(r.made_playoffs)}</td><td>{_pct(r.won_division)}</td>"
+                f"<td>{_pct(r.won_cup)}</td>"
+                f"<td>{'' if pd.isna(r.proj_points) else f'{r.proj_points:.0f}'}</td></tr>")
+        head = "".join(f"<th>{h}</th>" for h in ["Joukkue", "O", "V", "T", "JA", "P", "ME", "10 viim.", "Putki",
+                                                    "Playoffit", "Div.voitto", "Mestaruus", "Ennuste p"])
+        cards.append(f'<div class="game wide standings"><div class="block"><h3>{escape(title)}</h3>'
+                     f'<table><tr>{head}</tr>{"".join(rows)}</table></div></div>')
+    note = ('<p class="note">Viiva divisioonan 3. sijan alla: kolme parasta pääsee suoraan playoffeihin, '
+            "lisäksi konferenssin kaksi parasta muuta (wild card). Todennäköisyydet: MoneyPuck.com:n simulaatio "
+            f"({escape(str(odds.snapshot.iloc[0]))}).</p>" if not odds.empty else "")
+    return f'<div class="season">{"".join(cards)}</div>{note}'
+
+
 def _tile(panel: str, title: str, big: str, sub: str) -> str:
     return (f'<a class="tile" href="#{panel}" data-panel="{panel}"><span class="t-title">{escape(title)}</span>'
             f'<span class="t-big">{escape(big)}</span><span class="t-sub">{escape(sub)}</span></a>')
@@ -422,8 +481,16 @@ def _archive_html(current: date) -> str:
 
 
 def render(day: date, games, skaters, goalies, xg, items, tables, finns: set[int] = frozenset(),
-           inj: pd.DataFrame | None = None, stars: pd.DataFrame | None = None) -> str:
+           inj: pd.DataFrame | None = None, stars: pd.DataFrame | None = None,
+           standings: pd.DataFrame | None = None, odds: pd.DataFrame | None = None) -> str:
     stars = stars if stars is not None else pd.DataFrame()
+    standings = standings if standings is not None else pd.DataFrame()
+    odds = odds if odds is not None else pd.DataFrame()
+    if not standings.empty:
+        lead = standings.sort_values(["pts", "pt_pct"], ascending=False).iloc[0]
+        st_big, st_sub = lead.team, f"johtaa liigaa · {lead.pts} p" + (" · playoff-ennusteet" if not odds.empty else "")
+    else:
+        st_big, st_sub = "–", "ei tietoja"
     night = games[games.date == day.isoformat()].sort_values("game_id")
 
     fin_night = skaters[(skaters.date == day.isoformat()) & skaters.player_id.isin(finns)]
@@ -452,6 +519,7 @@ def render(day: date, games, skaters, goalies, xg, items, tables, finns: set[int
         ("suomalaiset", "Suomalaisnurkkaus", finn_big, finn_sub),
         ("loukkaantumiset", "Loukkaantumiset", inj_big, inj_sub),
         ("kausi", "Kausi", season_big, season_sub),
+        ("sarjataulukko", "Sarjataulukko", st_big, st_sub),
         ("arkisto", "Arkisto", "{ARCHIVE_COUNT}", "aiempaa raporttia"),
     ))
     cards = "".join(_game_html(gm, skaters, goalies, xg["xg_teams"], xg["xg_goalies"])
@@ -473,11 +541,13 @@ def render(day: date, games, skaters, goalies, xg, items, tables, finns: set[int
 <section class="panel" id="suomalaiset"><h2>Suomalaisnurkkaus</h2>{_finn_html(day.isoformat(), skaters, goalies, xg, items, tables, finns, inj)}</section>
 <section class="panel" id="loukkaantumiset"><h2>Loukkaantumiset</h2>{_injuries_html(day.isoformat(), inj, finns, stars)}</section>
 <section class="panel" id="kausi"><h2>Kausi tähän mennessä</h2>{_season_html(tables)}</section>
+<section class="panel" id="sarjataulukko"><h2>Sarjataulukko ja playoff-ennuste</h2>{_standings_html(standings, odds)}</section>
 <section class="panel" id="arkisto"><h2>Arkisto</h2>{{ARCHIVE}}</section>
 <a class="totop" href="#valikko">↑ Valikko</a>
 <footer>
 xG-, GSAx- ja laukausdata: <a href="https://moneypuck.com">MoneyPuck.com</a>.
-Tulokset ja pelaajatilastot: NHL.com. Loukkaantumiset: ESPN / RotoWire (paluuarviot ovat suuntaa-antavia). Päivitetty {updated}.<br>
+Tulokset ja pelaajatilastot: NHL.com. Loukkaantumiset: ESPN / RotoWire (paluuarviot ovat suuntaa-antavia).
+Playoff-ennusteet: MoneyPuck.com:n kausisimulaatio. Päivitetty {updated}.<br>
 ixG = pelaajan laukausten odotetut maalit. GSAx = maalivahdin päästämät maalit verrattuna odotettuun
 (positiivinen = odotettua parempi). PPM = päästetyt maalit 60 minuuttia kohden. xGA = torjuttavien laukausten odotetut maalit. Vaarallinen paikka = laukaus, jonka xG on vähintään 0,20.
 5v5 xG% = joukkueen osuus odotetuista maaleista pelaajan ollessa jäällä 5 vs. 5 (kausi tähän asti);

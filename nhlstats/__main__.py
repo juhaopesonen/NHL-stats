@@ -199,6 +199,19 @@ def main() -> None:
         update_injuries(season_id, skaters, goalies)
     players = storage.load_players()
     finns = set(players[players.birth_country == "FIN"].player_id)
+    if not args.no_fetch:
+        try:
+            storage.save_snapshot(season_id, "standings", pd.DataFrame(nhl_api.standings(day)), "date")
+        except Exception as e:
+            print(f"Sarjataulukon haku epäonnistui: {e}")
+        try:
+            snapshot = datetime.now(ZoneInfo("Europe/Helsinki")).date().isoformat()
+            storage.save_snapshot(season_id, "playoff_odds", moneypuck.playoff_odds(snapshot), "snapshot")
+        except Exception as e:
+            print(f"Playoff-ennusteen haku epäonnistui: {e}")
+    standings = storage.latest_snapshot(season_id, "standings", "date", day.isoformat())
+    odds = storage.latest_snapshot(season_id, "playoff_odds", "snapshot",
+                                   (day + timedelta(days=1)).isoformat())
     inj = storage.injuries_for(season_id, day.isoformat())
     stars = storage.load(season_id, "stars")
     if stars.empty and not args.no_fetch:
@@ -212,7 +225,7 @@ def main() -> None:
     items = insights.build(day.isoformat(), games, skaters, goalies, xg, inj)
     tables = insights.season_tables(day.isoformat(), skaters, xg["xg_players"], finns,
                                     storage.load(season_id, "onice_5v5"), goalies, xg["xg_goalies"])
-    report.write(day, report.render(day, games, skaters, goalies, xg, items, tables, finns, inj, stars))
+    report.write(day, report.render(day, games, skaters, goalies, xg, items, tables, finns, inj, stars, standings, odds))
     feed.update(day, int((games.date == day.isoformat()).sum()),
                 [i.text for i in report.top_insights(items, limit=5)], report.finn_summary(day, skaters, goalies, finns))
     print(f"Raportti {day}: {len(items)} nostoa -> docs/raportit/{day}.html")

@@ -52,6 +52,23 @@ def download_onice_5v5(start_year: int) -> pd.DataFrame:
     })
 
 
+ODDS_URL = "https://moneypuck.com/moneypuck/simulations/simulations_recent.csv"
+
+
+def playoff_odds(snapshot: str) -> pd.DataFrame:
+    """MoneyPuckin kausisimulaatio: playoff-, divisioonavoitto- ja mestaruustodennäköisyydet."""
+    df = pd.read_csv(io.StringIO(http.get(ODDS_URL).text))
+    df = df[df.scenerio == "ALL"]
+    return pd.DataFrame({
+        "snapshot": snapshot,
+        "team": df.teamCode,
+        "made_playoffs": df.madePlayoffs,
+        "won_division": df.wonDivision,
+        "won_cup": df.wonCup,
+        "proj_points": df.points,
+    })
+
+
 def aggregate(shots: pd.DataFrame, games: pd.DataFrame) -> dict[str, pd.DataFrame]:
     """Laskee ottelukohtaiset xG-luvut pelaajille, joukkueille ja maalivahdeille."""
     shots = shots.assign(hd=(shots.xGoal >= HIGH_DANGER_XG).astype(int))

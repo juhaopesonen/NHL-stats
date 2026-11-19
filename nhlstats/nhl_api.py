@@ -61,6 +61,25 @@ def stars(season_id: int) -> list[dict]:
     return result
 
 
+def standings(day: date) -> list[dict]:
+    """Sarjataulukko annetun pelipäivän jälkeen."""
+    data = http.get(f"{WEB}/standings/{day.isoformat()}").json().get("standings", [])
+    return [{
+        "date": day.isoformat(),
+        "team": r["teamAbbrev"]["default"],
+        "name": r["teamName"]["default"],
+        "conference": r.get("conferenceName", ""),
+        "division": r.get("divisionName", ""),
+        "div_rank": r.get("divisionSequence", 0),
+        "wildcard_rank": r.get("wildcardSequence", 0),
+        "gp": r.get("gamesPlayed", 0), "w": r.get("wins", 0), "l": r.get("losses", 0),
+        "otl": r.get("otLosses", 0), "pts": r.get("points", 0), "pt_pct": r.get("pointPctg", 0.0),
+        "rw": r.get("regulationWins", 0), "gd": r.get("goalDifferential", 0),
+        "l10": f'{r.get("l10Wins", 0)}-{r.get("l10Losses", 0)}-{r.get("l10OtLosses", 0)}',
+        "streak": f'{r.get("streakCode", "")}{r.get("streakCount", "")}',
+    } for r in data]
+
+
 def toi_splits(day: date) -> list[dict]:
     """Pelipäivän kenttäpelaajien peliaika tilanteittain (tasakentin, yv, av) sekunteina."""
     exp = (f'gameDate%3E%3D%22{day.isoformat()}%22%20and%20gameDate%3C%3D%22{day.isoformat()}%22'

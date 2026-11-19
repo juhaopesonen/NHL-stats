@@ -68,6 +68,25 @@ def injuries_for(season_id: int, day: str) -> pd.DataFrame:
     return df.fillna({"injury": "", "return_date": "", "updated": "", "espn_url": "", "position": ""})
 
 
+def save_snapshot(season_id: int, name: str, df: pd.DataFrame, key: str) -> None:
+    """Päiväkohtainen tilannekuva (esim. sarjataulukko); saman päivän vanha korvataan."""
+    old = load(season_id, name)
+    if not old.empty:
+        old = old[~old[key].isin(df[key].unique())]
+        df = pd.concat([old, df], ignore_index=True)
+    df.sort_values([key] + [c for c in ("team",) if c in df.columns], kind="stable").to_csv(
+        season_dir(season_id) / f"{name}.csv", index=False, lineterminator="\n", float_format="%.4f")
+
+
+def latest_snapshot(season_id: int, name: str, key: str, limit: str) -> pd.DataFrame:
+    """Uusin tilannekuva, jonka avain on enintään limit."""
+    df = load(season_id, name)
+    if df.empty:
+        return df
+    df = df[df[key] <= limit]
+    return df[df[key] == df[key].max()] if not df.empty else df
+
+
 PLAYERS_FILE = DATA_DIR / "players.csv"
 
 
