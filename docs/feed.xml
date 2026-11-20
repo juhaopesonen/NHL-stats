@@ -6,7 +6,14 @@
   <atom:link href="https://juhaopesonen.github.io/NHL-stats/feed.xml" rel="self" type="application/rss+xml"/>
   <description>NHL:n yön otteluiden syvädata ja nostot suomeksi: xG, putket, suomalaiset ja loukkaantumiset.</description>
   <language>fi</language>
-  <lastBuildDate>Thu, 19 Nov 2026 20:41:46 +0000</lastBuildDate>
+  <lastBuildDate>Fri, 20 Nov 2026 05:43:54 +0000</lastBuildDate>
+  <item>
+    <title>NHL-yöraportti 19.11.2026 – 11 ottelua</title>
+    <link>https://juhaopesonen.github.io/NHL-stats/raportit/2026-11-19.html</link>
+    <guid isPermaLink="true">https://juhaopesonen.github.io/NHL-stats/raportit/2026-11-19.html</guid>
+    <pubDate>Fri, 20 Nov 2026 05:43:54 +0000</pubDate>
+    <description>&lt;p&gt;Ottelut torstai 19.11.2026.&lt;/p&gt;&lt;ul&gt;&lt;li&gt;Berkly Catton (SEA) teki hattutempun, tehot 3+0.&lt;/li&gt;&lt;li&gt;Frank Nazar (CHI) on tehnyt maalin 4 ottelussa peräkkäin (yhteensä 6 maalia).&lt;/li&gt;&lt;li&gt;Kirill Kaprizov (MIN) jatkoi pisteputkensa 13 otteluun (putken aikana 7+19).&lt;/li&gt;&lt;li&gt;Quinn Hughes (MIN) jatkoi pisteputkensa 13 otteluun (putken aikana 6+15).&lt;/li&gt;&lt;li&gt;Connor McDavid (EDM): 23 ottelun pisteputki katkesi yön peliin.&lt;/li&gt;&lt;/ul&gt;&lt;p&gt;Suomalaiset: 15 pelasi, yhteensä 1+1 – Erik Haula 1+0, Joel Armia 0+1&lt;/p&gt;&lt;p&gt;&lt;a href=&quot;https://juhaopesonen.github.io/NHL-stats/raportit/2026-11-19.html&quot;&gt;Koko raportti&lt;/a&gt;&lt;/p&gt;</description>
+  </item>
   <item>
     <title>NHL-yöraportti 18.11.2026 – 3 ottelua</title>
     <link>https://juhaopesonen.github.io/NHL-stats/raportit/2026-11-18.html</link>
@@ -209,13 +216,6 @@
     <guid isPermaLink="true">https://juhaopesonen.github.io/NHL-stats/raportit/2026-10-21.html</guid>
     <pubDate>Thu, 22 Oct 2026 06:13:06 +0000</pubDate>
     <description>&lt;p&gt;Ottelut keskiviikko 21.10.2026.&lt;/p&gt;&lt;ul&gt;&lt;li&gt;Matthew Tkachuk (FLA) jatkoi pisteputkensa 9 otteluun (putken aikana 3+12).&lt;/li&gt;&lt;li&gt;Pisteputki jatkui 2 pelaajalla (peliä putkessa): Brady Tkachuk (FLA) 5, Seth Jones (FLA) 5.&lt;/li&gt;&lt;li&gt;Dan Vladar (PHI) torjui 27/28 ja päästi 2,78 maalia odotettua vähemmän (GSAx).&lt;/li&gt;&lt;li&gt;Akira Schmid (FLA): vaikea ilta, 25/30 ja 2,53 maalia odotettua enemmän (GSAx −2,53).&lt;/li&gt;&lt;li&gt;Linus Ullmark (OTT) pelasi yöllä 43.35 – nyt päivittäinen arvio, vamma: alavartalo, arvioitu paluu 22.10. (pian).&lt;/li&gt;&lt;/ul&gt;&lt;p&gt;Suomalaiset: 6 pelasi, yhteensä 0+1 – Nikolas Matinpalo 0+1&lt;/p&gt;&lt;p&gt;&lt;a href=&quot;https://juhaopesonen.github.io/NHL-stats/raportit/2026-10-21.html&quot;&gt;Koko raportti&lt;/a&gt;&lt;/p&gt;</description>
-  </item>
-  <item>
-    <title>NHL-yöraportti 20.10.2026 – 11 ottelua</title>
-    <link>https://juhaopesonen.github.io/NHL-stats/raportit/2026-10-20.html</link>
-    <guid isPermaLink="true">https://juhaopesonen.github.io/NHL-stats/raportit/2026-10-20.html</guid>
-    <pubDate>Wed, 21 Oct 2026 06:12:12 +0000</pubDate>
-    <description>&lt;p&gt;Ottelut tiistai 20.10.2026.&lt;/p&gt;&lt;ul&gt;&lt;li&gt;Mikko Rantanen (DAL) teki hattutempun, tehot 3+0.&lt;/li&gt;&lt;li&gt;Leon Draisaitl (EDM) on tehnyt maalin 4 ottelussa peräkkäin (yhteensä 5 maalia).&lt;/li&gt;&lt;li&gt;Kirill Kaprizov (MIN) on tehnyt maalin 4 ottelussa peräkkäin (yhteensä 5 maalia).&lt;/li&gt;&lt;li&gt;Connor McDavid (EDM) jatkoi pisteputkensa 9 otteluun (putken aikana 6+20).&lt;/li&gt;&lt;li&gt;Pisteputki jatkui 5 pelaajalla (peliä putkessa): Kirill Kaprizov (MIN) 7, Mitch Marner (VGK) 7, Evan Bouchard (EDM) 6, Artturi Lehkonen (COL) 5, Dylan Holloway (STL) 5.&lt;/li&gt;&lt;/ul&gt;&lt;p&gt;Suomalaiset: 18 pelasi, yhteensä 5+6 – Mikko Rantanen 3+0, Artturi Lehkonen 2+0, Erik Haula 0+1, Joel Armia 0+1, Roope Hintz 0+1&lt;/p&gt;&lt;p&gt;&lt;a href=&quot;https://juhaopesonen.github.io/NHL-stats/raportit/2026-10-20.html&quot;&gt;Koko raportti&lt;/a&gt;&lt;/p&gt;</description>
   </item>
 </channel>
 </rss>
