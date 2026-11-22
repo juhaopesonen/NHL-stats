@@ -357,3 +357,17 @@ game_id,date,game_type,away,home,away_name,home_name,away_score,home_score,away_
 2026020356,2026-11-19,2,ANA,COL,Anaheim Ducks,Colorado Avalanche,0,4,25,27,REG
 2026020357,2026-11-19,2,VAN,SEA,Vancouver Canucks,Seattle Kraken,1,5,23,43,REG
 2026020358,2026-11-19,2,DAL,VGK,Dallas Stars,Vegas Golden Knights,4,3,22,30,SO
+2026020359,2026-11-21,2,EDM,CAR,Edmonton Oilers,Carolina Hurricanes,4,7,15,36,REG
+2026020360,2026-11-21,2,CHI,CGY,Chicago Blackhawks,Calgary Flames,4,3,33,36,OT
+2026020361,2026-11-21,2,BUF,FLA,Buffalo Sabres,Florida Panthers,3,4,19,30,REG
+2026020362,2026-11-21,2,PIT,NSH,Pittsburgh Penguins,Nashville Predators,3,4,26,29,REG
+2026020363,2026-11-21,2,WSH,BOS,Washington Capitals,Boston Bruins,5,7,35,23,REG
+2026020364,2026-11-21,2,CBJ,TOR,Columbus Blue Jackets,Toronto Maple Leafs,4,3,35,26,REG
+2026020365,2026-11-21,2,PHI,MTL,Philadelphia Flyers,Montréal Canadiens,4,3,20,23,REG
+2026020366,2026-11-21,2,LAK,OTT,Los Angeles Kings,Ottawa Senators,2,4,21,28,REG
+2026020367,2026-11-21,2,NYI,DET,New York Islanders,Detroit Red Wings,3,2,21,20,REG
+2026020368,2026-11-21,2,NJD,STL,New Jersey Devils,St. Louis Blues,6,9,43,23,REG
+2026020369,2026-11-21,2,VGK,WPG,Vegas Golden Knights,Winnipeg Jets,5,4,33,30,SO
+2026020370,2026-11-21,2,ANA,UTA,Anaheim Ducks,Utah Mammoth,2,3,31,12,REG
+2026020371,2026-11-21,2,MIN,VAN,Minnesota Wild,Vancouver Canucks,3,4,25,24,SO
+2026020372,2026-11-21,2,SEA,SJS,Seattle Kraken,San Jose Sharks,3,4,30,29,REG
