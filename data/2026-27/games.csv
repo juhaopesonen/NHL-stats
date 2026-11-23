@@ -371,3 +371,8 @@ game_id,date,game_type,away,home,away_name,home_name,away_score,home_score,away_
 2026020370,2026-11-21,2,ANA,UTA,Anaheim Ducks,Utah Mammoth,2,3,31,12,REG
 2026020371,2026-11-21,2,MIN,VAN,Minnesota Wild,Vancouver Canucks,3,4,25,24,SO
 2026020372,2026-11-21,2,SEA,SJS,Seattle Kraken,San Jose Sharks,3,4,30,29,REG
+2026020373,2026-11-22,2,CAR,NYR,Carolina Hurricanes,New York Rangers,5,2,41,27,REG
+2026020374,2026-11-22,2,BUF,TBL,Buffalo Sabres,Tampa Bay Lightning,6,2,28,31,REG
+2026020375,2026-11-22,2,EDM,STL,Edmonton Oilers,St. Louis Blues,4,5,30,27,SO
+2026020376,2026-11-22,2,PIT,DAL,Pittsburgh Penguins,Dallas Stars,0,1,33,23,REG
+2026020377,2026-11-22,2,CHI,VAN,Chicago Blackhawks,Vancouver Canucks,6,3,30,25,REG
