@@ -376,3 +376,10 @@ game_id,date,game_type,away,home,away_name,home_name,away_score,home_score,away_
 2026020375,2026-11-22,2,EDM,STL,Edmonton Oilers,St. Louis Blues,4,5,30,27,SO
 2026020376,2026-11-22,2,PIT,DAL,Pittsburgh Penguins,Dallas Stars,0,1,33,23,REG
 2026020377,2026-11-22,2,CHI,VAN,Chicago Blackhawks,Vancouver Canucks,6,3,30,25,REG
+2026020378,2026-11-23,2,CBJ,NJD,Columbus Blue Jackets,New Jersey Devils,2,3,21,30,REG
+2026020379,2026-11-23,2,LAK,MTL,Los Angeles Kings,Montréal Canadiens,2,1,22,30,REG
+2026020380,2026-11-23,2,CGY,OTT,Calgary Flames,Ottawa Senators,1,2,36,31,REG
+2026020381,2026-11-23,2,TOR,NYI,Toronto Maple Leafs,New York Islanders,4,2,32,22,REG
+2026020382,2026-11-23,2,UTA,WPG,Utah Mammoth,Winnipeg Jets,2,4,36,15,REG
+2026020383,2026-11-23,2,ANA,SEA,Anaheim Ducks,Seattle Kraken,2,3,26,21,REG
+2026020384,2026-11-23,2,MIN,SJS,Minnesota Wild,San Jose Sharks,5,2,30,24,REG
