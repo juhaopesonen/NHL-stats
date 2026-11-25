@@ -542,9 +542,15 @@
   "title": "NHL-yöraportti 23.11.2026 – 7 ottelua"
  },
  "2026-11-24": {
-  "finns": "ei pelanneita yöllä",
-  "highlights": [],
+  "finns": "1 pelasi, yhteensä 0+1 – Kasperi Kapanen 0+1",
+  "highlights": [
+   "Trevor Connelly (VGK) keräsi 3 pistettä (2+1).",
+   "Pisteputki jatkui 2 pelaajalla (peliä putkessa): Vasily Podkolzin (EDM) 6, Jack Eichel (VGK) 5.",
+   "Filip Hallander (EDM) pelasi yöllä 3.06 – nyt päivittäinen arvio, vamma: alavartalo, arvioitu paluu 27.11. (n. 2 pv).",
+   "Marc Gatcomb (VGK) pelasi yöllä 7.20 – nyt päivittäinen arvio, vamma: kasvot, arvioitu paluu 27.11. (n. 2 pv).",
+   "Nic Dowd (VGK) katkaisi 25 ottelun maalittoman jakson."
+  ],
   "published": "2026-11-24T22:29:57+00:00",
-  "title": "NHL-yöraportti 24.11.2026 – 0 ottelua"
+  "title": "NHL-yöraportti 24.11.2026 – 1 ottelua"
  }
 }

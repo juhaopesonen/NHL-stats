@@ -5599,6 +5599,7 @@ snapshot,player_id,name,team,position,status,injury,return_date,updated,espn_url
 2026-11-25,8482762.0,Simon Edvinsson,DET,D,Injured Reserve,Contract Dispute,2026-11-28,2026-10-14,https://www.espn.com/nhl/player/_/id/4874720
 2026-11-25,8482171.0,William Wallinder,DET,D,Day-To-Day,Upper Body,2026-11-25,2026-11-22,https://www.espn.com/nhl/player/_/id/4697436
 2026-11-25,8480831.0,Alec Regula,EDM,D,Injured Reserve,Undisclosed,2026-12-01,2026-10-01,https://www.espn.com/nhl/player/_/id/4331611
+2026-11-25,8480842.0,Filip Hallander,EDM,C,Day-To-Day,Lower Body,2026-11-27,2026-11-25,https://www.espn.com/nhl/player/_/id/4588331
 2026-11-25,8475883.0,Frederik Andersen,EDM,G,Injured Reserve,Knee,2027-01-09,2026-09-29,https://www.espn.com/nhl/player/_/id/2517899
 2026-11-25,,Matt Savoie,EDM,C,Injured Reserve,Lower Body,2026-12-01,2026-10-01,https://www.espn.com/nhl/player/_/id/5080153
 2026-11-25,8477406.0,Mattias Janmark,EDM,C,Injured Reserve,Undisclosed,2026-11-28,2026-09-29,https://www.espn.com/nhl/player/_/id/3042085
@@ -5647,11 +5648,11 @@ snapshot,player_id,name,team,position,status,injury,return_date,updated,espn_url
 2026-11-25,8480748.0,Kiefer Sherwood,SJS,LW,Injured Reserve,Upper Body,2026-12-01,2026-11-23,https://www.espn.com/nhl/player/_/id/4391255
 2026-11-25,8480356.0,Kyle Keyser,SJS,G,Injured Reserve,Upper Body,2026-12-01,2026-09-28,https://www.espn.com/nhl/player/_/id/4329962
 2026-11-25,8484200.0,Quentin Musty,SJS,LW,Injured Reserve,Upper Body,2027-01-01,2026-11-15,https://www.espn.com/nhl/player/_/id/5149209
-2026-11-25,8478443.0,Brandon Carlo,STL,D,Day-To-Day,Undisclosed,2026-12-02,2026-11-24,https://www.espn.com/nhl/player/_/id/3904175
-2026-11-25,8481580.0,Connor McMichael,STL,LW,Out,Lower Body,2026-11-27,2026-11-24,https://www.espn.com/nhl/player/_/id/4565246
+2026-11-25,8478443.0,Brandon Carlo,STL,D,Injured Reserve,Lower Body,2026-12-02,2026-11-24,https://www.espn.com/nhl/player/_/id/3904175
+2026-11-25,8481580.0,Connor McMichael,STL,LW,Injured Reserve,Lower Body,2026-11-27,2026-11-24,https://www.espn.com/nhl/player/_/id/4565246
 2026-11-25,8479346.0,Dillon Dube,STL,C,Injured Reserve,Neck,2026-12-04,2026-10-10,https://www.espn.com/nhl/player/_/id/4063268
-2026-11-25,8483516.0,Jimmy Snuggerud,STL,RW,Day-To-Day,Undisclosed,2026-11-25,2026-11-24,https://www.espn.com/nhl/player/_/id/5080171
-2026-11-25,8477402.0,Pavel Buchnevich,STL,LW,Day-To-Day,Undisclosed,2026-11-25,2026-11-24,https://www.espn.com/nhl/player/_/id/3042081
+2026-11-25,8483516.0,Jimmy Snuggerud,STL,RW,Day-To-Day,Upper Body,2026-11-25,2026-11-24,https://www.espn.com/nhl/player/_/id/5080171
+2026-11-25,8477402.0,Pavel Buchnevich,STL,LW,Day-To-Day,Upper Body,2026-11-25,2026-11-24,https://www.espn.com/nhl/player/_/id/3042081
 2026-11-25,8476792.0,Torey Krug,STL,D,Injured Reserve,Ankle,2027-07-01,2026-10-13,https://www.espn.com/nhl/player/_/id/2952729
 2026-11-25,8481006.0,Tyler Tucker,STL,D,Injured Reserve,Knee,2026-11-28,2026-09-30,https://www.espn.com/nhl/player/_/id/4587904
 2026-11-25,8479542.0,Brandon Hagel,TBL,LW,Injured Reserve,Lower Body,2026-11-25,2026-11-19,https://www.espn.com/nhl/player/_/id/4065019
@@ -5678,6 +5679,7 @@ snapshot,player_id,name,team,position,status,injury,return_date,updated,espn_url
 2026-11-25,8478465.0,Guillaume Brisebois,VAN,D,Injured Reserve,Undisclosed,2026-11-29,2026-11-13,https://www.espn.com/nhl/player/_/id/3942866
 2026-11-25,8476907.0,Mackenzie MacEachern,VAN,LW,Injured Reserve,Undisclosed,2026-11-29,2026-09-29,https://www.espn.com/nhl/player/_/id/3069342
 2026-11-25,8477967.0,Thatcher Demko,VAN,G,Injured Reserve,Hip,2026-12-21,2026-09-28,https://www.espn.com/nhl/player/_/id/3096217
+2026-11-25,8483553.0,Marc Gatcomb,VGK,C,Day-To-Day,Face,2026-11-27,2026-11-25,https://www.espn.com/nhl/player/_/id/5103547
 2026-11-25,8476331.0,Dylan DeMelo,WPG,D,Injured Reserve,Lower Body,2026-12-26,2026-11-19,https://www.espn.com/nhl/player/_/id/2590861
 2026-11-25,8482765.0,Isak Rosen,WPG,RW,Injured Reserve,Undisclosed,2026-11-27,2026-11-17,https://www.espn.com/nhl/player/_/id/4874731
 2026-11-25,8475760.0,Nick Bjugstad,WPG,C,Injured Reserve,Pectoral,2027-03-11,2026-10-23,https://www.espn.com/nhl/player/_/id/5828
