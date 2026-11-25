@@ -5592,6 +5592,7 @@ snapshot,player_id,name,team,position,status,injury,return_date,updated,espn_url
 2026-11-25,8482742.0,Zachary L'Heureux,COL,LW,Injured Reserve,Upper Body,2026-11-27,2026-10-23,https://www.espn.com/nhl/player/_/id/4874744
 2026-11-25,8478476.0,Kyle Capobianco,DAL,D,Injured Reserve,Leg,2026-12-01,2026-11-14,https://www.espn.com/nhl/player/_/id/3939716
 2026-11-25,8483425.0,Lian Bichsel,DAL,D,Injured Reserve,Lower Body,2026-12-09,2026-11-14,https://www.espn.com/nhl/player/_/id/5080162
+2026-11-25,8475168.0,Matt Duchene,DAL,C,Injured Reserve,Abdomen,2027-01-12,2026-10-12,https://www.espn.com/nhl/player/_/id/5161
 2026-11-25,8480840.0,Oskar Back,DAL,C,Injured Reserve,Finger,2026-11-25,2026-11-19,https://www.espn.com/nhl/player/_/id/4894398
 2026-11-25,8474574.0,Tyler Myers,DAL,D,Day-To-Day,Upper Body,2026-11-25,2026-11-24,https://www.espn.com/nhl/player/_/id/5052
 2026-11-25,,Sam Montembeault,DET,G,Injured Reserve,Lower Body,2026-12-01,2026-11-23,https://www.espn.com/nhl/player/_/id/3942714
@@ -5606,6 +5607,7 @@ snapshot,player_id,name,team,position,status,injury,return_date,updated,espn_url
 2026-11-25,8477493.0,Aleksander Barkov,FLA,C,Injured Reserve,Knee,2026-11-25,2026-11-21,https://www.espn.com/nhl/player/_/id/3041970
 2026-11-25,8473419.0,Brad Marchand,FLA,LW,Injured Reserve,Knee,2026-11-25,2026-11-21,https://www.espn.com/nhl/player/_/id/3852
 2026-11-25,8479981.0,Jonah Gadjovich,FLA,LW,Injured Reserve,Neck,2026-12-12,2026-11-19,https://www.espn.com/nhl/player/_/id/4233890
+2026-11-25,8476979.0,Erik Gustafsson,LAK,D,Injured Reserve,Hand,2026-12-20,2026-11-23,https://www.espn.com/nhl/player/_/id/3891922
 2026-11-25,8484163.0,Jakub Dvorak,LAK,D,Injured Reserve,Upper Body,2026-11-28,2026-09-24,https://www.espn.com/nhl/player/_/id/5149241
 2026-11-25,8476874.0,Olli Maatta,MIN,D,Injured Reserve,Upper Body,2026-11-25,2026-11-16,https://www.espn.com/nhl/player/_/id/2976850
 2026-11-25,8480800.0,Quinn Hughes,MIN,D,Injured Reserve,Upper Body,2026-11-27,2026-11-23,https://www.espn.com/nhl/player/_/id/4320548
@@ -5632,7 +5634,6 @@ snapshot,player_id,name,team,position,status,injury,return_date,updated,espn_url
 2026-11-25,8478173.0,Hayden Hodgson,OTT,RW,Injured Reserve,Groin,2026-11-28,2026-11-24,https://www.espn.com/nhl/player/_/id/3150479
 2026-11-25,8477998.0,Warren Foegele,OTT,LW,Injured Reserve,Knee,2026-12-03,2026-11-16,https://www.espn.com/nhl/player/_/id/3151036
 2026-11-25,8482667.0,William Eklund,OTT,LW,Injured Reserve,Ankle,2027-01-05,2026-10-15,https://www.espn.com/nhl/player/_/id/4874721
-2026-11-25,8476979.0,Erik Gustafsson,PHI,D,Injured Reserve,Hand,2026-12-20,2026-11-23,https://www.espn.com/nhl/player/_/id/5774
 2026-11-25,8483733.0,Nikita Grebenkin,PHI,RW,Injured Reserve,Back,2027-02-13,2026-10-10,https://www.espn.com/nhl/player/_/id/5188490
 2026-11-25,8475810.0,Bryan Rust,PIT,RW,Injured Reserve,Lower Body,2026-12-05,2026-11-20,https://www.espn.com/nhl/player/_/id/2591155
 2026-11-25,8483398.0,Declan Carlile,PIT,D,Day-To-Day,Lower Body,2026-11-25,2026-11-23,https://www.espn.com/nhl/player/_/id/5103825
