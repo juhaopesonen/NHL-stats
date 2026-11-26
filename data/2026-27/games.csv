@@ -384,3 +384,17 @@ game_id,date,game_type,away,home,away_name,home_name,away_score,home_score,away_
 2026020383,2026-11-23,2,ANA,SEA,Anaheim Ducks,Seattle Kraken,2,3,26,21,REG
 2026020384,2026-11-23,2,MIN,SJS,Minnesota Wild,San Jose Sharks,5,2,30,24,REG
 2026020385,2026-11-24,2,VGK,EDM,Vegas Golden Knights,Edmonton Oilers,5,3,27,24,REG
+2026020386,2026-11-25,2,WPG,BOS,Winnipeg Jets,Boston Bruins,4,2,18,23,REG
+2026020387,2026-11-25,2,NYR,BUF,New York Rangers,Buffalo Sabres,1,5,30,30,REG
+2026020388,2026-11-25,2,CAR,TBL,Carolina Hurricanes,Tampa Bay Lightning,3,1,30,33,REG
+2026020389,2026-11-25,2,OTT,FLA,Ottawa Senators,Florida Panthers,3,5,28,32,REG
+2026020390,2026-11-25,2,STL,NYI,St. Louis Blues,New York Islanders,2,3,23,29,SO
+2026020391,2026-11-25,2,CGY,PIT,Calgary Flames,Pittsburgh Penguins,6,3,27,28,REG
+2026020392,2026-11-25,2,PHI,WSH,Philadelphia Flyers,Washington Capitals,3,7,21,35,REG
+2026020393,2026-11-25,2,NJD,CBJ,New Jersey Devils,Columbus Blue Jackets,3,2,26,24,SO
+2026020394,2026-11-25,2,VAN,DET,Vancouver Canucks,Detroit Red Wings,1,5,26,26,REG
+2026020395,2026-11-25,2,NSH,DAL,Nashville Predators,Dallas Stars,3,1,27,21,REG
+2026020396,2026-11-25,2,UTA,MIN,Utah Mammoth,Minnesota Wild,4,3,20,25,REG
+2026020397,2026-11-25,2,MTL,COL,Montréal Canadiens,Colorado Avalanche,0,6,28,38,REG
+2026020398,2026-11-25,2,SJS,ANA,San Jose Sharks,Anaheim Ducks,0,7,23,30,REG
+2026020399,2026-11-25,2,CHI,SEA,Chicago Blackhawks,Seattle Kraken,3,1,19,30,REG
