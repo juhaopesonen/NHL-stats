@@ -1535,3 +1535,35 @@ date,team,name,conference,division,div_rank,wildcard_rank,gp,w,l,otl,pts,pt_pct,
 2026-11-25,VGK,Vegas Golden Knights,Western,Pacific,2,0,26,15,6,5,35,0.6731,12,12,6-1-3,W2
 2026-11-25,WPG,Winnipeg Jets,Western,Central,5,2,26,13,9,4,30,0.5769,10,-3,8-1-1,W2
 2026-11-25,WSH,Washington Capitals,Eastern,Metropolitan,6,6,22,11,11,0,22,0.5000,9,-7,3-7-0,W1
+2026-11-26,ANA,Anaheim Ducks,Western,Pacific,3,0,26,12,13,1,25,0.4808,11,1,4-6-0,W1
+2026-11-26,BOS,Boston Bruins,Eastern,Atlantic,4,1,24,15,8,1,31,0.6458,12,20,6-4-0,L1
+2026-11-26,BUF,Buffalo Sabres,Eastern,Atlantic,6,4,25,11,10,4,26,0.5200,9,-6,4-5-1,W2
+2026-11-26,CAR,Carolina Hurricanes,Eastern,Metropolitan,1,0,25,19,3,3,41,0.8200,18,47,8-1-1,W3
+2026-11-26,CBJ,Columbus Blue Jackets,Eastern,Metropolitan,7,9,23,9,13,1,19,0.4130,4,-16,3-6-1,OT1
+2026-11-26,CGY,Calgary Flames,Western,Pacific,4,5,26,11,13,2,24,0.4615,10,-22,4-5-1,W1
+2026-11-26,CHI,Chicago Blackhawks,Western,Central,8,8,25,9,14,2,20,0.4000,6,-30,5-4-1,W3
+2026-11-26,COL,Colorado Avalanche,Western,Central,3,0,24,14,7,3,31,0.6458,14,28,6-2-2,W2
+2026-11-26,DAL,Dallas Stars,Western,Central,2,0,24,15,7,2,32,0.6667,9,7,7-2-1,L1
+2026-11-26,DET,Detroit Red Wings,Eastern,Atlantic,7,7,24,9,12,3,21,0.4375,7,-7,3-7-0,W1
+2026-11-26,EDM,Edmonton Oilers,Western,Pacific,1,0,27,17,6,4,38,0.7037,14,22,6-3-1,L1
+2026-11-26,FLA,Florida Panthers,Eastern,Atlantic,5,2,25,14,8,3,31,0.6200,12,7,6-3-1,W2
+2026-11-26,LAK,Los Angeles Kings,Western,Pacific,7,9,22,8,12,2,18,0.4091,5,-11,4-6-0,W1
+2026-11-26,MIN,Minnesota Wild,Western,Central,1,0,27,18,4,5,41,0.7593,17,36,7-1-2,L1
+2026-11-26,MTL,Montréal Canadiens,Eastern,Atlantic,3,0,26,14,8,4,32,0.6154,9,-1,4-5-1,L3
+2026-11-26,NJD,New Jersey Devils,Eastern,Metropolitan,2,0,25,17,8,0,34,0.6800,11,17,7-3-0,W2
+2026-11-26,NSH,Nashville Predators,Western,Central,4,1,24,13,6,5,31,0.6458,10,4,8-2-0,W2
+2026-11-26,NYI,New York Islanders,Eastern,Metropolitan,3,0,24,12,7,5,29,0.6042,9,7,5-2-3,W1
+2026-11-26,NYR,New York Rangers,Eastern,Metropolitan,4,3,24,13,10,1,27,0.5625,13,2,6-4-0,L2
+2026-11-26,OTT,Ottawa Senators,Eastern,Atlantic,1,0,26,16,7,3,35,0.6731,13,8,7-1-2,L1
+2026-11-26,PHI,Philadelphia Flyers,Eastern,Metropolitan,5,5,27,9,12,6,24,0.4444,8,-25,5-3-2,L1
+2026-11-26,PIT,Pittsburgh Penguins,Eastern,Metropolitan,8,10,24,7,15,2,16,0.3333,3,-17,2-8-0,L5
+2026-11-26,SEA,Seattle Kraken,Western,Pacific,6,7,22,11,10,1,23,0.5227,8,-5,4-6-0,L1
+2026-11-26,SJS,San Jose Sharks,Western,Pacific,5,6,27,11,14,2,24,0.4444,4,-30,4-5-1,L2
+2026-11-26,STL,St. Louis Blues,Western,Central,6,3,25,13,9,3,29,0.5800,11,4,6-2-2,OT1
+2026-11-26,TBL,Tampa Bay Lightning,Eastern,Atlantic,2,0,24,15,7,2,32,0.6667,13,14,6-4-0,L2
+2026-11-26,TOR,Toronto Maple Leafs,Eastern,Atlantic,8,8,26,9,14,3,21,0.4038,8,-10,1-8-1,W1
+2026-11-26,UTA,Utah Mammoth,Western,Central,7,4,26,13,10,3,29,0.5577,11,-2,3-4-3,W1
+2026-11-26,VAN,Vancouver Canucks,Western,Pacific,8,10,27,6,20,1,13,0.2407,3,-44,3-7-0,L2
+2026-11-26,VGK,Vegas Golden Knights,Western,Pacific,2,0,26,15,6,5,35,0.6731,12,12,6-1-3,W2
+2026-11-26,WPG,Winnipeg Jets,Western,Central,5,2,26,13,9,4,30,0.5769,10,-3,8-1-1,W2
+2026-11-26,WSH,Washington Capitals,Eastern,Metropolitan,6,6,22,11,11,0,22,0.5000,9,-7,3-7-0,W1
