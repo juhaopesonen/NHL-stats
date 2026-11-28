@@ -5951,12 +5951,12 @@ snapshot,player_id,name,team,position,status,injury,return_date,updated,espn_url
 2026-11-28,8480842.0,Filip Hallander,EDM,C,Out,Knee,2026-12-17,2026-11-27,https://www.espn.com/nhl/player/_/id/4588331
 2026-11-28,8475883.0,Frederik Andersen,EDM,G,Injured Reserve,Knee,2027-01-09,2026-09-29,https://www.espn.com/nhl/player/_/id/2517899
 2026-11-28,,Matt Savoie,EDM,C,Injured Reserve,Lower Body,2026-12-01,2026-10-01,https://www.espn.com/nhl/player/_/id/5080153
-2026-11-28,8477406.0,Mattias Janmark,EDM,C,Injured Reserve,Undisclosed,2026-11-28,2026-09-29,https://www.espn.com/nhl/player/_/id/3042085
+2026-11-28,8477406.0,Mattias Janmark,EDM,C,Injured Reserve,Undisclosed,2026-12-27,2026-09-29,https://www.espn.com/nhl/player/_/id/3042085
 2026-11-28,8475786.0,Zach Hyman,EDM,LW,Out,Impaired Vision,2026-12-03,2026-11-27,https://www.espn.com/nhl/player/_/id/5509
 2026-11-28,8477903.0,Garnet Hathaway,FLA,RW,Out,Lower Body,2026-12-01,2026-11-27,https://www.espn.com/nhl/player/_/id/3149633
 2026-11-28,8479981.0,Jonah Gadjovich,FLA,LW,Injured Reserve,Neck,2026-12-12,2026-11-19,https://www.espn.com/nhl/player/_/id/4233890
 2026-11-28,8476979.0,Erik Gustafsson,LAK,D,Injured Reserve,Hand,2026-12-20,2026-11-23,https://www.espn.com/nhl/player/_/id/3891922
-2026-11-28,8484163.0,Jakub Dvorak,LAK,D,Injured Reserve,Upper Body,2026-11-28,2026-09-24,https://www.espn.com/nhl/player/_/id/5149241
+2026-11-28,8484163.0,Jakub Dvorak,LAK,D,Injured Reserve,Upper Body,2026-12-30,2026-09-24,https://www.espn.com/nhl/player/_/id/5149241
 2026-11-28,8476874.0,Olli Maatta,MIN,D,Injured Reserve,Upper Body,2026-12-01,2026-11-16,https://www.espn.com/nhl/player/_/id/2976850
 2026-11-28,8480800.0,Quinn Hughes,MIN,D,Injured Reserve,Upper Body,2026-12-03,2026-11-26,https://www.espn.com/nhl/player/_/id/4320548
 2026-11-28,8475184.0,Chris Kreider,MTL,LW,Injured Reserve,Lower Body,2027-01-02,2026-11-15,https://www.espn.com/nhl/player/_/id/5833
@@ -5989,7 +5989,7 @@ snapshot,player_id,name,team,position,status,injury,return_date,updated,espn_url
 2026-11-28,8482475.0,Egor Chinakhov,PIT,RW,Injured Reserve,Undisclosed,2026-12-02,2026-11-26,https://www.espn.com/nhl/player/_/id/4697404
 2026-11-28,8481725.0,Elmer Soderblom,PIT,LW,Injured Reserve,Upper Body,2026-11-30,2026-11-02,https://www.espn.com/nhl/player/_/id/5075840
 2026-11-28,8481582.0,Nick Robertson,PIT,LW,Injured Reserve,Lower Body,2026-12-05,2026-11-20,https://www.espn.com/nhl/player/_/id/4565275
-2026-11-28,8477435.0,Ryan Graves,PIT,D,Injured Reserve,Knee,2026-11-28,2026-09-27,https://www.espn.com/nhl/player/_/id/3042122
+2026-11-28,8477435.0,Ryan Graves,PIT,D,Injured Reserve,Knee,2027-01-01,2026-09-27,https://www.espn.com/nhl/player/_/id/3042122
 2026-11-28,8485383.0,Jake O'Brien,SEA,C,Injured Reserve,Lower Body,2026-12-10,2026-11-19,https://www.espn.com/nhl/player/_/id/5291944
 2026-11-28,8477955.0,Jared McCann,SEA,LW,Injured Reserve,Lower Body,2027-01-02,2026-10-25,https://www.espn.com/nhl/player/_/id/3114777
 2026-11-28,8475831.0,Philipp Grubauer,SEA,G,Day-To-Day,Upper Body,2026-11-28,2026-11-28,https://www.espn.com/nhl/player/_/id/5657
@@ -6002,7 +6002,7 @@ snapshot,player_id,name,team,position,status,injury,return_date,updated,espn_url
 2026-11-28,8479346.0,Dillon Dube,STL,C,Injured Reserve,Neck,2026-12-04,2026-10-10,https://www.espn.com/nhl/player/_/id/4063268
 2026-11-28,8483516.0,Jimmy Snuggerud,STL,RW,Injured Reserve,Upper Body,2026-12-02,2026-11-27,https://www.espn.com/nhl/player/_/id/5080171
 2026-11-28,8476792.0,Torey Krug,STL,D,Injured Reserve,Ankle,2027-07-01,2026-10-13,https://www.espn.com/nhl/player/_/id/2952729
-2026-11-28,8481006.0,Tyler Tucker,STL,D,Injured Reserve,Knee,2026-11-28,2026-09-30,https://www.espn.com/nhl/player/_/id/4587904
+2026-11-28,8481006.0,Tyler Tucker,STL,D,Injured Reserve,Knee,2026-12-12,2026-09-30,https://www.espn.com/nhl/player/_/id/4587904
 2026-11-28,8483447.0,Conor Geekie,TBL,C,Injured Reserve,Shoulder,2027-03-30,2026-11-24,https://www.espn.com/nhl/player/_/id/5080155
 2026-11-28,8478416.0,Erik Cernak,TBL,D,Day-To-Day,Illness,2026-11-28,2026-11-28,https://www.espn.com/nhl/player/_/id/3904178
 2026-11-28,8480995.0,Pontus Holmberg,TBL,RW,Injured Reserve,Lower Body,2026-12-26,2026-11-27,https://www.espn.com/nhl/player/_/id/4588205
