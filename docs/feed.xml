@@ -6,7 +6,14 @@
   <atom:link href="https://juhaopesonen.github.io/NHL-stats/feed.xml" rel="self" type="application/rss+xml"/>
   <description>NHL:n yön otteluiden syvädata ja nostot suomeksi: xG, putket, suomalaiset ja loukkaantumiset.</description>
   <language>fi</language>
-  <lastBuildDate>Fri, 27 Nov 2026 21:21:30 +0000</lastBuildDate>
+  <lastBuildDate>Sat, 28 Nov 2026 08:08:13 +0000</lastBuildDate>
+  <item>
+    <title>NHL-yöraportti 27.11.2026 – 15 ottelua</title>
+    <link>https://juhaopesonen.github.io/NHL-stats/raportit/2026-11-27.html</link>
+    <guid isPermaLink="true">https://juhaopesonen.github.io/NHL-stats/raportit/2026-11-27.html</guid>
+    <pubDate>Sat, 28 Nov 2026 08:08:13 +0000</pubDate>
+    <description>&lt;p&gt;Ottelut perjantai 27.11.2026.&lt;/p&gt;&lt;ul&gt;&lt;li&gt;Jiri Kulich (BUF) on tehnyt maalin 4 ottelussa peräkkäin (yhteensä 4 maalia).&lt;/li&gt;&lt;li&gt;Sam Bennett (FLA) on tehnyt maalin 3 ottelussa peräkkäin (yhteensä 5 maalia).&lt;/li&gt;&lt;li&gt;Pisteputki jatkui 19 pelaajalla (peliä putkessa): Ryan Leonard (WSH) 7, Vasily Podkolzin (EDM) 7, Wyatt Johnston (DAL) 7, Jack Eichel (VGK) 6, Logan Cooley (UTA) 6, Robert Thomas (STL) 6, Simon Nemec (CGY) 6, Tage Thompson (BUF) 6, Vincent Trocheck (UTA) 6, Adam Fox (NYR) 5, Christian Dvorak (PHI) 5, Dylan Samberg (WPG) 5, Filip Forsberg (NSH) 5, Jack Quinn (BUF) 5, Jake Guentzel (TBL) 5, Josh Morrissey (WPG) 5, Kyle Connor (WPG) 5, Mark Scheifele (WPG) 5, Pavel Buchnevich (STL) 5.&lt;/li&gt;&lt;li&gt;John Gibson (DET) torjui 18/18 ja päästi 3,32 maalia odotettua vähemmän (GSAx).&lt;/li&gt;&lt;li&gt;Spencer Knight (CHI) torjui 30/31 ja päästi 2,01 maalia odotettua vähemmän (GSAx).&lt;/li&gt;&lt;/ul&gt;&lt;p&gt;Suomalaiset: 28 pelasi, yhteensä 7+12 – Kaapo Kakko 2+0, Roope Hintz 1+1, Aleksanteri Kaskimaki 1+1, Artturi Lehkonen 1+1, Ville Koivunen 1+1&lt;/p&gt;&lt;p&gt;&lt;a href=&quot;https://juhaopesonen.github.io/NHL-stats/raportit/2026-11-27.html&quot;&gt;Koko raportti&lt;/a&gt;&lt;/p&gt;</description>
+  </item>
   <item>
     <title>NHL-yöraportti 26.11.2026 – 0 ottelua</title>
     <link>https://juhaopesonen.github.io/NHL-stats/raportit/2026-11-26.html</link>
@@ -209,13 +216,6 @@
     <guid isPermaLink="true">https://juhaopesonen.github.io/NHL-stats/raportit/2026-10-29.html</guid>
     <pubDate>Fri, 30 Oct 2026 06:20:22 +0000</pubDate>
     <description>&lt;p&gt;Ottelut torstai 29.10.2026.&lt;/p&gt;&lt;ul&gt;&lt;li&gt;Tage Thompson (BUF) teki hattutempun, tehot 3+2.&lt;/li&gt;&lt;li&gt;Viktor Arvidsson (DET) teki hattutempun, tehot 3+1.&lt;/li&gt;&lt;li&gt;Denton Mateychuk (CBJ) on tehnyt maalin 3 ottelussa peräkkäin (yhteensä 3 maalia).&lt;/li&gt;&lt;li&gt;Filip Forsberg (NSH) on tehnyt maalin 3 ottelussa peräkkäin (yhteensä 4 maalia).&lt;/li&gt;&lt;li&gt;Pisteputki jatkui 9 pelaajalla (peliä putkessa): Drake Batherson (OTT) 6, Elias Pettersson (VAN) 6, Jordan Kyrou (WSH) 6, Matthew Schaefer (NYI) 6, Mikhail Sergachev (UTA) 6, Jackson Blake (CAR) 5, Jackson LaCombe (ANA) 5, Jakob Chychrun (WSH) 5, Nikolaj Ehlers (CAR) 5.&lt;/li&gt;&lt;/ul&gt;&lt;p&gt;Suomalaiset: 20 pelasi, yhteensä 3+4 – Mikko Rantanen 0+2, Mikael Granlund 1+0, Erik Haula 1+0, Joel Armia 1+0, Miro Heiskanen 0+1&lt;/p&gt;&lt;p&gt;&lt;a href=&quot;https://juhaopesonen.github.io/NHL-stats/raportit/2026-10-29.html&quot;&gt;Koko raportti&lt;/a&gt;&lt;/p&gt;</description>
-  </item>
-  <item>
-    <title>NHL-yöraportti 28.10.2026 – 4 ottelua</title>
-    <link>https://juhaopesonen.github.io/NHL-stats/raportit/2026-10-28.html</link>
-    <guid isPermaLink="true">https://juhaopesonen.github.io/NHL-stats/raportit/2026-10-28.html</guid>
-    <pubDate>Thu, 29 Oct 2026 06:21:29 +0000</pubDate>
-    <description>&lt;p&gt;Ottelut keskiviikko 28.10.2026.&lt;/p&gt;&lt;ul&gt;&lt;li&gt;Connor McDavid (EDM) jatkoi pisteputkensa 13 otteluun (putken aikana 8+28).&lt;/li&gt;&lt;li&gt;Artturi Lehkonen (COL) jatkoi pisteputkensa 8 otteluun (putken aikana 7+4).&lt;/li&gt;&lt;li&gt;Pisteputki jatkui 5 pelaajalla (peliä putkessa): Trevor Zegras (PHI) 6, Berkly Catton (SEA) 5, Easton Cowan (TOR) 5, Jack Roslovic (TOR) 5, Jordan Kyrou (WSH) 5.&lt;/li&gt;&lt;li&gt;Tristan Jarry (EDM) torjui 24/24 ja päästi 2,21 maalia odotettua vähemmän (GSAx).&lt;/li&gt;&lt;li&gt;Brennan Othmann (CGY) pelasi yöllä 0.52 – nyt päivittäinen arvio, vamma: ylävartalo, arvioitu paluu 30.10. (n. 1 pv).&lt;/li&gt;&lt;/ul&gt;&lt;p&gt;Suomalaiset: 4 pelasi, yhteensä 1+1 – Kasperi Kapanen 1+0, Artturi Lehkonen 0+1&lt;/p&gt;&lt;p&gt;&lt;a href=&quot;https://juhaopesonen.github.io/NHL-stats/raportit/2026-10-28.html&quot;&gt;Koko raportti&lt;/a&gt;&lt;/p&gt;</description>
   </item>
 </channel>
 </rss>

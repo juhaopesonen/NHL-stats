@@ -398,3 +398,18 @@ game_id,date,game_type,away,home,away_name,home_name,away_score,home_score,away_
 2026020397,2026-11-25,2,MTL,COL,Montréal Canadiens,Colorado Avalanche,0,6,28,38,REG
 2026020398,2026-11-25,2,SJS,ANA,San Jose Sharks,Anaheim Ducks,0,7,23,30,REG
 2026020399,2026-11-25,2,CHI,SEA,Chicago Blackhawks,Seattle Kraken,3,1,19,30,REG
+2026020400,2026-11-27,2,TOR,BOS,Toronto Maple Leafs,Boston Bruins,3,1,18,29,REG
+2026020401,2026-11-27,2,CGY,NJD,Calgary Flames,New Jersey Devils,3,5,29,34,REG
+2026020402,2026-11-27,2,UTA,NSH,Utah Mammoth,Nashville Predators,6,5,35,21,SO
+2026020403,2026-11-27,2,DAL,STL,Dallas Stars,St. Louis Blues,3,5,28,20,REG
+2026020404,2026-11-27,2,OTT,TBL,Ottawa Senators,Tampa Bay Lightning,6,2,21,20,REG
+2026020405,2026-11-27,2,VAN,PHI,Vancouver Canucks,Philadelphia Flyers,2,5,20,29,REG
+2026020406,2026-11-27,2,FLA,WSH,Florida Panthers,Washington Capitals,3,2,31,26,REG
+2026020407,2026-11-27,2,DET,CBJ,Detroit Red Wings,Columbus Blue Jackets,2,0,21,18,REG
+2026020408,2026-11-27,2,COL,MIN,Colorado Avalanche,Minnesota Wild,4,3,31,22,SO
+2026020409,2026-11-27,2,LAK,ANA,Los Angeles Kings,Anaheim Ducks,5,3,21,28,REG
+2026020410,2026-11-27,2,VGK,SJS,Vegas Golden Knights,San Jose Sharks,1,4,28,33,REG
+2026020411,2026-11-27,2,NYR,CHI,New York Rangers,Chicago Blackhawks,1,2,31,10,REG
+2026020412,2026-11-27,2,WPG,NYI,Winnipeg Jets,New York Islanders,3,1,37,27,REG
+2026020413,2026-11-27,2,PIT,BUF,Pittsburgh Penguins,Buffalo Sabres,6,3,29,23,REG
+2026020414,2026-11-27,2,SEA,EDM,Seattle Kraken,Edmonton Oilers,4,2,32,27,REG
